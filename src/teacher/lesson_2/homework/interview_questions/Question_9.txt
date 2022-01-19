@@ -1,0 +1,27 @@
+What is Primitive Casting in Java programming language?
+
+Primitive Casting is used to convert primitive values from
+one data type to another. For example, an int value can be
+assigned to a float data type, or a double value can be
+assigned to an int data type. Casting can be either implicit or explicit.
+
+Implicit Casting: In implicit casting the conversion happens
+automatically, without writing specific code to do the conversion.
+Implicit casting happens when you convert or assign a smaller value,
+like a byte, to a larger data type such as an int.
+
+Explicit Casting: In explicit casting code has to be specifically
+written to perform the conversion from one primitive type to another.
+Explicit casting is done by using the syntax (data_type) where
+data_type is the data type that the cast is being applied to.
+Explicit casting happens when you convert or assign a larger
+value to a smaller data type.
+
+Example:
+//Implicit cast - smaller value is assigned to bigger data type
+int i = 200;
+long l = i;
+
+//Explicit cast - larger value assigned to smaller data type
+float f = 234.345f;
+int i = (int)f;

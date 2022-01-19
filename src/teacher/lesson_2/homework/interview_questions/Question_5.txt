@@ -1,0 +1,11 @@
+What Is Variable Initialization? How Is It Different Than Assignment?
+
+When we assign a value to a variable first time,
+it is known as variable initialization.
+Before initialization primitive types have
+default values such as 0 or false.
+
+int number;
+number = 10;
+
+For example, variable number is initialized with value 10.

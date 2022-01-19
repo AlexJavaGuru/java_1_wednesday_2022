@@ -1,0 +1,14 @@
+Why Is Specifying DataType Mandatory In Java?
+
+Data type of a variable is an attribute which tells what kind of data that variable can have. Every java variable takes up a certain amount of space in
+memory. How much memory a variable takes is depends on its datatype.
+
+For Example, As we see in our daily life, Different types of vehicle requires different amount of space in your parking area. For example, Our two wheeler
+may require two blocks where as Car may require 6 blocks of space. Same applies to variables in java. Storing a small number requires less space compared
+to large number. So, we need to declare a datatype of our variable accordingly.
+
+In other words, data types are used by JVM to assign space for that variable in the memory. If we do not specify datatype, JVM can not decide how much
+space is required by that variable during program execution. So, it is mandatory to use datatype before variable name and Java Compiler will cry, if you miss
+to do that.
+
+Java has two types of datatype primitive and non-primitive data type.

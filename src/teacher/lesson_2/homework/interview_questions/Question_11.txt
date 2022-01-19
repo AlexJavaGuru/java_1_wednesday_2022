@@ -1,0 +1,6 @@
+What is the difference between float and double?
+
+Float can represent up to 7 digits accurately after decimal point,
+where as double can represent up to 15 digits accurately
+after decimal point.
+

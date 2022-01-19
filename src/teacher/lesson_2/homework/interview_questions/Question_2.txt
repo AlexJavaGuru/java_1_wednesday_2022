@@ -1,0 +1,14 @@
+How To Declare A Variable In Java?
+
+Declaring a variable is very easy. If you have noticed in above example, we have declared variable number on line 6. But along with that we have also
+specified its datatype i.e. int.
+
+Below code snippet shows some more example of variable declaration.
+
+int number;
+boolean flag;
+String name;
+
+Here number, flag and name are variable name and int, boolean and String are their respective data types.
+Java is known as strictly typed language as it is mandatory to specify a data type of a variable before variable name. in java. It is used by compiler to help
+programmer avoid any mistakes such as storing String values to integer variables.

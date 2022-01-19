@@ -1,0 +1,58 @@
+What is local variable?
+
+A variable declared inside method, block or loop is known as local variable.
+
+Their scope or visibility is local to the entity in which
+they are declared. They cannot be used outside these entity.
+
+A local variable should be initialized before use otherwise
+compiler error will occur.
+
+Important points related to java local variable.
+
+Scope of the java local variables is restricted
+to the method/constructor in which it is created.
+They are not accessible outside the method.
+
+Java local variables are not assigned any default value.
+If you fail to assign it a value then while using it compiler
+will give error.
+Say for example, int x; Then if you write System.out.println(x);
+you will get compiler error at x in print
+statement - "local variable x may not have been initialized".
+
+public class LocalVariable {
+
+            public static void main(String[] args) {
+
+                        int a = 10;    //var a local to main method
+                        int res = a+1;  //var res local to main method
+
+                        System.out.println(b);
+
+            }
+
+}
+
+
+Trying to access local variables outside the java method
+
+public class LocalVariable {
+
+            public static void main(String[] args) {
+
+                  int a = 10;    //var a local to main method
+                  int res = a+1;  //var res local to main method
+
+                  System.out.println(b);
+            }
+
+           public void methodA(){
+                 int b =20;
+                 int add = a + b;   //compilation error
+           }
+}
+
+Local variable cannot be accessed or used outside the method in which it is declared.
+
+This is why we are not able to use value of variable 'a' outside main() method and got compile time error in methodA.

@@ -1,0 +1,7 @@
+How To Assign A Value To Variable?
+
+We use assign operator (=) to assign a value to a variable. For Example,
+
+number = 10;
+flag = true;
+name = "Code";

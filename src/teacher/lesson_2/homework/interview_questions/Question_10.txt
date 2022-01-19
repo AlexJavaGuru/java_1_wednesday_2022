@@ -1,0 +1,34 @@
+How long do primitive variables exist in memory?
+Define the various scopes of primitive variables?
+
+After a primitive variable is declared and initialized;
+how long it lives in memory is dependent on the scope of the variable.
+Scope of a variable is determined based on where it is declared
+within a java class. Following are the various scopes of a
+variable in a java program based on where they are declared.
+
+1. Class variable (Static fields) - Class variables are variables declared within the class body, outside of any methods or blocks, and declared with 'static' keyword.
+
+Class variables have the longest scope. They are created when the class is loaded, and remain in memory as long as the class remains loaded in JVM.
+
+2. Instance variables (Non-static fields) - Instance variable are variables declared within the class body, outside of any method or block, and declared without 'static' keyword.
+
+Instance variables have the second highest scope. Instance variables are created when a new class instance is created, and live until the instance is removed from memory.
+
+3. Local Variables - Local variables are variables declared within a method body. They live only as long as the method in which it is declared remains on the stack.
+
+4. Block variables - Block variables are variables declared within a block such as an init block or within a for loop. They live only during the execution of the block and are the shortest living variables.
+
+Example:
+
+class MyClass {
+  static int v1 = 100; // Static variable
+  int v2 = 200; // Instance variable
+  {int v3 = 300} // Block variable in init block
+  void perform() {
+    int v4 = 400; //Local variable
+    for (int i=0; i < 4; i++) { //Block variable in for loop
+      ...
+    }
+  }
+}

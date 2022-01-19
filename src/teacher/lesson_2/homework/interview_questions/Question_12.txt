@@ -1,0 +1,45 @@
+How is a float or double value stored in memory in Java?
+
+Today, basically all floats in all languages use exactly
+the same storage method: they store a 32 bit integer divided
+into three parts. Those three parts are called the sign (1 bit),
+the exponent (8 bits) and the mantissa (23 bits).
+
+The double precision numbers have a similar format,
+just with more bits and bigger values (1 for the sign,
+11 for the exponent, and 52 for the mantissa, specifically).
+Note that the mantissa in this diagram is called the "fraction."
+
+If we call the sign s and consider it equal to 1 or 0,
+and if we call the exponent part x, and if we call the
+mantissa part m, then the value of the number is usually:
+
+ (x−151)         24
+2      (1-2s)(m+2  )
+
+The value 1.0 is represented with s=0, m=0, x=127, for example.
+The extra  224  added to m is called the "implicit leading bit,
+"and is there because every binary number in exponent notation
+(except zero) starts with a 1, so the implied leading bit doesn't
+need to be stored. Note that this default rule cannot store a zero.
+
+There are two important exceptions to this notation:
+
+Firstly, if x is 255 (the max value), then the number is illegal,
+and its meaning depends on m; if m is 0, then it is positive (s=0)
+or negative (s=1) infinity. If m is not zero, then it is NaN
+(not-a-number). There are many legal ways to represent NaN,
+and this is sometimes used to differentiate between cases
+where NaN ought to throw an exception and where it ought not to.
+
+The second case is when x=0. In this case, the formula becomes:
+
+ -150
+2    (1−2s)m
+
+This allows for an entire range of extra-small numbers,
+called denormalized numbers, to be generated, and has the
+double advantage that if you set all the bits to zero,
+the encoded number is also zero. Another major advantage of
+this system is that the integer comparisons (<, >, etc) work
+in nearly the same way for floats and integers!

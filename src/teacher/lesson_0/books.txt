@@ -1,0 +1,14 @@
+Thinking in Java (4th Edition) 4th Edition
+https://www.amazon.com/Thinking-Java-4th-Bruce-Eckel/dp/0131872486
+
+Head First Java, 2nd Edition 2nd Edition
+https://www.amazon.com/Head-First-Java-Kathy-Sierra/dp/0596009208
+
+The Pragmatic Programmer: From Journeyman to Master 1st Edition
+https://www.amazon.com/Pragmatic-Programmer-Journeyman-Master/dp/020161622X
+
+Clean Code: A Handbook of Agile Software Craftsmanship
+https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882
+
+Java 8 in Action: Lambdas, Streams, and Functional-Style Programming
+https://www.amazon.com/Java-8-in-Action-audiobook/dp/B07MBBX3DT

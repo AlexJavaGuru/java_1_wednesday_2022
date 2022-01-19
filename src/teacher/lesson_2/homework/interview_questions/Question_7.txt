@@ -1,0 +1,20 @@
+What are primitive data types?
+What are the primitive data types supported by Java programming language?
+
+Primitive data types are data types that are predefined
+in Java programming language and named by a reserved keyword.
+Java programming language supports eight different primitive
+types - byte, short, int, long, float, double, boolean and char.
+
+byte, short, int and long are integer number types.
+byte has 8 bits and is the smallest integer number type.
+long has 64 bits and is the biggest integer number type.
+The default value for all integer number types is 0.
+
+float and double are floating-point number types.
+doubles are bigger than floats. The default value for
+floating-point number types is 0.0.
+
+boolean has a true or false value.
+
+char contains a single, 16-bit unicode value.

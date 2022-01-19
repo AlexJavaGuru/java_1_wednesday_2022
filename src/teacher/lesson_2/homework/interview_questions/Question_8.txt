@@ -1,0 +1,54 @@
+What are Primitive Literals?
+
+Primitive Literals are the code representation of values
+of primitive data types. For example 'a' is a char literal,
+100 is an int literal, 'false' is a boolean literal
+and 2345.456 is a double literal.
+
+Integer Literals: Integer number types in the Java programming
+language can be represented in four different ways - decimal (base 10),
+octal (base 8), hexadecimal (base 16) and binary (base 2).
+You will use decimal representation in most cases; and rarely,
+if ever, use the other representations.
+
+Floating-point Literals: Floating point literals are defined by
+a number, followed by a decimal point and then followed by more
+numbers representing the fraction. Example: 23435363.4336633.
+Floating-point literals are of type double by default which
+is 64 bits. If you want to assign a floating-point literal
+to a float variable you have to suffix the literal with either
+'F' or 'f' (like 23435363.4336633F), else you will get a
+compilation error of a possible loss of precision. If you want to
+assign a floating-point literal to a double variable can optionally
+suffix the literal with either 'D' or 'd' (like 23435363.4336633D).
+It is optional since floating-point literals are of type double by
+default.
+
+Boolean Literals: Boolean literals are code representations
+of boolean data types and can be defined only as either
+'true' or 'false'. Some programming languages use numbers,
+usually 0 and 1, to represent boolean data type.
+But in Java programming language numbers are not allowed
+to represent boolean data types.
+
+Char literals: char literals are represented by a single character in single quotes.
+
+Example:
+//Decimal literal assigned to int data type
+int i1 = 200;
+//Binary literal assigned to int data type
+int i2 = 0B00011;
+//Octal literal assigned to int data type
+int i3 = 011;
+//Hexadecimal literal assigned to an int data type
+int i4 = 0x071ff;
+//Floating-point literal assigned to float data type
+float f = 23435.45637F;
+//Floating-point literal, with explicit suffix, assigned to double data type
+double d = 43536376.3455365D
+//Floating-point literal, without explicit suffix, assigned to double data type
+double d1 = 4253636.4536;
+//Character literal assigned to char data type
+char c = 'a';
+//Boolean literal assigned to boolean data type
+boolean b = true;

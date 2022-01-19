@@ -1,0 +1,29 @@
+Explain the concepts of JRE, JDK, and JVM
+
+JRE (Java Runtime Environment) includes the Java Virtual Machine
+and the standard Java APIs (core classes and supporting files.).
+The JRE contains just enough to execute a Java application,
+but not enough to compile it.
+
+JDK (Java Development Kit) is the JRE plus the Java compiler,
+and a set of other tools to compile and debug code.
+JRE consists of Java platform libraries, Java Virtual Machine (JVM),
+Java Plugin and Java Web Start to run Java applications.
+JRE as a stand-alone does not contain compilers and debugging tools.
+If you need to develop Java programs you need the full Java SDK.
+The JRE is not enough for program development.
+Only the full Java SDK contains the Java compiler which turns your
+.java source files into bytecode .class files.
+
+JVM (Java Virtual Machine) is an implementation of a specification,
+detailing the behavior expected of a JVM.
+Any implementation that conforms to the JVM specification should
+be able to run code compiled into Java bytecode irrespective of
+the language in which the code was originally written.
+In the Java programming language, all source code is first written
+in plain text files ending with the .java extension. Those source
+files are then compiled into .class files by the javac compiler.
+A .class file does not contain code that is native to your processor;
+it instead contains bytecodes — the machine language of the Java Virtual Machine.
+The java launcher tool then runs your application with an instance of the
+Java Virtual Machine.

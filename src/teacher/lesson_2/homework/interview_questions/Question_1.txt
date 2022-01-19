@@ -1,0 +1,24 @@
+What Is The Variable?
+
+Variable is a name which is given to a memory cell. Variable is also known as a container (or box) which is used to store data value during program execution
+in memory. It is a basic unit of data storage. Variable is a combination of two words:
+
+Vary + Able = Variable
+
+Variable value can be changed during program execution. Here 'vary' word represent variation, it means we can change the value of a variable during
+program execution.
+
+For Example, in below code snippet, we have declared a variable number, then in next step we initialized its value and then we modiÚed its value. We will
+refer below code snippet multiple time to understand variable declaration, assignment and initialization in detail in subsequent topics.
+
+public class VariableDemo {
+    public static void main(String[] args) {
+        // variable declaration
+        int number;
+        // initialization / assign a value to variable
+        number = 10;
+        // modify variable value and assign it again
+        number = number + 20;
+    }
+}
+
