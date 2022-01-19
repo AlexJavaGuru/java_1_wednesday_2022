@@ -1,4 +1,4 @@
-package petr_pirneac;
+package student_petr_pirneac;
 
 public class HelloWorld {
 
