@@ -1,4 +1,4 @@
-package student_Aleksandrs_Ivanovs;
+package student_aleksandrs_ivanovs;
 
 public class HelloWorld {
     public static void main(String[] args) {
