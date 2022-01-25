@@ -15,6 +15,6 @@ public class Homework_lesson1_task11_div {
         int num2 = num.nextInt();
 
         int div = num1 / num2;
-        System.out.println("Sum = " + div);
+        System.out.println("Result = " + div);
     }
 }
