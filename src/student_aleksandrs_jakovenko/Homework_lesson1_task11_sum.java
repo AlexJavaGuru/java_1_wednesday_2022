@@ -2,7 +2,9 @@ package student_aleksandrs_jakovenko;
 
 import java.util.Scanner;
 
-public class Homework_lesson1_task11 {
+//Write a Java program to print the sum of two numbers.
+
+public class Homework_lesson1_task11_sum {
     public static void main(String[] args) {
         Scanner num = new Scanner(System.in);
 

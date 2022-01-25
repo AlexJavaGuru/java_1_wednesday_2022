@@ -2,7 +2,9 @@ package student_aleksandrs_jakovenko;
 
 import java.util.Scanner;
 
-public class Homework_lesson1_task12 {
+//Write a Java program to divide two numbers and print on the screen.
+
+public class Homework_lesson1_task11_div {
     public static void main(String[] args) {
         Scanner num = new Scanner(System.in);
 
