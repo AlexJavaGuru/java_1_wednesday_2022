@@ -1,4 +1,4 @@
-package Student_Konstantin_Kolesnik;
+package student_konstantin_kolesnik;
 
 public class HelloWorld {
     public static void main(String[] args) {
