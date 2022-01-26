@@ -1,4 +1,4 @@
-package student_sergejgsp_test;
+package student_sergejgsp;
 
 public class HelloWorld {
 
@@ -7,4 +7,3 @@ public class HelloWorld {
     }
 
 }
-
