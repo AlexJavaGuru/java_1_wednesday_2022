@@ -1,6 +1,6 @@
-package student_vlad_stus.Lesson_1;
+package student_andrejs_saldavs;
 
-public class numbers {
+public class sum {
     public static void main(String[] args) {
         System.out.println(74 + 36);
         System.out.println(50 / 3);
