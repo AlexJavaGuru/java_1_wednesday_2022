@@ -1,8 +1,0 @@
-package student_aleksandrs_korsaks.ak_lesson_1.ak_level_4;
-
-public class HelloWorld {
-    public static void main(String[] args) {
-
-        System.out.println("Hello World");
-    }
-}
