@@ -1,4 +1,4 @@
-package student_viktorija_vinka.lesson1.task12;
+package student_viktorija_vinka.lesson1.task11;
 
 public class DivideTwoNumbers {
     public static void main(String[] args) {
