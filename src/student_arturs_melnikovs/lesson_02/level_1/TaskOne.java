@@ -7,9 +7,9 @@ public class TaskOne {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Please, enter the 1st number:");
+        System.out.println("Please, enter the 1st integer: ");
         int firstNumber = scanner.nextInt();
-        System.out.println("Please, enter the 2nd number:");
+        System.out.println("Please, enter the 2nd integer: ");
         int secondNumber = scanner.nextInt();
 
         int summResult = firstNumber + secondNumber;
