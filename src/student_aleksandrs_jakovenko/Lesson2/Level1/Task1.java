@@ -1,21 +1,21 @@
-package student_aleksandrs_jakovenko.Lesson2;
+package student_aleksandrs_jakovenko.Lesson2.Level1;
 
 import java.util.Scanner;
 
-public class Task2 {
+public class Task1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter first number:");
-        double firstNumber = scanner.nextDouble();
+        int firstNumber = scanner.nextInt();
 
         System.out.println("Enter second number:");
-        double secondNumber = scanner.nextDouble();
+        int secondNumber = scanner.nextInt();
 
-        double sum = firstNumber + secondNumber;
-        double sub = firstNumber - secondNumber;
-        double mul = firstNumber * secondNumber;
-        double div = firstNumber / secondNumber;
+        int sum = firstNumber + secondNumber;
+        int sub = firstNumber - secondNumber;
+        int mul = firstNumber * secondNumber;
+        int div = firstNumber / secondNumber;
 
         System.out.println("Sum result: " + sum);
         System.out.println("Subtraction result: " + sub);
