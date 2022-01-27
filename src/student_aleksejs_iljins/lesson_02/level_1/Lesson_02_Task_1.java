@@ -1,4 +1,4 @@
-package student_aleksejs_iljins.lesson_02;
+package student_aleksejs_iljins.lesson_02.level_1;
 
 import java.util.Scanner;
 

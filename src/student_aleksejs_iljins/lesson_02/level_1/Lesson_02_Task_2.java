@@ -1,8 +1,9 @@
-package student_aleksejs_iljins.lesson_02;
+package student_aleksejs_iljins.lesson_02.level_1;
 
 import java.util.Scanner;
 
 public class Lesson_02_Task_2 {
+
     public static void main(String[] args) {
 
         Scanner secondScanner = new Scanner(System.in);
