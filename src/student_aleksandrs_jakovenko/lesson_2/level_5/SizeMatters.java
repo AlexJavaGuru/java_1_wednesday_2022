@@ -1,4 +1,4 @@
-package student_aleksandrs_jakovenko.Lesson2.Level5;
+package student_aleksandrs_jakovenko.lesson_2.level_5;
 
 public class SizeMatters {
     public static void main(String[] args) {

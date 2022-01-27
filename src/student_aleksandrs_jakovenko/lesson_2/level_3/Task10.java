@@ -1,4 +1,4 @@
-package student_aleksandrs_jakovenko.Lesson2.Level3;
+package student_aleksandrs_jakovenko.lesson_2.level_3;
 
 import java.util.Scanner;
 
