@@ -1,9 +1,11 @@
 package student_sergejgsp;
 
+import static java.lang.System.*;
+
 public class HelloWorld {
 
     public static void main(String[] args) {
-        System.out.println("Hello");
+        out.println("Hello World Happy New Year!!!");
     }
 
 }
