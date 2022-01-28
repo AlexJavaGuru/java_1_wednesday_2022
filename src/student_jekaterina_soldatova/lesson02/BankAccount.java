@@ -16,7 +16,7 @@ package student_jekaterina_soldatova.lesson02;
 
 public class BankAccount {
     // 65 = 'A', 90 = 'Z'
-    char letter1 = (char)(Math.random() * (91-89) + 89);
+    char letter1 = (char)(Math.random() * (91-65) + 65);
     char letter2 = (char)(Math.random() * (91-65) + 65);
 
 
