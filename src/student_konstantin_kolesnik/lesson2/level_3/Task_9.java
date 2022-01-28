@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Task_9 {
     public static void main(String[] args) {
-        System.out.println("Input a number (Example: 0-9)");
+        System.out.println("Input a number (Example: 1-9)");
 
         System.out.println("Input number:");
         Scanner scanner = new Scanner(System.in);
@@ -12,7 +12,7 @@ public class Task_9 {
 
         System.out.println("Results:");
         System.out.print(number + " x 1 = ");
-        System.out.println(number * 1);
+        System.out.println(number);
         System.out.print(number + " x 2 = ");
         System.out.println(number * 2);
         System.out.print(number + " x 3 = ");
@@ -31,13 +31,5 @@ public class Task_9 {
         System.out.println(number * 9);
         System.out.print(number + " x 10 = ");
         System.out.println(number * 10);
-
-
-
-
-
-
-
-
     }
 }

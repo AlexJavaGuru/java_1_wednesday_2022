@@ -22,8 +22,5 @@ public class Task_1 {
         System.out.println(firstNumber * secondNumber);
         System.out.print("First number / Second number = ");
         System.out.println(firstNumber / secondNumber);
-
-
-
     }
 }

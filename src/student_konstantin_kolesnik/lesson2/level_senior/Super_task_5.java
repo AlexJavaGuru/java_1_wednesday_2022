@@ -1,4 +1,4 @@
-package student_konstantin_kolesnik.level_senior;
+package student_konstantin_kolesnik.lesson2.level_senior;
 
 public class Super_task_5 {
     public static void main(String[] args) {
@@ -7,6 +7,6 @@ public class Super_task_5 {
 
         /*Съешь ещё этих мягких французских булок,
         да выпей [же] чаю. 1234567890.*/
-        System.out.println("многострочный коментарий начиается с /* и заканчивается */");
+        System.out.println("многострочный коментарий начинается с /* и заканчивается */");
     }
 }

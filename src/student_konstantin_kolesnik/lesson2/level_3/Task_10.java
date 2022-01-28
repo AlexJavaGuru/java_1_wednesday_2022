@@ -14,6 +14,4 @@ public class Task_10 {
         System.out.println("Perimeter is = " + perimeterFormula);
         System.out.println("Area is = " + areaFormula);
     }
-
-
 }
