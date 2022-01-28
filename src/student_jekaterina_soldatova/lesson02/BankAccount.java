@@ -20,7 +20,7 @@ public class BankAccount {
 
 
     long min = 100000000000L;
-    long max = 999999999999L;
-    long x = (long) (Math.random() * (max-min) + min);
+    long max = 99999999999999999L;
+    long number = (long) (Math.random() * (max-min) + min);
 }
 //how clean is it? can it be improved?
