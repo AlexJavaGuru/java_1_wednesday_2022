@@ -12,6 +12,7 @@ class BankAccount {
 
 //please run internTask05
 
+//please run internTask05
 package student_jekaterina_soldatova.lesson02;
 
 public class BankAccount {
@@ -31,7 +32,6 @@ public class BankAccount {
         int accountLength = (int) (Math.random() * (maxAccountLength + 1 - minAccountLength) + minAccountLength);
 
         for (int i = 0; i < accountLength; i++) {
-            //numberGenerator += (int) (Math.random() * 10);
             numberGenerator.append((int) (Math.random() * 10));
         }
         return numberGenerator.toString();
