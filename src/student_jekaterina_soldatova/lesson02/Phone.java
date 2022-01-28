@@ -6,6 +6,8 @@ class Phone
 }
  */
 
+//please run internTask04
+
 package student_jekaterina_soldatova.lesson02;
 
 public class Phone {
