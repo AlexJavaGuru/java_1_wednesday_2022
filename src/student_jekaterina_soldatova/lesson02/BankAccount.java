@@ -13,21 +13,23 @@ class BankAccount {
 //please run internTask05
 
 //please run internTask05
+
 package student_jekaterina_soldatova.lesson02;
 
 public class BankAccount {
 
-    char randomLetter() {
+    char getLetter() {
         int a = 65;
         int z = 90;
         return ((char) (Math.random() * (z + 1 - a) + a));
     }
-    String generateLetters = "" + randomLetter() + randomLetter();
+
+    String randomLetters = "" + getLetter() + getLetter();
 
 
-    String randomDigits() {
+    String generateRandomDigits() {
         StringBuilder numberGenerator = new StringBuilder();
-        int minAccountLength = 10;
+        int minAccountLength = 8;
         int maxAccountLength = 20;
         int accountLength = (int) (Math.random() * (maxAccountLength + 1 - minAccountLength) + minAccountLength);
 
