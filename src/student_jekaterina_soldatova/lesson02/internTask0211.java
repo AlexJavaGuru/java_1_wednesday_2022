@@ -11,7 +11,7 @@ package student_jekaterina_soldatova.lesson02;
 
 import java.util.Scanner;
 
-public class internTask02 {
+public class internTask0211 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter first integer number");
