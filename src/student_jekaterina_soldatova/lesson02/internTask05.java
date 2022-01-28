@@ -2,14 +2,20 @@
         Дан код, нужно исправить ошибку компиляции.
         Для сдачи работы создайте исправленный класс.
 
-class Book {
+class BankAccount {
+
+    public static void main(String[] args) {
+
+    }
 
  */
+
 package student_jekaterina_soldatova.lesson02;
 
-class internTask03 {
+public class internTask05 {
     public static void main(String[] args) {
-        Book coolBook = new Book();
-        System.out.println(coolBook.title);
+        BankAccount myObj = new BankAccount();
+        System.out.println("Random account number: LV80BANK" + myObj.x);
+
     }
 }
