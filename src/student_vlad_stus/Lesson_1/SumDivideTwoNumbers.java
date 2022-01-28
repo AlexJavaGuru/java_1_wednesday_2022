@@ -10,7 +10,7 @@ public class SumDivideTwoNumbers {
 
 double camA = 110;
 double camB = 52.52d;
-double resultOne = camA+ (int) camB;
+double resultOne = camA+ (double) camB;
         System.out.println(resultOne);
     }
 }
