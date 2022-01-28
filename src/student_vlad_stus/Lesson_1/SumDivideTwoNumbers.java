@@ -5,8 +5,12 @@ public class SumDivideTwoNumbers {
 
         int variableA = 74;
         int variableB = 36;
-        int result = variableA + variableB;
+        double result = variableA / (double) variableB;
         System.out.println ( result );
 
+double camA = 110;
+double camB = 52.52d;
+double resultOne = camA/ (int)camB;
+        System.out.println(resultOne);
     }
 }
