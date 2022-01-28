@@ -1,4 +1,4 @@
-package student_sergejgsp.Task_11;
+package student_sergejgsp.task_11;
 
 public class CalculateFourNumbers {
     public static void main(String[] args) {
