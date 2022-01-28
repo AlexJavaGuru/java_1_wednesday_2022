@@ -15,13 +15,27 @@ class BankAccount {
 package student_jekaterina_soldatova.lesson02;
 
 public class BankAccount {
-    // 65 = 'A', 90 = 'Z'
-    char letter1 = (char)(Math.random() * (91-65) + 65);
-    char letter2 = (char)(Math.random() * (91-65) + 65);
+
+    char randomLetter() {
+        int a = 65;
+        int z = 90;
+        return ((char) (Math.random() * (z + 1 - a) + a));
+    }
+    String generateLetters = "" + randomLetter() + randomLetter();
 
 
-    long min = 100000000000L;
-    long max = 99999999999999999L;
-    long number = (long) (Math.random() * (max-min) + min);
+    String randomDigits() {
+        StringBuilder numberGenerator = new StringBuilder();
+        int minAccountLength = 10;
+        int maxAccountLength = 20;
+        int accountLength = (int) (Math.random() * (maxAccountLength + 1 - minAccountLength) + minAccountLength);
+
+        for (int i = 0; i < accountLength; i++) {
+            //numberGenerator += (int) (Math.random() * 10);
+            numberGenerator.append((int) (Math.random() * 10));
+        }
+        return numberGenerator.toString();
+    }
 }
-//how clean is it? can it be improved?
+
+//how clean is it? how can it be improved?
