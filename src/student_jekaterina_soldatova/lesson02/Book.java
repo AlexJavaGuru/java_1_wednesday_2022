@@ -8,7 +8,5 @@ class Book {
 package student_jekaterina_soldatova.lesson02;
 
 public class Book {
-    public static void main(String[] args) {
-        String x = "Head First Java by Bert Bates and Kathy Sierra";
-    }
+        String title = "Head First Java by Bert Bates and Kathy Sierra";
 }
