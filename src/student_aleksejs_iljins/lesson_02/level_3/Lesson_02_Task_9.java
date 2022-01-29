@@ -4,33 +4,24 @@ import java.util.Scanner;
 
 public class Lesson_02_Task_9 {
     public static void main(String[] args) {
-        Scanner firstScanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Input number:");
-        int number = firstScanner.nextInt();
+        System.out.println("Test data:");
+        System.out.println("Input a number:");
 
-        int resultOne = number * 1;
-        int resultTwo = number * 2;
-        int resultThree = number * 3;
-        int resultFour = number * 4;
-        int resultFive = number * 5;
-        int resultSix = number * 6;
-        int resultSeven = number * 7;
-        int resultEight = number * 8;
-        int resultNine = number * 9;
-        int resultTen = number * 10;
+        int number = scanner.nextInt();
 
-        System.out.println(resultOne);
-        System.out.println(resultTwo);
-        System.out.println(resultThree);
-        System.out.println(resultFour);
-        System.out.println(resultFive);
-        System.out.println(resultSix);
-        System.out.println(resultSeven);
-        System.out.println(resultEight);
-        System.out.println(resultNine);
-        System.out.println(resultTen);
+        System.out.println("Result:");
 
+        System.out.println(number + " * 1 = " + (number));
+        System.out.println(number + " * 2 = " + (number * 2));
+        System.out.println(number + " * 3 = " + (number * 3));
+        System.out.println(number + " * 4 = " + (number * 4));
+        System.out.println(number + " * 5 = " + (number * 5));
+        System.out.println(number + " * 6 = " + (number * 6));
+        System.out.println(number + " * 7 = " + (number * 7));
+        System.out.println(number + " * 8 = " + (number * 8));
+        System.out.println(number + " * 9 = " + (number * 9));
+        System.out.println(number + " * 10 = " + (number * 10));
     }
-
 }
