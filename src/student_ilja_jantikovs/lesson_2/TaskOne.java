@@ -13,6 +13,5 @@ public class TaskOne {
         System.out.println(firstNumber - secondNumber);
         System.out.println(firstNumber * secondNumber);
         System.out.println(firstNumber / secondNumber);
-
     }
 }
