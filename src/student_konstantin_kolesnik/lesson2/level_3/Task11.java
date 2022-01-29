@@ -2,8 +2,9 @@ package student_konstantin_kolesnik.lesson2.level_3;
 
 import java.util.Scanner;
 
-public class Task_11 {
+public class Task11 {
     public static void main(String[] args) {
+
         System.out.println("Please enter number one:");
         Scanner scannerOne = new Scanner(System.in);
         double numberOne = scannerOne.nextDouble();

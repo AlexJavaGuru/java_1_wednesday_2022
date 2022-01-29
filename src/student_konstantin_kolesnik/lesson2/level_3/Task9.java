@@ -2,7 +2,7 @@ package student_konstantin_kolesnik.lesson2.level_3;
 
 import java.util.Scanner;
 
-public class Task_9 {
+public class Task9 {
     public static void main(String[] args) {
         System.out.println("Input a number (Example: 1-9)");
 

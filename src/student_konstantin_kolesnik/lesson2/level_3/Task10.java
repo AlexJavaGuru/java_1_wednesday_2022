@@ -2,7 +2,7 @@ package student_konstantin_kolesnik.lesson2.level_3;
 
 import java.util.Scanner;
 
-public class Task_10 {
+public class Task10 {
     public static void main(String[] args) {
 
         System.out.println("Please enter the radius of the circle:");
