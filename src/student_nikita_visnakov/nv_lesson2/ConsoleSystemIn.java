@@ -15,9 +15,10 @@ public class ConsoleSystemIn {
         double numB = myScanner.nextDouble();
         double result = numA + (double) numB;
 
-        System.out.println("Calculating: var A = " +numA +  " + " + " var B = " +numB + "result = " + result);
+        System.out.println("Calculating: var A = " +numA +  " + " + "var B = " +numB + " result = " + result);
 
         System.out.println("I will be a Java Programmer");
+
 
 
 
