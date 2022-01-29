@@ -7,13 +7,23 @@ class LoginService {
     public void main(String[] args) {
         System.out.println("You can login!");
     }
-
-
 }
-
  */
 
 package student_jekaterina_soldatova.lesson02;
 
+import java.util.Scanner;
+
 public class internTask07 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Your new login:");
+        String login = scanner.nextLine();
+
+        System.out.println("Your new password:");
+        String password = scanner.nextLine();
+
+
+    }
 }
