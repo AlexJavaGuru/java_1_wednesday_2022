@@ -18,13 +18,13 @@ package student_jekaterina_soldatova.lesson02;
 
 public class BankAccount {
 
-    char getLetter() {
+    char getRandomLetter() {
         int a = 65;
         int z = 90;
         return ((char) (Math.random() * (z + 1 - a) + a));
     }
 
-    String randomLetters = "" + getLetter() + getLetter();
+    String randomLetters = "" + getRandomLetter() + getRandomLetter();      //is this bad?
 
 
     String generateRandomDigits() {
@@ -40,4 +40,4 @@ public class BankAccount {
     }
 }
 
-//how clean is it? how can it be improved?
+//how bad is it? how can it be improved?
