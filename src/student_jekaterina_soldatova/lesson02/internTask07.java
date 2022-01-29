@@ -17,9 +17,11 @@ import java.util.Scanner;
 public class internTask07 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        LoginService testing = new LoginService();
 
         System.out.println("Your new login:");
         String login = scanner.nextLine();
+       // testing();
 
         System.out.println("Your new password:");
         String password = scanner.nextLine();
