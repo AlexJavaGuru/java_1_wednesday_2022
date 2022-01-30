@@ -7,7 +7,7 @@ class LoginService {
 
     boolean CheckChars(String input) {
         for (int i = 0; i < input.length(); i++){
-            if ((int) input.charAt(i) <= 90) {
+            if ((int) input.charAt(i) <= 90 || ((int) input.charAt(i) > 122 && (int) input.charAt(i) < 192) || ((int) input.charAt(i) > 90 && (int) input.charAt(i) < 97)) {
                 return false;
             }
         }
