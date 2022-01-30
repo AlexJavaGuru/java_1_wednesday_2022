@@ -33,11 +33,11 @@ public class internTask07 {
         System.out.println("Your new password:");
         String password = scanner.nextLine();
         while (test.CheckLength(password, passwordLength) || test.CheckChars(password)){
-            while (test.CheckLength(password, passwordLength)) {
+            if (test.CheckLength(password, passwordLength)) {
                 System.out.println("Should be at least " + passwordLength + " characters long, please choose another");
                 password = scanner.nextLine();
             }
-            while (test.CheckChars(password)){
+            if (test.CheckChars(password)){
                 System.out.println("Should contain at least one capital letter or a number or a special character, please choose another");
                 password = scanner.nextLine();
             }
