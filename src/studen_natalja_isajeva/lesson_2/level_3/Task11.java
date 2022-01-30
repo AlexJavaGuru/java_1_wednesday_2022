@@ -12,7 +12,7 @@ public class Task11 {
         System.out.println("Third number:");
         int thirdNumber = scanner.nextInt();
 
-        double result = (firstNumber + secondNumber + thirdNumber) / 3.0;
+        double result = (firstNumber + secondNumber + (double)thirdNumber) / 3;
         System.out.println("Average =" + result);
 
     }
