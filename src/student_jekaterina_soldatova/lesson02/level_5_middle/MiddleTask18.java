@@ -10,9 +10,22 @@ class SizeMatters {
 */
 package student_jekaterina_soldatova.lesson02.level_5_middle;
 
+import java.util.Scanner;
+
 public class MiddleTask18 {
     public static void main(String[] args) {
-        System.out.println("Sorry, I have an error.");
-        System.out.println("Please fix me!");
+        Scanner scanner = new Scanner(System.in);
+        String original = "Sorry, I have an error.";
+        int offset;
+
+        System.out.println("Please enter a line to cipher:");
+        original = scanner.nextLine();
+        System.out.println("Please enter the offset(integer) for the cipher:");
+        offset = scanner.nextInt();
+
+        CaesarCipher result = new CaesarCipher();
+
+        System.out.println(result.Shift(original, offset));
+
     }
 }
