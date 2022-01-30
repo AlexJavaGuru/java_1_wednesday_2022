@@ -11,16 +11,14 @@ public class Task2 {
         System.out.println("Enter second number:");
         Scanner scannerTwo = new Scanner(System.in);
         double secondNumber = scannerTwo.nextDouble();
-        var resultPlus = firstNumber + secondNumber;
-        var resultMinus = firstNumber - secondNumber;
-        var resultMult = firstNumber * secondNumber;
-        var resultDiv = firstNumber / secondNumber;
-        String stringOne = String.valueOf(firstNumber);
-        String stringTwo = String.valueOf(secondNumber);
+        double resultPlus = firstNumber + secondNumber;
+        double resultMinus = firstNumber - secondNumber;
+        double resultMult = firstNumber * secondNumber;
+        double resultDiv = firstNumber / secondNumber;
         System.out.println();
-        System.out.println(stringOne + " + " + stringTwo + " = " + resultPlus);
-        System.out.println(stringOne + " - " + stringTwo + " = " + resultMinus);
-        System.out.println(stringOne + " * " + stringTwo + " = " + resultMult);
-        System.out.println(stringOne + " / " + stringTwo + " = " + resultDiv);
+        System.out.println(firstNumber + " + " + secondNumber + " = " + resultPlus);
+        System.out.println(firstNumber + " - " + secondNumber + " = " + resultMinus);
+        System.out.println(firstNumber + " * " + secondNumber + " = " + resultMult);
+        System.out.println(firstNumber + " / " + secondNumber + " = " + resultDiv);
     }
 }
