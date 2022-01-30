@@ -23,7 +23,7 @@ public class BankAccount {
         return ((char) (Math.random() * (z + 1 - a) + a));
     }
 
-//    String randomLetters = "" + getRandomLetter() + getRandomLetter();      //is this bad? should it better be in main class?
+   String randomLetters = "" + getRandomLetter() + getRandomLetter();      //is this bad? should it better be in main class?
 
     String generateRandomDigits() {
         StringBuilder numberGenerator = new StringBuilder();
