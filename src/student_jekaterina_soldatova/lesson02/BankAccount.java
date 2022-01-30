@@ -1,17 +1,4 @@
-/*
-        Дан код, нужно исправить ошибку компиляции.
-        Для сдачи работы создайте исправленный класс.
-
-class BankAccount {
-
-    public static void main(String[] args) {
-
-    }
-
- */
-
 //please run internTask05
-
 
 package student_jekaterina_soldatova.lesson02;
 

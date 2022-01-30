@@ -1,9 +1,13 @@
+//please run internTask08
+
 package student_jekaterina_soldatova.lesson02;
 
 class NameCheck {
+    int letterCode = 0;
     boolean CheckChars(String name) {
         for (int i = 0; i < name.length(); i++){
-            if ((int) name.charAt(i) < 65 || ((int) name.charAt(i) > 90 && (int) name.charAt(i) > 97) || (int) name.charAt(i) > 122) {
+            letterCode = name.charAt(i);
+            if (letterCode < 65 || (letterCode > 90 && letterCode < 97) || letterCode > 122) {
                 return true;
             }
         }
