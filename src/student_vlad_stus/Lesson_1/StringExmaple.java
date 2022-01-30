@@ -4,6 +4,7 @@ public class StringExmaple {
     public static void main(String[] args) {
 
 
-        String someString = "Hello World! ";
+        String someString = ("Hello World!");
         System.out.println(someString);
+    }
 }
