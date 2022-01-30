@@ -12,7 +12,6 @@ class BankAccount {
 
 //please run internTask05
 
-//please run internTask05
 
 package student_jekaterina_soldatova.lesson02;
 
@@ -24,8 +23,7 @@ public class BankAccount {
         return ((char) (Math.random() * (z + 1 - a) + a));
     }
 
-    String randomLetters = "" + getRandomLetter() + getRandomLetter();      //is this bad?
-
+//    String randomLetters = "" + getRandomLetter() + getRandomLetter();      //is this bad? should it better be in main class?
 
     String generateRandomDigits() {
         StringBuilder numberGenerator = new StringBuilder();
