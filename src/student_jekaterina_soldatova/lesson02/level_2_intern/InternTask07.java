@@ -15,7 +15,7 @@ package student_jekaterina_soldatova.lesson02.level_2_intern;
 
 import java.util.Scanner;
 
-public class internTask07 {
+public class InternTask07 {
     public static void main(String[] args) {
         int loginLength = 4;
         int passwordLength = 6;

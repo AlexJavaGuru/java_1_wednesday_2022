@@ -13,5 +13,5 @@ class AttentionPlease {
 
 package student_jekaterina_soldatova.lesson02;
 
-public class middleTask23 {
+public class MiddleTask23 {
 }

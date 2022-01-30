@@ -13,9 +13,11 @@
 
 package student_jekaterina_soldatova.lesson02.level_5_middle;
 
-public class middleTask15 {
+public class MiddleTask15 {
     public static void main(String[] args) {
-        for (int i = 65; i < 91; i++){
+        byte codeA = (int) 'A';
+        byte codeZ = (int) 'Z';
+        for (int i = codeA; i < codeZ + 1; i++){
             System.out.print((char) i + " ");
         }
     }

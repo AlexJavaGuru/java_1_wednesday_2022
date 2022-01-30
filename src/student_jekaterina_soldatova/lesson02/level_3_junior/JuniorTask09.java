@@ -17,7 +17,7 @@ package student_jekaterina_soldatova.lesson02.level_3_junior;
 
 import java.util.Scanner;
 
-public class juniorTask09 {
+public class JuniorTask09 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

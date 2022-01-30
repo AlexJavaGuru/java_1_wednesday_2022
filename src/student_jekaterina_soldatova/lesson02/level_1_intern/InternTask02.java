@@ -16,7 +16,7 @@ package student_jekaterina_soldatova.lesson02.level_1_intern;
 
 import java.util.Scanner;
 
-public class internTask02 {
+public class InternTask02 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter first real number");

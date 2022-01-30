@@ -7,7 +7,7 @@ class Book {
  */
 package student_jekaterina_soldatova.lesson02.level_2_intern;
 
-class internTask03 {
+class InternTask03 {
     public static void main(String[] args) {
         Book coolBook = new Book();
         System.out.println(coolBook.title);

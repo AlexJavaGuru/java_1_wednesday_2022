@@ -12,7 +12,7 @@ class BankAccount {
 
 package student_jekaterina_soldatova.lesson02.level_2_intern;
 
-public class internTask05 {
+public class InternTask05 {
     public static void main(String[] args) {
         BankAccount accountGenerator = new BankAccount();
         System.out.println("Bank account number template: 2 letters + 8-20 digits");

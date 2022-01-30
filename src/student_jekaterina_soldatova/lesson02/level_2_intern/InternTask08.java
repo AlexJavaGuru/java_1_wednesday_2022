@@ -8,7 +8,7 @@ package student_jekaterina_soldatova.lesson02.level_2_intern;
 
 import java.util.Scanner;
 
-public class internTask08 {
+public class InternTask08 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         NameCheck test = new NameCheck();
