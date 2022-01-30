@@ -5,7 +5,7 @@
 
 Примечение: обратите внимание, что результат может быть дробным числом.
  */
-package student_jekaterina_soldatova.lesson02;
+package student_jekaterina_soldatova.lesson02.level_3_junior;
 
 import java.util.Scanner;
 

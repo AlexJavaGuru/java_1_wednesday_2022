@@ -11,7 +11,7 @@ Perimeter is = 47.12388980384689
 Area is = 176.71458676442586
  */
 
-package student_jekaterina_soldatova.lesson02;
+package student_jekaterina_soldatova.lesson02.level_3_junior;
 
 import java.util.Scanner;
 

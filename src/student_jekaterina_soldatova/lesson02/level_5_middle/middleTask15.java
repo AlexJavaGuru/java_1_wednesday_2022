@@ -11,7 +11,7 @@
     System.out.print("text");
  */
 
-package student_jekaterina_soldatova.lesson02;
+package student_jekaterina_soldatova.lesson02.level_5_middle;
 
 public class middleTask15 {
     public static void main(String[] args) {

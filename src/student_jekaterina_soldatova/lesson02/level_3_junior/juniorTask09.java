@@ -13,7 +13,7 @@ Expected Output :
 8 x 10 = 80
 */
 
-package student_jekaterina_soldatova.lesson02;
+package student_jekaterina_soldatova.lesson02.level_3_junior;
 
 import java.util.Scanner;
 
