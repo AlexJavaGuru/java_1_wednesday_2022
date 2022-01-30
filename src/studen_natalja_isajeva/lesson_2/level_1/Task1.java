@@ -11,17 +11,17 @@ public class Task1 {
         int firstNumber = scanner.nextInt();
         System.out.println("Second number:");
         int secondNumber = scanner.nextInt();
-        System.out.println("calculation:");
+        System.out.println("Calculating:");
 
         int sum = firstNumber + secondNumber;
         int sub = firstNumber - secondNumber;
         int mul = firstNumber * secondNumber;
-        int dev = firstNumber / secondNumber;
+        int div = firstNumber / secondNumber;
 
-        System.out.println(sum);
-        System.out.println(sub);
-        System.out.println(mul);
-        System.out.println(dev);
+        System.out.println("Summa: " + sum);
+        System.out.println("Subtraction: " + sub);
+        System.out.println("Multiplication: " + mul);
+        System.out.println("Division: " + div);
 
 
     }
