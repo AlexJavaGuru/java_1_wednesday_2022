@@ -17,14 +17,21 @@ import java.util.Scanner;
 public class internTask07 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        LoginService testing = new LoginService();
+        LoginService test = new LoginService();
 
         System.out.println("Your new login:");
         String login = scanner.nextLine();
-       // testing();
+        while (test.Check(login, 4)){
+            System.out.println("Should be at least 4 characters long, please choose another");
+            login = scanner.nextLine();
+        }
 
         System.out.println("Your new password:");
         String password = scanner.nextLine();
+        while (test.Check(password, 6)){
+            System.out.println("Should be at least 6 characters long, please choose another");
+            password = scanner.nextLine();
+        }
 
 
     }
