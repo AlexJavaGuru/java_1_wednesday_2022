@@ -1,6 +1,6 @@
 //please run internTask07
 
-package student_jekaterina_soldatova.lesson02;
+package student_jekaterina_soldatova.lesson02.level_2_intern;
 
 class LoginService {
     boolean CheckLength(String input, int i) {

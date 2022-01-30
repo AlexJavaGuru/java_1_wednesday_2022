@@ -10,7 +10,8 @@ class LoginService {
 }
  */
 
-package student_jekaterina_soldatova.lesson02;
+package student_jekaterina_soldatova.lesson02.level_2_intern;
+
 
 import java.util.Scanner;
 

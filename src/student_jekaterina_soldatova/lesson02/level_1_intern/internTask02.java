@@ -12,7 +12,7 @@
         (каждый результат на новой строке отдельно).
 */
 
-package student_jekaterina_soldatova.lesson02;
+package student_jekaterina_soldatova.lesson02.level_1_intern;
 
 import java.util.Scanner;
 

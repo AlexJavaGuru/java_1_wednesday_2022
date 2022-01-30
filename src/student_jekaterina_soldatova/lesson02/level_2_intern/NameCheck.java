@@ -1,6 +1,6 @@
 //please run internTask08
 
-package student_jekaterina_soldatova.lesson02;
+package student_jekaterina_soldatova.lesson02.level_2_intern;
 
 class NameCheck {
     int letterCode = 0;

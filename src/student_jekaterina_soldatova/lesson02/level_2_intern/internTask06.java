@@ -10,7 +10,7 @@ class Turtle {
 
 }
 */
-package student_jekaterina_soldatova.lesson02;
+package student_jekaterina_soldatova.lesson02.level_2_intern;
 
 public class internTask06 {
     public static void main(String[] args) {

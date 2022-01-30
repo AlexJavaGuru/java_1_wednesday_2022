@@ -5,7 +5,7 @@
 class Book {
 
  */
-package student_jekaterina_soldatova.lesson02;
+package student_jekaterina_soldatova.lesson02.level_2_intern;
 
 class internTask03 {
     public static void main(String[] args) {
