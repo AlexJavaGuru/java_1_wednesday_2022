@@ -8,9 +8,9 @@ public class SumDivideTwoNumbers {
         double result = variableA / (double) variableB;//- чтобы данные привелись к double
         System.out.println ( result );
 
-double camA = 110;
+int camA = 110;
 double camB = 52.52d;
-double resultOne = camA+ (double) camB;
+double resultOne = camA+ (int) camB;
         System.out.println(resultOne);
     }
 }
