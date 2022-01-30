@@ -1,6 +1,5 @@
-package student_vlad_stus.Lesson_1;
+package student_vlad_stus.lesson_1;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class ScannerExmaple {

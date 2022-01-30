@@ -1,4 +1,4 @@
-package student_vlad_stus.Lesson_1;
+package student_vlad_stus.lesson_1;
 
 public class SumDivideTwoNumbers {
     public static void main(String[] args) {
