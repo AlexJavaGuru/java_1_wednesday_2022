@@ -18,8 +18,6 @@ public class internTask07 {
     public static void main(String[] args) {
         int loginLength = 4;
         int passwordLength = 6;
-
-
         Scanner scanner = new Scanner(System.in);
         LoginService test = new LoginService();
 
