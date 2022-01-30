@@ -13,5 +13,6 @@ public class Task1 {
         System.out.println(sumA - sumB);
         System.out.println(sumA / sumB);
         System.out.println(sumA % sumB);
+        System.out.println(sumA * sumB);
     }
 }
