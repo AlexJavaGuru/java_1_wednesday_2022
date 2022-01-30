@@ -2,7 +2,7 @@ package student_jekaterina_soldatova.lesson02;
 
 class LoginService {
     boolean CheckLength(String input, int i) {
-        return input.length() <= i;
+        return input.length() < i;
     }
 
     boolean CheckChars(String input) {
