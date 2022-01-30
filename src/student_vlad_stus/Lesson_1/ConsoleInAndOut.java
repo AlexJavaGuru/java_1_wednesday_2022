@@ -7,6 +7,6 @@ public class ConsoleInAndOut {
         int result = sumA+ sumB;
 
         System.out.println(result);
-        System.out.println("Calcuation: sumA " + sumA + "+ sumB " + sumB + "Result: " + result  );
+        System.out.println("Calcuation: sum A = " + sumA + " + sum B = " + sumB + "Result = " + result  );
     }
 }
