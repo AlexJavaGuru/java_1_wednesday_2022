@@ -42,5 +42,6 @@ public class internTask07 {
                 password = scanner.nextLine();
             }
         }
+        System.out.println("You can login!");
     }
 }
