@@ -1,6 +1,6 @@
 package student_nikita_visnakov.nv_lesson2;
 
-public class CalculatorSystemOut {
+public class Calculator {
     public static void main(String[] args) {
 
         int plusA   = 30;

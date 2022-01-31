@@ -12,7 +12,7 @@ public class Hello {
         System.out.println(" What is you name , Master ? ");
         System.out.println(" Recommend for you is Joda ");
         String name = nameScanner.next();
-        System.out.println(" Welcome back , Master , " + name + "!!");
+        System.out.println(" Welcome back , Master , " +name + "!!");
 
     }
 }
