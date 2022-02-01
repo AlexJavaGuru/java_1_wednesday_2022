@@ -5,7 +5,9 @@ import javax.swing.JOptionPane;
 
 public class Book {
     public static void main(String[] args) {
-        JOptionPane.showMessageDialog(null, "Думай, что делаешь!!! Нужно ли это тебе");
+        String title = "Сообщение";
+        String text = "Continue watch!!!";
+        JOptionPane.showMessageDialog(null,text,title,JOptionPane.WARNING_MESSAGE);
 
     }
 }
