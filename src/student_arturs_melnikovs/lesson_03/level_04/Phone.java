@@ -1,6 +1,6 @@
 package student_arturs_melnikovs.lesson_03.level_04;
 
-public class Phone {
+class Phone {
 
     String model;
 

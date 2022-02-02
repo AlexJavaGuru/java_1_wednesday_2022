@@ -1,6 +1,6 @@
 package student_arturs_melnikovs.lesson_03.level_05;
 
-public class Dog {
+class Dog {
     String dogName;
     int age;
     String color;

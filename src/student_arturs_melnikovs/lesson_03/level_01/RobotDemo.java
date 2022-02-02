@@ -1,6 +1,6 @@
 package student_arturs_melnikovs.lesson_03.level_01;
 
-public class RobotDemo {
+class RobotDemo {
 
     public static void main(String[] args) {
         Robot myRobot = new Robot("ROBO");
