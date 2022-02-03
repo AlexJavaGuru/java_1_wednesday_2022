@@ -1,6 +1,6 @@
-package student_konstantin_kolesnik.Lesson_2;
+package student_konstantin_kolesnik.lesson1;
 
-public class Lesson2_Task_11 {
+public class Task_11 {
     public static void main(String[] args) {
         {
             // Version 1
