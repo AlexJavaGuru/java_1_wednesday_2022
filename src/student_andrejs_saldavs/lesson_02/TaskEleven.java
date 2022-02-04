@@ -7,15 +7,15 @@ public class TaskEleven {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter first number: ");
-        int firstNumber = scanner.nextInt();
+        double firstNumber = scanner.nextDouble();
 
         System.out.println("Enter second number: ");
-        int secondNumber = scanner.nextInt();
+        double secondNumber = scanner.nextDouble();
 
         System.out.println("Enter third number: ");
-        int thirdNumber = scanner.nextInt();
+        double thirdNumber = scanner.nextDouble();
 
-        int sum = firstNumber + secondNumber + thirdNumber;
+        double sum = firstNumber + secondNumber + thirdNumber;
         double average = sum / 3;
 
         System.out.println("Average number of " + firstNumber + ", " + secondNumber + " and " + thirdNumber + " is: " + average);
