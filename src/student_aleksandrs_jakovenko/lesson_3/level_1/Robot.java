@@ -1,4 +1,4 @@
-package student_aleksandrs_jakovenko.lesson_3;
+package student_aleksandrs_jakovenko.lesson_3.level_1;
 
 public class Robot {
     public void sayHello(){
