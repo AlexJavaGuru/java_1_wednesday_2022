@@ -1,6 +1,6 @@
 package student_aleksandrs_korsaks.ak_lesson_3.level_5;
 
-public class Dog {
+class Dog {
     private final String dogName;
     private String colour;
     private int dogAge;
