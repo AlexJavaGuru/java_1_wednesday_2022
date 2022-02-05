@@ -2,8 +2,14 @@ package student_aleksandrs_korsaks.ak_lesson_3.level_1;
 
 public class Robot {
 
+    String name;
+
     public Robot() {
 
+    }
+
+    public Robot(String robotName) {
+        this.name = robotName;
     }
 
     public void sayHello() {
@@ -11,6 +17,6 @@ public class Robot {
     }
 
     public void sayYourName() {
-        System.out.println("My name is ROBO");
+        System.out.println("My name is " + name);
     }
 }
