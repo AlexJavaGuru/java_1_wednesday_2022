@@ -2,8 +2,8 @@ package student_aleksandrs_korsaks.ak_lesson_3.level_5;
 
 public class Dog {
     private final String dogName;
-    String colour;
-    int dogAge;
+    private String colour;
+    private int dogAge;
 
     public Dog(String dogName, int dogAge, String colour) {
         this.dogName = dogName;
@@ -28,5 +28,18 @@ public class Dog {
 
     void changeColor(String newColor) {
         colour = newColor;
+    }
+
+    public String getColour() {
+        return colour;
+    }
+
+    public int getDogAge() {
+        return dogAge;
+    }
+
+
+    public void setDogAge(int dogAge) {
+        this.dogAge = dogAge;
     }
 }
