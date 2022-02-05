@@ -6,6 +6,10 @@ public class Robot {
         demoRobot.sayHello();
     }
 
+    public Robot (){
+
+    }
+
     public void sayHello() {
         System.out.println("Hello!");
     }
