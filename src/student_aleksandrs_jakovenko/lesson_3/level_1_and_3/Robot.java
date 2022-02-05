@@ -1,6 +1,6 @@
 package student_aleksandrs_jakovenko.lesson_3.level_1_and_3;
 
-public class Robot {
+class Robot {
     String name;
     Robot(String robotName){
         this.name = robotName;

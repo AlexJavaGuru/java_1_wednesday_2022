@@ -1,6 +1,6 @@
 package student_aleksandrs_jakovenko.lesson_3.level_5;
 
-public class Dog {
+class Dog {
     String name = "Richy";
     int age = 5;
     String color;
