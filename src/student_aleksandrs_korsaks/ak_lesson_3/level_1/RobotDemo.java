@@ -4,5 +4,6 @@ public class RobotDemo {
     public static void main(String[] args) {
         Robot demoRobot = new Robot();
         demoRobot.sayHello();
+        demoRobot.sayYourName();
     }
 }
