@@ -13,7 +13,8 @@ class ProductDemo {
         int discount = scanner.nextInt();
 
         Product productPrice = new Product(productName);
+
         double actualPrice = productPrice.actualPrice(regularPrice, discount);
-        System.out.println("Actual price of the " + productName + " is " + actualPrice);
+        productPrice.printInformation(actualPrice);
     }
 }

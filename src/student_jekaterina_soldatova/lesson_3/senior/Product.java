@@ -22,4 +22,8 @@ public class Product {
     double actualPrice(double regularPrice, double discount) {
         return regularPrice - (regularPrice * (discount / 100));
     }
+
+    void printInformation(double actualPrice) {
+        System.out.println("Actual price of the " + productName + " is " + actualPrice);
+    }
 }
