@@ -12,20 +12,18 @@ public void sayHello() {
 
 package student_jekaterina_soldatova.lesson_3.intern;
 
-public class Robot {
+class Robot {
     String name;
-    public Robot() {
-    }
 
     Robot(String robotName) {
         this.name = robotName;
     }
 
-    public void sayHello() {
+    void sayHello() {
         System.out.println("Hello there");
     }
 
-    public void sayYourName() {
+    void sayYourName() {
         System.out.println("My name is " + name);
     }
 }

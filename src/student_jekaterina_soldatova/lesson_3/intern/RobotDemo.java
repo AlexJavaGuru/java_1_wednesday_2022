@@ -12,8 +12,8 @@ public void sayHello() {
 
 package student_jekaterina_soldatova.lesson_3.intern;
 
-public class RobotDemo {
-    public static void main(String[] args) {
+class RobotDemo {
+    static void main(String[] args) {
         Robot robot = new Robot("GLaDOS");
         robot.sayHello();
         robot.sayYourName();

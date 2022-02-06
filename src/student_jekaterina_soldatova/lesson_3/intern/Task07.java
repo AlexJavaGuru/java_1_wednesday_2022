@@ -2,8 +2,8 @@ package student_jekaterina_soldatova.lesson_3.intern;
 
 import java.util.Scanner;
 
-public class Task07 {
-    public static void main(String[] args) {
+class Task07 {
+    static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Please enter your name:");
