@@ -5,10 +5,11 @@ public class Car {
 
     public Car(String model) {
         this.model = model;
+
     }
 
-    String getModel() {
-        return this.model;
+    public String getModel() {
+        return model;
 
     }
 }

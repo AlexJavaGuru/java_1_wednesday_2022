@@ -5,8 +5,8 @@ public class Book {
     public Book(String title) {
         this.title = title;
     }
-    String getTitle(){
-        return this.title;
+    public String getTitle(){
+        return title;
     }
 
 }

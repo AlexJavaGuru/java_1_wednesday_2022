@@ -5,8 +5,8 @@ public class Phone {
     public Phone(String model) {
         this.model = model;
     }
-    String getModel() {
-        return this.model;
+    public String getModel() {
+        return model;
     }
 
 }
