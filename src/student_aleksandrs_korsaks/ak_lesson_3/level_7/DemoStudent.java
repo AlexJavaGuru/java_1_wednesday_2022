@@ -1,6 +1,6 @@
 package student_aleksandrs_korsaks.ak_lesson_3.level_7;
 
-public class DemoStudent {
+class DemoStudent {
     public static void main(String[] args) {
         Student studentOne = new Student("Krist Novoselic", 35, 25669997);
         Student studentTwo = new Student("Peter Parker", 22, 25598989);

@@ -1,6 +1,6 @@
 package student_aleksandrs_korsaks.ak_lesson_3.level_7;
 
-public class Car {
+class Car {
     private final String carModel;
     private final int yearOfProduction;
     private int carPrice;
