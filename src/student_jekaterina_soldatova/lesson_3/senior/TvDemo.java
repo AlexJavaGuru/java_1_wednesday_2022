@@ -2,7 +2,7 @@ package student_jekaterina_soldatova.lesson_3.senior;
 
  class TvDemo {
      public static void main(String[] args) {
-         Tv tv = new Tv(false, 9, 3);
+         Tv tv = new Tv(false, 9, 1);
 
          tv.changeMode();
          if (tv.tvMode) {
