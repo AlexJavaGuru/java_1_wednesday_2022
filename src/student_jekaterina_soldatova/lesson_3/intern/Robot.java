@@ -13,8 +13,12 @@ public void sayHello() {
 package student_jekaterina_soldatova.lesson_3.intern;
 
 public class Robot {
+    String name;
     public Robot() {
+    }
 
+    Robot(String robotName) {
+        this.name = robotName;
     }
 
     public void sayHello() {
@@ -22,6 +26,6 @@ public class Robot {
     }
 
     public void sayYourName() {
-        System.out.println("My name is ROBO");
+        System.out.println("My name is " + name);
     }
 }
