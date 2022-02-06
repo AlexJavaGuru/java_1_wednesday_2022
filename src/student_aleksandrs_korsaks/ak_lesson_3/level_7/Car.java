@@ -4,7 +4,7 @@ class Car {
     private final String carModel;
     private final int yearOfProduction;
     private int carPrice;
-    private int carOdometr;
+    private final int carOdometr;
     private String carColour;
 
     public Car(String carModel, int yearOfProduction, String carColour, int carPrice, int carOdometr) {
