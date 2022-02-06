@@ -1,10 +1,12 @@
 package student_darja_soroka.lesson_03.level_2;
 
-public class TaskSeven {
+public class TaskEight {
 
     public static void main(String[] args) {
 
         String myName = "Darja";
-        System.out.println(myName);
+        String greeting = "Hi " + myName + "!";
+
+        System.out.println(greeting);
     }
 }
