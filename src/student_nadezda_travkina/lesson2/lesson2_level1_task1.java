@@ -4,15 +4,18 @@ import java.util.Scanner;
 
 public class lesson2_level1_task1 {
     public static void main(String[] args) {
-
-        Scanner myScanner = new Scanner(System.in);
-
-        System.out.println("Value for A:");
-        int variableA = myScanner.nextInt();
-        System.out.println("Value for B:");
-        int variableB = myScanner.nextInt();
-        double sum = variableA + variableB /n ;
-        double minus = variableA - variableB /n ;
-        double multiply = variableA * variableB /n ;
-        double divide = variableA / variableB / n ;
+        System.out.print("Введите первое целое число: ");
+        Scanner scanner = new Scanner(System.in);
+        int firstNumber = scanner.nextInt();
+        System.out.print("Введите второе целое число: ");
+        int secondNumber = scanner.nextInt();
+        int sum = firstNumber + secondNumber;
+        System.out.println(sum);
+        int minus = firstNumber - secondNumber;
+        System.out.println(minus);
+        int multiply = firstNumber * secondNumber;
+        System.out.println(multiply);
+        int divide = firstNumber / secondNumber;
+        System.out.println(divide);
+    }
 }

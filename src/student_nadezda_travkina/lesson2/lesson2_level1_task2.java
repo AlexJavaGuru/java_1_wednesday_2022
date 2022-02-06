@@ -6,22 +6,18 @@ public class lesson2_level1_task2 {
     public class ScannerExample {
 
         public static void main(String[] args) {
+            System.out.print ("Введите первое дробное число: ");
             Scanner scanner = new Scanner(System.in);
             double firstDoubleNumber = scanner.nextDouble();
-        }
-            Scanner num = new Scanner(System.in);
-            int first, second, result;
-            System.out.print("Enter first num: ");
-            first = num.nextInt();
-            System.out.print("Enter second num: ");
-            second = num.nextInt();
-            sum = first + second;
-            System.out.println("Result is -" + sum);
-            minus = first - second;
-            System.out.println("Result is -" + minus);
-            multiply = first * second;
-            System.out.println("Result is -" + multiply);
-            divide = first \ second;
-            System.out.println("Result is -" + divide);
+            System.out.print ("Введите второе дробное число: ");
+            double secondDoubleNumber = scanner.nextDouble();
+            double sum = firstDoubleNumber + secondDoubleNumber;
+            System.out.println (sum);
+            double minus = firstDoubleNumber - secondDoubleNumber;
+            System.out.println (minus);
+            double multiply = firstDoubleNumber * secondDoubleNumber;
+            System.out.println (multiply);
+            double divide = firstDoubleNumber / secondDoubleNumber;
+            System.out.println (divide);
     }
 }
