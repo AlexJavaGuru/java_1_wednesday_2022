@@ -13,7 +13,15 @@ public void sayHello() {
 package student_jekaterina_soldatova.lesson_3.intern;
 
 public class Robot {
+    public Robot() {
+
+    }
+
     public void sayHello() {
         System.out.println("Hello there");
+    }
+
+    public void sayYourName() {
+        System.out.println("My name is ROBO");
     }
 }
