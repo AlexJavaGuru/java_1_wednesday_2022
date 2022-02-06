@@ -1,0 +1,8 @@
+Найти в интеренете ответ на вопрос:
+Как запустить откомпилировнный код с помощью JDK и виртуальной
+машины Java (JVM), без помощи среды разработки (из консоли)?
+
+Ответ:
+https://javarush.ru/groups/posts/2256-kompiljacija-i-ispolnenie-java-prilozheniy-pod-kapotom
+
+https://habr.com/ru/post/471772/

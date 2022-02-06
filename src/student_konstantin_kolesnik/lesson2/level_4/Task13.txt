@@ -1,0 +1,6 @@
+Найти в интеренете ответ на вопрос:
+Как откомпилировать код с помощью JDK компилятора javac,
+без помощи среды разработки (из консоли)?
+
+Ответ:
+https://java-blog.ru/osnovy/kompilyatsiya-java-koda-iz-komandnoy-stroki
