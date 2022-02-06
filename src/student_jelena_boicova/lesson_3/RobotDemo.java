@@ -4,11 +4,15 @@ public class RobotDemo {
 
     public static void main(String[] args) {
 
-        Robot myFirstRobot = new Robot();
+        Robot myRobot = new Robot("ROBO");
+        myRobot.sayHello();
+        myRobot.sayYourName();
+
+        Robot myFirstRobot = new Robot("Rider");
         myFirstRobot.sayHello();
         myFirstRobot.sayYourName();
 
-        Robot mySecondRobot = new Robot();
+        Robot mySecondRobot = new Robot("John");
         mySecondRobot.sayHello();
         mySecondRobot.sayYourName();
     }
