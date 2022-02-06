@@ -2,7 +2,7 @@ package student_jekaterina_soldatova.lesson_3.junior;
 
 class BankAccountDemo {
 
-    static void main(String[] args) {
+    public static void main(String[] args) {
         BankAccount bankAccount = new BankAccount("Viktor", "Savonin", 100000);
         String ownerFirstName = bankAccount.getOwnerFirstName();
         String ownerLastName = bankAccount.getOwnerLastName();

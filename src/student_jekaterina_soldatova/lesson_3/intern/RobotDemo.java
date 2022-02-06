@@ -13,7 +13,7 @@ public void sayHello() {
 package student_jekaterina_soldatova.lesson_3.intern;
 
 class RobotDemo {
-    static void main(String[] args) {
+    public static void main(String[] args) {
         Robot robot = new Robot("GLaDOS");
         robot.sayHello();
         robot.sayYourName();
