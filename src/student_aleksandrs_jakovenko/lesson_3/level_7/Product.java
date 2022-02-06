@@ -1,12 +1,12 @@
 package student_aleksandrs_jakovenko.lesson_3.level_7;
-
+// Task_31
 class Product {
     String name;
     double regularPrice;
     double discount;
 
     double actualPrice(){
-        double actualDiscount = (regularPrice * discount);
+        double actualDiscount = regularPrice * discount;
         double actualPrice = regularPrice - actualDiscount;
         return actualPrice;
     }
@@ -21,6 +21,6 @@ class Product {
     int getDiscount(double discount){
         double discountPercent = discount * 100;
         this.discount = (int)discountPercent;
-        return (int)discountPercent;
+        return (int)discount;
     }
 }

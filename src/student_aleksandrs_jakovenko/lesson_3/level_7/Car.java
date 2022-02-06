@@ -1,5 +1,5 @@
 package student_aleksandrs_jakovenko.lesson_3.level_7;
-
+// Task_29
 class Car {
     String brand;
     int price;
