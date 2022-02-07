@@ -1,5 +1,5 @@
 package student_aleksejs_iljins.lesson_03.level_7;
-
+//Task 29
 class Table {
     int height;
     int width;

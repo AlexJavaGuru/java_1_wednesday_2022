@@ -1,5 +1,5 @@
 package student_aleksejs_iljins.lesson_03.level_7;
-
+//Task 29
 class PictureDemo {
     public static void main(String[] args) {
         Picture picture = new Picture("\"Девятый вал\"", 1850, "Иван Константинович Айвазовский");

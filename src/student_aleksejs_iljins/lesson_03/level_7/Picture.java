@@ -1,5 +1,5 @@
 package student_aleksejs_iljins.lesson_03.level_7;
-
+//Task 29
 class Picture {
     String name;
     int year;
@@ -13,9 +13,8 @@ class Picture {
     public void setName(){
         System.out.println("Название картины: " + name);
     }
-    public int setYear(){
+    public void setYear(){
         System.out.println("Год написания картины: " + year);
-        return year;
     }
     public void setAuthor(){
         System.out.println("Автор картины: " + author);
