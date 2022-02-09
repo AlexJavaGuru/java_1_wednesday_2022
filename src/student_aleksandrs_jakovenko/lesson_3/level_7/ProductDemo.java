@@ -8,7 +8,7 @@ class ProductDemo {
         product.discount = 0.3;
         product.actualPrice();
         double actualResult = product.actualPrice();
-        product.getDiscount(product.discount);
+        product.setDiscount(product.discount);
         product.printInformation();
         System.out.println("Actual product price is: " + actualResult);
     }

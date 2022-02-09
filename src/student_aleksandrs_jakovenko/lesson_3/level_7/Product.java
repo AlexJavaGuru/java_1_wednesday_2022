@@ -18,9 +18,8 @@ class Product {
     public Product(String name){
         this.name = name;
     }
-    int getDiscount(double discount){
-        double discountPercent = discount * 100;
-        this.discount = (int)discountPercent;
-        return (int)discount;
+    void setDiscount(double discount){
+        discount = discount * 100;
+        this.discount = discount;
     }
 }

@@ -9,11 +9,9 @@ class Computer {
         this.model = model;
     }
     String getManufacturer(){
-        this.manufacturer = manufacturer;
         return manufacturer;
     }
     String getModel(){
-        this.model = model;
         return model;
     }
 }
