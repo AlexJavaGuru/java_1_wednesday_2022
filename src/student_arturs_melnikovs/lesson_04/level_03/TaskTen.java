@@ -20,8 +20,10 @@ class TaskTen {
             System.out.println(secondNum);
         } else if(thirdNum > secondNum && thirdNum > firstNum){
             System.out.println(thirdNum);
+        } else if((firstNum == secondNum && firstNum > thirdNum) || (firstNum == thirdNum && firstNum > secondNum)){
+            System.out.println(firstNum);
         } else {
-            System.out.println("Числа равны");
+            System.out.println(secondNum);
         }
     }
 }
