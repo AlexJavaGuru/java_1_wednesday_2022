@@ -2,7 +2,7 @@ package student_arturs_melnikovs.lesson_04.level_03;
 
 import java.util.Scanner;
 
-public class TaskTen {
+class TaskTen {
     public static void main(String[] args) {
         System.out.println("Введите 1ое целое число");
         Scanner scanner = new Scanner(System.in);
