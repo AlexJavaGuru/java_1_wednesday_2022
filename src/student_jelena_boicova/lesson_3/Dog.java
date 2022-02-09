@@ -4,8 +4,8 @@ public class Dog {
 
   String nickname;
 
-    Dog(String dogNickname){
-        this.nickname = dogNickname;
+    Dog(String Max){
+        this.nickname = Max;
 
 }
 
@@ -14,7 +14,7 @@ public class Dog {
     }
 
     public void voice(){
-        System.out.println("Max, Max,Max");
+        System.out.println("Max,Max,Max");
 
     }
 }
