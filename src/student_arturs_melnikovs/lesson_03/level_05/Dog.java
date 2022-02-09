@@ -17,9 +17,10 @@ class Dog {
         System.out.println("Цвет: " + this.color);
     }
     public void happyBirthday() {
-        this.age ++;
+        age++;
     }
+
     public void changeColor(String newColor) {
-        this.color = newColor;
+        color = newColor;
     }
 }
