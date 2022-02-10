@@ -15,7 +15,7 @@ public class Task1 {
         int sum = firstNumber + secondNumber;
         int sub = firstNumber - secondNumber;
         int mul = firstNumber * secondNumber;
-        int div = firstNumber / secondNumber;
+        double div = (double)firstNumber / secondNumber;
 
         System.out.println("Sum result: " + sum);
         System.out.println("Subtraction result: " + sub);
