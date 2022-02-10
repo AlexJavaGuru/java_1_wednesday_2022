@@ -1,12 +1,7 @@
 package student_aleksandrs_jakovenko.lesson_4.level_5;
 
-import java.util.Scanner;
-
 class LightColorDetector {
     public String detect(int wavelength) {
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.println("Enter wavelength: ");
-//        wavelength = scanner.nextInt();
         if (wavelength >= 380 && wavelength <= 449){
             return "Violet";
         }
