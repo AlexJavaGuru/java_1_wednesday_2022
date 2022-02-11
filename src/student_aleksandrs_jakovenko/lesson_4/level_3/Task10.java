@@ -21,10 +21,12 @@ class Task10 {
         else if (thirdNum > firstNum && thirdNum > secondNum){
             System.out.println(thirdNum);
         }
-        else
+        else if (secondNum == thirdNum && firstNum < secondNum){
+            System.out.println(secondNum);
+        }
+        else if (firstNum == secondNum && thirdNum < firstNum){
             System.out.println(firstNum);
-//        else if (firstNum == secondNum && firstNum == thirdNum){
-//            System.out.println(firstNum);
-//        }
+        }
+        else System.out.println(firstNum);
     }
 }
