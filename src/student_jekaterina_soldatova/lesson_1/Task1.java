@@ -14,7 +14,7 @@ class Task1 {
         Scanner scanner = new Scanner(System.in);
         int numberToCheck = scanner.nextInt();
         if (numberToCheck > 0) {
-            System.out.println("The number is positive");
+            System.out.print("The number is positive");
         } else if (numberToCheck == 0) {
             System.out.println("The number is 0");
         } else {
