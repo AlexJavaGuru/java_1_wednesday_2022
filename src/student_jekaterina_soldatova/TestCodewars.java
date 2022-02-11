@@ -14,7 +14,6 @@ public class TestCodewars {
 //            int z = b;
 //            b = a;
 //            a = z;
-//        }
 
         int whole = t / (b - a);
         int rem = t % (b - a);
