@@ -1,8 +1,8 @@
-package student_nadezda_travkina.lesson2;
+package student_nadezda_travkina.lesson2.level3;
 
 import java.util.Scanner;
 
-public class lesson2_task9 {
+public class ArithmeticExpressionsThird {
     public static void main(String[] args) {
         System.out.print ("Введите целое число: ");
         Scanner scanner = new Scanner(System.in);

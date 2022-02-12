@@ -1,8 +1,8 @@
-package student_nadezda_travkina.lesson2;
+package student_nadezda_travkina.lesson2.level1;
 
 import java.util.Scanner;
 
-public class lesson2_level1_task1 {
+public class ArithmeticExpressionsSecond {
     public static void main(String[] args) {
         System.out.print("Введите первое целое число: ");
         Scanner scanner = new Scanner(System.in);

@@ -1,8 +1,8 @@
-package student_nadezda_travkina.lesson2;
+package student_nadezda_travkina.lesson2.level2;
 
 import java.util.Scanner;
 
-public class lesson2_task8 {
+public class LoginServiceSecond {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println ("Пожалуйста, введите имя пользователя");
