@@ -9,10 +9,15 @@ public class Lesson_2_Scanner_in {
 
         int variableA = scanner.nextInt();
         int variableB = scanner.nextInt();
-        int result = variableA / variableB;
+        int result1 = variableA / variableB;
+        int result2 = variableA * variableB;
+        int result3 = variableA + variableB;
+        int result4 = variableA - variableB;
 
-        System.out.println("result");
+        System.out.println(result1);
+        System.out.println(result2);
+        System.out.println(result3);
+        System.out.println(result4);
+
     }
-
-
 }
