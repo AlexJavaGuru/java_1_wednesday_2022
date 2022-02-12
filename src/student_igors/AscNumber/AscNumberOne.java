@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class AscNumberOne {
     public static void main(String[] args) {
 
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter 1st decimal number");
         double firstDoubleNumber = scanner.nextDouble();
