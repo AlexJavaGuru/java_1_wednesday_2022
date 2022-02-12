@@ -12,7 +12,7 @@ class TaskTen {
         System.out.println("Please input 3rd integer");
         int inputNumberThree = scanner.nextInt();
 
-//Variant nr. 1
+// Variant nr. 1
         if ((inputNumberOne >= inputNumberTwo) && (inputNumberOne >= inputNumberThree)) {
             System.out.println("V_1 Max number is " + inputNumberOne);
         } else if (inputNumberTwo >= inputNumberThree) {
@@ -20,7 +20,6 @@ class TaskTen {
         } else {
             System.out.println("V_1 Max number is " + inputNumberThree);
         }
-
 /*
 Variant nr. 2
 Долго думал над вторым вариантом, так ничего и не придумал :),
@@ -28,12 +27,16 @@ Variant nr. 2
 */
         int maxValue;
         maxValue = inputNumberOne;
-        if (inputNumberTwo > maxValue)
-            maxValue = inputNumberTwo;
-        if (inputNumberThree > maxValue)
-            maxValue = inputNumberThree;
+        if (inputNumberTwo > maxValue) maxValue = inputNumberTwo;
+        if (inputNumberThree > maxValue) maxValue = inputNumberThree;
 
         System.out.println("V_2 Max number is " + maxValue);
-
+/*
+Variant nr. 3
+Тоже подсмотрел в интернете, хотя - это тот же V-2, но только в виде тернарной операции.
+*/
+        inputNumberOne = ((inputNumberOne > inputNumberTwo) && (inputNumberOne > inputNumberThree)) ?
+                inputNumberOne : ((inputNumberTwo > inputNumberThree) ? inputNumberTwo : inputNumberThree);
+        System.out.println("V_3 Max number is " + inputNumberOne);
     }
 }
