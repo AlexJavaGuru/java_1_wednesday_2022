@@ -12,12 +12,12 @@ public class AscNumberOne {
         System.out.println("Enter 2nd decimal number");
         double secondDoubleNumber = scanner.nextDouble();
 
-        double sum = firstDoubleNumber + secondDoubleNumber;
-        double sub = firstDoubleNumber - secondDoubleNumber;
-        double mult = firstDoubleNumber * secondDoubleNumber;
-        double div = firstDoubleNumber / secondDoubleNumber;
+        double result1 = firstDoubleNumber + secondDoubleNumber;
+        double result2 = firstDoubleNumber - secondDoubleNumber;
+        double result3 = firstDoubleNumber * secondDoubleNumber;
+        double result4 = firstDoubleNumber / secondDoubleNumber;
 
-        System.out.println(double sum);
+        System.out.println(result1);
         System.out.println(result2);
         System.out.println(result3);
         System.out.println(result4);
