@@ -21,6 +21,8 @@ class CalculatorDemo {
         System.out.println("Please input number to check is it Even or Odd");
         int thirdNumber = scanner.nextInt();
         System.out.println("Is number " + thirdNumber + " - Even number? It`s " + newCalc.isEven(thirdNumber));
+        System.out.println();
+        System.out.println("From all three inputted numbers max is " + newCalc.maxOfThreeNumbers(firstNumber, secondNumber, thirdNumber));
 
     }
 }
