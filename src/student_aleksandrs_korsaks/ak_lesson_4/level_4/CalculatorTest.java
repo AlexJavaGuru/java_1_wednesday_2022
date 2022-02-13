@@ -10,6 +10,9 @@ public class CalculatorTest {
         calculatorTest.divTest();
         calculatorTest.isEvenFirstTest();
         calculatorTest.isEvenSecondTest();
+        calculatorTest.maxOfTwoNumbersOneTest();
+        calculatorTest.maxOfTwoNumbersTwoTest();
+        calculatorTest.maxOfTwoNumbersThreeTest();
     }
 
     public void sumTest() {
@@ -60,6 +63,34 @@ public class CalculatorTest {
         Calculator calculator = new Calculator();
         boolean realResult = !(calculator.isEven(firstNumber));
         checkTestResult("isEvenSecondTest", realResult);
+    }
+
+
+    public void maxOfTwoNumbersOneTest() {
+        int firstNumber = 20;
+        int secondNumber = 15;
+        int expectedResult = 20;
+        Calculator calculator = new Calculator();
+        int realResult = calculator.maxOfTwoNumbers(firstNumber, secondNumber);
+        checkTestResult("maxOfTwoNumbersOneTest", expectedResult, realResult);
+    }
+
+    public void maxOfTwoNumbersTwoTest() {
+        int firstNumber = 15;
+        int secondNumber = 20;
+        int expectedResult = 20;
+        Calculator calculator = new Calculator();
+        int realResult = calculator.maxOfTwoNumbers(firstNumber, secondNumber);
+        checkTestResult("maxOfTwoNumbersTwoTest", expectedResult, realResult);
+    }
+
+    public void maxOfTwoNumbersThreeTest() {
+        int firstNumber = 20;
+        int secondNumber = 20;
+        int expectedResult = 20;
+        Calculator calculator = new Calculator();
+        int realResult = calculator.maxOfTwoNumbers(firstNumber, secondNumber);
+        checkTestResult("maxOfTwoNumbersThreeTest", expectedResult, realResult);
     }
 
     public void checkTestResult(String testName, int expectedResult, int realResult) {

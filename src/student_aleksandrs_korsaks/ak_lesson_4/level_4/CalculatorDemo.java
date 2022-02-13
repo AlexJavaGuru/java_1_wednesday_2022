@@ -15,6 +15,7 @@ class CalculatorDemo {
         System.out.println(firstNumber + " - " + secondNumber + " = " + newCalc.sub(firstNumber, secondNumber));
         System.out.println(firstNumber + " * " + secondNumber + " = " + newCalc.mul(firstNumber, secondNumber));
         System.out.println(firstNumber + " / " + secondNumber + " = " + newCalc.div(firstNumber, secondNumber));
+        System.out.println(firstNumber + " vs " + secondNumber + " max is " + newCalc.maxOfTwoNumbers(firstNumber, secondNumber));
 
         System.out.println();
         System.out.println("Please input number to check is it Even or Odd");
