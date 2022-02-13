@@ -1,11 +1,10 @@
 package student_jelena_boicova.lesson_4_homerwork;
 
-public class Task11 {
+public class Calculator {
 
     public static void main(String[] args) {
-}
-    class Calculator {
 
+    }
         public int sum(int firstNumber, int secondNumber) {
             return firstNumber + secondNumber;
         }
@@ -19,4 +18,3 @@ public class Task11 {
             return firstNumber / secondNumber;
         }
     }
-}
