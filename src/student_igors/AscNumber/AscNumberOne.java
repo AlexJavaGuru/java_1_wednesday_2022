@@ -17,10 +17,10 @@ public class AscNumberOne {
         double mult = firstDoubleNumber * secondDoubleNumber;
         double div = firstDoubleNumber / secondDoubleNumber;
 
-        System.out.println(firstDoubleNumber + " + " + secondDoubleNumber + " = " + Math.round(sum * 100.0) / 100.0);
-        System.out.println(firstDoubleNumber + " - " + secondDoubleNumber + " = " + Math.round(sub * 100.0) / 100.0);
-        System.out.println(firstDoubleNumber + " * " + secondDoubleNumber + " = " + Math.round(mult * 100.0) / 100.0);
-        System.out.println(firstDoubleNumber + " / " + secondDoubleNumber + " = " + Math.round(div * 100.0) / 100.0);
+        System.out.println(double sum);
+        System.out.println(result2);
+        System.out.println(result3);
+        System.out.println(result4);
     }
 
 }
