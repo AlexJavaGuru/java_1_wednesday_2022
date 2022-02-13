@@ -5,7 +5,6 @@ public class Product {
     String name;
     double regularPrice;
     double discount;
-    double actualPrice = regularPrice - regularPrice * discount;
 
     public Product() {
 
@@ -18,7 +17,8 @@ public class Product {
     }
 
     public double printInformation() {
-        return actualPrice;
+
+        return regularPrice - (regularPrice * discount);
     }
 
 }
