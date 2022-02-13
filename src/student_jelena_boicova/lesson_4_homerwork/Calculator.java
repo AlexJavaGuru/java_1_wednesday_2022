@@ -2,9 +2,6 @@ package student_jelena_boicova.lesson_4_homerwork;
 
 public class Calculator {
 
-    public static void main(String[] args) {
-
-    }
         public int sum(int firstNumber, int secondNumber) {
             return firstNumber + secondNumber;
         }
@@ -21,7 +18,16 @@ public class Calculator {
             if (number % 2 == 0) {
                 return true;
             }
-                return false;
+            else return false;
         }
 
-    }
+
+        public int maxOfTwoNumbers(int firstNumber, int secondNumber) {
+        if (firstNumber > secondNumber) {
+                return firstNumber;
+            } else return secondNumber;
+        }
+}
+
+
+
