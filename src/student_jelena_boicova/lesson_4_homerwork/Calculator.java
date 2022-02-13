@@ -17,4 +17,11 @@ public class Calculator {
         public int div(int firstNumber, int secondNumber) {
             return firstNumber / secondNumber;
         }
+        public boolean isEven(int number) {
+            if (number % 2 == 0) {
+                return true;
+            }
+                return false;
+        }
+
     }
