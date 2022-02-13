@@ -17,4 +17,8 @@ class Calculator {
     public double div(double firstNumber, double secondNumber) {
         return Math.round((firstNumber / secondNumber) * 100.0) / 100.0;
     }
+
+    public boolean isEven(int number) {
+        return (number % 2 == 0);
+    }
 }

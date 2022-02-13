@@ -1,8 +1,6 @@
 package student_aleksandrs_korsaks.ak_lesson_4.level_4;
 
 public class CalculatorTest {
-    double expectedResult;
-    double realResult;
 
     public static void main(String[] args) {
         CalculatorTest calculatorTest = new CalculatorTest();
@@ -10,54 +8,78 @@ public class CalculatorTest {
         calculatorTest.subTest();
         calculatorTest.mulTest();
         calculatorTest.divTest();
+        calculatorTest.isEvenFirstTest();
+        calculatorTest.isEvenSecondTest();
     }
 
     public void sumTest() {
         int firstNumber = 20;
         int secondNumber = 10;
-        expectedResult = 30;
+        int expectedResult = 30;
         Calculator calculator = new Calculator();
-        realResult = calculator.sum(firstNumber, secondNumber);
-        String methodName = new Object() {
-        }.getClass().getEnclosingMethod().getName();
-        checkTestResult(methodName);
+        int realResult = calculator.sum(firstNumber, secondNumber);
+        checkTestResult("sumTest", expectedResult, realResult);
     }
 
     public void subTest() {
         int firstNumber = 20;
         int secondNumber = 10;
-        expectedResult = 10;
+        int expectedResult = 10;
         Calculator calculator = new Calculator();
-        realResult = calculator.sub(firstNumber, secondNumber);
-        String methodName = new Object() {
-        }.getClass().getEnclosingMethod().getName();
-        checkTestResult(methodName);
+        int realResult = calculator.sub(firstNumber, secondNumber);
+        checkTestResult("subTest", expectedResult, realResult);
     }
 
     public void mulTest() {
         int firstNumber = 20;
         int secondNumber = 10;
-        expectedResult = 200;
+        int expectedResult = 200;
         Calculator calculator = new Calculator();
-        realResult = calculator.mul(firstNumber, secondNumber);
-        String methodName = new Object() {
-        }.getClass().getEnclosingMethod().getName();
-        checkTestResult(methodName);
+        int realResult = calculator.mul(firstNumber, secondNumber);
+        checkTestResult("mulTest", expectedResult, realResult);
     }
 
     public void divTest() {
         int firstNumber = 20;
         int secondNumber = 15;
-        expectedResult = 1.33;
+        double expectedResult = 1.33;
         Calculator calculator = new Calculator();
-        realResult = calculator.div(firstNumber, secondNumber);
-        String methodName = new Object() {
-        }.getClass().getEnclosingMethod().getName();
-        checkTestResult(methodName);
+        double realResult = calculator.div(firstNumber, secondNumber);
+        checkTestResult("divTest", expectedResult, realResult);
     }
 
-    public void checkTestResult(String testName) {
+    public void isEvenFirstTest() {
+        int firstNumber = 20;
+        Calculator calculator = new Calculator();
+        boolean realResult = calculator.isEven(firstNumber);
+        checkTestResult("isEvenFirstTest", realResult);
+    }
+
+    public void isEvenSecondTest() {
+        int firstNumber = 19;
+        Calculator calculator = new Calculator();
+        boolean realResult = !(calculator.isEven(firstNumber));
+        checkTestResult("isEvenSecondTest", realResult);
+    }
+
+    public void checkTestResult(String testName, int expectedResult, int realResult) {
         if (realResult == expectedResult) {
+            System.out.println("\"" + testName + "\"" + " test = OK");
+        } else {
+            System.out.println("\"" + testName + "\"" + " test = FAIL");
+        }
+    }
+
+    public void checkTestResult(String testName, double expectedResult, double realResult) {
+        if (realResult == expectedResult) {
+            System.out.println("\"" + testName + "\"" + " test = OK");
+        } else {
+            System.out.println("\"" + testName + "\"" + " test = FAIL");
+        }
+    }
+
+    public void checkTestResult(String testName, boolean realResult) {
+        if (realResult) {
             System.out.println("\"" + testName + "\"" + " test = OK");
         } else {
             System.out.println("\"" + testName + "\"" + " test = FAIL");
