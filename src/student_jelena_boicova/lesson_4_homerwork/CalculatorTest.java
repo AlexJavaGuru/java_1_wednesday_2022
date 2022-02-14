@@ -1,5 +1,7 @@
 package student_jelena_boicova.lesson_4_homerwork;
 
+import teacher.lesson_4_if_statement.lessoncode.basecodetestapproach.MathHelper;
+
 public class CalculatorTest {
 
     public static void main(String[] args) {
@@ -9,6 +11,9 @@ public class CalculatorTest {
     calculatorTest.subTest();
     calculatorTest.mulTest();
     calculatorTest.divTest();
+    calculatorTest.isEvenTest();
+    calculatorTest.maxOfTwoNumbersFirstTest();
+
 
     }
 
@@ -25,9 +30,9 @@ public class CalculatorTest {
         }
     }
         public void subTest() {
-        int firstNumber = 10;
+        int firstNumber = 20;
         int secondNumber = 5;
-        int expectedResult = 5;
+        int expectedResult = 15;
         Calculator calculator = new Calculator();
         int realResult = calculator.sub(firstNumber, secondNumber);
         if (realResult == expectedResult) {
@@ -39,7 +44,7 @@ public class CalculatorTest {
     public void mulTest() {
          int firstNumber = 10;
          int secondNumber = 5;
-         int expectedResult = 5;
+         int expectedResult = 50;
          Calculator calculator = new Calculator();
          int realResult = calculator.mul(firstNumber, secondNumber);
          if (realResult == expectedResult) {
@@ -51,8 +56,8 @@ public class CalculatorTest {
     public void divTest() {
           int firstNumber = 10;
           int secondNumber = 5;
-          int expectedResult = 5;
-         Calculator calculator = new Calculator();
+          int expectedResult = 2;
+          Calculator calculator = new Calculator();
           int realResult = calculator.div(firstNumber, secondNumber);
           if (realResult == expectedResult) {
               System.out.println("Div test = OK");
@@ -60,6 +65,27 @@ public class CalculatorTest {
               System.out.println("Div test = FAIL");
           }
     }
-
-
+    public void isEvenTest() {
+          int number = 10;
+          boolean expectedResult = true;
+          Calculator calculator = new Calculator();
+          boolean realResult = calculator.isEven(number);
+          if (realResult == expectedResult) {
+              System.out.println("IsEven test = OK");
+          } else {
+              System.out.println("IsEven test = FAILED");
+          }
+    }
+    public void maxOfTwoNumbersFirstTest() {
+          int firstNumber = 70;
+          int secondNumber = 50;
+          int expectedResult = 70;
+          Calculator calculator = new Calculator();
+          int realResult = calculator.maxOfTwoNumbers(firstNumber, secondNumber);
+          if (realResult == expectedResult) {
+              System.out.println("First is bigger = OK");
+          } else {
+              System.out.println("First is bigger = FAILED");
+          }
+    }
 }
