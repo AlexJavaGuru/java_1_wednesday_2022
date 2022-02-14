@@ -2,32 +2,32 @@ package student_konstantin_kolesnik.lesson_3.level_7;
 
 class Aircraft {
 
-    String name = "Boieng";
-    String model = "777";
-    int mp = 25000;
-    int year = 2007;
-    double lenght = 47.7;
-    String price = "25000000€";
+    String brand;
+    String model;
+    int power;
+    int year;
+    String country;
+    double length;
+    String price;
 
-    Aircraft() {
-        System.out.println("Sell:");
-        System.out.println();
-    }
-    Aircraft(String name, String model, int mp, int year, double lenght, String price) {
-        this.name = name;
+    public Aircraft(String brand, String model, int power, int year, String country, double length, String price) {
+
+        this.brand = brand;
         this.model = model;
-        this.mp = mp;
+        this.power = power;
         this.year = year;
-        this.lenght = lenght;
+        this.country = country;
+        this.length = length;
         this.price = price;
     }
+
     void aircraftPrint() {
-        System.out.println(name);
-        System.out.println(model);
-        System.out.println(mp);
-        System.out.println(year);
-        System.out.println(lenght);
-        System.out.println(price);
+        System.out.println("Specs:");
+        System.out.println("Aircraft: " + brand + " " + model);
+        System.out.println("Power: " + power + " pound force, " + "Length: " + length + "m, " + " Country: " + country + ", " + " Year: " + year);
+        System.out.println("Price: " + price);
         System.out.println();
     }
+
+
 }

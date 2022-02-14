@@ -1,25 +1,21 @@
 package student_konstantin_kolesnik.lesson_3.level_7;
 
-import java.sql.SQLOutput;
-
 class Product {
     String name;
     double regularPrice;
     double discount;
 
-    Product(String name) {
+    public Product(String name, double regularPrice, double discount) {
         this.name = name;
-        regularPrice = 1.49;
-        discount = 17.5;
+        this.regularPrice = regularPrice ;
+        this.discount = discount;
     }
     double actualDiscount() {
-        double actualDiscount = (regularPrice / 100) * discount;
-        return actualDiscount;
+        return (regularPrice / 100) * discount;
     }
     double actualPrice() {
-        double actualDiscount = (regularPrice / 100) * discount;
-        double actualPrice = (regularPrice - actualDiscount);
-        return actualPrice;
+        return (regularPrice / 100) * discount;
+
 
     }
     void print() {

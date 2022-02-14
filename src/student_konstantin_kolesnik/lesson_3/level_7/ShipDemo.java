@@ -4,16 +4,13 @@ class ShipDemo {
 
     public static void main(String[] args) {
 
-        Ship cargoShip = new Ship();
-        cargoShip.veselPrint();
+        Ship everAce = new Ship("Ever Ace", 23.992, 2021, 400,"Samsung Heavy Industries in / South Korea");
+        everAce.shipPrint();
 
-        Ship cargoShipOne = new Ship();
-        cargoShipOne.shipPrint();
+        Ship hmmAlgeciras = new Ship("HMM Algeciras", 23.964, 2021, 399.9, "Daewoo Shipbuilding and Marine Engineering / South Korea");
+        hmmAlgeciras.shipPrint();
 
-        Ship cargoShipTwo = new Ship("HMM Algeciras", 23.964, 2021, 399.9, "Daewoo Shipbuilding and Marine Engineering / South Korea");
-        cargoShipTwo.shipPrint();
-
-        Ship cargoShipThree = new Ship("HMM Oslo", 2020, 23.792, 400, "Samsung Heavy Industries / South Korea");
-        cargoShipThree.shipPrint();
+        Ship hmmOslo = new Ship("HMM Oslo", 23.792, 2020, 400, "Samsung Heavy Industries / South Korea");
+        hmmOslo.shipPrint();
     }
 }

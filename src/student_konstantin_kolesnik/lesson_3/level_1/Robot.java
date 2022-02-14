@@ -1,18 +1,19 @@
 package student_konstantin_kolesnik.lesson_3.level_1;
 
 public class Robot {
-
-    String name = "Wall.E";
+    String roboName;
 
     public Robot() {
     }
-    public Robot(String name) {
-        this.name=name;
+
+    public Robot(String roboName) {
+        this.roboName=roboName;
     }
+
     public void sayHello() {
         System.out.println("Hello!");
     }
     public void sayYourName() {
-        System.out.println("My name is " + name);
+        System.out.println("My name is " + roboName);
     }
 }
