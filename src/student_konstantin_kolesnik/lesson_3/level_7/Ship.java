@@ -2,27 +2,19 @@ package student_konstantin_kolesnik.lesson_3.level_7;
 
 class Ship {
 
-    String name = "Ever Ace";
-    double teus = 23.992;
-    int year = 2021;
-    double meterLong = 400;
-    String built = "Samsung Heavy Industries in / South Korea";
+    String name;
+    double teus;
+    int year;
+    double meterLong;
+    String built;
 
-    Ship() {
-    }
-    Ship(String name, double newTeus, int year, double meterLong, String newBuilt) {
+
+    public Ship(String name, double teus, int year, double meterLong, String built) {
         this.name = name;
-        teus = newTeus;
+        this.teus = teus;
         this.year = year;
         this.meterLong = meterLong;
-        built = newBuilt;
-    }
-    Ship(String nameTwo, int yearTwo, double teusTwo, double meterLongTwo, String builtTwo) {
-        this.name = nameTwo;
-        this.teus = teusTwo;
-        this.year = yearTwo;
-        this.meterLong = meterLongTwo;
-        this.built = builtTwo;
+        this.built = built;
     }
     void shipPrint() {
         System.out.println("Ship name: " + name);
