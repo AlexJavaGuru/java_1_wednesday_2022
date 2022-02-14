@@ -6,8 +6,8 @@ class StockDemo {
         String priceInformation = google.getPriceInformation();
         System.out.println(priceInformation);
         google.updatePrice(15);
-//        google.updatePrice(7);
-//        google.updatePrice(14);
+        google.updatePrice(7);
+        google.updatePrice(14);
         priceInformation = google.getPriceInformation();
         System.out.println(priceInformation);
     }
