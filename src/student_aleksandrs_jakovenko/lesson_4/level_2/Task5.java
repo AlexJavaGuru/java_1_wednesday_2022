@@ -12,11 +12,9 @@ class Task5 {
 
         if (firstNum > secondNum){
             System.out.println("First number is bigger!");
-        }
-        else if (firstNum < secondNum){
+        } else if (firstNum < secondNum){
             System.out.println("Second number is bigger!");
-        }
-        else
+        } else
             System.out.println("The numbers are the same!");
     }
 }

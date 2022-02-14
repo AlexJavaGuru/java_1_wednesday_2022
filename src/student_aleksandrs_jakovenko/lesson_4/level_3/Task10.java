@@ -12,21 +12,11 @@ class Task10 {
         System.out.println("Enter the third number: ");
         int thirdNum = scanner.nextInt();
 
-        if (firstNum > secondNum && firstNum > thirdNum){
-            System.out.println(firstNum);
-        }
-        else if (secondNum > firstNum && secondNum > thirdNum){
-            System.out.println(secondNum);
-        }
-        else if (thirdNum > firstNum && thirdNum > secondNum){
-            System.out.println(thirdNum);
-        }
-        else if (secondNum == thirdNum && firstNum < secondNum){
-            System.out.println(secondNum);
-        }
-        else if (firstNum == secondNum && thirdNum < firstNum){
-            System.out.println(firstNum);
-        }
-        else System.out.println(firstNum);
+        if (firstNum >= secondNum && firstNum >= thirdNum) {
+            System.out.println(firstNum + " is the largest.");
+        } else if (secondNum >= firstNum && secondNum >= thirdNum) {
+            System.out.println(secondNum + " is the largest.");
+        } else
+            System.out.println(thirdNum + " is the largest.");
     }
 }

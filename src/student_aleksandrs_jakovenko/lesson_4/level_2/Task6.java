@@ -12,11 +12,9 @@ class Task6 {
 
         if (firstNum > secondNum){
             System.out.println(secondNum + " is less!");
-        }
-        else if (firstNum < secondNum){
+        } else if (firstNum < secondNum){
             System.out.println(firstNum + " is less!");
-        }
-        else
+        } else
             System.out.println("Numbers are equals!");
     }
 }

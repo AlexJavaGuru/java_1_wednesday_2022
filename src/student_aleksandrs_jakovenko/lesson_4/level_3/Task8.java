@@ -14,11 +14,9 @@ class Task8 {
 
         if (firstNum == secondNum && secondNum == thirdNum){
             System.out.println("All numbers are equal!");
-        }
-        else if (firstNum != secondNum && secondNum != thirdNum && firstNum != thirdNum){
+        } else if (firstNum != secondNum && secondNum != thirdNum && firstNum != thirdNum){
             System.out.println("All numbers are different!");
-        }
-        else
+        } else
             System.out.println("Neither all are equal or different!");
     }
 }

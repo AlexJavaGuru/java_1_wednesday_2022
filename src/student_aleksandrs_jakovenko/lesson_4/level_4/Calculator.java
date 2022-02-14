@@ -16,8 +16,7 @@ class Calculator {
     public boolean isEven(int number) {
         if (number % 2 == 0){
             return true;
-        }
-        else return false;
+        } else return false;
     }
     public int maxOfTwo(int firstNumber, int secondNumber) {
         if (firstNumber > secondNumber) {
@@ -25,18 +24,10 @@ class Calculator {
         } else return secondNumber;
     }
     public int maxOfThree(int firstNum, int secondNum, int thirdNum){
-        if (firstNum > secondNum && firstNum > thirdNum){
+        if (firstNum >= secondNum && firstNum >= thirdNum){
             return firstNum;
-        }
-        else if (secondNum > firstNum && secondNum > thirdNum){
+        } else if (secondNum >= firstNum && secondNum >= thirdNum) {
             return secondNum;
-        }
-        else if (thirdNum > firstNum && thirdNum > secondNum){
-            return thirdNum;
-        }
-//        else if (firstNum == secondNum && firstNum == thirdNum){
-//            return firstNum;
-//        }
-        else return firstNum;
+        } else return thirdNum;
     }
 }

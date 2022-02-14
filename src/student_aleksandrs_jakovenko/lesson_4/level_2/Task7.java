@@ -12,8 +12,7 @@ class Task7 {
 
         if (firstNum == secondNum){
             System.out.println("Numbers are equals!");
-        }
-        else
+        } else
             System.out.println("Numbers are different!");
     }
 }

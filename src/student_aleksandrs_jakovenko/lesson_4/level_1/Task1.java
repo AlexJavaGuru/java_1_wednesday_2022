@@ -9,8 +9,7 @@ class Task1 {
         int number = scanner.nextInt();
         if (number < 0){
             System.out.println("Number " + number + " is negative!");
-        }
-        else {
+        } else {
             System.out.println("Number " + number + " is positive!");
         }
     }

@@ -14,11 +14,9 @@ class Task9 {
 
         if (firstNum < secondNum && secondNum < thirdNum){
             System.out.println("Increasing!");
-        }
-        else if (firstNum > secondNum && secondNum > thirdNum){
+        } else if (firstNum > secondNum && secondNum > thirdNum){
             System.out.println("Decreasing!");
-        }
-        else
+        } else
             System.out.println("Neither increasing or decreasing order!");
     }
 }
