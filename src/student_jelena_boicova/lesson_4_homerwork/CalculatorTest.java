@@ -14,6 +14,7 @@ public class CalculatorTest {
     calculatorTest.isEvenTest();
     calculatorTest.maxOfTwoNumbersFirstTest();
     calculatorTest.maxOfTwoNumbersSecondTest();
+    calculatorTest.maxOfTwoNumbersSecondEqual();
 
     }
 
@@ -88,7 +89,6 @@ public class CalculatorTest {
               System.out.println("First is bigger = FAILED");
           }
     }
-
     public void maxOfTwoNumbersSecondTest() {
          int firstNumber = 100;
          int secondNumber = 150;
@@ -100,6 +100,17 @@ public class CalculatorTest {
          } else {
              System.out.println("Second is bigger = FAILED");
         }
-
     }
+    public void maxOfTwoNumbersSecondEqual() {
+        int firstNumber = 70;
+        int secondNumber = 70;
+        int expectedResult = 70;
+        Calculator calculator = new Calculator();
+        int realResult = calculator.maxOfTwoNumbers(firstNumber, secondNumber);
+        if (realResult == expectedResult) {
+            System.out.println("Equal test = OK");
+        } else {
+            System.out.println("Equal test = FAILED");
+    }
+}
 }
