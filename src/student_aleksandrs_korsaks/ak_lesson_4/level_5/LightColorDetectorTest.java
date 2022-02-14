@@ -1,6 +1,6 @@
 package student_aleksandrs_korsaks.ak_lesson_4.level_5;
 
-public class LightColorDetectorTest {
+class LightColorDetectorTest {
     public static void main(String[] args) {
         LightColorDetectorTest lightColorDetectorTest = new LightColorDetectorTest();
         lightColorDetectorTest.violetTest();

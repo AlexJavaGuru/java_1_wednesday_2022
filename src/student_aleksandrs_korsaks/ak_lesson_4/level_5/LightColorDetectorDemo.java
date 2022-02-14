@@ -2,7 +2,7 @@ package student_aleksandrs_korsaks.ak_lesson_4.level_5;
 
 import java.util.Scanner;
 
-public class LightColorDetectorDemo {
+class LightColorDetectorDemo {
     public static void main(String[] args) {
         LightColorDetector caseOne = new LightColorDetector();
         Scanner scanner = new Scanner(System.in);

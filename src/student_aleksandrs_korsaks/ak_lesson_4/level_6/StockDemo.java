@@ -1,6 +1,6 @@
 package student_aleksandrs_korsaks.ak_lesson_4.level_6;
 
-public class StockDemo {
+class StockDemo {
     public static void main(String[] args) {
 
         Stock google = new Stock("GOOGLE", 10);
