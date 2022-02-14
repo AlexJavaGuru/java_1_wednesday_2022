@@ -35,10 +35,10 @@ public class Calculator {
             } else if (secondNumber > firstNumber && secondNumber > thirdNumber){
                 return secondNumber;
 
-            } else if (thirdNumber >firstNumber && thirdNumber > secondNumber){
+            } else if (thirdNumber > firstNumber && thirdNumber > secondNumber){
                 return thirdNumber;
 
-            } else if (firstNumber == secondNumber && firstNumber ==thirdNumber){
+            } else if (firstNumber == secondNumber && firstNumber == thirdNumber){
                 return firstNumber;
 
             } else return firstNumber;
