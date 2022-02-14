@@ -24,7 +24,6 @@ public class CalculatorTest {
     calculatorTest.maxOfThreeNumbersSecondAndThirdTest();
     calculatorTest.maxOfThreeNumbersEqualTest();
 
-
     }
 
     public void sumTest() {
