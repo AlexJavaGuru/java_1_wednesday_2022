@@ -22,6 +22,7 @@ public class CalculatorTest {
     calculatorTest.maxOfThreeNumbersFirstAndSecondTest();
     calculatorTest.maxOfThreeNumbersFirstAndThirdTest();
     calculatorTest.maxOfThreeNumbersSecondAndThirdTest();
+    calculatorTest.maxOfThreeNumbersEqualTest();
 
 
     }
@@ -197,6 +198,19 @@ public class CalculatorTest {
             System.out.println("Second and Third are equal and bigger test = OK");
         } else {
             System.out.println("Second and Third are equal and bigger test = FAILED");
+        }
+    }
+    public void maxOfThreeNumbersEqualTest(){
+        int firstNumber = 73;
+        int secondNumber = 73;
+        int thirdNumber = 73;
+        int expectedResult = 73;
+        Calculator calculator = new Calculator();
+        int realResult = calculator.maxOfThreeNumbers(firstNumber, secondNumber, thirdNumber);
+        if (realResult == expectedResult) {
+            System.out.println("Numbers are Equal test = OK");
+        } else {
+            System.out.println("Numbers are Equal test = FAILED");
         }
     }
 }
