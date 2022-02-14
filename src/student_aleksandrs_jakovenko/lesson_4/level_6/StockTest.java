@@ -24,6 +24,7 @@ class StockTest {
             System.out.println("Current price test = FAIL");
         }
     }
+
     public void minPriceTest(){
         Stock stock = new Stock("Google", 10);
         stock.updatePrice(10);
@@ -40,6 +41,7 @@ class StockTest {
             System.out.println("Minimal price test = FAIL");
         }
     }
+
     public void maxPriceTest(){
         Stock stock = new Stock("Google", 10);
         stock.updatePrice(10);
