@@ -32,4 +32,14 @@ class Calculator {
         }
     }
 
+    int maxOfThreeNumbers(int firstNumber, int secondNumber, int thirdNumber) {
+        if (firstNumber == secondNumber && secondNumber == thirdNumber) {
+            System.out.println("All numbers are equal");
+            return firstNumber;
+        } else {
+            if (firstNumber >= secondNumber && firstNumber >= thirdNumber) {
+                return firstNumber;
+            } else return Math.max(thirdNumber, secondNumber);
+        }
+    }
 }
