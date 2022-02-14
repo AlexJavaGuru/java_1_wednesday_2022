@@ -38,11 +38,10 @@ public class Calculator {
             } else if (thirdNumber > firstNumber && thirdNumber > secondNumber){
                 return thirdNumber;
 
-            } else if (firstNumber == secondNumber && firstNumber == thirdNumber){
+            } else if (firstNumber == secondNumber && firstNumber > thirdNumber || firstNumber == thirdNumber && firstNumber > secondNumber){
                 return firstNumber;
 
-            } else return firstNumber;
-
+            } else return secondNumber;
 
         }
 }
