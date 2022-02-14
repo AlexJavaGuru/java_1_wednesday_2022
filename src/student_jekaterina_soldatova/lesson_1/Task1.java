@@ -15,10 +15,18 @@ class Task1 {
         int numberToCheck = scanner.nextInt();
         if (numberToCheck > 0) {
             System.out.print("The number is positive");
-        } else if (numberToCheck == 0) {
+        } else if (numberToCheck < 0) {
+            System.out.print("The number is negative");
+        }
+
+        if (numberToCheck % 2 == 0 && numberToCheck != 0) {
+            System.out.println(" and even");
+        } else if (numberToCheck % 2 != 0) {
+            System.out.println(" and odd");
+        }
+
+        else {
             System.out.println("The number is 0");
-        } else {
-            System.out.println("The number is negative");
         }
     }
 }
