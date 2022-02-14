@@ -11,6 +11,7 @@ class LightColorDetectorTest {
         lightColorDetector.testOrange(619);
         lightColorDetector.testRed(620);
         lightColorDetector.testInvisible(760);
+        lightColorDetector.testInvisible(100);
     }
 
     public void checkResult(String actualResult, String expectedResult, String testName){
