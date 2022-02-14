@@ -5,12 +5,13 @@
 положительное оно или отрицательное.
  */
 
-package student_jekaterina_soldatova.lesson_1;
+package student_jekaterina_soldatova.lesson_4.intern;
 
 import java.util.Scanner;
 
 class Task1 {
     public static void main(String[] args) {
+        System.out.println("Please enter an integer");
         Scanner scanner = new Scanner(System.in);
         int numberToCheck = scanner.nextInt();
         if (numberToCheck > 0) {

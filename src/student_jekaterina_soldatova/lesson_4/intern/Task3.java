@@ -11,7 +11,7 @@
 Вывод: Friday
  */
 
-package student_jekaterina_soldatova.lesson_1;
+package student_jekaterina_soldatova.lesson_4.intern;
 
 import java.util.Scanner;
 
