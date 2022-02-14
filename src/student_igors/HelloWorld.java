@@ -1,4 +1,4 @@
-package student_viktorija_vinka;
+package student_igors;
 
 public class HelloWorld {
 
@@ -6,5 +6,4 @@ public class HelloWorld {
         System.out.println("Hello World...");
     }
 }
-
 
