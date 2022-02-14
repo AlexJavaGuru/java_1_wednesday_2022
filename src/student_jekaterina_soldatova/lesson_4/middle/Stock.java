@@ -18,8 +18,11 @@ class Stock {
     }
 
     void updatePrice(int newPrice) {
-        if (newPrice > currentPrice) maxPrice = newPrice;
-        else if (newPrice < currentPrice) minPrice = newPrice;
+        if (newPrice > maxPrice) {
+            maxPrice = newPrice;
+        } else if (newPrice < minPrice) {
+            minPrice = newPrice;
+        }
         currentPrice = newPrice;
     }
 }
