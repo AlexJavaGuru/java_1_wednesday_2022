@@ -1,6 +1,6 @@
 package student_aleksandrs_korsaks.ak_lesson_4.level_4;
 
-public class CalculatorTest {
+class CalculatorTest {
 
     public static void main(String[] args) {
         CalculatorTest calculatorTest = new CalculatorTest();

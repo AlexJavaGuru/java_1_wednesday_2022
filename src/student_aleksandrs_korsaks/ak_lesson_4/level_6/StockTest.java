@@ -1,6 +1,6 @@
 package student_aleksandrs_korsaks.ak_lesson_4.level_6;
 
-public class StockTest {
+class StockTest {
     public static void main(String[] args) {
         StockTest stockTest = new StockTest();
 
