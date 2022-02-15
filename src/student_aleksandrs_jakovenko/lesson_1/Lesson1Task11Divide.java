@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 //Write a Java program to divide two numbers and print on the screen.
 
-public class Lesson1Task11Divide {
+class Lesson1Task11Divide {
     public static void main(String[] args) {
         Scanner num = new Scanner(System.in);
 
