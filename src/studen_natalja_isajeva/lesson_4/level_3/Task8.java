@@ -6,15 +6,15 @@ public class Task8 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Type first number :");
-        int x = scanner.nextInt();
+        int firstNumber = scanner.nextInt();
         System.out.println("Type second number :");
-        int y = scanner.nextInt();
+        int secondNumber = scanner.nextInt();
         System.out.println("Type third number :");
-        int z = scanner.nextInt();
+        int thirdNumber = scanner.nextInt();
 
-        if ((x == y) && (x == z)) {
+        if ((firstNumber == secondNumber) && (firstNumber == thirdNumber)) {
             System.out.println("All  numbers are equal");
-        } else if ((x != y) && (x != z)) {
+        } else if ((firstNumber != secondNumber) && (firstNumber != thirdNumber)) {
             System.out.println("All  numbers are different");
         } else {
             System.out.println("Neither all are equal or different");
