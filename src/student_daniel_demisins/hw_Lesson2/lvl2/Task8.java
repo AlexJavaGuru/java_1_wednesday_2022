@@ -1,8 +1,8 @@
-package student_daniel_demisins.HW_Lesson2;
+package student_daniel_demisins.hw_Lesson2.lvl2;
 
 import java.util.Scanner;
 
-public class Lvl_2_Task_08 {
+public class Task8 {
 
 
     public static void main(String[] args) {
