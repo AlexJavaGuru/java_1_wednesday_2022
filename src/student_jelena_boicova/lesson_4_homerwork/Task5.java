@@ -7,13 +7,13 @@ public class Task5 {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter two numbers");
-        int a = 50;
-        int b = 100;
+        int numberA = scanner.nextInt();
+        int numberB = scanner.nextInt();
 
-        if (a < b) {
-            System.out.println(b);
+        if (numberA < numberB) {
+            System.out.println(numberB);
         } else {
-            System.out.println(a);
+            System.out.println(numberA);
         }
     }
 }
