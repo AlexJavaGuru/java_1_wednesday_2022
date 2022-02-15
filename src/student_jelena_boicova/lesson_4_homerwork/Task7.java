@@ -7,10 +7,10 @@ public class Task7 {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter two numbers");
-        int a = 70;
-        int b = 70;
+        int numberA = scanner.nextInt();
+        int numberB = scanner.nextInt();
 
-        if (a == b) {
+        if (numberA == numberB) {
             System.out.println("Numbers are equals");
         } else {
             System.out.println("Numbers are different");
