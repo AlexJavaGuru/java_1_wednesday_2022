@@ -7,12 +7,12 @@ public class Task4 {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите число: ");
-        int num = 10;
+        int number = scanner.nextInt();
 
         // Если число делится на 2, то это четное число, иначе - нечетное
         // если остаток от деления равен нулю, то четное
 
-        if ( num % 2 == 0 ){
+        if ( number % 2 == 0 ){
             System.out.println("Число четное");
         }
         else
