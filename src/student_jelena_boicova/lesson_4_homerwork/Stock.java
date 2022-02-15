@@ -15,7 +15,7 @@ public class Stock {
     public String getPriceInformation() {
         return "Company:" + companyName + ", currentPrice =" + currentPrice + ", maxPrice=" + maxPrice +", minPrice=" + minPrice;
     }
-    public int updatePrice(int newPrice){
+    public void updatePrice(int newPrice){
         currentPrice = newPrice;
         if(newPrice < minPrice){
         minPrice = newPrice;
@@ -24,6 +24,5 @@ public class Stock {
         maxPrice = newPrice;
     }
 
-    }
 }
 
