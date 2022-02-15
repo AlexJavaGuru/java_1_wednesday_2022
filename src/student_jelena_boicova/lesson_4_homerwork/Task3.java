@@ -6,7 +6,7 @@ public class Task3 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a number from 1 to 7: ");
-        int x = 3;
+        int x = scanner.nextInt();
 
         if (x == 1) {
             System.out.println("Monday");
