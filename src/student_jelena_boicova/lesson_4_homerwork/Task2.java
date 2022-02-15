@@ -7,7 +7,7 @@ public class Task2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a number: ");
-        int x = 0;
+        int x = scanner.nextInt();
 
         if (x > 0) {
             System.out.println("Entered number is positive");
