@@ -7,9 +7,9 @@ public class Task10 {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter three numbers");
-        int a = 200;
-        int b = 50 ;
-        int c = 100;
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
+        int c = scanner.nextInt();
 
         if (a <= b && b < c) {
             System.out.println(c);
