@@ -2,10 +2,10 @@ package student_jelena_boicova.lesson_3;
 
 public class Dog {
 
-    String nickname;
-    int age;
+    String nickname = "Max";
+    int age = 15;
 
-    Dog(String nickname, int age){
+    public Dog(String nickname, int age){
 
     }
 
