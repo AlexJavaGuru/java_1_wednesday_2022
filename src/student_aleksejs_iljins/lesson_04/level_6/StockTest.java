@@ -8,7 +8,7 @@ public class StockTest {
         stockTest.maxPriceTest();
     }
     public void currentPriceTest(){
-        Stock stock = new Stock("Google", 10);
+        Stock stock = new Stock("GOOG", 10);
         stock.updatePrice(10);
         stock.updatePrice(12);
         stock.updatePrice(5);
@@ -24,7 +24,7 @@ public class StockTest {
         }
     }
     public void maxPriceTest(){
-        Stock stock = new Stock("Google", 10);
+        Stock stock = new Stock("GOOG", 10);
         stock.updatePrice(10);
         stock.updatePrice(12);
         stock.updatePrice(5);
@@ -40,7 +40,7 @@ public class StockTest {
         }
     }
     public void minPriceTest(){
-        Stock stock = new Stock("Google", 10);
+        Stock stock = new Stock("GOOG", 10);
         stock.updatePrice(10);
         stock.updatePrice(12);
         stock.updatePrice(5);
