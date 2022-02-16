@@ -28,16 +28,4 @@ class Stock {
         System.out.println("Min price: " + minPrice);
         System.out.println("Max price: " + maxPrice);
     }
-
-    int getMaxPrice() {
-        return maxPrice;
-    }
-
-    int getMinPrice() {
-        return minPrice;
-    }
-
-    int getActualPrice() {
-        return actualPrice;
-    }
 }
