@@ -2,7 +2,7 @@ package student_konstantin_kolesnik.lesson4.level_3;
 
 import java.util.Scanner;
 
-public class Task9 {
+class Task9 {
     public static void main(String[] args) {
 
         System.out.println("Enter the first number:");

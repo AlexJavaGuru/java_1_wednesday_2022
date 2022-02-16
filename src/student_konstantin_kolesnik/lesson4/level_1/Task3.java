@@ -2,13 +2,13 @@ package student_konstantin_kolesnik.lesson4.level_1;
 
 import java.util.Scanner;
 
-public class Task3 {
+class Task3 {
 
-        public static void main(String[] args) {
+    public static void main(String[] args) {
 
-            System.out.println("Enter number (1-7):");
-            Scanner whatNumberIs = new Scanner(System.in);
-            int number = whatNumberIs.nextInt();
+        System.out.println("Enter number (1-7):");
+        Scanner whatNumberIs = new Scanner(System.in);
+        int number = whatNumberIs.nextInt();
 
             switch (number) {
                 case 1:
@@ -35,7 +35,7 @@ public class Task3 {
                 default:
                     System.out.println("Error: Please try again. Enter number (1-7): ");
             }
-        }
+    }
 }
 
 
