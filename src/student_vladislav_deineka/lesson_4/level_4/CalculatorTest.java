@@ -9,7 +9,6 @@ public class CalculatorTest {
         calculatorTest.test(50, calculator.mul(10,5));
         calculatorTest.test(2, calculator.div(10,5));
         calculatorTest.isEvenTest1();
-        calculatorTest.isEvenTest2();
     }
     public void test(int expectedResult, int realResult) {
         if (realResult == expectedResult) {
@@ -25,15 +24,6 @@ public class CalculatorTest {
             System.out.println("isEven Test = OK");
         } else {
             System.out.println("isEven Test = FAIL");
-        }
-    }
-    public void isEvenTest2() {
-        Calculator calculator = new Calculator();
-        int result = calculator.isEven2(41);
-        if (result == false) {
-            System.out.println("isEven test = OK");
-        } else {
-            System.out.println("isEven test = FAIL");
         }
     }
 }
