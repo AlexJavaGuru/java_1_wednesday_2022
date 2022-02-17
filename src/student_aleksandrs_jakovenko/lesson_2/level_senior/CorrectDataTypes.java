@@ -1,6 +1,6 @@
 package student_aleksandrs_jakovenko.lesson_2.level_senior;
 
-public class CorrectDataTypes {
+class CorrectDataTypes {
     public static void main(String[] args) {
 
         int numberOne = 10;
