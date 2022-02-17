@@ -8,7 +8,7 @@ class TaskEleven {
         Scanner scanner = new Scanner(System.in);
         int[] numbers = new int[3];
         for (int i = 0; i < numbers.length; i++) {
-            System.out.println("Please inter integer for array`s element nr. " + i);
+            System.out.println("Please inter integer for array`s element nr. " + (i + 1));
             numbers[i] = scanner.nextInt();
         }
         System.out.println(Arrays.toString(numbers));
