@@ -2,7 +2,7 @@ package student_aleksandrs_jakovenko.lesson_2.level_1;
 
 import java.util.Scanner;
 
-public class Task1 {
+class Task1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -15,7 +15,7 @@ public class Task1 {
         int sum = firstNumber + secondNumber;
         int sub = firstNumber - secondNumber;
         int mul = firstNumber * secondNumber;
-        int div = firstNumber / secondNumber;
+        double div = (double)firstNumber / secondNumber;
 
         System.out.println("Sum result: " + sum);
         System.out.println("Subtraction result: " + sub);
