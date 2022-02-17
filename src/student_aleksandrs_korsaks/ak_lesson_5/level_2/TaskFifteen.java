@@ -10,8 +10,12 @@ class TaskFifteen {
         for (int i = 0; i < numbers.length; i++) {
             numbers[i] = random.nextInt(10);
             System.out.println("Array`s element nr. " + (i + 1) + " = " + numbers[i]);
+            //output variant 1
             numbers[i] += 2;
+            System.out.println("Array`s element nr. " + (i + 1) + " (+ 2) = " + numbers[i]);
         }
+        //output v-2
+        System.out.println();
         System.out.println("Array`s element + 2 = " + Arrays.toString(numbers));
     }
 }
