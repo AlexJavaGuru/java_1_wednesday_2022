@@ -1,10 +1,8 @@
 package student_jelena_boicova.lesson_5_homework;
 
-class ArrayDefinition1 {
+public class ArrayDefinition2 {
 
     public static void main(String[] args) {
-        int[] numbers = new int[9];
+        byte [] numbers = new byte[7];
     }
-
 }
-
