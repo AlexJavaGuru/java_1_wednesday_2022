@@ -1,8 +1,8 @@
 package student_vladislav_deineka.lesson_5.task_2;
 
-import student_vladislav_deineka.lesson_5.task_1.Array;
+import java.util.Arrays;
 
-public class Massive {
+class Massive {
     public static void main(String[] args) {
         int[] numbers = new int[3];
 
@@ -10,9 +10,7 @@ public class Massive {
         numbers[1] = 24;
         numbers[2] = 83;
 
-        System.out.println(numbers[0]);
-        System.out.println(numbers[1]);
-        System.out.println(numbers[2]);
+        System.out.println(Arrays.toString(numbers));
 
     }
 }

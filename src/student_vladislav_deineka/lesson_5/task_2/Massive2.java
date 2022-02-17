@@ -1,8 +1,9 @@
 package student_vladislav_deineka.lesson_5.task_2;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class Massive2 {
+class Massive2 {
     public static void main(String[] args) {
 
         int[] numbers = new int[3];
@@ -15,10 +16,7 @@ public class Massive2 {
         System.out.println("Write number 3: ");
         numbers[2] = scanner.nextInt();
 
-        System.out.println("Your numbers: ");
-        System.out.println(numbers[0]);
-        System.out.println(numbers[1]);
-        System.out.println(numbers[2]);
+        System.out.println("Your numbers: " + Arrays.toString(numbers));
 
     }
 }
