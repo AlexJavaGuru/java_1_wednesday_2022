@@ -20,6 +20,14 @@ class TaskTwentyEight {
             }
         }
         System.out.println(minNumber);
+
+        //        level 7 рефакторинг, используя созданный в level_06  клас ArrayUtil
+//
+//        ArrayUtil arrayUtil = new ArrayUtil();
+//        int[] numbers = arrayUtil.createArray(15);
+//        arrayUtil.fillArrayWithRandomNumbers(numbers);
+//        arrayUtil.printArrayToConsole(numbers);
+//        System.out.println(arrayUtil.findMinNumber(numbers));
     }
 
 }

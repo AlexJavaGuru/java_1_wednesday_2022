@@ -1,5 +1,7 @@
 package student_arturs_melnikovs.lesson_05.level_04;
 
+import student_arturs_melnikovs.lesson_05.level_05.ArrayUtil;
+
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
@@ -17,6 +19,12 @@ class TaskTwentySix {
         }
 
         System.out.println(Arrays.toString(numbers));
+
+//        level 7 рефакторинг, используя созданный в level_06  клас ArrayUtil
+//
+//        ArrayUtil arrayUtil = new ArrayUtil();
+//        arrayUtil.fillArrayWithRandomNumbers(numbers);
+//        arrayUtil.printArrayToConsole(numbers);
     }
 
 }
