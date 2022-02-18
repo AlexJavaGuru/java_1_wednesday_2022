@@ -28,4 +28,14 @@ class ArrayUtil {
         }
         return max;
     }
+
+    public int findMinNumber(int[] arrayOfNumbers) {
+        int min = arrayOfNumbers[0];
+        for (int number : arrayOfNumbers) {
+            if (number < min) {
+                min = number;
+            }
+        }
+        return min;
+    }
 }
