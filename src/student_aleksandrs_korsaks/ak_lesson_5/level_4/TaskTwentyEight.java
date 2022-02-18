@@ -2,7 +2,7 @@ package student_aleksandrs_korsaks.ak_lesson_5.level_4;
 
 import java.util.Random;
 
-public class TaskTwentySeven {
+class TaskTwentyEight {
     public static void main(String[] args) {
         Random random = new Random();
         int[] numbers = new int[10];
@@ -11,13 +11,13 @@ public class TaskTwentySeven {
             System.out.println("Array`s element nr. " + (i + 1) + " = " + numbers[i]);
         }
 
-        int max = numbers[0];
+        int min = numbers[0];
 
         for (int number : numbers) {
-            if (number > max) {
-                max = number;
+            if (number < min) {
+                min = number;
             }
         }
-        System.out.println("Max Array`s elements is: " + max);
+        System.out.println("Min Array`s elements is: " + min);
     }
 }
