@@ -6,6 +6,7 @@ class ArrayUtilTest {
     public static void main(String[] args) {
         ArrayUtilTest test = new ArrayUtilTest();
         test.shouldCreateArray();
+        test.shouldFindMaxNumber();
     }
 
     public void shouldCreateArray() {
@@ -13,6 +14,13 @@ class ArrayUtilTest {
         int[] realResult = arrayUtil.createArray(5);
         checkTestResult("shouldCreateArray", expectedResult == realResult.length);
 
+    }
+
+    public void shouldFindMaxNumber() {
+        int[] testArray = {5, 10, 4, 0, -50};
+        int expectedResult = 10;
+        int realResult = arrayUtil.findMaxNumber(testArray);
+        checkTestResult("shouldFindMaxNumber", expectedResult == realResult);
     }
 
     public void checkTestResult(String testName, boolean condition) {
