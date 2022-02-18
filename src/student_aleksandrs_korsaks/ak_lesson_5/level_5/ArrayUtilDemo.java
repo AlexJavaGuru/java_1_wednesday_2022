@@ -8,5 +8,7 @@ public class ArrayUtilDemo {
         int[] arrayOfNumbers = arrayUtil.createArray(10);
         arrayUtil.fillArrayWithRandomNumbers(arrayOfNumbers);
         arrayUtil.printArrayToConsole(arrayOfNumbers);
+        int max = arrayUtil.findMaxNumber(arrayOfNumbers);
+        System.out.println("Max value of array`s elements is: " + max);
     }
 }

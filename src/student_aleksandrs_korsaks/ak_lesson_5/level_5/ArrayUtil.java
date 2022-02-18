@@ -18,4 +18,14 @@ class ArrayUtil {
     public void printArrayToConsole(int[] arrayOfNumbers) {
         System.out.println(Arrays.toString(arrayOfNumbers));
     }
+
+    public int findMaxNumber(int[] arrayOfNumbers) {
+        int max = arrayOfNumbers[0];
+        for (int number : arrayOfNumbers) {
+            if (number > max) {
+                max = number;
+            }
+        }
+        return max;
+    }
 }
