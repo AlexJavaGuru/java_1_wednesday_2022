@@ -1,5 +1,6 @@
 package student_aleksandrs_korsaks.ak_lesson_5.level_5;
 
+import java.util.Arrays;
 import java.util.Random;
 
 class ArrayUtil {
@@ -12,5 +13,9 @@ class ArrayUtil {
         for (int i = 0; i < arrayOfNumbers.length; i++) {
             arrayOfNumbers[i] = random.nextInt(100);
         }
+    }
+
+    public void printArrayToConsole(int[] arrayOfNumbers) {
+        System.out.println(Arrays.toString(arrayOfNumbers));
     }
 }

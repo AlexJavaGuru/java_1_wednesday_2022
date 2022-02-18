@@ -5,8 +5,8 @@ import java.util.Arrays;
 public class ArrayUtilDemo {
     public static void main(String[] args) {
         ArrayUtil arrayUtil = new ArrayUtil();
-        int[] arrayOfNumbers = arrayUtil.createArray(2);
+        int[] arrayOfNumbers = arrayUtil.createArray(10);
         arrayUtil.fillArrayWithRandomNumbers(arrayOfNumbers);
-        System.out.println(Arrays.toString(arrayOfNumbers));
+        arrayUtil.printArrayToConsole(arrayOfNumbers);
     }
 }
