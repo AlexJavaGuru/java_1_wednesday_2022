@@ -18,6 +18,6 @@ class TaskTwentyEight {
                 min = number;
             }
         }
-        System.out.println("Min Array`s elements is: " + min);
+        System.out.println("Min Array`s element is: " + min);
     }
 }
