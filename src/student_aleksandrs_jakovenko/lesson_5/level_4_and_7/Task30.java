@@ -1,12 +1,8 @@
-package student_aleksandrs_jakovenko.lesson_5.level_4;
+package student_aleksandrs_jakovenko.lesson_5.level_4_and_7;
 
 import student_aleksandrs_jakovenko.lesson_5.level_5_and_6.ArrayUtil;
 
-import java.util.Arrays;
-import java.util.Random;
-import java.util.Scanner;
-
-class Task27 {
+class Task30 {
     public static void main(String[] args) {
 //        int[] numbers;
 //        Scanner scanner = new Scanner(System.in);
@@ -15,23 +11,26 @@ class Task27 {
 //        numbers = new int[size];
 //        for (int i = 0; i < numbers.length; i++) {
 //            Random random = new Random();
-//            numbers[i] = random.nextInt();
+//            int input = random.nextInt();
+//            numbers[i] = input;
 //        }
 //        System.out.println(Arrays.toString(numbers));
-//
-//        int max = 0;
+//        System.out.println("Odd numbers: ");
 //        for (int i = 0; i < numbers.length; i++) {
-//            max = numbers[0];
-//            if (numbers[i] > max) {
-//                max = numbers[i];
+//            if (numbers[i] % 2 != 0) {
+//                System.out.println(numbers[i]);
 //            }
 //        }
-//        System.out.println("Max number = " + max);
 
         ArrayUtil arrayUtil = new ArrayUtil();
         int[] numbers = arrayUtil.createArray(5);
         arrayUtil.fillArrayWithRandomNumbers(numbers);
         arrayUtil.printArrayToConsole(numbers);
-        System.out.println(arrayUtil.findMaxNumber(numbers));
+        System.out.println("Odd numbers: ");
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] % 2 != 0) {
+                System.out.println(numbers[i]);
+            }
+        }
     }
 }
