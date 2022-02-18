@@ -1,6 +1,6 @@
 package student_aleksandrs_korsaks.ak_lesson_5.level_5;
 
-public class ArrayUtilDemo {
+class ArrayUtilDemo {
     public static void main(String[] args) {
         ArrayUtil arrayUtil = new ArrayUtil();
         int[] arrayOfNumbers = arrayUtil.createArray(10);
