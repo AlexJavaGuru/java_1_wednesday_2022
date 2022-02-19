@@ -19,7 +19,6 @@ class ArrayUtil {
 
         for (int i = 0; i < arrayLength; i++) {
             numbers[i] = (int) (Math.random() * 10);
-            System.out.println(numbers[i]);
         }
     return numbers;
     }
