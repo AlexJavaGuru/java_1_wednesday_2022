@@ -7,8 +7,7 @@ package student_jekaterina_soldatova.lesson_3.senior;
          tv.changeMode();
          if (tv.tvMode) {
              System.out.println("TV is now on, volume: " + tv.tvVolume + ", channel: " + tv.tvChannel + " - " + tv.getChannelName());
-         }
-         else {
+         } else {
              System.out.println("TV is off now");
          }
 
