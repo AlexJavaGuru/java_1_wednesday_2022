@@ -7,18 +7,19 @@
  */
 package student_jekaterina_soldatova.lesson_5.junior;
 
+import student_jekaterina_soldatova.lesson_5.middle.ArrayUtil;
+
 import java.util.Scanner;
 
 class Task26 {
     public static void main(String[] args) {
+        ArrayUtil arrayUtil = new ArrayUtil();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter length of the array");
         int arrayLength = scanner.nextInt();
         int[] numbers = new int[arrayLength];
+        arrayUtil.fillArrayWithRandomNumbers(numbers);
+        arrayUtil.printArrayToConsole(numbers);
 
-        for (int i = 0; i < arrayLength; i++) {
-            numbers[i] = (int)(Math.random()*10);
-            System.out.println(numbers[i]);
-        }
     }
 }
