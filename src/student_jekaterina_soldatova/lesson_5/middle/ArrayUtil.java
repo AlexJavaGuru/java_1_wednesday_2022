@@ -1,7 +1,7 @@
 package student_jekaterina_soldatova.lesson_5.middle;
 
-class ArrayUtil {
-    int[] createArray(int arrayLength) {
+public class ArrayUtil {
+    public int[] createArray(int arrayLength) {
         int[] array = new int[arrayLength];
         for (int i = 0; i < arrayLength; i++) {
             array[i] = i;
@@ -9,19 +9,19 @@ class ArrayUtil {
         return array;
     }
 
-    void fillArrayWithRandomNumbers(int[] array) {
+    public void fillArrayWithRandomNumbers(int[] array) {
         for (int i = 0; i < array.length; i++) {
             array[i] = (int) (Math.random() * 10);
         }
     }
 
-    void printArrayToConsole(int[] array) {
+    public void printArrayToConsole(int[] array) {
         for (int i : array) {
             System.out.println(i);
         }
     }
 
-    int findMaxNumber(int[] array) {
+    public int findMaxNumber(int[] array) {
         int max = 0;
         for (int i: array) {
             if (i > max) {
@@ -31,7 +31,7 @@ class ArrayUtil {
         return max;
     }
 
-    int findMinNumber(int[] array) {
+    public int findMinNumber(int[] array) {
         int min = array[0];
         for (int i = 1; i < array.length; i++) {
             if (array[i] < min) {
