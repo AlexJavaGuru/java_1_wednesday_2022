@@ -29,22 +29,19 @@ class Tv {
     }
 
     String getChannelName() {
-        if (tvChannel == 1) {
-            return "Discovery Channel";
-        }
-        if (tvChannel == 2) {
-            return "MTV";
-        }
-        if (tvChannel == 3) {
-            return "BBC One";
-        }
-        if (tvChannel == 4) {
-            return "HBO";
-        }
-        if (tvChannel == 5) {
-            return "Fuji TV";
-        } else {
-            return "no channel";
+        switch (tvChannel) {
+            case 1: 
+                return "Discovery Channel";
+            case 2: 
+                return "MTV";
+            case 3: 
+                return return "BBC One";
+            case 4: 
+                return "HBO";
+            case 5: 
+                return "Fuji TV";
+            default: 
+                return "no channel";
         }
     }
 
