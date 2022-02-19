@@ -7,16 +7,16 @@
  */
 package student_jekaterina_soldatova.lesson_5.junior;
 
+import student_jekaterina_soldatova.lesson_5.middle.ArrayUtil;
+
 class Task30 {
     public static void main(String[] args) {
+        ArrayUtil arrayUtil = new ArrayUtil();
         int arrayLength = (int) (Math.random() * 10 + 1);
         System.out.println("Array length is " + arrayLength);
         int[] numbers = new int[arrayLength];
-
-        for (int i = 0; i < arrayLength; i++) {
-            numbers[i] = (int) (Math.random() * 10);
-            System.out.println(numbers[i]);
-        }
+        arrayUtil.fillArrayWithRandomNumbers(numbers);
+        arrayUtil.printArrayToConsole(numbers);
 
         int count = 0;
         for (int i : numbers) {
