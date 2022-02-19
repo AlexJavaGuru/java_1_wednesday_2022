@@ -20,6 +20,5 @@ class Task26 {
         int[] numbers = new int[arrayLength];
         arrayUtil.fillArrayWithRandomNumbers(numbers);
         arrayUtil.printArrayToConsole(numbers);
-
     }
 }

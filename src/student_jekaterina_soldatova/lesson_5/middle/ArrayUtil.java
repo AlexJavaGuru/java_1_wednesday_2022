@@ -2,8 +2,12 @@ package student_jekaterina_soldatova.lesson_5.middle;
 
 public class ArrayUtil {
     public int[] createArray(int arrayLength) {
-        int[] array = new int[arrayLength];
-        for (int i = 0; i < arrayLength; i++) {
+        return new int[arrayLength];
+    }
+
+    int[] fillArrayWithNumbers(int length) {
+        int[] array = new int[length];
+        for (int i = 0; i < length; i++) {
             array[i] = i;
         }
         return array;
