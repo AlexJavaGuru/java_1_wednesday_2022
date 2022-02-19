@@ -10,7 +10,7 @@ class ArrayDefinition1 {
 }
 
  */
-package student_jekaterina_soldatova.lesson_5;
+package student_jekaterina_soldatova.lesson_5.intern;
 
 class Task1 {
 
