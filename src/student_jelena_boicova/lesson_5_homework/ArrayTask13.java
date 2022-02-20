@@ -16,6 +16,5 @@ class ArrayTask13 {
 
         int sum = numbers[0] + numbers[1] + numbers[2];
         System.out.println("Sum = " + sum);
-
     }
 }
