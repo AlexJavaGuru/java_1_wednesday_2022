@@ -21,23 +21,23 @@ public class ArrayUtil {
         }
 
     public int findMaxNumber(int[] array) {
-    int max = array[10];
+    int maxNumber = array[0];
         for (int number : array) {
-            if (number > max) {
-                max = number;
+            if (number > maxNumber) {
+                maxNumber = number;
             }
         }
-        return max;
+        return maxNumber;
     }
 
     public int findMinNumber(int[] array) {
-    int min = array[10];
+    int minNumber = array[0];
         for (int number : array) {
-            if (number < min) {
-                min = number;
+            if (number < minNumber) {
+                minNumber = number;
             }
         }
-        return min;
+        return minNumber;
     }
 
 }
