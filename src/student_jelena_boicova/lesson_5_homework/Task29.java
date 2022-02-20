@@ -2,7 +2,6 @@ package student_jelena_boicova.lesson_5_homework;
 
 import java.util.Arrays;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Task29 {
 
