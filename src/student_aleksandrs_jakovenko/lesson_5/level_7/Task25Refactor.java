@@ -1,26 +1,16 @@
-package student_aleksandrs_jakovenko.lesson_5.level_4_and_7;
+package student_aleksandrs_jakovenko.lesson_5.level_7;
 
 import student_aleksandrs_jakovenko.lesson_5.level_5_and_6.ArrayUtil;
 
 import java.util.Scanner;
 
-class Task25 {
+public class Task25Refactor {
     public static void main(String[] args) {
-//        int[] numbers;
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.println("Enter array length:");
-//        int size = scanner.nextInt();
-//        numbers = new int[size];
-//        System.out.println("Enter numbers:");
-//        for (int i = 0; i < numbers.length; i++) {
-//            int input = scanner.nextInt();
-//            numbers[i] = input;
-//        }
-//        System.out.println(Arrays.toString(numbers));
 
         ArrayUtil arrayUtil = new ArrayUtil();
         int[] numbers = arrayUtil.createArray(5);
         arrayUtil.fillArrayWithRandomNumbers(numbers);
+
         System.out.println("Enter numbers:");
         Scanner scanner = new Scanner(System.in);
         for (int i = 0; i < numbers.length; i++) {
