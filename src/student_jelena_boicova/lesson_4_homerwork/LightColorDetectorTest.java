@@ -24,6 +24,7 @@ public class LightColorDetectorTest {
             System.out.println("Violet test = FAIL");
         }
     }
+
     public void blueTest() {
         String expectedResult = "Blue";
         LightColorDetector lightColorDetector = new LightColorDetector();
@@ -34,6 +35,7 @@ public class LightColorDetectorTest {
             System.out.println("Blue test = FAIL");
         }
     }
+
     public void greenTest() {
         String expectedResult = "Green";
         LightColorDetector lightColorDetector = new LightColorDetector();
@@ -44,6 +46,7 @@ public class LightColorDetectorTest {
             System.out.println("Green test = FAIL");
         }
     }
+
     public void yellowTest() {
         String expectedResult = "Yellow";
         LightColorDetector lightColorDetector = new LightColorDetector();
@@ -54,6 +57,7 @@ public class LightColorDetectorTest {
             System.out.println("Yellow test = FAIL");
         }
     }
+
     public void orangeTest() {
         String expectedResult = "Orange";
         LightColorDetector lightColorDetector = new LightColorDetector();
@@ -64,6 +68,7 @@ public class LightColorDetectorTest {
             System.out.println("Orange test = FAIL");
         }
     }
+
     public void redTest() {
         String expectedResult = "Red";
         LightColorDetector lightColorDetector = new LightColorDetector();
@@ -74,6 +79,7 @@ public class LightColorDetectorTest {
             System.out.println("Red test = FAIL");
         }
     }
+
     public void invisibleLightTest() {
         String expectedResult = "Invisible Light";
         LightColorDetector lightColorDetector = new LightColorDetector();
@@ -85,4 +91,3 @@ public class LightColorDetectorTest {
         }
     }
 }
-

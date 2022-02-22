@@ -12,7 +12,6 @@ import java.util.Scanner;
             System.out.println("Enter a number: ");
             int number = scanner.nextInt();
 
-
             if (number < 0) {
                 System.out.println("Entered number is negative");
                 // negative
@@ -22,7 +21,5 @@ import java.util.Scanner;
             } else {
                 System.out.println("Your entered number is not a positive and non-negative number");
             }
-
         }
     }
-

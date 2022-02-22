@@ -4,16 +4,15 @@ import java.util.Scanner;
 
 public class Task5 {
     public static void main(String[] args) {
-
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter two numbers");
-        int numberA = scanner.nextInt();
-        int numberB = scanner.nextInt();
+        int numberFirst = scanner.nextInt();
+        int numberSecond = scanner.nextInt();
 
-        if (numberA < numberB) {
-            System.out.println(numberB);
+        if (numberFirst < numberSecond) {
+            System.out.println(numberSecond);
         } else {
-            System.out.println(numberA);
+            System.out.println(numberFirst);
         }
     }
 }

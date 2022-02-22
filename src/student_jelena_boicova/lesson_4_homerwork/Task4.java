@@ -14,9 +14,7 @@ public class Task4 {
 
         if ( number % 2 == 0 ){
             System.out.println("Число четное");
-        }
-        else
+        } else
             System.out.println("Число нечетное");
     }
-
 }
