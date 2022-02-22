@@ -11,9 +11,8 @@ class Task1 {
 
         if (number >= 0) {
             System.out.println("Ваше число " + number + " является положительным.");
-        }
-        if (number < 0) {
-            System.out.println("Ваше число  " + number + " является отрицательным.");
+        } else {
+            System.out.println("Ваше число " + number + " является отрицательным.");
         }
     }
 }

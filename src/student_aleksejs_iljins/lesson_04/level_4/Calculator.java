@@ -24,12 +24,11 @@ class Calculator {
             return firstNumber;
         } else return secondNumber;
     }
-    public int maxOfThree(int a, int b, int c) {
-        if (a >= b && a >= c) {
-            return a;
-        } else if (b >= a && b >= c) {
-            return b;
-        } else return c;
-
+    public int maxOfThree(int firstNumber, int secondNumber, int thirdNumber) {
+        if (firstNumber >= secondNumber && firstNumber >= thirdNumber) {
+            return firstNumber;
+        } else if (secondNumber >= firstNumber && secondNumber >= thirdNumber) {
+            return secondNumber;
+        } else return thirdNumber;
     }
 }

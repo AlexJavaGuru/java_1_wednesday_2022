@@ -6,17 +6,18 @@ class Task8 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Input first number: ");
-        int a = scanner.nextInt();
+        int firstNumber = scanner.nextInt();
         System.out.println("Input second number: ");
-        int b = scanner.nextInt();
+        int secondNumber = scanner.nextInt();
         System.out.println("Input second number: ");
-        int c = scanner.nextInt();
+        int thirdNumber = scanner.nextInt();
 
-        if (a == b && b == c) {
+        if (firstNumber == secondNumber && secondNumber == thirdNumber) {
             System.out.println("\"All numbers are equal\"");
-        } else if (a != b && b != c && a != c) {
+        } else if (firstNumber != secondNumber && secondNumber != thirdNumber && firstNumber != thirdNumber) {
             System.out.println("\"All numbers are different\"");
-        } else if (a == b || a == c || a != c || b != c) {
+        } else {
+        //} else if (firstNumber == secondNumber || firstNumber == thirdNumber || firstNumber != thirdNumber || secondNumber != thirdNumber) {
             System.out.println("\"Neither all are equal or different\"" );
         }
     }

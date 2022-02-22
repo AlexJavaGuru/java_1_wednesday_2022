@@ -4,16 +4,18 @@ import java.util.Scanner;
 
 class Task4 {
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите целое число: ");
-        int a = scanner.nextInt();
-        int b = 2;
-        int c = a % b;
 
-        if (c == 0) {
+        int firstNumber = scanner.nextInt();
+        //int secondNumber = 2;
+        int result = firstNumber % 2;
+
+        if (result == 0) {
             System.out.println("Ваше число чётное");
-        }
-        if (c != 0) {
+        } else {
+        //if (result != 0) {
             System.out.println("Ваше число нечётное");
         }
     }

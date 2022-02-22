@@ -10,11 +10,9 @@ class Task2 {
 
         if (number > 0) {
             System.out.println("Ваше число " + number + " является положительным.");
-        }
-        if (number < 0) {
-            System.out.println("Ваше число  " + number + " является отрицательным.");
-        }
-        if (number == 0) {
+        } else if (number < 0) {
+            System.out.println("Ваше число " + number + " является отрицательным.");
+        } else  {
             System.out.println("Ваше число " + number + " равняется нулю.");
         }
     }

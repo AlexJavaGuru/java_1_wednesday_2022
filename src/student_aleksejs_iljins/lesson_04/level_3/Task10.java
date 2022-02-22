@@ -6,19 +6,19 @@ class Task10 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите первое целое число: ");
-        int a = scanner.nextInt();
+        int firstNumber = scanner.nextInt();
         System.out.println("Введите второе целое число: ");
-        int b = scanner.nextInt();
+        int secondNumber = scanner.nextInt();
         System.out.println("Введите третье целое число: ");
-        int c = scanner.nextInt();
+        int thirdNumber = scanner.nextInt();
 
-        if (a > b && a > c) {
-            System.out.println("Эта цифра наибольшая: " + a);
-        } else if (b > a && b > c) {
-            System.out.println("Эта цифра наибольшая: " + b);
-        } else  if (c > a && c > b) {
-            System.out.println("Эта цифра наибольшая: " + c);
-        } else  if (a == b && b == c) {
+        if (firstNumber > secondNumber && firstNumber > thirdNumber) {
+            System.out.println("Эта цифра наибольшая: " + firstNumber);
+        } else if (secondNumber > firstNumber && secondNumber > thirdNumber) {
+            System.out.println("Эта цифра наибольшая: " + secondNumber);
+        } else  if (thirdNumber > firstNumber && thirdNumber > secondNumber) {
+            System.out.println("Эта цифра наибольшая: " + thirdNumber);
+        } else  if (firstNumber == secondNumber && secondNumber == thirdNumber) {
             System.out.println("Все цифры равны.");
         }
     }

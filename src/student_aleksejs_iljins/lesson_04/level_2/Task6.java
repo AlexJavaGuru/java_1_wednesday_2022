@@ -6,14 +6,14 @@ class Task6 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите первое целое число: ");
-        int a = scanner.nextInt();
+        int firstNumber = scanner.nextInt();
         System.out.println("Введите второе целое число: ");
-        int b = scanner.nextInt();
+        int secondNumber = scanner.nextInt();
 
-        if (a < b) {
-            System.out.println("Эта цифра наименьшая: " + a);
-        } else if (a > b){
-            System.out.println("Эта цифра наименьшая: " + b);
+        if (firstNumber < secondNumber) {
+            System.out.println("Эта цифра наименьшая: " + firstNumber);
+        } else if (firstNumber > secondNumber){
+            System.out.println("Эта цифра наименьшая: " + secondNumber);
         }
     }
 }

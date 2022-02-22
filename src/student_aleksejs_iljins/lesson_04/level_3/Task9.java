@@ -6,17 +6,18 @@ class Task9 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Input first number: ");
-        int a = scanner.nextInt();
+        int firstNumber = scanner.nextInt();
         System.out.println("Input second number: ");
-        int b = scanner.nextInt();
+        int secondNumber = scanner.nextInt();
         System.out.println("Input third number: ");
-        int c = scanner.nextInt();
+        int thirdNumber = scanner.nextInt();
 
-        if (a < b && b < c) {
+        if (firstNumber < secondNumber && secondNumber < thirdNumber) {
             System.out.println("\"Increasing\"");
-        } else if (a > b && b > c) {
+        } else if (firstNumber > secondNumber && secondNumber > thirdNumber) {
             System.out.println("\"Decreasing\"");
-        } else if (a > b || b < c || a < b || b > c || a == b || b == c) {
+        } else {
+        //} else if (firstNumber > secondNumber || secondNumber < thirdNumber || firstNumber < secondNumber || secondNumber > thirdNumber || firstNumber == secondNumber || secondNumber == thirdNumber) {
             System.out.println("\"Neither increasing or decreasing order\"" );
         }
     }
