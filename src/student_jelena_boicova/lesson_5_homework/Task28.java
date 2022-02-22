@@ -24,5 +24,4 @@ public class Task28 {
         }
         System.out.println("Minimum number = " + minNum);
     }
-
 }

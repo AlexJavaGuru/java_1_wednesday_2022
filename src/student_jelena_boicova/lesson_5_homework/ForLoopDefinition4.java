@@ -7,6 +7,5 @@ public class ForLoopDefinition4 {
             System.out.println(i);
         }
     }
-
 }
 

@@ -45,7 +45,6 @@ public class ArrayUtilTest {
             System.out.println("Min number is wrong");
         }
     }
-
 }
 
 

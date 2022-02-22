@@ -16,5 +16,4 @@ public class Task25 {
         }
         System.out.println(Arrays.toString(numbers));
     }
-
 }
