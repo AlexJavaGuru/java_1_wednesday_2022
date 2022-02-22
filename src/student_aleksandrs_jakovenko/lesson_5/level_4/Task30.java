@@ -5,12 +5,15 @@ import java.util.Random;
 import java.util.Scanner;
 
 class Task30 {
+
     public static void main(String[] args) {
         int[] numbers;
         Scanner scanner = new Scanner(System.in);
+
         System.out.println("Enter array length:");
         int size = scanner.nextInt();
         numbers = new int[size];
+
         for (int i = 0; i < numbers.length; i++) {
             Random random = new Random();
             int input = random.nextInt();
