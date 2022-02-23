@@ -1,6 +1,6 @@
 package student_aleksandrs_jakovenko.lesson_2.level_senior;
 
-public class SuperTask5 {
+class SuperTask5 {
     public static void main(String[] args) {
 
 //      System.out.println("Commented");

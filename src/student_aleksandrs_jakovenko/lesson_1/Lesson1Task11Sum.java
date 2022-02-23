@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 //Write a Java program to print the sum of two numbers.
 
-public class Lesson1Task11Sum {
+class Lesson1Task11Sum {
     public static void main(String[] args) {
         Scanner num = new Scanner(System.in);
 
