@@ -7,30 +7,21 @@ public class Task10 {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter three numbers");
-        int a = scanner.nextInt();
-        int b = scanner.nextInt();
-        int c = scanner.nextInt();
+        int firstNumber = scanner.nextInt();
+        int secondNumber = scanner.nextInt();
+        int thirdNumber = scanner.nextInt();
 
-        if (a <= b && b < c) {
-            System.out.println(c);
+        if (firstNumber <= secondNumber && secondNumber < thirdNumber) {
+            System.out.println(thirdNumber);
 
-        } else if (a > b && a > c){
-            System.out.println(a);
-
-        } else if (a > b && b >= c){
-            System.out.println(a);
-
-        } else if (a <= c && c < b){
-            System.out.println(b);
-
-        } else if (a < c && b < a){
-            System.out.println(b);
-
-        } else if (a < b && c < b){
-            System.out.println(b);
-
-        } else if (a > c && b < c){
-            System.out.println(a);
-    }
+        } else if (firstNumber > secondNumber && firstNumber > thirdNumber){
+            System.out.println(firstNumber);
+        } else if (firstNumber <= thirdNumber && thirdNumber < secondNumber){
+            System.out.println(secondNumber);
+        } else if (firstNumber < thirdNumber && secondNumber < firstNumber){
+            System.out.println(secondNumber);
+        } else if (firstNumber < secondNumber && thirdNumber < secondNumber){
+            System.out.println(secondNumber);
+        }
     }
 }

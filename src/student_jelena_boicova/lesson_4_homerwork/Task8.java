@@ -7,16 +7,14 @@ public class Task8 {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter three numbers");
-        int a = scanner.nextInt();
-        int b = scanner.nextInt();
-        int c = scanner.nextInt();
+        int firstNumber = scanner.nextInt();
+        int secondNumber = scanner.nextInt();
+        int thirdNumber = scanner.nextInt();
 
-        if (a == b && b == c && a == c) {
+        if (firstNumber == secondNumber && secondNumber == thirdNumber) {
             System.out.println("All numbers are equal");
-
-        } else if (a != b && b != c && a != c){
+        } else if (firstNumber != secondNumber && secondNumber != thirdNumber && firstNumber != thirdNumber){
             System.out.println("All numbers are different");
-
         } else {
             System.out.println("Neither all are equal or different");
         }

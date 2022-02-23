@@ -10,27 +10,19 @@ public class Task3 {
 
         if (x == 1) {
             System.out.println("Monday");
-        }
-        else if (x == 2) {
+        } else if (x == 2) {
             System.out.println("Tuesday");
-        }
-        else if (x == 3) {
+        } else if (x == 3) {
             System.out.println("Wednesday");
-        }
-        else if (x == 4) {
+        } else if (x == 4) {
             System.out.println("Thursday");
-        }
-        else if (x == 5) {
+        } else if (x == 5) {
             System.out.println("Friday");
-        }
-        else if (x == 6) {
+        } else if (x == 6) {
             System.out.println("Saturday");
-        }
-        else if (x == 7) {
+        } else if (x == 7) {
             System.out.println("Sunday");
-        }
-        else
+        } else
             System.out.println("There is no such day of the week ");
         }
-
-    }
+}

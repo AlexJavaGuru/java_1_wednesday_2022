@@ -15,7 +15,6 @@ public class CalculatorTest {
     calculatorTest.maxOfTwoNumbersFirstTest();
     calculatorTest.maxOfTwoNumbersSecondTest();
     calculatorTest.maxOfTwoNumbersSecondEqual();
-
     calculatorTest.maxOfThreeNumbersFirstTest();
     calculatorTest.maxOfThreeNumbersSecondTest();
     calculatorTest.maxOfThreeNumbersThirdTest();
@@ -23,7 +22,6 @@ public class CalculatorTest {
     calculatorTest.maxOfThreeNumbersFirstAndThirdTest();
     calculatorTest.maxOfThreeNumbersSecondAndThirdTest();
     calculatorTest.maxOfThreeNumbersEqualTest();
-
     }
 
     public void sumTest() {
@@ -38,7 +36,8 @@ public class CalculatorTest {
             System.out.println("Sum test = FAIL");
         }
     }
-        public void subTest() {
+
+    public void subTest() {
         int firstNumber = 20;
         int secondNumber = 5;
         int expectedResult = 15;
@@ -50,6 +49,7 @@ public class CalculatorTest {
             System.out.println("Sub test = FAIL");
         }
     }
+
     public void mulTest() {
          int firstNumber = 10;
          int secondNumber = 5;
@@ -62,6 +62,7 @@ public class CalculatorTest {
             System.out.println("Mul test = FAIL");
          }
     }
+
     public void divTest() {
           int firstNumber = 10;
           int secondNumber = 5;
@@ -74,6 +75,7 @@ public class CalculatorTest {
               System.out.println("Div test = FAIL");
           }
     }
+
     public void isEvenTest() {
           int number = 10;
           boolean expectedResult = true;
@@ -85,6 +87,7 @@ public class CalculatorTest {
               System.out.println("IsEven test = FAILED");
           }
     }
+
     public void maxOfTwoNumbersFirstTest() {
           int firstNumber = 70;
           int secondNumber = 50;
@@ -97,6 +100,7 @@ public class CalculatorTest {
               System.out.println("First is bigger test = FAILED");
           }
     }
+
     public void maxOfTwoNumbersSecondTest() {
          int firstNumber = 100;
          int secondNumber = 150;
@@ -109,6 +113,7 @@ public class CalculatorTest {
              System.out.println("Second is bigger test = FAILED");
         }
     }
+
     public void maxOfTwoNumbersSecondEqual() {
         int firstNumber = 70;
         int secondNumber = 70;
@@ -119,8 +124,9 @@ public class CalculatorTest {
             System.out.println("Equal test = OK");
         } else {
             System.out.println("Equal test = FAILED");
+        }
     }
-}
+
     public void maxOfThreeNumbersFirstTest(){
         int firstNumber = 30;
         int secondNumber = 20;
@@ -132,8 +138,9 @@ public class CalculatorTest {
             System.out.println("First is bigger test = OK");
         } else {
             System.out.println("First is bigger test = FAILED");
+        }
     }
-}
+
     public void maxOfThreeNumbersSecondTest(){
         int firstNumber = 20;
         int secondNumber = 100;
@@ -147,6 +154,7 @@ public class CalculatorTest {
             System.out.println("Second is bigger test = FAILED");
         }
     }
+
     public void maxOfThreeNumbersThirdTest(){
         int firstNumber = 20;
         int secondNumber = 70;
@@ -158,8 +166,9 @@ public class CalculatorTest {
             System.out.println("Third is bigger test = OK");
         } else {
             System.out.println("Third is bigger test = FAILED");
+        }
     }
-}
+
     public void maxOfThreeNumbersFirstAndSecondTest(){
         int firstNumber = 85;
         int secondNumber = 85;
@@ -171,8 +180,9 @@ public class CalculatorTest {
             System.out.println("First and Second are equal and bigger test = OK");
         } else {
             System.out.println("First and Second are equal and bigger test = FAILED");
+        }
     }
-}
+
     public void maxOfThreeNumbersFirstAndThirdTest(){
         int firstNumber = 90;
         int secondNumber = 60;
@@ -184,8 +194,9 @@ public class CalculatorTest {
             System.out.println("First and Third are equal and bigger test = OK");
         } else {
             System.out.println("First and Third are equal and bigger test = FAILED");
+        }
     }
-}
+
     public void maxOfThreeNumbersSecondAndThirdTest(){
         int firstNumber = 10;
         int secondNumber = 35;
@@ -199,6 +210,7 @@ public class CalculatorTest {
             System.out.println("Second and Third are equal and bigger test = FAILED");
         }
     }
+
     public void maxOfThreeNumbersEqualTest(){
         int firstNumber = 73;
         int secondNumber = 73;

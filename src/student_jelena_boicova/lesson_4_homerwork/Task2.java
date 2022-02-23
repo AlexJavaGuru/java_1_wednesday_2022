@@ -11,16 +11,11 @@ public class Task2 {
 
         if (x > 0) {
             System.out.println("Entered number is positive");
-        }
-        else if (x < 0) {
+        } else if (x < 0) {
             System.out.println("Entered number is negative");
-
         } else {
             System.out.println("Entered number is equal to 0");
-
         }
 
     }
 }
-
-
