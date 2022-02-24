@@ -1,6 +1,6 @@
 package student_aleksandrs_korsaks.ak_lesson_6.level_1;
 
-public class WhileDefinition5 {
+class WhileDefinition5 {
 
     public static void main(String[] args) {
         int i = 1;
