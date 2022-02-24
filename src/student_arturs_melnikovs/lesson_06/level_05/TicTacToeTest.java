@@ -1,6 +1,8 @@
 package student_arturs_melnikovs.lesson_06.level_05;
 
 
+import java.util.Arrays;
+
 class TicTacToeTest {
     public static void main(String[] args) {
         TicTacToeTest tester = new TicTacToeTest();
@@ -23,6 +25,7 @@ class TicTacToeTest {
         tester.testIsDrawv2();
         tester.testIsDrawv3();
         tester.testIsDrawv4();
+        tester.testCreateField();
     }
 
     public void testIsDrawv1() {
@@ -182,8 +185,22 @@ class TicTacToeTest {
         checkResult(result, "Win position test 4");
     }
 
+    public void testCreateField() {
+        TicTacToe subject = new TicTacToe();
+        int[][] expectedResult = {{-1, -1, -1}, {-1, -1, -1}, {-1, -1, -1}};
+        int[][] actualResult = subject.createField(3, 3);
+        checkResult(expectedResult, actualResult, "Create field test");
+    }
+
     void checkResult(boolean actualResult, String testName) {
         if (actualResult) {
+            System.out.println(testName + " has passed");
+        } else {
+            System.out.println(testName + " has failed");
+        }
+    }
+    void checkResult(int[][] expectedResult, int[][] actualResult, String testName) {
+        if (Arrays.deepEquals(expectedResult, actualResult)) {
             System.out.println(testName + " has passed");
         } else {
             System.out.println(testName + " has failed");
