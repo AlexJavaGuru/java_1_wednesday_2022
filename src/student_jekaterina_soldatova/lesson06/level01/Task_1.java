@@ -1,4 +1,4 @@
-package student_jekaterina_soldatova.lesson06.level_1_intern;
+package student_jekaterina_soldatova.lesson06.level01;
 
 class Task_1 {
     public static void main(String[] args) {
