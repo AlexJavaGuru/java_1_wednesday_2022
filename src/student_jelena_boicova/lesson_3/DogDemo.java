@@ -8,7 +8,6 @@ public class DogDemo {
         myDog.setAge(15);
 
         myDog.voice();
-
     }
 
 }

@@ -35,7 +35,7 @@ class Tv {
             case 2: 
                 return "MTV";
             case 3: 
-                return return "BBC One";
+                return "BBC One";
             case 4: 
                 return "HBO";
             case 5: 
