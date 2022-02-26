@@ -7,5 +7,6 @@ public class ArrayServiceDemo {
         int number = 4;
         int result = check.ArrayIncludesNumberCountTimes(array, number);
         System.out.println(result);
+
     }
 }

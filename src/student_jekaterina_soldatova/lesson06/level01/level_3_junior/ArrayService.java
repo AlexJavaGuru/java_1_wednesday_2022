@@ -23,9 +23,9 @@ class ArrayService {
     }
 
     void ChangeOneNumberInArrayFirst(int[] array, int numberToChange, int newNumber){
-        for (int i: array) {
-            if (i == numberToChange) {
-                i = newNumber;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == numberToChange) {
+                array[i] = newNumber;
                 break;
             }
         }
@@ -40,14 +40,24 @@ class ArrayService {
     }
 
     void ReverseArray(int[] array){
-        int arrayLength = array.length;
-        int[] newArray = new int[arrayLength];
-        for (int i = 0; i < arrayLength; i++) {
-            newArray[arrayLength-1-i] = array[i];
+        int arrayLength = array.length-1;
+        int[] newArray = array;
+        System.out.println("method" + Arrays.toString(newArray));
+
+        for (int i = 0; i < (arrayLength+1); i++) {
+            System.out.println(i);
+
+            array[i] = newArray[arrayLength-i];
+           // System.out.println(newArray[i]);
+            System.out.println(newArray[i] + " - " + i);
+
         }
+        System.out.println(Arrays.toString(array));
+
+        //array = newArray;
     }
 
     void SortArray(int[] array){
-        Arrays.sort(array);
+
     }
 }
