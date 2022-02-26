@@ -2,7 +2,7 @@ package student_jekaterina_soldatova.lesson06.level01.level_2_intern;
 
 import java.util.Scanner;
 
-public class DayOfTheWeekDetector {
+class DayOfTheWeekDetector {
     int getDayNumberFromUser() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Input day number between 1 and 7 : ");
