@@ -18,6 +18,7 @@ class ArrayServiceTest {
         test.replaceAllNegative();
         test.replaceAllNothing();
         test.revertTest();
+        test.bubbleSortTest();
     }
 
     public void hasNumberPositive() {
@@ -109,11 +110,19 @@ class ArrayServiceTest {
     }
 
     public void revertTest() {
-        int[] expectedResult = {5, 4, 3, 2, 1};
+        int[] expectedResult = {5, -4, 3, -2, 1};
         ArrayService arrayService = new ArrayService();
-        int[] array = {1, 2, 3, 4, 5};
+        int[] array = {1, -2, 3, -4, 5};
         arrayService.revert(array);
         checkResultArray(array, expectedResult, "revertTest");
+    }
+
+    public void bubbleSortTest() {
+        int[] array = {5, -4, 3, -2, 1};
+        int[] expectedResult = {-4, -2, 1, 3, 5};
+        ArrayService arrayService = new ArrayService();
+        arrayService.bubbleSort(array);
+        checkResultArray(array, expectedResult, "bubbleSortTest");
     }
 
     public void checkResult(boolean realResult, boolean expectedResult, String testName){
