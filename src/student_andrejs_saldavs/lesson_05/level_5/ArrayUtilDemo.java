@@ -11,11 +11,14 @@ class ArrayUtilDemo {
         arrayUtil.fillArrayWithRandomNumbers(myArray);
 //        System.out.println(Arrays.toString(myArray));
 
-        arrayUtil.printArrayToConsole(myArray);
+        int[] arrayDemo = arrayUtil.printArrayToConsole(myArray);
+        System.out.println(Arrays.toString(arrayDemo));
 
-        arrayUtil.findMaxNumber(myArray);
+        int maxNumberDemo = arrayUtil.findMaxNumber(myArray);
+        System.out.println(maxNumberDemo);
 
-        arrayUtil.findMinNumber(myArray);
+        int minNumberDemo = arrayUtil.findMinNumber(myArray);
+        System.out.println(minNumberDemo);
     }
 
 }

@@ -13,8 +13,16 @@ public class TaskTwentyEight {
             numbers[i] = random.nextInt();
         }
         System.out.println(Arrays.toString(numbers));
-        Arrays.sort(numbers);
-        System.out.println(numbers[0]);
+//        Arrays.sort(numbers);
+//        System.out.println(numbers[0]);
+        int minNumber = numbers[0];
+        for (int number : numbers) {
+            if (minNumber > number) {
+                minNumber = number;
+            }
+        }
+        System.out.println(minNumber);
+
     }
 
 }

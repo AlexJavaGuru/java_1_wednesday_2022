@@ -7,16 +7,14 @@ class TaskFifteen {
 
     public static void main(String[] args) {
         int[] numbers = new int[3];
+        Random random = new Random();
 
         for (int i = 0; i < numbers.length; i++) {
-            Random random = new Random();
             numbers[i] = random.nextInt();
+            System.out.print(numbers[i]);
+            numbers[i] = numbers[i] + 2;
+            System.out.println(" + 2 = " + numbers[i]);
         }
-
-        System.out.println(Arrays.toString(numbers));
-        numbers[0] = numbers[0] + 2;
-        numbers[1] = numbers[1] + 2;
-        numbers[2] = numbers[2] + 2;
         System.out.println(Arrays.toString(numbers));
     }
 

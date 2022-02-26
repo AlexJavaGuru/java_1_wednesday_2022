@@ -20,8 +20,9 @@ class ArrayUtil {
 
     }
 
-    public void printArrayToConsole(int[] array) {
+    public int[] printArrayToConsole(int[] array) {
         System.out.println(Arrays.toString(array));
+        return array;
     }
 
     public int findMaxNumber(int[] array) {

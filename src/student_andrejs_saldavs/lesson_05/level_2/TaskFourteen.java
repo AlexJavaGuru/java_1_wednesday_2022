@@ -6,19 +6,20 @@ import java.util.Random;
 class TaskFourteen {
 
     public static void main(String[] args) {
-        int[] numbers = new int[3];
 
-        for (int i = 0; i < numbers.length; i++) {
+        int[] numbers = new int[3];
+        double avg = 0;
+
+        for (int i = 0; i < numbers.length ; i++) {
             Random random = new Random();
             numbers[i] = random.nextInt();
+            avg += numbers[i];
 
         }
 
-        System.out.println(Arrays.toString(numbers));
-
-        int sum = numbers[0] + numbers[1] + numbers[2];
-        int avg = sum/3;
         System.out.println(avg);
+
+        System.out.println(Arrays.toString(numbers));
     }
 
 }

@@ -7,13 +7,13 @@ class TaskThirteen {
 
     public static void main(String[] args) {
         int[] numbers = new int[3];
+        int sum = 0;
 
         for (int i = 0; i < numbers.length; i++) {
             Random random = new Random();
             numbers[i] = random.nextInt();
+            sum =+ numbers[i];
         }
-        System.out.println(Arrays.toString(numbers));
-        int sum = numbers[0] + numbers[1] + numbers[2];
         System.out.println(sum);
     }
 
