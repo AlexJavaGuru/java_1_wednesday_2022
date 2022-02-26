@@ -77,8 +77,8 @@ class ArrayServiceTest {
     }
 
     void ReverseArray() {
-        int[] smth = {0, 1, 2, 3};
-        int[] expectedResult = {3, 2, 1, 0};
+        int[] smth = {5, 6, 7, 8};
+        int[] expectedResult = {8, 7, 6, 5};
         ArrayService arrayService = new ArrayService();
         System.out.println(Arrays.toString(smth) + "result before method");
         arrayService.ReverseArray(smth);
