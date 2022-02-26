@@ -5,7 +5,7 @@ public class ArrayServiceDemo {
         ArrayService check = new ArrayService();
         int[] array = {1, 2, 3, 3};
         int number = 4;
-        int result = check.CheckArrayForNumber(array, number);
+        int result = check.ArrayIncludesNumberCountTimes(array, number);
         System.out.println(result);
     }
 }
