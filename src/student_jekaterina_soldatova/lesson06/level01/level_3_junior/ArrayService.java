@@ -40,25 +40,18 @@ class ArrayService {
     }
 
     void ReverseArray(int[] array){
-        int length = array.length-1;
-        int[] newArray = array;
-    //    System.out.println("method" + Arrays.toString(newArray));
+        int length = array.length;
+        int[] copiedArray = array;
+        System.out.println(Arrays.toString(copiedArray) + " copied array");
 
-        for (int i = 0; i < (length+1); i++) {
-           // System.out.println(i + " index to change");
-            System.out.println(length-i + " index, " + newArray[(length-i)] + " value");
-            System.out.println(length-i + " new value index");
+        for (int i = 0; i < (length); i++) {
+            System.out.println(Arrays.toString(copiedArray) + " - iteration " + i);
 
-
-
-            //       System.out.println(newArray[arrayLength-i] + " copying");
-
-
-            array[i] = newArray[(length-i)];
+            array[i] = copiedArray[(length-1-i)];
         }
-        //System.out.println(Arrays.toString(array));
+        System.out.println(Arrays.toString(array) + " resulted array");
 
-        //array = newArray;
+
     }
 
     void SortArray(int[] array){

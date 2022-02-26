@@ -80,10 +80,10 @@ class ArrayServiceTest {
         int[] smth = {5, 6, 7, 8};
         int[] expectedResult = {8, 7, 6, 5};
         ArrayService arrayService = new ArrayService();
-        System.out.println(Arrays.toString(smth) + "result before method");
+  //      System.out.println(Arrays.toString(smth) + "result before method");
         arrayService.ReverseArray(smth);
         int[] realResult = smth;
-        System.out.println(Arrays.toString(realResult) + "result after method");
+  //      System.out.println(Arrays.toString(realResult) + "result after method");
         if (CompareArrays(realResult, expectedResult)) {
             System.out.println("Reverse array test = OK");
         } else {
