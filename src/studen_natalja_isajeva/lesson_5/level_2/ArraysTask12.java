@@ -8,9 +8,10 @@ public class ArraysTask12 {
         int[] numbers = new int[3];
 
         Random random = new Random();
-        numbers[0]= random.nextInt(10);
-        numbers[1]= random.nextInt(10);
-        numbers[2]= random.nextInt(10);
+
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = random.nextInt(10);
+        }
 
         System.out.println(Arrays.toString(numbers));
 

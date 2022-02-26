@@ -8,16 +8,13 @@ public class ArraysTask15 {
         int[] numbers = new int[3];
 
         Random random = new Random();
-        numbers[0]= random.nextInt(10);
-        numbers[1]= random.nextInt(10);
-        numbers[2]= random.nextInt(10);
-
-        System.out.println(Arrays.toString(numbers));
-
-        numbers[0] += 2;
-        numbers[1] += 2;
-        numbers[2] += 2;
-
-        System.out.println(Arrays.toString(numbers));
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = random.nextInt(10);
         }
+        System.out.println(Arrays.toString(numbers));
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] += 2;
+        }
+        System.out.println(Arrays.toString(numbers));
     }
+}
