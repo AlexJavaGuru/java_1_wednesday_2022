@@ -7,10 +7,14 @@ class TaskFourteen {
         Random random = new Random();
         int[] numbers = new int[3];
         double sum = 0;
+
         for (int i = 0; i < numbers.length; i++) {
             numbers[i] = random.nextInt(10);
             System.out.println("Array`s element nr. " + (i + 1) + " = " + numbers[i]);
-            sum += numbers[i];
+        }
+
+        for (int number : numbers) {
+            sum += number;
         }
         System.out.println("Average of Array`s element - " + Math.round((sum / numbers.length) * 100.00) / 100.00);
     }
