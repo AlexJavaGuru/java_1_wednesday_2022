@@ -1,5 +1,7 @@
 package student_aleksandrs_korsaks.ak_lesson_6.level_3;
 
+import java.util.Arrays;
+
 class ArrayServiceTest {
     public static void main(String[] args) {
         ArrayServiceTest arrayServiceTest = new ArrayServiceTest();
@@ -7,7 +9,8 @@ class ArrayServiceTest {
         arrayServiceTest.containsNegativeTest();
         arrayServiceTest.countOfContainsPositiveTest();
         arrayServiceTest.countOfContainsNegativeTest();
-
+        arrayServiceTest.replaceFirstNumberPositiveTest();
+        arrayServiceTest.replaceFirstNumberNegativeTest();
     }
 
     public void containsPositiveTest() {
@@ -38,6 +41,23 @@ class ArrayServiceTest {
         int expectedResult = 2;
         int realResult = arrayService.countOfContains(testArr, 2);
         checkTestResult("countOfContainsPositiveTest", expectedResult == realResult);
+    }
+
+    public void replaceFirstNumberPositiveTest() {
+        ArrayService arrayService = new ArrayService();
+        int[] testArr = {1, 2, -1, 2, 5};
+        int[] expectedResult = {1, 6, -1, 2, 5};
+        arrayService.replaceFirstNumber(testArr, 2, 6);
+        checkTestResult("replaceFirstNumberPositiveTest", Arrays.equals(testArr, expectedResult));
+    }
+
+
+    public void replaceFirstNumberNegativeTest() {
+        ArrayService arrayService = new ArrayService();
+        int[] testArr = {1, 2, -1, 2, 5};
+        int[] expectedResult = {1, 2, -1, 2, 5};
+        arrayService.replaceFirstNumber(testArr, 7, 6);
+        checkTestResult("replaceFirstNumberNegativeTest", Arrays.equals(testArr, expectedResult));
     }
 
     public void checkTestResult(String testName, boolean result) {

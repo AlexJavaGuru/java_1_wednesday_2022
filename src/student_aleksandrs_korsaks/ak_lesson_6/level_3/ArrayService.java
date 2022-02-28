@@ -19,4 +19,14 @@ class ArrayService {
         }
         return counter;
     }
+
+    boolean replaceFirstNumber(int[] arr, int numberToReplace, int newNumber) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == numberToReplace) {
+                arr[i] = newNumber;
+                return true;
+            }
+        }
+        return false;
+    }
 }
