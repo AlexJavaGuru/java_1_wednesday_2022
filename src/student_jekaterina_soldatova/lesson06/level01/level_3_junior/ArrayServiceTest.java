@@ -1,6 +1,5 @@
 package student_jekaterina_soldatova.lesson06.level01.level_3_junior;
 
-import java.util.Arrays;
 
 class ArrayServiceTest {
     public static void main(String[] args) {
@@ -11,9 +10,17 @@ class ArrayServiceTest {
         test.arrayIncludesNumberNegative(testArray);
 
         test.arrayIncludesNumberCountTimes(testArray);
-//        test.ChangeOneNumberInArrayFirst(testArray);
-//        test.ChangeOneNumberInArrayAllInstances(testArray);
-        test.ReverseArray();
+        test.arrayIncludesNumberCountTimesNone(testArray);
+
+        test.ChangeOneNumberInArrayFirst(testArray);
+        test.ChangeOneNumberInArrayFirstNone(testArray);
+
+        test.ChangeOneNumberInArrayAllInstances(testArray);
+        test.ChangeOneNumberInArrayAllInstancesNone(testArray);
+
+        test.ReverseArray(testArray);
+        test.SortArray(testArray);
+
 
     }
 
@@ -50,10 +57,27 @@ class ArrayServiceTest {
         }
     }
 
-    void ChangeOneNumberInArrayFirst(int[] array) {
-        int[] expectedResult = {6, 1, 2, 3, 3, 4, 1, 0};
+    void arrayIncludesNumberCountTimesNone(int[] array) {
+        int expectedResult = 0;
         ArrayService arrayService = new ArrayService();
+        int realResult = arrayService.ArrayIncludesNumberCountTimes(array, 8);
+        if (realResult == expectedResult) {
+            System.out.println("How many times includes number test = OK");
+        } else {
+            System.out.println("How many times includes number test = FAIL");
+        }
+    }
+
+    void ChangeOneNumberInArrayFirst(int[] originalArray) {
+        ArrayService arrayService = new ArrayService();
+        ArrayServiceTest test = new ArrayServiceTest();
+
+        int[] expectedResult = {6, 1, 2, 3, 3, 4, 1, 0};
+        int[] array = new int[originalArray.length];
+        test.CopyArray(originalArray, array);
+
         arrayService.ChangeOneNumberInArrayFirst(array, 0, 6);
+
         int[] realResult = array;
         if (CompareArrays(realResult, expectedResult)) {
             System.out.println("Change first instance of the number in the array test = OK");
@@ -63,10 +87,36 @@ class ArrayServiceTest {
         }
     }
 
-    private void ChangeOneNumberInArrayAllInstances(int[] array) {
-        int[] expectedResult = {6, 1, 2, 3, 3, 4, 1, 6};
+    void ChangeOneNumberInArrayFirstNone(int[] originalArray) {
         ArrayService arrayService = new ArrayService();
-        arrayService.ChangeOneNumberInArrayFirst(array, 0, 6);
+        ArrayServiceTest test = new ArrayServiceTest();
+
+        int[] expectedResult = originalArray;
+
+        int[] array = new int[originalArray.length];
+        test.CopyArray(originalArray, array);
+
+        arrayService.ChangeOneNumberInArrayFirst(array, 8, 6);
+        int[] realResult = array;
+
+        if (CompareArrays(realResult, expectedResult)) {
+            System.out.println("Change first instance of the number in the array test(no number) = OK");
+        } else {
+            System.out.println("Change first instance of the number in the array test(no number) = FAIL");
+
+        }
+    }
+
+    void ChangeOneNumberInArrayAllInstances(int[] originalArray) {
+        ArrayService arrayService = new ArrayService();
+        ArrayServiceTest test = new ArrayServiceTest();
+
+        int[] expectedResult = {6, 1, 2, 3, 3, 4, 1, 6};
+        int[] array = new int[originalArray.length];
+        test.CopyArray(originalArray, array);
+
+        arrayService.ChangeOneNumberInArrayAllInstances(array, 0, 6);
+
         int[] realResult = array;
         if (CompareArrays(realResult, expectedResult)) {
             System.out.println("Change all instances of the number in the array test = OK");
@@ -76,18 +126,59 @@ class ArrayServiceTest {
         }
     }
 
-    void ReverseArray() {
-        int[] smth = {5, 6, 7, 8};
-        int[] expectedResult = {8, 7, 6, 5};
+    void ChangeOneNumberInArrayAllInstancesNone(int[] originalArray) {
         ArrayService arrayService = new ArrayService();
-  //      System.out.println(Arrays.toString(smth) + "result before method");
-        arrayService.ReverseArray(smth);
-        int[] realResult = smth;
-  //      System.out.println(Arrays.toString(realResult) + "result after method");
+        ArrayServiceTest test = new ArrayServiceTest();
+
+        int[] expectedResult = originalArray;
+        int[] array = new int[originalArray.length];
+        test.CopyArray(originalArray, array);
+
+        arrayService.ChangeOneNumberInArrayAllInstances(array, 8, 6);
+
+        int[] realResult = array;
+
+        if (CompareArrays(realResult, expectedResult)) {
+            System.out.println("Change all instances of the number in the array test(no number) = OK");
+        } else {
+            System.out.println("Change all instances of the number in the array test(no number) = FAIL");
+
+        }
+    }
+
+    void ReverseArray(int[] originalArray) {
+        ArrayService arrayService = new ArrayService();
+        ArrayServiceTest test = new ArrayServiceTest();
+
+        int[] expectedResult = {0, 1, 4, 3, 3, 2, 1, 0};
+        int[] array = new int[originalArray.length];
+        test.CopyArray(originalArray, array);
+
+        arrayService.ReverseArray(array);
+        int[] realResult = array;
+
         if (CompareArrays(realResult, expectedResult)) {
             System.out.println("Reverse array test = OK");
         } else {
             System.out.println("Reverse array test = FAIL");
+
+        }
+    }
+
+    void SortArray(int[] originalArray) {
+        ArrayService arrayService = new ArrayService();
+        ArrayServiceTest test = new ArrayServiceTest();
+
+        int[] expectedResult = {0, 0, 1, 1, 2, 3, 3, 4};
+        int[] array = new int[originalArray.length];
+        test.CopyArray(originalArray, array);
+
+        arrayService.SortArray(array);
+        int[] realResult = array;
+        if (CompareArrays(realResult, expectedResult)) {
+            System.out.println("Sort array test = OK");
+        } else {
+            System.out.println("Sort array test = FAIL");
 
         }
     }
@@ -100,5 +191,11 @@ class ArrayServiceTest {
             }
         }
         return true;
+    }
+
+    void CopyArray(int[] originalArray, int[] copiedArray) {
+        for (int i = 0; i < originalArray.length; i++) {
+            copiedArray[i] = originalArray[i];
+        }
     }
 }

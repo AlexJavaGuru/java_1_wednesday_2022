@@ -3,8 +3,8 @@ package student_jekaterina_soldatova.lesson06.level01.level_3_junior;
 import java.util.Arrays;
 
 class ArrayService {
-    boolean ArrayIncludesNumber(int[] arrayToCheck, int numberToCheck){
-        for (int i: arrayToCheck) {
+    boolean ArrayIncludesNumber(int[] arrayToCheck, int numberToCheck) {
+        for (int i : arrayToCheck) {
             if (i == numberToCheck) {
                 return true;
             }
@@ -12,9 +12,9 @@ class ArrayService {
         return false;
     }
 
-    int ArrayIncludesNumberCountTimes(int[] arrayToCheck, int numberToCheck){
+    int ArrayIncludesNumberCountTimes(int[] arrayToCheck, int numberToCheck) {
         int numberOfTimes = 0;
-        for (int i: arrayToCheck) {
+        for (int i : arrayToCheck) {
             if (i == numberToCheck) {
                 numberOfTimes++;
             }
@@ -22,39 +22,57 @@ class ArrayService {
         return numberOfTimes;
     }
 
-    void ChangeOneNumberInArrayFirst(int[] array, int numberToChange, int newNumber){
+    void ChangeOneNumberInArrayFirst(int[] array, int numberToChange, int newNumber) {
+        int count = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] == numberToChange) {
                 array[i] = newNumber;
+                count++;
                 break;
             }
         }
+        if (count == 0) {
+            System.out.println("No such number in the array");
+        }
     }
 
-    void ChangeOneNumberInArrayAllInstances(int[] array, int numberToChange, int newNumber){
-        for (int i: array) {
-            if (i == numberToChange) {
-                i = newNumber;
+    void ChangeOneNumberInArrayAllInstances(int[] array, int numberToChange, int newNumber) {
+        int count = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == numberToChange) {
+                array[i] = newNumber;
+                count++;
             }
         }
-    }
-
-    void ReverseArray(int[] array){
-        int length = array.length;
-        int[] copiedArray = array;
-        System.out.println(Arrays.toString(copiedArray) + " copied array");
-
-        for (int i = 0; i < (length); i++) {
-            System.out.println(Arrays.toString(copiedArray) + " - iteration " + i);
-
-            array[i] = copiedArray[(length-1-i)];
+        if (count == 0) {
+            System.out.println("No such number in the array");
         }
-        System.out.println(Arrays.toString(array) + " resulted array");
+    }
 
+    void ReverseArray(int[] array) {
+        int length = array.length;
+        int temporaryHolder;
+
+        for (int i = 0; i < length / 2; i++) {
+            temporaryHolder = array[i];
+
+            array[i] = array[(length - 1 - i)];
+            array[(length - 1 - i)] = temporaryHolder;
+        }
 
     }
 
-    void SortArray(int[] array){
-
+    void SortArray(int[] array) {
+        int length = array.length;
+        for (int i = 0; i < length; i++) {
+            for (int j = i + 1; j < length; j++) {
+                int min = 0;
+                if (array[i] >= array[j]) {
+                    min = array[i];
+                    array[i] = array[j];
+                    array[j] = min;
+                }
+            }
+        }
     }
 }
