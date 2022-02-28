@@ -1,7 +1,5 @@
 package student_jekaterina_soldatova.lesson06.level01.level_4_junior;
 
-import java.util.Arrays;
-
 public class TwoDimensionalArray {
     public static void main(String[] args) {
         TwoDimensionalArray fill = new TwoDimensionalArray();
