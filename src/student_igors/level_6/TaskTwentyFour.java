@@ -1,4 +1,4 @@
-package student_igors.Level_6;
+package student_igors.level_6;
 
 public class TaskTwentyFour {
     public static void main(String[] args) {
