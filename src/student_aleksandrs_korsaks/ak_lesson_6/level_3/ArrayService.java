@@ -9,4 +9,14 @@ class ArrayService {
         }
         return false;
     }
+
+    int countOfContains(int[] arr, int numberToCount) {
+        int counter = 0;
+        for (int number : arr) {
+            if (number == numberToCount) {
+                counter++;
+            }
+        }
+        return counter;
+    }
 }
