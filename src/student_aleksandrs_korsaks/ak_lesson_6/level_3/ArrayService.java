@@ -40,4 +40,17 @@ class ArrayService {
         }
         return numbersReplacedCounter;
     }
+
+    void reverseArray(int[] arr) {
+        int[] tempArr = new int[arr.length];
+        int j = 0;
+
+        for (int i = arr.length - 1; i >= 0; i--) {
+            tempArr[j] = arr[i];
+            j++;
+        }
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = tempArr[i];
+        }
+    }
 }

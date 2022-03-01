@@ -15,6 +15,7 @@ class ArrayServiceTest {
         arrayServiceTest.replaceAllNumbersNegativeTest();
         arrayServiceTest.replaceAllNumbersPositiveCounterTest();
         arrayServiceTest.replaceAllNumbersNegativeCounterTest();
+        arrayServiceTest.reverseArrayTest();
     }
 
     public void containsPositiveTest() {
@@ -93,6 +94,14 @@ class ArrayServiceTest {
         int expectedResult = 0;
         int realResult = arrayService.replaceAllNumbers(testArr, 7, 6);
         checkTestResult("replaceAllNumbersNegativeCounterTest", expectedResult == realResult);
+    }
+
+    public void reverseArrayTest() {
+        ArrayService arrayService = new ArrayService();
+        int[] testArr = {1, 2, 3, 4};
+        int[] expectedResult = {4, 3, 2, 1};
+        arrayService.reverseArray(testArr);
+        checkTestResult("reverseArrayTest", Arrays.equals(testArr, expectedResult));
     }
 
     public void checkTestResult(String testName, boolean result) {
