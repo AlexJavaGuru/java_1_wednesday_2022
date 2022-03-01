@@ -29,4 +29,15 @@ class ArrayService {
         }
         return false;
     }
+
+    int replaceAllNumbers(int[] arr, int numberToReplace, int newNumber) {
+        int numbersReplacedCounter = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == numberToReplace) {
+                arr[i] = newNumber;
+                numbersReplacedCounter++;
+            }
+        }
+        return numbersReplacedCounter;
+    }
 }
