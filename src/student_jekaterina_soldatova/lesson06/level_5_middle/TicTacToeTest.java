@@ -30,6 +30,9 @@ public class TicTacToeTest {
         testIsDraw();
         testIsNotDrawWin();
         testIsNotDrawEmpty();
+
+        testCreateFieldTrue();
+        testCreateFieldTFalse();
     }
 
     static void testIsWinForHorizontalPlayerOne() {
@@ -335,5 +338,46 @@ public class TicTacToeTest {
         } else {
             System.out.println("Failed");
         }
+    }
+
+
+    static void testCreateFieldTrue() {
+        TicTacToeTest test = new TicTacToeTest();
+        TicTacToe subject = new TicTacToe();
+        int[][] testField = {{ 0, 0, 0},
+                             { 0, 0, 0},
+                             { 0, 0, 0}};
+        boolean result = test.compareArrays(subject.createField(), (testField));
+        if (result) {
+            System.out.println("create Passed");
+        } else {
+            System.out.println("Failed");
+        }
+    }
+
+    static void testCreateFieldTFalse() {
+        TicTacToeTest test = new TicTacToeTest();
+        TicTacToe subject = new TicTacToe();
+        int[][] testField = {{ 0, 0, 0},
+                             { 0, 0, 0},
+                             { 0, 0, 1}};
+        boolean result = test.compareArrays(subject.createField(), (testField));
+        if (!result) {
+            System.out.println("create Passed");
+        } else {
+            System.out.println("create Failed");
+        }
+    }
+
+
+    boolean compareArrays(int[][] real, int[][] expected) {
+        for (int i = 0; i < real.length; i++) {
+            for (int j = 0; j < real[0].length; j++) {
+                if (real[i][j] != expected[i][j]) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }

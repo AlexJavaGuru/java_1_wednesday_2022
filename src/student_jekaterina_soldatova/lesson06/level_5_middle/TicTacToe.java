@@ -5,6 +5,16 @@ class TicTacToe {
 
     }
 
+    int[][] createField() {
+        int[][] field = new int[3][3];
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                field[i][j] = 0;
+            }
+        }
+        return field;
+    }
+
     boolean isWinPositionForHorizontals(int[][] field, int playerToCheck) {
         for (int i = 0; i < field.length; i++) {
             for (int j = 0; j < field[0].length; j++) {
