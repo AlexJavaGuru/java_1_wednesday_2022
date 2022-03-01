@@ -1,8 +1,52 @@
 package student_jekaterina_soldatova.lesson06.level_5_middle;
 
+import java.util.Scanner;
+
 class TicTacToe {
     public static void main(String[] args) {
+        TicTacToe game = new TicTacToe();
+        game.play();
+    }
 
+    void play() {
+        int[][] field = createField();
+        printFieldToConsole(field);
+
+        while(true) {
+            System.out.print("Player1! ");
+            Move move1 = getNextMove();
+            while (field[move1.getX()][move1.getY()] != 0) {
+                System.out.println("It's occupied! Choose another");
+                move1 = getNextMove();
+            }
+            field[move1.getX()][move1.getY()] = 1;
+            printFieldToConsole(field);
+            if (isWinPosition(field, 1)) {
+                System.out.println("Player 1 WIN!");
+                break;
+            }
+            if (isDrawPosition(field)) {
+                System.out.println("DRAW!");
+                break;
+            }
+
+            System.out.print("Player2! ");
+            Move move2 = getNextMove();
+            while (field[move2.getX()][move2.getY()] != 0) {
+                System.out.println("It's occupied! Choose another");
+                move2 = getNextMove();
+            }
+            field[move2.getX()][move2.getY()] = 2;
+            printFieldToConsole(field);
+            if (isWinPosition(field, 2)) {
+                System.out.println("Player 2 WIN!");
+                break;
+            }
+            if (isDrawPosition(field)) {
+                System.out.println("DRAW!");
+                break;
+            }
+        }
     }
 
     int[][] createField() {
@@ -13,6 +57,23 @@ class TicTacToe {
             }
         }
         return field;
+    }
+
+    Move getNextMove() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter row index and column index for your move");
+        int row = scanner.nextInt();
+        int column = scanner.nextInt();
+        return new Move(row, column);
+    }
+
+    void printFieldToConsole(int[][] field) {
+        for (int i = 0; i < field.length; i++) {
+            for (int j = 0; j < field[0].length; j++) {
+                System.out.print(field[i][j] + ", ");
+            }
+            System.out.println();
+        }
     }
 
     boolean isWinPositionForHorizontals(int[][] field, int playerToCheck) {
