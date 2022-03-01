@@ -1,12 +1,14 @@
-package student_jekaterina_soldatova.lesson06.level01.level_4_junior;
+package student_jekaterina_soldatova.lesson06.level_4_junior;
 
-public class ForInfiniteLoopBreak {
+public class WhileInfiniteLoopBreak {
     public static void main(String[] args) {
-        for (int i = 1; i > 0; i++) {
+        int i = 1;
+        while (i > 0) {
             System.out.println("i = " + i);
             if (i == 5) {
                 break;
             }
+            i++;
         }
     }
 }

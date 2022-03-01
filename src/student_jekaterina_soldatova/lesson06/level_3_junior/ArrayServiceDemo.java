@@ -1,4 +1,4 @@
-package student_jekaterina_soldatova.lesson06.level01.level_3_junior;
+package student_jekaterina_soldatova.lesson06.level_3_junior;
 
 public class ArrayServiceDemo {
     public static void main(String[] args) {

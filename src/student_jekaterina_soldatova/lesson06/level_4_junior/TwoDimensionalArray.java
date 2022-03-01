@@ -1,4 +1,4 @@
-package student_jekaterina_soldatova.lesson06.level01.level_4_junior;
+package student_jekaterina_soldatova.lesson06.level_4_junior;
 
 public class TwoDimensionalArray {
     public static void main(String[] args) {

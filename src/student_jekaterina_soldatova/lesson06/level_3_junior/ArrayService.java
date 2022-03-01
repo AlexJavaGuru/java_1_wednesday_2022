@@ -1,4 +1,4 @@
-package student_jekaterina_soldatova.lesson06.level01.level_3_junior;
+package student_jekaterina_soldatova.lesson06.level_3_junior;
 
 import java.util.Arrays;
 
@@ -66,7 +66,7 @@ class ArrayService {
         int length = array.length;
         for (int i = 0; i < length; i++) {
             for (int j = i + 1; j < length; j++) {
-                int min = 0;
+                int min;
                 if (array[i] >= array[j]) {
                     min = array[i];
                     array[i] = array[j];

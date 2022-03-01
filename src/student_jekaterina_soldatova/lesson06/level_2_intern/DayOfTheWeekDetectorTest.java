@@ -1,4 +1,4 @@
-package student_jekaterina_soldatova.lesson06.level01.level_2_intern;
+package student_jekaterina_soldatova.lesson06.level_2_intern;
 
 public class DayOfTheWeekDetectorTest {
     public static void main(String[] args) {
