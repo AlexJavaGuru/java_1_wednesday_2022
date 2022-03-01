@@ -1,9 +1,15 @@
 package student_jekaterina_soldatova.lesson06.level_4_junior;
 
+import java.util.Scanner;
+
 public class TwoDimensionalArray {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter number of rows and number of columns of the array");
+        int rows = scanner.nextInt();
+        int columns = scanner.nextInt();
         TwoDimensionalArray utility = new TwoDimensionalArray();
-        int[][] twoDimensionalArray = new int[utility.random()+2][utility.random()+2];
+        int[][] twoDimensionalArray = new int[rows][columns];
 
         utility.fillArray(twoDimensionalArray);
         utility.printArray(twoDimensionalArray);
