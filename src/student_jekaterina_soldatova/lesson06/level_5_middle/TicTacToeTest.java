@@ -21,6 +21,15 @@ public class TicTacToeTest {
         testIsWinForDiagonalUpPlayerTwo();
         testIsNotWinForDiagonalUpPlayerOne();
         testIsNotWinForDiagonalUpPlayerTwo();
+
+        testIsWinPlayerOne();
+        testIsWinPlayerTwo();
+        testIsNotWinPlayerOne();
+        testIsNotWinPlayerTwo();
+
+        testIsDraw();
+        testIsNotDrawWin();
+        testIsNotDrawEmpty();
     }
 
     static void testIsWinForHorizontalPlayerOne() {
@@ -228,6 +237,99 @@ public class TicTacToeTest {
                              { 2, 1, 0},
                              { 2, 0, 2}};
         boolean result = subject.isWinPositionForDiagonalsUp(testField, 2);
+        if (!result) {
+            System.out.println("Passed");
+        } else {
+            System.out.println("Failed");
+        }
+    }
+
+
+    static void testIsWinPlayerOne() {
+        TicTacToe subject = new TicTacToe();
+        int[][] testField = {{ 1, 0, 1},
+                             { 2, 1, 2},
+                             { 1, 2, 2}};
+        boolean result = subject.isWinPosition(testField, 1);
+        if (result) {
+            System.out.println("Passed");
+        } else {
+            System.out.println("Failed");
+        }
+    }
+
+    static void testIsWinPlayerTwo() {
+        TicTacToe subject = new TicTacToe();
+        int[][] testField = {{ 2, 1, 2},
+                             { 1, 1, 1},
+                             { 2, 2, 2}};
+        boolean result = subject.isWinPosition(testField, 2);
+        if (result) {
+            System.out.println("Passed");
+        } else {
+            System.out.println("Failed");
+        }
+    }
+
+    static void testIsNotWinPlayerOne() {
+        TicTacToe subject = new TicTacToe();
+        int[][] testField = {{ 1, 0, 1},
+                             { 2, 0, 0},
+                             { 2, 1, 2}};
+        boolean result = subject.isWinPosition(testField, 1);
+        if (!result) {
+            System.out.println("Passed");
+        } else {
+            System.out.println("Failed");
+        }
+    }
+
+    static void testIsNotWinPlayerTwo() {
+        TicTacToe subject = new TicTacToe();
+        int[][] testField = {{ 1, 0, 1},
+                             { 2, 1, 0},
+                             { 2, 0, 2}};
+        boolean result = subject.isWinPosition(testField, 2);
+        if (!result) {
+            System.out.println("Passed");
+        } else {
+            System.out.println("Failed");
+        }
+    }
+
+
+    static void testIsDraw() {
+        TicTacToe subject = new TicTacToe();
+        int[][] testField = {{ 2, 1, 2},
+                             { 1, 2, 1},
+                             { 2, 1, 1}};
+        boolean result = subject.isDrawPosition(testField);
+        if (result) {
+            System.out.println("Passed");
+        } else {
+            System.out.println("Failed");
+        }
+    }
+
+    static void testIsNotDrawWin() {
+        TicTacToe subject = new TicTacToe();
+        int[][] testField = {{ 2, 0, 1},
+                             { 2, 0, 0},
+                             { 2, 1, 2}};
+        boolean result = subject.isWinPosition(testField, 1);
+        if (!result) {
+            System.out.println("Passed");
+        } else {
+            System.out.println("Failed");
+        }
+    }
+
+    static void testIsNotDrawEmpty() {
+        TicTacToe subject = new TicTacToe();
+        int[][] testField = {{ 2, 0, 1},
+                             { 1, 0, 0},
+                             { 2, 1, 2}};
+        boolean result = subject.isDrawPosition(testField);
         if (!result) {
             System.out.println("Passed");
         } else {
