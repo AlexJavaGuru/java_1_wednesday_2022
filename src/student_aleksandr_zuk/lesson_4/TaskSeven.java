@@ -2,18 +2,17 @@ package student_aleksandr_zuk.lesson_4;
 
 import java.util.Scanner;
 
-class Task7 {
+class TaskSeven {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your first number...");
-        int a = scanner.nextInt();
+        int firstNumber = scanner.nextInt();
         System.out.println("Enter your second number...");
-        int b = scanner.nextInt();
+        int secondNumber = scanner.nextInt();
 
-        if (a == b){
+        if (firstNumber == secondNumber){
             System.out.println("Numbers are equals");
-        }
-        else if (a != b){
+        } else if (firstNumber != secondNumber){
             System.out.println("Numbers are different");
         }
     }

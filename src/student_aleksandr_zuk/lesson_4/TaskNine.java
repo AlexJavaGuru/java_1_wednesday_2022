@@ -2,23 +2,21 @@ package student_aleksandr_zuk.lesson_4;
 
 import java.util.Scanner;
 
-class Task9 {
+class TaskNine {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your first number...");
-        int a = scanner.nextInt();
+        int firstNumber = scanner.nextInt();
         System.out.println("Enter your second number...");
-        int b = scanner.nextInt();
+        int secondNumber = scanner.nextInt();
         System.out.println("Enter your third number...");
-        int c = scanner.nextInt();
+        int thirdNumber = scanner.nextInt();
 
-        if (a < b && b < c){
+        if (firstNumber < secondNumber && secondNumber < thirdNumber){
             System.out.println("The number are in increasing order");
-        }
-        else if (a > b && b > c){
+        } else if (firstNumber > secondNumber && secondNumber > thirdNumber){
             System.out.println("The numbers are in decreasing order");
-        }
-        else if (a != b && b != c && a != c){
+        } else {
             System.out.println("Neither decreasing or increasing order");
         }
 

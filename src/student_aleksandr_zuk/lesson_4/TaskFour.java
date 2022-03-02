@@ -2,19 +2,17 @@ package student_aleksandr_zuk.lesson_4;
 
 import java.util.Scanner;
 
-class Task4 {
+class TaskFour {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your number ...");
-        int a = scanner.nextInt();
-        int b = 2;
-        int c = a % b;
+        int number = scanner.nextInt();
+        int result = number % 2;
 
-        if (c == 0){
+        if (result == 0){
             System.out.println("Your number is even");
-        }
-        if (c != 0){
+        } else if (result != 0){
             System.out.println("Your number is negative");
         }
 

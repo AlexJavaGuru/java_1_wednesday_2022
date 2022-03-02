@@ -2,7 +2,7 @@ package student_aleksandr_zuk.lesson_4;
 
 import java.util.Scanner;
 
-class Task2 {
+class TaskTwo {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -11,13 +11,10 @@ class Task2 {
 
         if (number == 0){
             System.out.println("Your number " + number + " is zero");
-            }
-        if (number < 0){
+        } else if (number < 0){
             System.out.println("Your number " + number + " is negative");
-        }
-        if (number > 0){
-            System.out.println("Your number " + number + " is even");
-        }
+        } else if (number > 0) {
+            System.out.println("Your number " + number + " is even");}
 
     }
 }
