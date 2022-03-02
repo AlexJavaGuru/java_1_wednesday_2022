@@ -25,6 +25,7 @@ class TicTacToeTest {
         test.isDrawPositionTest2();
         test.isDrawPositionTest3();
         test.isDrawPositionTest4();
+        test.createFieldTest();
     }
 
     public void isWinPositionForHorizontalsTest1() {
@@ -216,8 +217,25 @@ class TicTacToeTest {
         checkResult(realResult, expectedResult, "isDrawPositionTest4");
     }
 
+    public void createFieldTest() {
+        int[][] expectedResult = {{-1, -1, -1},
+                                  {-1, -1, -1},
+                                  {-1, -1, -1}};
+        TicTacToe ticTacToe = new TicTacToe();
+        int[][] realResult = ticTacToe.createField();
+        checkResultArrays(realResult, expectedResult, "isDrawPositionTest4");
+    }
+
     void checkResult(boolean realResult, boolean expectedResult, String testName) {
         if (realResult == expectedResult) {
+            System.out.println(testName + " = OK!");
+        } else {
+            System.out.println(testName + " = FAIL!");
+        }
+    }
+
+    void checkResultArrays(int[][] realResult, int[][] expectedResult, String testName) {
+        if (Arrays.deepEquals(realResult, expectedResult)) {
             System.out.println(testName + " = OK!");
         } else {
             System.out.println(testName + " = FAIL!");
