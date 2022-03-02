@@ -5,12 +5,12 @@ import java.util.Locale;
 class WordService {
 
     public String findMostFrequentWord(String text) {
-        String[] words = splitTextInLowerCase(text);
+        String[] words = createArrayOfWords(text);
         int[] numberOfDuplicates = countDuplicates(words);
-        return getMostFrequentWord(words, numberOfDuplicates);
+        return words[locateMostFrequentWord(words, numberOfDuplicates)];
     }
 
-    public String[] splitTextInLowerCase(String text) {
+    public String[] createArrayOfWords(String text) {
         String textToSplit = text.toLowerCase(Locale.ROOT);
         return textToSplit.split(" ");
     }
@@ -30,7 +30,7 @@ class WordService {
         return countOfDuplicates;
     }
 
-    public String getMostFrequentWord(String[] words, int[] numbersOfDuplicates) {
+    public int locateMostFrequentWord(String[] words, int[] numbersOfDuplicates) {
         int indexOfMostFrequentWord = 0;
         int maxDuplicates = 0;
         for (int i = 0; i < numbersOfDuplicates.length ; i++) {
@@ -39,7 +39,7 @@ class WordService {
                 indexOfMostFrequentWord = i;
             }
         }
-        return words[indexOfMostFrequentWord];
+        return indexOfMostFrequentWord;
     }
 
 }
