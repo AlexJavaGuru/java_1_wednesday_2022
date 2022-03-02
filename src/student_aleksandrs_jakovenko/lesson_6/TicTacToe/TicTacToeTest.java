@@ -30,8 +30,8 @@ class TicTacToeTest {
 
     public void isWinPositionForHorizontalsTest1() {
         int[][] array = {{0, 0, 0},
-                {-1, -1, -1},
-                {-1, -1, -1}};
+                         {-1, -1, -1},
+                         {-1, -1, -1}};
         boolean expectedResult = true;
         TicTacToe ticTacToe = new TicTacToe();
         boolean realResult = ticTacToe.isWinPositionForHorizontals(array, 0);
@@ -40,8 +40,8 @@ class TicTacToeTest {
 
     public void isWinPositionForHorizontalsTest2() {
         int[][] array = {{-1, -1, -1},
-                {0, 0, 0},
-                {-1, -1, -1}};
+                          {0, 0, 0},
+                         {-1, -1, -1}};
         boolean expectedResult = true;
         TicTacToe ticTacToe = new TicTacToe();
         boolean realResult = ticTacToe.isWinPositionForHorizontals(array, 0);
@@ -50,8 +50,8 @@ class TicTacToeTest {
 
     public void isWinPositionForHorizontalsTest3() {
         int[][] array = {{-1, -1, -1},
-                {-1, -1, -1},
-                {0, 0, 0}};
+                         {-1, -1, -1},
+                         {0, 0, 0}};
         boolean expectedResult = true;
         TicTacToe ticTacToe = new TicTacToe();
         boolean realResult = ticTacToe.isWinPositionForHorizontals(array, 0);
@@ -60,8 +60,8 @@ class TicTacToeTest {
 
     public void isWinPositionForHorizontalsTest4() {
         int[][] array = {{-1, -1, -1},
-                {-1, -1, -1},
-                {-1, -1, -1}};
+                         {-1, -1, -1},
+                         {-1, -1, -1}};
         boolean expectedResult = false;
         TicTacToe ticTacToe = new TicTacToe();
         boolean realResult = ticTacToe.isWinPositionForHorizontals(array, 0);
@@ -70,8 +70,8 @@ class TicTacToeTest {
 
     public void isWinPositionForVerticalsTest1() {
         int[][] array = {{0, -1, -1},
-                {0, -1, -1},
-                {0, -1, -1}};
+                         {0, -1, -1},
+                         {0, -1, -1}};
         boolean expectedResult = true;
         TicTacToe ticTacToe = new TicTacToe();
         boolean realResult = ticTacToe.isWinPositionForVerticals(array, 0);
@@ -80,8 +80,8 @@ class TicTacToeTest {
 
     public void isWinPositionForVerticalsTest2() {
         int[][] array = {{-1, 0, -1},
-                {-1, 0, -1},
-                {-1, 0, -1}};
+                         {-1, 0, -1},
+                         {-1, 0, -1}};
         boolean expectedResult = true;
         TicTacToe ticTacToe = new TicTacToe();
         boolean realResult = ticTacToe.isWinPositionForVerticals(array, 0);
@@ -90,8 +90,8 @@ class TicTacToeTest {
 
     public void isWinPositionForVerticalsTest3() {
         int[][] array = {{-1, -1, 0},
-                {-1, -1, 0},
-                {-1, -1, 0}};
+                         {-1, -1, 0},
+                         {-1, -1, 0}};
         boolean expectedResult = true;
         TicTacToe ticTacToe = new TicTacToe();
         boolean realResult = ticTacToe.isWinPositionForVerticals(array, 0);
@@ -100,8 +100,8 @@ class TicTacToeTest {
 
     public void isWinPositionForVerticalsTest4() {
         int[][] array = {{-1, -1, -1},
-                {-1, -1, -1},
-                {-1, -1, -1}};
+                         {-1, -1, -1},
+                         {-1, -1, -1}};
         boolean expectedResult = false;
         TicTacToe ticTacToe = new TicTacToe();
         boolean realResult = ticTacToe.isWinPositionForVerticals(array, 0);
@@ -110,8 +110,8 @@ class TicTacToeTest {
 
     public void isWinPositionForDiagonalsTest1() {
         int[][] array = {{0, -1, -1},
-                {-1, 0, -1},
-                {-1, -1, 0}};
+                        {-1, 0, -1},
+                        {-1, -1, 0}};
         boolean expectedResult = true;
         TicTacToe ticTacToe = new TicTacToe();
         boolean realResult = ticTacToe.isWinPositionForDiagonals(array, 0);
@@ -120,8 +120,8 @@ class TicTacToeTest {
 
     public void isWinPositionForDiagonalsTest2() {
         int[][] array = {{-1, -1, 0},
-                {-1, 0, -1},
-                {0, -1, -1}};
+                         {-1, 0, -1},
+                          {0, -1, -1}};
         boolean expectedResult = true;
         TicTacToe ticTacToe = new TicTacToe();
         boolean realResult = ticTacToe.isWinPositionForDiagonals(array, 0);
@@ -130,8 +130,8 @@ class TicTacToeTest {
 
     public void isWinPositionForDiagonalsTest3() {
         int[][] array = {{-1, -1, -1},
-                {-1, -1, -1},
-                {-1, -1, -1}};
+                         {-1, -1, -1},
+                         {-1, -1, -1}};
         boolean expectedResult = false;
         TicTacToe ticTacToe = new TicTacToe();
         boolean realResult = ticTacToe.isWinPositionForDiagonals(array, 0);
@@ -140,8 +140,8 @@ class TicTacToeTest {
 
     public void isWinPositionTest1() {
         int[][] array = {{0, 0, 0},
-                {-1, -1, -1},
-                {-1, -1, -1}};
+                        {-1, -1, -1},
+                        {-1, -1, -1}};
         boolean expectedResult = true;
         TicTacToe ticTacToe = new TicTacToe();
         boolean realResult = ticTacToe.isWinPosition(array, 0);
@@ -150,8 +150,8 @@ class TicTacToeTest {
 
     public void isWinPositionTest2() {
         int[][] array = {{-1, 0, -1},
-                {-1, 0, -1},
-                {-1, 0, -1}};
+                         {-1, 0, -1},
+                         {-1, 0, -1}};
         boolean expectedResult = true;
         TicTacToe ticTacToe = new TicTacToe();
         boolean realResult = ticTacToe.isWinPosition(array, 0);
@@ -160,8 +160,8 @@ class TicTacToeTest {
 
     public void isWinPositionTest3() {
         int[][] array = {{0, -1, -1},
-                {-1, 0, -1},
-                {-1, -1, 0}};
+                        {-1, 0, -1},
+                        {-1, -1, 0}};
         boolean expectedResult = true;
         TicTacToe ticTacToe = new TicTacToe();
         boolean realResult = ticTacToe.isWinPosition(array, 0);
@@ -170,8 +170,8 @@ class TicTacToeTest {
 
     public void isWinPositionTest4() {
         int[][] array = {{-1, -1, -1},
-                {-1, -1, -1},
-                {-1, -1, -1}};
+                         {-1, -1, -1},
+                         {-1, -1, -1}};
         boolean expectedResult = false;
         TicTacToe ticTacToe = new TicTacToe();
         boolean realResult = ticTacToe.isWinPosition(array, 0);
@@ -180,8 +180,8 @@ class TicTacToeTest {
 
     public void isDrawPositionTest1() {
         int[][] array = {{0, 1, 0},
-                {1, 0, 1},
-                {1, 0, 1}};
+                         {1, 0, 1},
+                         {1, 0, 1}};
         TicTacToe ticTacToe = new TicTacToe();
         boolean realResult = ticTacToe.isDrawPosition(array);
         boolean expectedResult = true;
@@ -190,8 +190,8 @@ class TicTacToeTest {
 
     public void isDrawPositionTest2() {
         int[][] array = {{0, 1, 0},
-                {1, 1, 1},
-                {1, 0, 1}};
+                        {1, 1, 1},
+                        {1, 0, -1}};
         TicTacToe ticTacToe = new TicTacToe();
         boolean realResult = ticTacToe.isDrawPosition(array);
         boolean expectedResult = false;
@@ -200,8 +200,8 @@ class TicTacToeTest {
 
     public void isDrawPositionTest3() {
         int[][] array = {{0, 1, 0},
-                {1, 1, 1},
-                {0, 1, 1}};
+                         {1, 1, 1},
+                         {0, 1, -1}};
         TicTacToe ticTacToe = new TicTacToe();
         boolean realResult = ticTacToe.isDrawPosition(array);
         boolean expectedResult = false;
@@ -210,8 +210,8 @@ class TicTacToeTest {
 
     public void isDrawPositionTest4() {
         int[][] array = {{1, 1, 0},
-                {0, 1, 1},
-                {1, 0, 1}};
+                         {0, 1, 1},
+                         {-1, 0, 1}};
         TicTacToe ticTacToe = new TicTacToe();
         boolean realResult = ticTacToe.isDrawPosition(array);
         boolean expectedResult = false;
@@ -220,8 +220,8 @@ class TicTacToeTest {
 
     public void createFieldTest() {
         int[][] expectedResult = {{-1, -1, -1},
-                {-1, -1, -1},
-                {-1, -1, -1}};
+                                  {-1, -1, -1},
+                                  {-1, -1, -1}};
         TicTacToe ticTacToe = new TicTacToe();
         int[][] realResult = ticTacToe.createField();
         checkResultArrays(realResult, expectedResult, "createFieldTest");

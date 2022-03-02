@@ -118,13 +118,18 @@ class TicTacToe {
 
     public void play() {
         int[][] field = createField();
+        printFieldToConsole(field);
+
         while(true) {
-//            printFieldToConsole(field);
             Move move0 = getNextMove();
+            while (field[move0.getX()][move0.getY()] != -1) {
+                System.out.println("Choose another!");
+                move0 = getNextMove();
+            }
             field[move0.getX()][move0.getY()] = 0;
             printFieldToConsole(field);
             if (isWinPosition(field, 0)) {
-                System.out.println("Player 0 WIN!");
+                System.out.println("Player 0 WINS!");
                 break;
             }
             if (isDrawPosition(field)) {
@@ -134,10 +139,14 @@ class TicTacToe {
 
 //            printFieldToConsole(field);
             Move move1 = getNextMove();
+            while (field[move1.getX()][move1.getY()] != -1) {
+                System.out.println("Choose another!");
+                move1 = getNextMove();
+            }
             field[move1.getX()][move1.getY()] = 1;
             printFieldToConsole(field);
             if (isWinPosition(field, 1)) {
-                System.out.println("Player 1 WIN!");
+                System.out.println("Player 1 WINS!");
                 break;
             }
             if (isDrawPosition(field)) {
