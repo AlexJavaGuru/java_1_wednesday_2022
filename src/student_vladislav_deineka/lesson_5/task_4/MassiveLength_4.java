@@ -22,9 +22,9 @@ public class MassiveLength_4 {
         System.out.println(Arrays.toString(numbers));
 
         int maximum = numbers[0];
-        for (int j : numbers) {
-            if (j < maximum)
-                maximum = j;
+        for (int number : numbers) {
+            if (number < maximum)
+                maximum = number;
         }
         System.out.println("Maximum: " + maximum);
     }

@@ -7,14 +7,14 @@ public class LowestNumber {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter number 1: ");
-        int x = scanner.nextInt();
+        int number = scanner.nextInt();
         System.out.println("Enter number 2: ");
-        int q = scanner.nextInt();
+        int secondNumber = scanner.nextInt();
 
-        if (x < q) {
-            System.out.println(x);
+        if (number < secondNumber) {
+            System.out.println(number);
         } else {
-            System.out.println(q);
+            System.out.println(secondNumber);
         }
     }
 }

@@ -7,5 +7,4 @@ public class Loop_2 {
             System.out.println(i);
         }
     }
-
 }

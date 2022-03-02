@@ -25,7 +25,6 @@ public class MassiveLength_6 {
             if (number % 2 != 0) {
                 System.out.println(number);
             }
-
         }
     }
 }

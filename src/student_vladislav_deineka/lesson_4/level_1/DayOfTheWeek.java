@@ -6,9 +6,9 @@ public class DayOfTheWeek {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your number");
-        int x = scanner.nextInt();
+        int number = scanner.nextInt();
 
-        switch (x) {
+        switch (number) {
             case 1:
                 System.out.println("Monday");
                 break;

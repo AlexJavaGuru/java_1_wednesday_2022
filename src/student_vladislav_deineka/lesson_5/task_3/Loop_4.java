@@ -6,5 +6,4 @@ public class Loop_4 {
             System.out.println(i);
         }
     }
-
 }

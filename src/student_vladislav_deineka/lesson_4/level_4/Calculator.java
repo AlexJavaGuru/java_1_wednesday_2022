@@ -18,11 +18,8 @@ public class Calculator {
     public int div(int firstNumber, int secondNumber) {
         return firstNumber / secondNumber;
     }
+
     public boolean isEven1(int number) {
         return number % 2 == 0;
     }
-    public int isEven2(int number) {
-        return number;
-    }
-
 }
