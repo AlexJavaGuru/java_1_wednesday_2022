@@ -1,0 +1,56 @@
+package student_aleksandrs_korsaks.ak_lesson_6.level_5;
+
+class TicTacToeTest {
+    public static void main(String[] args) {
+        TicTacToeTest ticTacToeTest = new TicTacToeTest();
+        ticTacToeTest.isWinPositionForHorizontalsTest1();
+        ticTacToeTest.isWinPositionForHorizontalsTest2();
+        ticTacToeTest.isWinPositionForHorizontalsTest3();
+        ticTacToeTest.isWinPositionForHorizontalsTest4();
+
+    }
+
+    public void isWinPositionForHorizontalsTest1() {
+        TicTacToe ticTacToe = new TicTacToe();
+        int[][] testField = {{1, 1, 1},
+                             {0, 0, -1},
+                             {1, -1, 1}};
+        boolean realResult = ticTacToe.isWinPositionForHorizontals(testField,1);
+        checkTestResult("isWinPositionForHorizontalsTest1", realResult);
+    }
+
+    public void isWinPositionForHorizontalsTest2() {
+        TicTacToe ticTacToe = new TicTacToe();
+        int[][] testField = {{1, 1, 0},
+                             {1, 1, 1},
+                             {1, 0, 0}};
+        boolean realResult = ticTacToe.isWinPositionForHorizontals(testField,1);
+        checkTestResult("isWinPositionForHorizontalsTest2", realResult);
+    }
+
+    public void isWinPositionForHorizontalsTest3() {
+        TicTacToe ticTacToe = new TicTacToe();
+        int[][] testField = {{1, -1, -1},
+                             {0, 0, -1},
+                             {1, 1, 1}};
+        boolean realResult = ticTacToe.isWinPositionForHorizontals(testField,1);
+        checkTestResult("isWinPositionForHorizontalsTest3", realResult);
+    }
+
+    public void isWinPositionForHorizontalsTest4() {
+        TicTacToe ticTacToe = new TicTacToe();
+        int[][] testField = {{1, -1, 1},
+                             {0, 0, -1},
+                             {1, -1, 1}};
+        boolean realResult = !ticTacToe.isWinPositionForHorizontals(testField,1);
+        checkTestResult("isWinPositionForHorizontalsTest4", realResult);
+    }
+
+    public void checkTestResult(String testName, boolean result) {
+        if (result) {
+            System.out.println("\"" + testName + "\"" + " test = OK");
+        } else {
+            System.out.println("\"" + testName + "\"" + " test = FAIL");
+        }
+    }
+}
