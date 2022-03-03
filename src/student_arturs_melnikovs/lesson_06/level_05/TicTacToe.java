@@ -1,5 +1,6 @@
 package student_arturs_melnikovs.lesson_06.level_05;
 
+import java.util.Random;
 import java.util.Scanner;
 
 class TicTacToe {
@@ -11,16 +12,16 @@ class TicTacToe {
 
     public void play() {
         int[][] field = createField(3, 3);
-        while(true) {
+        while (true) {
             printFieldToConsole(field);
-            Move move0 = getNextMove();
-            while(true) {
-                if(field[move0.getX()][move0.getY()] == -1) {
+            Move move0 = getAliceMove(field);
+            while (true) {
+                if (field[move0.getX()][move0.getY()] == -1) {
                     field[move0.getX()][move0.getY()] = 0;
                     break;
                 } else {
                     System.out.println("Illegal move, try again!");
-                    move0 = getNextMove();
+                    move0 = getAliceMove(field);
                 }
             }
             printFieldToConsole(field);
@@ -35,8 +36,8 @@ class TicTacToe {
 
             printFieldToConsole(field);
             Move move1 = getNextMove();
-            while(true) {
-                if(field[move1.getX()][move1.getY()] == -1) {
+            while (true) {
+                if (field[move1.getX()][move1.getY()] == -1) {
                     field[move1.getX()][move1.getY()] = 1;
                     break;
                 } else {
@@ -61,14 +62,10 @@ class TicTacToe {
     }
 
     public boolean isDrawPosition(int[][] field) {
-        if(isWinPosition(field, 0) || isWinPosition(field, 1)){
-            return false;
-        } else {
-            for (int i = 0; i < field.length; i++) {
-                for (int j = 0; j < field[0].length; j++) {
-                    if (field[i][j] == -1) {
-                        return false;
-                    }
+        for (int i = 0; i < field.length; i++) {
+            for (int j = 0; j < field[0].length; j++) {
+                if (field[i][j] == -1) {
+                    return false;
                 }
             }
         }
@@ -109,8 +106,7 @@ class TicTacToe {
     }
 
 
-
-    public boolean isWinPositionForHorizontals(int[][] field, int playerToCheck){
+    public boolean isWinPositionForHorizontals(int[][] field, int playerToCheck) {
         for (int i = 0; i < field.length; i++) {
             for (int j = 0; j < field[0].length; j++) {
                 if (playerToCheck != field[i][j]) {
@@ -123,7 +119,7 @@ class TicTacToe {
         return false;
     }
 
-    public boolean isWinPositionForVerticals(int[][] field, int playerToCheck){
+    public boolean isWinPositionForVerticals(int[][] field, int playerToCheck) {
         for (int i = 0; i < field[0].length; i++) {
             for (int j = 0; j < field.length; j++) {
                 if (playerToCheck != field[j][i]) {
@@ -136,7 +132,7 @@ class TicTacToe {
         return false;
     }
 
-    public boolean isWinPositionForDiagonals(int[][] field, int playerToCheck){
+    public boolean isWinPositionForDiagonals(int[][] field, int playerToCheck) {
         return isWinPositionForDiagonalsFirst(field, playerToCheck) || isWinPositionForDiagonalsSecond(field, playerToCheck);
     }
 
@@ -160,6 +156,75 @@ class TicTacToe {
             }
         }
         return false;
+    }
+
+
+    ///Alice
+    //-1,-1, 1
+    // 0, 1,-1
+    //-1,-1, 0
+    public Move getAliceMove(int[][] field) {
+        int[][] fakeField = copyField(field);
+
+        int count = countPossibleOptionsForMove(fakeField);
+        while (count != 0) {
+            Move fakeMove = generateMove(fakeField);
+            if (fakeMove != null) {
+                makeMove(fakeField, fakeMove, 1);
+                if (isWinPosition(fakeField, 1)) {
+                    return fakeMove;
+                }
+            }
+            count--;
+        }
+        return getRandomMove(fakeField);
+    }
+
+    private void makeMove(int[][] fakeField, Move fakeMove, int i) {
+        fakeField[fakeMove.getX()][fakeMove.getY()] = i;
+    }
+
+    private int countPossibleOptionsForMove(int[][] fakeField) {
+        int count = 0;
+        for (int i = 0; i < fakeField.length; i++) {
+            for (int j = 0; j < fakeField.length; j++) {
+                if (fakeField[i][j] == -1) {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+
+    private Move generateMove(int[][] fakeField) {
+        for (int i = 0; i < fakeField.length; i++) {
+            for (int j = 0; j < fakeField.length; j++) {
+                if (fakeField[i][j] == -1) {
+                    fakeField[i][j] = 5;
+                    return new Move(i, j);
+                }
+            }
+        }
+        return null;
+    }
+
+    private Move getRandomMove(int[][] fakeField) {
+        Random random = new Random();
+        Move move;
+        do {
+            move = new Move(random.nextInt(3), random.nextInt(3));
+        } while (fakeField[move.getX()][move.getY()] == -1);
+        return move;
+    }
+
+    private int[][] copyField(int[][] field) {
+        int[][] fakeField = new int[field.length][field.length];
+        for (int i = 0; i < field.length; i++) {
+            for (int j = 0; j < field.length; j++) {
+                fakeField[i][j] = field[i][j];
+            }
+        }
+        return fakeField;
     }
 
 }
