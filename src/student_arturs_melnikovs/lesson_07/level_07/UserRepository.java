@@ -22,8 +22,38 @@ class UserRepository {
         }
     }
 
-    public void deleteUser(UserEntity userToDelete) {
+    public void editUser(UserEntity userToEdit, int editedID, String editedFirstName, String editedLastName, String editedPersonalCode) {
+        for (int i = 0; i < savedUsers.length; i++) {
+            if (userToEdit.equals(savedUsers[i])) {
+                savedUsers[i].setId(editedID);
+                savedUsers[i].setFirstName(editedFirstName);
+                savedUsers[i].setLastName(editedLastName);
+                savedUsers[i].setPersonalCode(editedPersonalCode);
+            } else {
+                System.out.println("User not found");
+            }
+        }
+    }
 
+
+    public void deleteUser(UserEntity userToDelete) {
+        for (int i = 0; i < savedUsers.length; i++) {
+            if (userToDelete.equals(savedUsers[i])) {
+                savedUsers[i] = null;
+                numberOfSavedUsers--;
+            } else {
+                System.out.println("User not found");
+            }
+        }
+        UserEntity[] copy = new UserEntity[numberOfSavedUsers];
+        for (int i = 0; i < copy.length; i++) {
+            if (savedUsers[i] == null) {
+                copy[i] = savedUsers[savedUsers.length-1];
+            } else {
+                copy[i] = savedUsers[i];
+            }
+        }
+        savedUsers = copy;
     }
 
     public UserEntity getUserFromID(int id) {
