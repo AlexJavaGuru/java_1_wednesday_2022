@@ -7,15 +7,19 @@ class TicTacToeTest {
         ticTacToeTest.isWinPositionForHorizontalsTest2();
         ticTacToeTest.isWinPositionForHorizontalsTest3();
         ticTacToeTest.isWinPositionForHorizontalsTest4();
+        ticTacToeTest.isWinPositionForVerticalTest1();
+        ticTacToeTest.isWinPositionForVerticalTest2();
+        ticTacToeTest.isWinPositionForVerticalTest3();
+        ticTacToeTest.isWinPositionForVerticalTest4();
 
     }
 
     public void isWinPositionForHorizontalsTest1() {
         TicTacToe ticTacToe = new TicTacToe();
         int[][] testField = {{1, 1, 1},
-                             {0, 0, -1},
-                             {1, -1, 1}};
-        boolean realResult = ticTacToe.isWinPositionForHorizontals(testField,1);
+                            {0, 0, -1},
+                            {1, -1, 1}};
+        boolean realResult = ticTacToe.isWinPositionForHorizontals(testField, 1);
         checkTestResult("isWinPositionForHorizontalsTest1", realResult);
     }
 
@@ -24,7 +28,7 @@ class TicTacToeTest {
         int[][] testField = {{1, 1, 0},
                              {1, 1, 1},
                              {1, 0, 0}};
-        boolean realResult = ticTacToe.isWinPositionForHorizontals(testField,1);
+        boolean realResult = ticTacToe.isWinPositionForHorizontals(testField, 1);
         checkTestResult("isWinPositionForHorizontalsTest2", realResult);
     }
 
@@ -33,7 +37,7 @@ class TicTacToeTest {
         int[][] testField = {{1, -1, -1},
                              {0, 0, -1},
                              {1, 1, 1}};
-        boolean realResult = ticTacToe.isWinPositionForHorizontals(testField,1);
+        boolean realResult = ticTacToe.isWinPositionForHorizontals(testField, 1);
         checkTestResult("isWinPositionForHorizontalsTest3", realResult);
     }
 
@@ -42,8 +46,44 @@ class TicTacToeTest {
         int[][] testField = {{1, -1, 1},
                              {0, 0, -1},
                              {1, -1, 1}};
-        boolean realResult = !ticTacToe.isWinPositionForHorizontals(testField,1);
+        boolean realResult = !ticTacToe.isWinPositionForHorizontals(testField, 1);
         checkTestResult("isWinPositionForHorizontalsTest4", realResult);
+    }
+
+    public void isWinPositionForVerticalTest1() {
+        TicTacToe ticTacToe = new TicTacToe();
+        int[][] testField = {{1, -1, 1},
+                             {1, 0, -1},
+                             {1, -1, 1}};
+        boolean realResult = ticTacToe.isWinPositionForVerticals(testField, 1);
+        checkTestResult("isWinPositionForVerticalTest1", realResult);
+    }
+
+    public void isWinPositionForVerticalTest2() {
+        TicTacToe ticTacToe = new TicTacToe();
+        int[][] testField = {{0, 1, 1},
+                             {1, 1, -1},
+                             {1, 1, 1}};
+        boolean realResult = ticTacToe.isWinPositionForVerticals(testField, 1);
+        checkTestResult("isWinPositionForVerticalTest2", realResult);
+    }
+
+    public void isWinPositionForVerticalTest3() {
+        TicTacToe ticTacToe = new TicTacToe();
+        int[][] testField = {{0, 0, 1},
+                             {1, 1, 1},
+                             {1, 1, 1}};
+        boolean realResult = ticTacToe.isWinPositionForVerticals(testField, 1);
+        checkTestResult("isWinPositionForVerticalTest3", realResult);
+    }
+
+    public void isWinPositionForVerticalTest4() {
+        TicTacToe ticTacToe = new TicTacToe();
+        int[][] testField = {{0, 0, 1},
+                             {1, 1, 1},
+                             {1, 1, 0}};
+        boolean realResult = !ticTacToe.isWinPositionForVerticals(testField, 1);
+        checkTestResult("isWinPositionForVerticalTest4", realResult);
     }
 
     public void checkTestResult(String testName, boolean result) {
