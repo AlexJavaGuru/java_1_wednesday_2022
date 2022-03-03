@@ -14,15 +14,18 @@ public class UserRepositoryTest {
         tester.testEditUserV1();
         tester.testEditUserV2();
         tester.testDeleteUserV1();
+        tester.testDeleteUserV2();
     }
 
     public void testUserSavingV1() {
         UserRepository repository = new UserRepository();
         UserEntity testUser1 = new UserEntity(01, "Arturs", "Melnikovs", "220595-11111");
         UserEntity testUser2 = new UserEntity(02, "Olegs", "Melnikovs", "220595-11112");
+        UserEntity testUser3 = new UserEntity(03, "Mister", "Twister", "123124");
         repository.saveUser(testUser1);
         repository.saveUser(testUser2);
-        UserEntity[] expectedResult = {testUser1, testUser2};
+        repository.saveUser(testUser3);
+        UserEntity[] expectedResult = {testUser1, testUser2, testUser3};
         UserEntity[] actualResult = repository.getAllUsers();
         checkResult(expectedResult, actualResult, "User saving test 1");
     }
@@ -30,9 +33,11 @@ public class UserRepositoryTest {
         UserRepository repository = new UserRepository();
         UserEntity testUser1 = new UserEntity(01, "Arturs", "Melnikovs", "220595-11111");
         UserEntity testUser2 = new UserEntity(01, "Olegs", "Melnikovs", "220595-11112");
+        UserEntity testUser3 = new UserEntity(03, "Mister", "Twister", "123124");
         repository.saveUser(testUser1);
         repository.saveUser(testUser2);
-        UserEntity[] expectedResult = {testUser1};
+        repository.saveUser(testUser3);
+        UserEntity[] expectedResult = {testUser1, testUser3};
         UserEntity[] actualResult = repository.getAllUsers();
         checkResult(expectedResult, actualResult, "User saving test 2");
     }
@@ -42,9 +47,8 @@ public class UserRepositoryTest {
         UserEntity testUser2 = new UserEntity(02, "Olegs", "Melnikovs", "220595-11112");
         repository.saveUser(testUser1);
         repository.saveUser(testUser2);
-        UserEntity expectedResult = testUser2;
         UserEntity actualResult = repository.getUserFromID(02);
-        checkResult(expectedResult, actualResult, "Get user from ID test 1");
+        checkResult(testUser2, actualResult, "Get user from ID test 1");
     }
     public void testGetUserFromIDv2() {
         UserRepository repository = new UserRepository();
@@ -87,11 +91,11 @@ public class UserRepositoryTest {
         UserRepository repository = new UserRepository();
         UserEntity testUser1 = new UserEntity(01, "Arturs", "Melnikovs", "220595-11111");
         UserEntity testUser2 = new UserEntity(02, "Olegs", "Melnikovs", "220595-11112");
-        UserEntity testUser3 = new UserEntity(01, "Mister", "Twister", "123124");
+        UserEntity testUser3 = new UserEntity(03, "Mister", "Twister", "123124");
         repository.saveUser(testUser1);
         repository.saveUser(testUser2);
-        repository.editUser(testUser3, 01, "Vasja", "Pupkin", "220595-11111");
-        UserEntity expected = new UserEntity(01, "Mister", "Twister", "123124");
+        repository.editUser(testUser3, 04, "Vasja", "Pupkin", "220595-11116");
+        UserEntity expected = new UserEntity(03, "Mister", "Twister", "123124");
         checkResult(expected, testUser3, "Edit test 2");
     }
     public void testDeleteUserV1() {
@@ -106,6 +110,18 @@ public class UserRepositoryTest {
         UserEntity[] expected = {testUser1, testUser3};
         UserEntity[] actual = repository.getAllUsers();
         checkResult(expected, actual, "Delete user test 1");
+    }
+    public void testDeleteUserV2() {
+        UserRepository repository = new UserRepository();
+        UserEntity testUser1 = new UserEntity(01, "Arturs", "Melnikovs", "220595-11111");
+        UserEntity testUser2 = new UserEntity(02, "Olegs", "Melnikovs", "220595-11112");
+        UserEntity testUser3 = new UserEntity(03, "Mister", "Twister", "123124");
+        repository.saveUser(testUser1);
+        repository.saveUser(testUser2);
+        repository.deleteUser(testUser3);
+        UserEntity[] expected = {testUser1, testUser2};
+        UserEntity[] actual = repository.getAllUsers();
+        checkResult(expected, actual, "Delete user test 2");
     }
 
 

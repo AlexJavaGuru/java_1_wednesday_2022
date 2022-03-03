@@ -13,12 +13,13 @@ class UserRepository {
             savedUsers = copy;
         } else if (!isUserUnique(userToSave)) {
             System.out.println("User with same personal code or ID is already registered!");
+            numberOfSavedUsers--;
         } else {
             for (int i = 0; i < savedUsers.length; i++) {
                 copy[i] = savedUsers[i];
-                copy[numberOfSavedUsers - 1] = userToSave;
-                savedUsers = copy;
             }
+            copy[numberOfSavedUsers - 1] = userToSave;
+            savedUsers = copy;
         }
     }
 
@@ -41,6 +42,7 @@ class UserRepository {
             if (userToDelete.equals(savedUsers[i])) {
                 savedUsers[i] = null;
                 numberOfSavedUsers--;
+                break;
             } else if (i == savedUsers.length -1) {
                 System.out.println("User not found!");
             }
