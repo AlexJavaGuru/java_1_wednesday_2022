@@ -29,20 +29,20 @@ class UserRepository {
                 savedUsers[i].setFirstName(editedFirstName);
                 savedUsers[i].setLastName(editedLastName);
                 savedUsers[i].setPersonalCode(editedPersonalCode);
-            } else {
+                break;
+            } else if (i == savedUsers.length - 1) {
                 System.out.println("User not found");
             }
         }
     }
-
 
     public void deleteUser(UserEntity userToDelete) {
         for (int i = 0; i < savedUsers.length; i++) {
             if (userToDelete.equals(savedUsers[i])) {
                 savedUsers[i] = null;
                 numberOfSavedUsers--;
-            } else {
-                System.out.println("User not found");
+            } else if (i == savedUsers.length -1) {
+                System.out.println("User not found!");
             }
         }
         UserEntity[] copy = new UserEntity[numberOfSavedUsers];
@@ -62,6 +62,7 @@ class UserRepository {
                 return savedUsers[i];
             }
         }
+        System.out.println("User not found");
         return null;
     }
 
@@ -71,6 +72,7 @@ class UserRepository {
                 return savedUsers[i];
             }
         }
+        System.out.println("User not found");
         return null;
     }
 
