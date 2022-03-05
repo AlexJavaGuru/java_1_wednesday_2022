@@ -2,23 +2,23 @@ package student_arturs_melnikovs.lesson_07.level_07;
 
 class UserRepository {
 
-    private int numberOfSavedUsers;
+    private int id;
     private UserEntity[] savedUsers;
 
     public void saveUser(UserEntity userToSave) {
-        numberOfSavedUsers++;
-        UserEntity[] copy = new UserEntity[numberOfSavedUsers];
-        if(numberOfSavedUsers == 1) {
+        id++;
+        UserEntity[] copy = new UserEntity[id];
+        if(id == 1) {
             copy[0] = userToSave;
             savedUsers = copy;
         } else if (!isUserUnique(userToSave)) {
             System.out.println("User with same personal code or ID is already registered!");
-            numberOfSavedUsers--;
+            id--;
         } else {
             for (int i = 0; i < savedUsers.length; i++) {
                 copy[i] = savedUsers[i];
             }
-            copy[numberOfSavedUsers - 1] = userToSave;
+            copy[id - 1] = userToSave;
             savedUsers = copy;
         }
     }
@@ -41,21 +41,11 @@ class UserRepository {
         for (int i = 0; i < savedUsers.length; i++) {
             if (userToDelete.equals(savedUsers[i])) {
                 savedUsers[i] = null;
-                numberOfSavedUsers--;
                 break;
             } else if (i == savedUsers.length -1) {
                 System.out.println("User not found!");
             }
         }
-        UserEntity[] copy = new UserEntity[numberOfSavedUsers];
-        for (int i = 0; i < copy.length; i++) {
-            if (savedUsers[i] == null) {
-                copy[i] = savedUsers[savedUsers.length-1];
-            } else {
-                copy[i] = savedUsers[i];
-            }
-        }
-        savedUsers = copy;
     }
 
     public UserEntity getUserFromID(int id) {

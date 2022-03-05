@@ -107,7 +107,7 @@ public class UserRepositoryTest {
         repository.saveUser(testUser2);
         repository.saveUser(testUser3);
         repository.deleteUser(testUser2);
-        UserEntity[] expected = {testUser1, testUser3};
+        UserEntity[] expected = {testUser1, null, testUser3};
         UserEntity[] actual = repository.getAllUsers();
         checkResult(expected, actual, "Delete user test 1");
     }
