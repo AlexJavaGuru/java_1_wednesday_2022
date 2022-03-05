@@ -1,4 +1,4 @@
-package student_igors.AscNumber;
+package student_igors.level_2;
 
 import java.util.Scanner;
 
