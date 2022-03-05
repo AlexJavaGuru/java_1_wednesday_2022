@@ -3,12 +3,10 @@ package student_aleksandrs_jakovenko.lesson_6.level_3;
 class ArrayService {
 
     boolean contains(int[] arr, int numberToSearch) {
-        int i = 0;
-        while (i < arr.length) {
-            if (arr[i] == numberToSearch) {
+        for (int i : arr) {
+            if (i == numberToSearch) {
                 return true;
             }
-            i++;
         }
         return false;
     }
@@ -47,16 +45,11 @@ class ArrayService {
         return result;
     }
 
-//Очень долго просидел, сломал голову и в итоге загуглил, переделал под себя...
-    void revert(int[] arr) {
-        int[] test = new int[arr.length];
-        int size = arr.length;
-        for (int i = 0; i < arr.length; i++) {
-            test[size - 1] = arr[i];
-            size = size - 1;
-        }
-        for (int j = 0; j < arr.length; j++) {
-            arr[j] = test[j];
+    void revert(int[] array) {
+        for (int i = 0; i < array.length / 2; i++) {
+            int temp = array[i];
+            array[i] = array[array.length - i - 1];
+            array[array.length - i - 1] = temp;
         }
     }
 
@@ -65,7 +58,7 @@ class ArrayService {
             for (int j = 0; j < i; j++) {
                 if (arr[j] > arr[j + 1]) {
                     int tmp = arr[j];
-                    arr[j] = arr [j + 1];
+                    arr[j] = arr[j + 1];
                     arr[j + 1] = tmp;
                 }
             }
