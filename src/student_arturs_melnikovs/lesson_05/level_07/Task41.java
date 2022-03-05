@@ -1,4 +1,4 @@
-package student_arturs_melnikovs.lesson_07;
+package student_arturs_melnikovs.lesson_05.level_07;
 
 import student_arturs_melnikovs.lesson_05.level_05.ArrayUtil;
 
