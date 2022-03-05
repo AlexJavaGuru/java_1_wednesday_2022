@@ -1,8 +1,5 @@
 package student_igors.lesson_3;
 
-import student_nikita_visnakov.nv_lesson2.Hello;
-
-import java.util.Scanner;
 
 public record RobotDemo() {
 
