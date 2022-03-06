@@ -5,7 +5,7 @@ class TicTacToeDemo {
         TicTacToe ticTacToe = new TicTacToe();
         int[][] test = {{1, 1, -1},
                         {1, 1, 1},
-                        {1, 0, 1}};
+                        {0, 0, 1}};
         boolean checkResultHorizontal = ticTacToe.isWinPositionForHorizontals(test,1);
         System.out.println(checkResultHorizontal);
 
@@ -20,5 +20,8 @@ class TicTacToeDemo {
 
         boolean checkResultDiagonals = ticTacToe.isWinPositionForDiagonals(test,1);
         System.out.println(checkResultDiagonals);
+
+        boolean checkResul = ticTacToe.isWinPosition(test,1);
+        System.out.println(checkResul);
     }
 }
