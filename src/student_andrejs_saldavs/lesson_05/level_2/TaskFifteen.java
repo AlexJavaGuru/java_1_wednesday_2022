@@ -11,10 +11,14 @@ class TaskFifteen {
 
         for (int i = 0; i < numbers.length; i++) {
             numbers[i] = random.nextInt();
+        }
+
+        for (int i = 0; i < numbers.length; i++) {
             System.out.print(numbers[i]);
             numbers[i] = numbers[i] + 2;
             System.out.println(" + 2 = " + numbers[i]);
         }
+
         System.out.println(Arrays.toString(numbers));
     }
 

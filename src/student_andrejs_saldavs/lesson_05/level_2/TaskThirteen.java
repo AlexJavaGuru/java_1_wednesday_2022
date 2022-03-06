@@ -8,10 +8,13 @@ class TaskThirteen {
     public static void main(String[] args) {
         int[] numbers = new int[3];
         int sum = 0;
+        Random random = new Random();
 
         for (int i = 0; i < numbers.length; i++) {
-            Random random = new Random();
             numbers[i] = random.nextInt();
+        }
+
+        for (int i = 0; i < numbers.length; i++) {
             sum =+ numbers[i];
         }
         System.out.println(sum);

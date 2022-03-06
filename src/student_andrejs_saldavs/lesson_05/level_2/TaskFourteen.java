@@ -9,12 +9,16 @@ class TaskFourteen {
 
         int[] numbers = new int[3];
         double avg = 0;
+        int sum = 0;
+        Random random = new Random();
 
         for (int i = 0; i < numbers.length ; i++) {
-            Random random = new Random();
             numbers[i] = random.nextInt();
-            avg += numbers[i];
+        }
 
+        for (int i = 0; i < numbers.length; i++) {
+            sum += numbers[i];
+            avg = sum/3;
         }
 
         System.out.println(avg);
