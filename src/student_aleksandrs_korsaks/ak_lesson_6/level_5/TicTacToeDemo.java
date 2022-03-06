@@ -1,5 +1,7 @@
 package student_aleksandrs_korsaks.ak_lesson_6.level_5;
 
+import java.util.Arrays;
+
 class TicTacToeDemo {
     public static void main(String[] args) {
         TicTacToe ticTacToe = new TicTacToe();
@@ -26,5 +28,8 @@ class TicTacToeDemo {
 
         boolean checkDraw = ticTacToe.isDrawPosition(test);
         System.out.println(checkDraw);
+
+        int[][] testField2 = ticTacToe.createField();
+        System.out.println(Arrays.deepToString(testField2));
     }
 }

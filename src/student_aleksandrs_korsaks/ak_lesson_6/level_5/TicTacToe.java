@@ -83,5 +83,16 @@ class TicTacToe {
         }
         return true;
     }
+
+    public int[][] createField() {
+        int[][] field = new int[3][3];
+        for (int i = 0; i < field.length; i++) {
+            for (int j = 0; j < field[i].length; j++) {
+                field[i][j] = -1;
+            }
+        }
+        return field;
+    }
 }
+
 

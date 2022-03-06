@@ -1,5 +1,7 @@
 package student_aleksandrs_korsaks.ak_lesson_6.level_5;
 
+import java.util.Arrays;
+
 class TicTacToeTest {
     public static void main(String[] args) {
         TicTacToeTest ticTacToeTest = new TicTacToeTest();
@@ -29,6 +31,7 @@ class TicTacToeTest {
         ticTacToeTest.isDrawPositionTest4();
         ticTacToeTest.isDrawPositionTest5();
         ticTacToeTest.isDrawPositionTest6();
+        ticTacToeTest.createFieldTest();
 
     }
 
@@ -264,6 +267,13 @@ class TicTacToeTest {
                              {0, 1, 1}};
         boolean realResult = !ticTacToe.isDrawPosition(testField);
         checkTestResult("isDrawPositionTest6", realResult);
+    }
+
+    public void createFieldTest() {
+        TicTacToe ticTacToe = new TicTacToe();
+        int[][] expectedResult = {{-1, -1, -1}, {-1, -1, -1}, {-1, -1, -1}};
+        int[][] realResult = ticTacToe.createField();
+        checkTestResult("createFieldTest", Arrays.deepEquals(expectedResult, realResult));
     }
 
     public void checkTestResult(String testName, boolean result) {
