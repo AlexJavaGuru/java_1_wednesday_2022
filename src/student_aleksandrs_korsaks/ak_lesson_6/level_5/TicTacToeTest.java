@@ -23,6 +23,12 @@ class TicTacToeTest {
         ticTacToeTest.isWinPositionTest3();
         ticTacToeTest.isWinPositionTest4();
         ticTacToeTest.isWinPositionTest5();
+        ticTacToeTest.isDrawPositionTest1();
+        ticTacToeTest.isDrawPositionTest2();
+        ticTacToeTest.isDrawPositionTest3();
+        ticTacToeTest.isDrawPositionTest4();
+        ticTacToeTest.isDrawPositionTest5();
+        ticTacToeTest.isDrawPositionTest6();
 
     }
 
@@ -204,6 +210,60 @@ class TicTacToeTest {
                              {1, 0, -1}};
         boolean realResult = !ticTacToe.isWinPosition(testField, 1);
         checkTestResult("isWinPositionTest5", realResult);
+    }
+
+    public void isDrawPositionTest1() {
+        TicTacToe ticTacToe = new TicTacToe();
+        int[][] testField = {{0, 1, 1},
+                             {1, 0, 0},
+                             {0, 0, 1}};
+        boolean realResult = ticTacToe.isDrawPosition(testField);
+        checkTestResult("isDrawPositionTest1", realResult);
+    }
+
+    public void isDrawPositionTest2() {
+        TicTacToe ticTacToe = new TicTacToe();
+        int[][] testField = {{0, 1, -1},
+                             {1, 0, 0},
+                             {0, 0, 1}};
+        boolean realResult = !ticTacToe.isDrawPosition(testField);
+        checkTestResult("isDrawPositionTest2", realResult);
+    }
+
+    public void isDrawPositionTest3() {
+        TicTacToe ticTacToe = new TicTacToe();
+        int[][] testField = {{1, 1, 1},
+                             {1, 0, 0},
+                             {0, 0, 1}};
+        boolean realResult = !ticTacToe.isDrawPosition(testField);
+        checkTestResult("isDrawPositionTest3", realResult);
+    }
+
+    public void isDrawPositionTest4() {
+        TicTacToe ticTacToe = new TicTacToe();
+        int[][] testField = {{1, 0, 0},
+                             {1, 1, 0},
+                             {0, 1, 0}};
+        boolean realResult = !ticTacToe.isDrawPosition(testField);
+        checkTestResult("isDrawPositionTest4", realResult);
+    }
+
+    public void isDrawPositionTest5() {
+        TicTacToe ticTacToe = new TicTacToe();
+        int[][] testField = {{1, 0, 0},
+                             {1, 1, 0},
+                             {0, 1, 1}};
+        boolean realResult = !ticTacToe.isDrawPosition(testField);
+        checkTestResult("isDrawPositionTest5", realResult);
+    }
+
+    public void isDrawPositionTest6() {
+        TicTacToe ticTacToe = new TicTacToe();
+        int[][] testField = {{1, 0, 0},
+                             {1, 0, 0},
+                             {0, 1, 1}};
+        boolean realResult = !ticTacToe.isDrawPosition(testField);
+        checkTestResult("isDrawPositionTest6", realResult);
     }
 
     public void checkTestResult(String testName, boolean result) {

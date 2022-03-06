@@ -3,8 +3,8 @@ package student_aleksandrs_korsaks.ak_lesson_6.level_5;
 class TicTacToeDemo {
     public static void main(String[] args) {
         TicTacToe ticTacToe = new TicTacToe();
-        int[][] test = {{1, 1, -1},
-                        {1, 1, 1},
+        int[][] test = {{0, 1, 1},
+                        {1, 0, 0},
                         {0, 0, 1}};
         boolean checkResultHorizontal = ticTacToe.isWinPositionForHorizontals(test,1);
         System.out.println(checkResultHorizontal);
@@ -21,7 +21,10 @@ class TicTacToeDemo {
         boolean checkResultDiagonals = ticTacToe.isWinPositionForDiagonals(test,1);
         System.out.println(checkResultDiagonals);
 
-        boolean checkResul = ticTacToe.isWinPosition(test,1);
-        System.out.println(checkResul);
+        boolean checkResult = ticTacToe.isWinPosition(test,1);
+        System.out.println(checkResult);
+
+        boolean checkDraw = ticTacToe.isDrawPosition(test);
+        System.out.println(checkDraw);
     }
 }
