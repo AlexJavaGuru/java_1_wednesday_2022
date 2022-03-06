@@ -1,5 +1,7 @@
 package student_aleksandrs_korsaks.ak_lesson_6.level_5;
 
+import java.util.Scanner;
+
 class TicTacToe {
     public static void main(String[] args) {
 
@@ -92,6 +94,15 @@ class TicTacToe {
             }
         }
         return field;
+    }
+
+    public Move getNextMove() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter the X coordinate of your move");
+        int x = scanner.nextInt();
+        System.out.println("Please enter the Y coordinate of your move");
+        int y = scanner.nextInt();
+        return new Move(x, y);
     }
 }
 
