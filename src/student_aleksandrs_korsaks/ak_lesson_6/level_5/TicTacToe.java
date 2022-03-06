@@ -104,6 +104,17 @@ class TicTacToe {
         int y = scanner.nextInt();
         return new Move(x, y);
     }
+
+    public void printFieldToConsole(int[][] field) {
+        for (int i = 0; i < field.length; i++) {
+            System.out.print("|");
+            for (int j = 0; j < field[i].length; j++) {
+                System.out.print(field[i][j] + "|");
+            }
+            System.out.println();
+        }
+    }
 }
+
 
 

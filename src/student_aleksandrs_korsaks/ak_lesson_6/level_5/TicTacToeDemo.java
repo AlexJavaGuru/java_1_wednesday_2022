@@ -31,5 +31,7 @@ class TicTacToeDemo {
 
         int[][] testField2 = ticTacToe.createField();
         System.out.println(Arrays.deepToString(testField2));
+
+        ticTacToe.printFieldToConsole(testField2);
     }
 }
