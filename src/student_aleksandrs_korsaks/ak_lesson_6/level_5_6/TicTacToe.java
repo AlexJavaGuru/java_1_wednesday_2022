@@ -36,7 +36,6 @@ class TicTacToe {
                 break;
             }
 
-
             System.out.println();
             System.out.println("2nd player move");
             printFieldToConsole(field);
