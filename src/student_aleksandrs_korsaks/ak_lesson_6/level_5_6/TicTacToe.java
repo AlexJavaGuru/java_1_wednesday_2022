@@ -12,13 +12,23 @@ class TicTacToe {
 
     public void play() {
         int[][] field = createField();
+
         while (true) {
+
+            System.out.println();
+            System.out.println("1st player move");
             printFieldToConsole(field);
             Move move0 = getNextMove();
+            while (field[move0.getX()][move0.getY()] != -1) {
+                System.out.println("That move is taken, make another one");
+                System.out.println();
+                move0 = getNextMove();
+            }
             field[move0.getX()][move0.getY()] = 0;
             printFieldToConsole(field);
+
             if (isWinPosition(field, 0)) {
-                System.out.println("Player 0 WIN!");
+                System.out.println("1st player WIN!");
                 break;
             }
             if (isDrawPosition(field)) {
@@ -26,12 +36,21 @@ class TicTacToe {
                 break;
             }
 
+
+            System.out.println();
+            System.out.println("2nd player move");
             printFieldToConsole(field);
             Move move1 = getNextMove();
+            while (field[move1.getX()][move1.getY()] != -1) {
+                System.out.println("That move is taken, make another one");
+                System.out.println();
+                move1 = getNextMove();
+            }
             field[move1.getX()][move1.getY()] = 1;
             printFieldToConsole(field);
+
             if (isWinPosition(field, 1)) {
-                System.out.println("Player 1 WIN!");
+                System.out.println("2nd player WIN!");
                 break;
             }
             if (isDrawPosition(field)) {
