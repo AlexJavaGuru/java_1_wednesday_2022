@@ -8,8 +8,10 @@ public class ProductDemo {
         double discount = (1.2 * 10) / 100;
         double result = (regularPrice - discount);
 
+         double actualPrice = result;
 
-        System.out.println("Result actual price is: " + result + " EUR");
+
+        System.out.println("Result actual price is: " + actualPrice + " EUR");
 
     }
 }

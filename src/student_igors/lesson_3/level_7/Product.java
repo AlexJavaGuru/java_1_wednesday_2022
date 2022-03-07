@@ -13,9 +13,10 @@ public class Product {
         this.regularPrice = regularPrice;
         this.discount = discount;
 
-
     }
-
+    double actualPrice() {
+        return regularPrice - regularPrice * discount / 100;
+    }
 
 }
 
