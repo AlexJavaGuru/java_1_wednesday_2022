@@ -6,14 +6,14 @@ public class Task6 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Type first number ");
-        int x = scanner.nextInt();
+        int num1 = scanner.nextInt();
         System.out.println("Type second number ");
-        int y = scanner.nextInt();
+        int num2 = scanner.nextInt();
 
-        if (x > y) {
-            System.out.println(y);
-        } else if (x < y) {
-            System.out.println(x);
+        if (num1 > num2) {
+            System.out.println(num2);
+        } else if (num1 < num2) {
+            System.out.println(num1);
         }
     }
 }

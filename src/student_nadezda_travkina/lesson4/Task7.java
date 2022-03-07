@@ -6,13 +6,13 @@ public class Task7 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Type first number ");
-        int x = scanner.nextInt();
+        int num1 = scanner.nextInt();
         System.out.println("Type second number ");
-        int y = scanner.nextInt();
+        int num2 = scanner.nextInt();
 
-        if (x == y) {
+        if (num1 == num2) {
             System.out.println("Numbers are equals");
-        } else if (x != y) {
+        } else if (num1 != num2) {
             System.out.println("Numbers are different");
         }
     }

@@ -16,11 +16,11 @@ public class Calculator {
     public static int getInt() {
         System.out.println("Type a number:");
         Scanner scanner = new Scanner(System.in);
-        int x = scanner.nextInt();
+        int num3 = scanner.nextInt();
         if (scanner.hasNextInt()) {
-            x = scanner.nextInt();
+            num3 = scanner.nextInt();
         }
-        return x;
+        return num3;
     }
 
     public static char getOperation() {
@@ -55,17 +55,16 @@ public class Calculator {
     public boolean isEven(int result) {
         if (result % 2 == 0) {
             return true;
-        } else if (result % 2 != 0) {
-            return false;
-        }
-        return true;
+        } else if (result % 2 != 0) {}
+
+        return false;
     }
 
-    public int maxOfTwoNumbers(int x, int y) {
-        if (x > y) {
-        } else if (x < y) {
-        } else if (x == y) {
+    public int maxOfTwoNumbers(int num3, int num4) {
+        if (num3 > num4) {
+        } else if (num3 < num4) {
+        } else if (num3 == num4) {
         }
-        return x;
+        return num3;
     }
 }

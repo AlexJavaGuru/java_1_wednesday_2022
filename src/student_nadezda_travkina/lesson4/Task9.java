@@ -6,15 +6,15 @@ public class Task9 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Type first number ");
-        int x = scanner.nextInt();
+        int num1 = scanner.nextInt();
         System.out.println("Type second number ");
-        int y = scanner.nextInt();
+        int num2 = scanner.nextInt();
         System.out.println("Type third number ");
-        int a = scanner.nextInt();
+        int num3 = scanner.nextInt();
 
-        if (x < y & y < a) {
+        if (num1 < num2 & num2 < num3) {
             System.out.println("increasing");
-        } else if (x > y & y > a) {
+        } else if (num1 > num2 & num2 > num3) {
             System.out.println("decreasing");
         } else {
             System.out.println("Neither increasing or decreasing order");
