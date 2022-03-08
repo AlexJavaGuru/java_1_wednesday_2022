@@ -5,7 +5,7 @@ import java.util.Scanner;
 class PowerCalculator {
     //get numbers
     //check if power > == < 0
-    //exponentiation
+    //exponentiation pos neg
     //print
 
     static int[] getNumbers() {
