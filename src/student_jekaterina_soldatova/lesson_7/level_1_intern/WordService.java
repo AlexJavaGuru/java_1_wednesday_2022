@@ -10,7 +10,7 @@ class WordService {
     }
 
     static String[] stringToArray(String sentence) {
-        String[] arrayFromString = sentence.split(" ", 0);
+        String[] arrayFromString = sentence.split(" ");
         WordService.removeSpecialChars(arrayFromString);
         return arrayFromString;
     }
@@ -19,7 +19,6 @@ class WordService {
         for (int i = 0; i < arrayToCheck.length; i++) {
             arrayToCheck[i] = arrayToCheck[i].replaceAll("[^\\w]", "");
         }
-        //return arrayToCheck;
     }
 
     static String findMostFrequentWord(String[] arrayOfWords) {

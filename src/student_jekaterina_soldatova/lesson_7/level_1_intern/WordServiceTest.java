@@ -1,5 +1,7 @@
 package student_jekaterina_soldatova.lesson_7.level_1_intern;
 
+import java.util.Arrays;
+
 class WordServiceTest {
     public static void main(String[] args) {
         WordServiceTest test = new WordServiceTest();
@@ -10,11 +12,12 @@ class WordServiceTest {
 
     void stringToArray() {
         String[] expectedResult = {"Huh", "Joe", "waited", "for", "the", "train", "the", "train", "was", "late"};
-        String[] realResult = WordService.stringToArray("Huh - Joe waited for the train, the train was late!");
+        String[] realResult = WordService.stringToArray("Huh, Joe waited for the train, the train was late!");
         if (compareArrays(expectedResult, realResult)) {
             System.out.println("string to array = OK");
         } else {
             System.out.println("string to array = FAIL");
+            System.out.println(Arrays.toString(realResult));
         }
     }
 
