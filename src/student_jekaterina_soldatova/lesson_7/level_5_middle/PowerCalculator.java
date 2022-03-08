@@ -30,7 +30,12 @@ class PowerCalculator {
     }
 
     static double exponentiationNegative(int[] numbers) {
-        double result =
-
+        double result = (double) numbers[0];
+        for (int i = 0; i > numbers[1]; i--) {
+            result = result / numbers[0];
+        }
+        return result;
     }
+
+    static void printResult(result)
 }
