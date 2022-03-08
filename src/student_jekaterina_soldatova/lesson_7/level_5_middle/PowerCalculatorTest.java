@@ -61,12 +61,13 @@ class PowerCalculatorTest {
     }
 
     void exponentiationNegative() {
-        int expectedResult = 1;
-        int realResult = PowerCalculator.exponentiationPositive(new int[]{2, 0});
+        double expectedResult = 0.125;
+        double realResult = PowerCalculator.exponentiationNegative(new int[]{2, -3});
         if (expectedResult==realResult) {
-            System.out.println("exponentiationZero = OK");
+            System.out.println("exponentiationNegative = OK");
         } else {
-            System.out.println("exponentiationZero = FAIL");
+            System.out.println("exponentiationNegative = FAIL");
+            System.out.println(realResult);
         }
     }
 }

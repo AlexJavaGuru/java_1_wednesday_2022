@@ -2,6 +2,8 @@ package student_jekaterina_soldatova.lesson_7.level_5_middle;
 
 import java.util.Scanner;
 
+import static java.lang.Math.abs;
+
 class PowerCalculator {
     //get numbers
     //check if power > == < 0
@@ -30,11 +32,11 @@ class PowerCalculator {
     }
 
     static double exponentiationNegative(int[] numbers) {
-        double result = numbers[0];
-        for (int i = 0; i > numbers[1]; i--) {
-            result = result / numbers[0];
+        int result = 1;
+        for (int i = 0; i < abs(numbers[1]); i++) {
+            result = result * numbers[0];
         }
-        return result;
+        return 1.0/result;
     }
 
     static void printResult(Object result) {
