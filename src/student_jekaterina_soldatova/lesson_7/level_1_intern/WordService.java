@@ -34,6 +34,7 @@ class WordService {
             }
             if (countOfTimes > maxNumberOfTimes) {
                 mostFrequentWord = word;
+                maxNumberOfTimes = countOfTimes;
             }
         }
         return mostFrequentWord;
