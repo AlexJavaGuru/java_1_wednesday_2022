@@ -15,7 +15,8 @@ class WordService {
     }
 
     static String removeSpecialChars(String sentence) {
-            return sentence.replaceAll("[^\s\\w]", "");
+
+        return sentence.replaceAll("[^\s\\w]", "");
     }
 
     static String findMostFrequentWord(String[] arrayOfWords) {
