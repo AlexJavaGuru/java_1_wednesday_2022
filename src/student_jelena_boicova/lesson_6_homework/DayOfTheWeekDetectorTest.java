@@ -9,8 +9,13 @@ public class DayOfTheWeekDetectorTest {
 
     public void shouldReturnMonday(){
         DayOfTheWeekDetector detector = new DayOfTheWeekDetector();
-        String dayOfTheWeek = detector.findDayOfTheWeek(1);
-        checkTestResult("Monday".equals(dayOfTheWeek));
-
+        int dayNumber = 1;
+        String actualResult = detector.findDayOfTheWeek(dayNumber);
+        String expectedResult = "Monday";
+        if (actualResult == expectedResult){
+            System.out.println ("Monday test = OK");
+        } else {
+            System.out.println ("Monday test = FAIL");
+        }
     }
 }
