@@ -8,6 +8,7 @@ class WordServiceTest {
 
         test.stringToArray();
         test.findMostFrequentWord();
+        test.removeSpecialChars();
     }
 
     void stringToArray() {
@@ -38,6 +39,18 @@ class WordServiceTest {
             System.out.println("find Most Frequent Word = OK");
         } else {
             System.out.println("find Most Frequent Word = FAIL");
+            System.out.println(realResult);
+        }
+    }
+
+    void removeSpecialChars() {
+        String expectedResult = "somebody";
+        String stringToCheck = ";,;'[][]'some-body//[;^^^&*(;'.!#&";
+        String realResult = WordService.removeSpecialChars(stringToCheck);
+        if (expectedResult.equals(realResult)) {
+            System.out.println("removeSpecialChars = OK");
+        } else {
+            System.out.println("removeSpecialChars = FAIL");
             System.out.println(realResult);
         }
     }

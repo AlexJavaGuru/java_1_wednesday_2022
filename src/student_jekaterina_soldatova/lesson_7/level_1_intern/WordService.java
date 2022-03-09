@@ -1,6 +1,5 @@
 package student_jekaterina_soldatova.lesson_7.level_1_intern;
 
-import java.util.Locale;
 import java.util.Scanner;
 
 class WordService {
@@ -16,7 +15,7 @@ class WordService {
     }
 
     static String removeSpecialChars(String sentence) {
-            return sentence.replaceAll("[^\\w^\\s]", "");
+            return sentence.replaceAll("[^\s\\w]", "");
     }
 
     static String findMostFrequentWord(String[] arrayOfWords) {
