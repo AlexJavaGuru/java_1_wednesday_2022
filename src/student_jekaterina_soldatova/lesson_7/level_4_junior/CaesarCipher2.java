@@ -1,6 +1,7 @@
 package student_jekaterina_soldatova.lesson_7.level_4_junior;
 
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 
 class CaesarCipher2 {
@@ -23,14 +24,15 @@ class CaesarCipher2 {
         int offset = pair.getOffset();
 
         for (int i = 0; i < oldString.length(); i++) {
-            char letter = oldString.charAt(i);
-            newString.append(replaceLetter(letter, offset));
+
+            char letter = replaceLetter(oldString.charAt(i), offset);
+            newString.append(letter);
         }
         return newString.toString();
     }
 
     static char replaceLetter(char letter, int offset) {
-        if ("[a-z]".contains(Character.toString(letter))) {
+        if (Pattern.matches("[a-z]", Character.toString(letter))) {
             return replaceLetterLowercase(letter, offset);
         } else if ("[A-Z]".contains(Character.toString(letter)))  {
             return replaceLetterUppercase(letter, offset);
