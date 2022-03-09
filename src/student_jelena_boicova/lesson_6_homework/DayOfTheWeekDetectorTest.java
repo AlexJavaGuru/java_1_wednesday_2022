@@ -4,15 +4,14 @@ public class DayOfTheWeekDetectorTest {
 
     public static void main(String[] args) {
         DayOfTheWeekDetectorTest test = new DayOfTheWeekDetectorTest();
-        test.shouldReturnMonday();
+        test.findMonday();
     }
 
-    public void shouldReturnMonday() {
-        DayOfTheWeekDetector detector = new DayOfTheWeekDetector();
-        String dayOfTheWeek = detector.findDayOfTheWeek(1);
-        checkTestResult("Monday".equals(dayOfTheWeek),"Monday");
-     }
-
-    private void checkTestResult(boolean equals, String monday) {
+    public void findMonday (){
+        DayOfTheWeekDetector result = new DayOfTheWeekDetector();
+        int dayNumber = 1;
+        String actualResult = result.findDayOfTheWeek(dayNumber);
+        String expectedResult = "Monday";
+        checkResult(expectedResult, actualResult, "Find day of the week TEST Monday");
     }
 }
