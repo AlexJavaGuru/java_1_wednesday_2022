@@ -11,8 +11,8 @@ class WordServiceTest {
     }
 
     void stringToArray() {
-        String[] expectedResult = {"Huh", "Joe", "waited", "for", "the", "train", "the", "train", "was", "late"};
-        String[] realResult = WordService.stringToArray("Huh, Joe waited for the train, the train was late!");
+        String[] expectedResult = {"huh", "joe", "waited", "for", "the", "train", "the", "train", "was", "late"};
+        String[] realResult = WordService.stringToArray("Huh-   Joe waited for the train, the train was late!");
         if (compareArrays(expectedResult, realResult)) {
             System.out.println("string to array = OK");
         } else {

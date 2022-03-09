@@ -1,5 +1,6 @@
 package student_jekaterina_soldatova.lesson_7.level_1_intern;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 class WordService {
@@ -10,15 +11,12 @@ class WordService {
     }
 
     static String[] stringToArray(String sentence) {
-        String[] arrayFromString = sentence.split(" ");
-        WordService.removeSpecialChars(arrayFromString);
-        return arrayFromString;
+        sentence = WordService.removeSpecialChars(sentence).toLowerCase();
+        return sentence.split("\\s+");
     }
 
-    static void removeSpecialChars(String[] arrayToCheck) {
-        for (int i = 0; i < arrayToCheck.length; i++) {
-            arrayToCheck[i] = arrayToCheck[i].replaceAll("[^\\w]", "");
-        }
+    static String removeSpecialChars(String sentence) {
+            return sentence.replaceAll("[^\\w^\\s]", "");
     }
 
     static String findMostFrequentWord(String[] arrayOfWords) {
