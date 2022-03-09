@@ -17,43 +17,40 @@ class CaesarCipher2 {
         return new Pair(stringFromUser, offsetFromUser);
     }
 
-
     String goThroughSentence(Pair pair) {
         String oldString = pair.getString();
-        StringBuilder newString = new StringBuilder();
         int offset = pair.getOffset();
+        String newString = "";
 
         for (int i = 0; i < oldString.length(); i++) {
-
-            char letter = replaceLetter(oldString.charAt(i), offset);
-            newString.append(letter);
+            newString += replaceLetter(oldString.charAt(i), offset);
         }
-        return newString.toString();
+        return newString;
     }
 
     static char replaceLetter(char letter, int offset) {
         if (Pattern.matches("[a-z]", Character.toString(letter))) {
             return replaceLetterLowercase(letter, offset);
-        } else if ("[A-Z]".contains(Character.toString(letter)))  {
+        } else if (Pattern.matches("[A-Z]", Character.toString(letter)))  {
             return replaceLetterUppercase(letter, offset);
         }
         return letter;
     }
 
     static char replaceLetterLowercase(char letter, int offset) {
-        if ((int)letter - offset < (int)'a') {
-            letter = (char) ((int)'z' - (offset - (int)letter - (int)'a') + 1);
+        if (letter - offset < 'a') {
+            letter = (char) ('z' - (offset - (letter - 'a')) + 1);
         } else {
-            letter = (char) ((int)letter - offset);
+            letter = (char) (letter - offset);
         }
         return letter;
     }
 
     static char replaceLetterUppercase(char letter, int offset) {
-        if ((int)letter - offset < (int)'A') {
-            letter = (char) ((int)'Z' - (offset - (int)letter - (int)'A') + 1);
+        if (letter - offset < 'A') {
+            letter = (char) ('Z' - (offset - (letter - 'A')) + 1);
         } else {
-            letter = (char) ((int)letter - offset);
+            letter = (char) (letter - offset);
         }
         return letter;
     }
