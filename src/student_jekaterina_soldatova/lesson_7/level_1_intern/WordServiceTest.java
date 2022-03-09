@@ -45,7 +45,7 @@ class WordServiceTest {
 
     void removeSpecialChars() {
         String expectedResult = "somebody";
-        String stringToCheck = ";,;'[][]'some-body//[;^^^&*(;'.!#&";
+        String stringToCheck = ";,;'[][]'some^&*(-body//[;^^^&*(;'.!#&";
         String realResult = WordService.removeSpecialChars(stringToCheck);
         if (expectedResult.equals(realResult)) {
             System.out.println("removeSpecialChars = OK");
