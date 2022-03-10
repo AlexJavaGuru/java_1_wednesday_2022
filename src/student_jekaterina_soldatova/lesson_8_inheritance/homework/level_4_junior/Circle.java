@@ -21,5 +21,4 @@ class Circle extends Shape {
         return 2 * PI_CONSTANT * radius;
     }
 
-
 }
