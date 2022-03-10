@@ -9,6 +9,11 @@ class ShapeTest {
 
         test.squareArea();
         test.squarePerimeter();
+
+        test.rectangleArea();
+        test.rectanglePerimeter();
+
+
     }
 
     static void circleArea() {
@@ -31,9 +36,10 @@ class ShapeTest {
         if (expectedResult == realResult) {
             System.out.println("circle perimeter = OK");
         } else {
-            System.out.println("Circle perimeter = FAIL, result is " + realResult);
+            System.out.println("circle perimeter = FAIL, result is " + realResult);
         }
     }
+
 
     static void squareArea() {
         Square square = new Square("square", 5.0);
@@ -43,7 +49,7 @@ class ShapeTest {
         if (expectedResult == realResult) {
             System.out.println("square area = OK");
         } else {
-            System.out.println("Circle area = FAIL, result is " + realResult);
+            System.out.println("square area = FAIL, result is " + realResult);
         }
     }
 
@@ -55,7 +61,32 @@ class ShapeTest {
         if (expectedResult == realResult) {
             System.out.println("square perimeter = OK");
         } else {
-            System.out.println("Circle perimeter = FAIL, result is " + realResult);
+            System.out.println("square perimeter = FAIL, result is " + realResult);
+        }
+    }
+
+
+    static void rectangleArea() {
+        Rectangle rectangle = new Rectangle("rectangle", 5.0, 6.0);
+        double expectedResult = 30.0;
+        double realResult = rectangle.calculateArea();
+
+        if (expectedResult == realResult) {
+            System.out.println("rectangle area = OK");
+        } else {
+            System.out.println("rectangle area = FAIL, result is " + realResult);
+        }
+    }
+
+    static void rectanglePerimeter() {
+        Rectangle rectangle = new Rectangle("rectangle", 5.0, 6.0);
+        double expectedResult = 22.0;
+        double realResult = rectangle.calculatePerimeter();
+
+        if (expectedResult == realResult) {
+            System.out.println("rectangle perimeter = OK");
+        } else {
+            System.out.println("rectangle perimeter = FAIL, result is " + realResult);
         }
     }
 }
