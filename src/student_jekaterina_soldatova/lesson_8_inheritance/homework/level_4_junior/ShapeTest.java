@@ -13,6 +13,8 @@ class ShapeTest {
         test.rectangleArea();
         test.rectanglePerimeter();
 
+        test.triangleArea();
+        test.trianglePerimeter();
 
     }
 
@@ -87,6 +89,31 @@ class ShapeTest {
             System.out.println("rectangle perimeter = OK");
         } else {
             System.out.println("rectangle perimeter = FAIL, result is " + realResult);
+        }
+    }
+
+
+    static void triangleArea() {
+        Triangle triangle = new Triangle("triangle", 5.0);
+        double expectedResult = 10.83;
+        double realResult = Math.round(triangle.calculateArea() * 100.0) / 100.0;
+
+        if (expectedResult == realResult) {
+            System.out.println("triangle area = OK");
+        } else {
+            System.out.println("triangle area = FAIL, result is " + realResult);
+        }
+    }
+
+    static void trianglePerimeter() {
+        Triangle triangle = new Triangle("triangle", 5.0);
+        double expectedResult = 15.0;
+        double realResult = triangle.calculatePerimeter();
+
+        if (expectedResult == realResult) {
+            System.out.println("triangle perimeter = OK");
+        } else {
+            System.out.println("triangle perimeter = FAIL, result is " + realResult);
         }
     }
 }
