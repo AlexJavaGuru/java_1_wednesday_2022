@@ -7,6 +7,11 @@ public class DayOfTheWeekDetectorTest {
         test.shouldReturnMonday();
         test.shouldReturnTuesday();
         test.shouldReturnWednesday();
+        test.shouldReturnThursday();
+        test.shouldReturnFriday();
+        test.shouldReturnSaturday();
+        test.shouldReturnSunday();
+
     }
 
     public void shouldReturnMonday(){
@@ -39,6 +44,50 @@ public class DayOfTheWeekDetectorTest {
             System.out.println ("Wednesday test = OK");
         } else {
             System.out.println ("Wednesday test = FAIL");
+        }
+    }
+
+    public void shouldReturnThursday(){
+        DayOfTheWeekDetector detector = new DayOfTheWeekDetector();
+        String actualResult = detector.findDayOfTheWeek(4);
+        String expectedResult = "Thursday";
+        if (actualResult.equals(expectedResult)){
+            System.out.println ("Thursday test = OK");
+        } else {
+            System.out.println ("Thursday test = FAIL");
+        }
+    }
+
+    public void shouldReturnFriday(){
+        DayOfTheWeekDetector detector = new DayOfTheWeekDetector();
+        String actualResult = detector.findDayOfTheWeek(5);
+        String expectedResult = "Friday";
+        if (actualResult.equals(expectedResult)){
+            System.out.println ("Friday test = OK");
+        } else {
+            System.out.println ("Friday test = FAIL");
+        }
+    }
+
+    public void shouldReturnSaturday(){
+        DayOfTheWeekDetector detector = new DayOfTheWeekDetector();
+        String actualResult = detector.findDayOfTheWeek(6);
+        String expectedResult = "Saturday";
+        if (actualResult.equals(expectedResult)){
+            System.out.println ("Saturday test = OK");
+        } else {
+            System.out.println ("Saturday test = FAIL");
+        }
+    }
+
+    public void shouldReturnSunday(){
+        DayOfTheWeekDetector detector = new DayOfTheWeekDetector();
+        String actualResult = detector.findDayOfTheWeek(7);
+        String expectedResult = "Sunday";
+        if (actualResult.equals(expectedResult)){
+            System.out.println ("Sunday test = OK");
+        } else {
+            System.out.println ("Sunday test = FAIL");
         }
     }
 }
