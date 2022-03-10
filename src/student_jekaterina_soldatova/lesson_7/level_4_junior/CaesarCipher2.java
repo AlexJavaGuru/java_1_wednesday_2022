@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 class CaesarCipher2 {
     //get string
-    //replace letters
+    //replace letters: upper/lower
     //print
 
     Pair getString() {
