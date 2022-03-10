@@ -12,7 +12,7 @@ public class DayOfTheWeekDetectorTest {
         DayOfTheWeekDetector detector = new DayOfTheWeekDetector();
         String actualResult = detector.findDayOfTheWeek(1);
         String expectedResult = "Monday";
-        if (actualResult == expectedResult){
+        if (actualResult.equals(expectedResult)){
             System.out.println ("Monday test = OK");
         } else {
             System.out.println ("Monday test = FAIL");
@@ -23,7 +23,7 @@ public class DayOfTheWeekDetectorTest {
         DayOfTheWeekDetector detector = new DayOfTheWeekDetector();
         String actualResult = detector.findDayOfTheWeek(2);
         String expectedResult = "Tuesday";
-        if (actualResult == expectedResult){
+        if (actualResult.equals(expectedResult)){
             System.out.println ("Tuesday test = OK");
         } else {
             System.out.println ("Tuesday test = FAIL");
