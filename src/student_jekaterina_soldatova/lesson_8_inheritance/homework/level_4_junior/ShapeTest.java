@@ -23,7 +23,7 @@ class ShapeTest {
     static void circlePerimeter() {
         Circle circle = new Circle("circle", 5.0);
         double expectedResult = 31.4;
-        double realResult = circle.calculatePerimeter();
+        double realResult = Math.round(circle.calculatePerimeter() * 100.0) / 100.0;
 
         if (expectedResult == realResult) {
             System.out.println("circle are = OK");
