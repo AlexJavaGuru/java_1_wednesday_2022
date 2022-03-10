@@ -6,6 +6,7 @@ public class DayOfTheWeekDetectorTest {
         DayOfTheWeekDetectorTest test = new DayOfTheWeekDetectorTest();
         test.shouldReturnMonday();
         test.shouldReturnTuesday();
+        test.shouldReturnWednesday();
     }
 
     public void shouldReturnMonday(){
@@ -27,6 +28,17 @@ public class DayOfTheWeekDetectorTest {
             System.out.println ("Tuesday test = OK");
         } else {
             System.out.println ("Tuesday test = FAIL");
+        }
+    }
+
+    public void shouldReturnWednesday(){
+        DayOfTheWeekDetector detector = new DayOfTheWeekDetector();
+        String actualResult = detector.findDayOfTheWeek(3);
+        String expectedResult = "Wednesday";
+        if (actualResult.equals(expectedResult)){
+            System.out.println ("Wednesday test = OK");
+        } else {
+            System.out.println ("Wednesday test = FAIL");
         }
     }
 }
