@@ -44,11 +44,19 @@ class ShapeUtil {
     }
 
     double calculateArea(Shape[] shapes) {
-
+        double result = 0.0;
+        for (Shape shape: shapes) {
+            result += calculateArea(shape);
+        }
+        return result;
     }
 
     double calculatePerimeter(Shape[] shapes) {
-
+        double result = 0.0;
+        for (Shape shape: shapes) {
+            result += calculatePerimeter(shape);
+        }
+        return result;
     };
 
     double calculateArea(Shape shape) {
