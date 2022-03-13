@@ -1,7 +1,7 @@
 package student_jekaterina_soldatova.lesson_8_inheritance.homework.level_7_senior.task_32;
 
 
-class MAthOperationDemo {
+class MathOperationDemo {
 
 	public static void main(String[] args) {
 		// build and calculate: 10 + 20
