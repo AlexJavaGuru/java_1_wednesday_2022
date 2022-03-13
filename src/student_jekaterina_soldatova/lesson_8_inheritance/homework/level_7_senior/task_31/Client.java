@@ -2,48 +2,36 @@ package student_jekaterina_soldatova.lesson_8_inheritance.homework.level_7_senio
 
 class Client {
     private String name;
-    private String[] booksTaken;
-    private String[] booksReserved;
+    private String[] booksTakenByThisClient;
+    private String[] booksReservedByThisClient;
 
     Client(String name, String[] booksTaken, String[] booksReserved) {
         this.name = name;
-        this.booksTaken = booksTaken;
-        this.booksReserved = booksReserved;
+        this.booksTakenByThisClient = booksTaken;
+        this.booksReservedByThisClient = booksReserved;
     }
 
     String getClientName() {
         return name;
     }
 
-    String[] getBooksTaken() {
-        return booksTaken;
+    String[] getBooksTakenByThisClient() {
+        return booksTakenByThisClient;
     }
 
-    String[] getBooksReserved() {
-        return booksReserved;
+    String[] getBooksReservedByThisClient() {
+        return booksReservedByThisClient;
     }
 
     void takeBook(Book book){
-        String[] newBooksTakenList = new String[booksTaken.length+1];
-        System.arraycopy(booksTaken, 0, newBooksTakenList, 0, booksTaken.length);
-        newBooksTakenList[newBooksTakenList.length-1] = book.getTitle();
-        booksTaken = newBooksTakenList;
+        booksTakenByThisClient = (String[])ELibraryUtil.addToArray(book.getTitle(), booksTakenByThisClient);
     }
 
     void returnBook(Book book) {
-        String[] newBooksTakenList = new String[booksTaken.length - 1];
-        for (int i = 0, j = 0; i < booksTaken.length - 1; i++) {
-            if (!(booksTaken[i].equals(book.getTitle()))) {
-                newBooksTakenList[j++] = booksTaken[i];
-            }
-        }
-        booksTaken = newBooksTakenList;
+        booksTakenByThisClient = (String[])ELibraryUtil.removeFromArray(book.getTitle(), booksTakenByThisClient);
     }
 
     void reserveBook(Book book) {
-        String[] newBooksReserved = new String[booksReserved.length+1];
-        System.arraycopy(booksReserved, 0, newBooksReserved, 0, booksReserved.length);
-        newBooksReserved[newBooksReserved.length-1] = book.getTitle();
-        booksReserved = newBooksReserved;
+        booksReservedByThisClient = (String[])ELibraryUtil.addToArray(book.getTitle(), booksReservedByThisClient);
     }
 }

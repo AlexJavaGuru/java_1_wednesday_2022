@@ -4,44 +4,48 @@ class Book {
     private String title;
     private String author;
     private int countOfBooks;
-    private String[] clientsWhoTook;
-    private String[] clientsWhoReserved;
+    private String[] clientsWhoTookThisBook;
+    private String[] clientsWhoReservedThisBook;
 
     Book(String title, String author, int countOfBooks, String[] clientsWhoTook, String[] clientsWhoReserved) {
         this.title = title;
         this.author = author;
         this.countOfBooks = countOfBooks;
-        this.clientsWhoTook = clientsWhoTook;
-        this.clientsWhoReserved = clientsWhoReserved;
+        this.clientsWhoTookThisBook = clientsWhoTook;
+        this.clientsWhoReservedThisBook = clientsWhoReserved;
     }
 
     String getTitle() {
         return title;
     }
 
+    String getAuthor() {
+        return author;
+    }
+
+    int getCountOfBooks() {
+        return countOfBooks;
+    }
+
+    String[] getClientsWhoTookThisBook() {
+        return clientsWhoTookThisBook;
+    }
+
+    String[] getClientsWhoReservedThisBook() {
+        return clientsWhoReservedThisBook;
+    }
+
     void takeBook(Client client) {
         countOfBooks--;
-        String[] newClientsWhoTookList = new String[clientsWhoTook.length+1];
-        System.arraycopy(clientsWhoTook, 0, newClientsWhoTookList, 0, clientsWhoTook.length);
-        newClientsWhoTookList[newClientsWhoTookList.length-1] = client.getClientName();
-        clientsWhoTook = newClientsWhoTookList;
+        clientsWhoTookThisBook = (String[])ELibraryUtil.addToArray(client.getClientName(), clientsWhoTookThisBook);
     }
 
     void returnBook(Client client) {
         countOfBooks++;
-        String[] newClientsWhoTookList = new String[clientsWhoTook.length - 1];
-        for (int i = 0, j = 0; i < clientsWhoTook.length - 1; i++) {
-            if (!(clientsWhoTook[i].equals(client.getClientName()))) {
-                newClientsWhoTookList[j++] = clientsWhoTook[i];
-            }
-        }
-        clientsWhoTook = newClientsWhoTookList;
+        clientsWhoTookThisBook = (String[])ELibraryUtil.removeFromArray(client.getClientName(), clientsWhoTookThisBook);
     }
 
     void reserveBook(Client client) {
-        String[] newClientsWhoReserved = new String[clientsWhoReserved.length+1];
-        System.arraycopy(clientsWhoReserved, 0, newClientsWhoReserved, 0, clientsWhoReserved.length);
-        newClientsWhoReserved[newClientsWhoReserved.length-1] = client.getClientName();
-        clientsWhoReserved = newClientsWhoReserved;
+        clientsWhoReservedThisBook = (String[])ELibraryUtil.addToArray(client.getClientName(), clientsWhoReservedThisBook);
     }
 }
