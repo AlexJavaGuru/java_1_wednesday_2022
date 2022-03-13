@@ -2,6 +2,7 @@ package student_jekaterina_soldatova.lesson_8_inheritance.homework.level_7_senio
 
 class MathOperationTest {
     public static void main(String[] args) {
+        MathOperationTest test = new MathOperationTest();
 
     }
 }
