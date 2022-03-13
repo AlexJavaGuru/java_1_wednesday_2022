@@ -30,6 +30,5 @@ class AllBooks {
             }
         }
     }
-          //  System.out.println(Arrays.deepToString(arrayOfAuthors));
 
 }

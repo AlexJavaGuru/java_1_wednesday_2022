@@ -11,13 +11,30 @@ class ELibrary {
     //- выписывание штрафов за вовремя не сданные книги;
     //- добавление новой книги в библиотеку.
 
-    //array of books: author, title
-    //library: array of books, count of books, array[clients who took], array[clients who reserved]
+    //array of books: author, title, count of books, array[clients who took], array[clients who reserved]
     //array of clients: name, array[book taken, days taken], array[reserved books]
     //take book (array of books: count of books-1, array[clients who took]: +name OR array[clients who reserved]: +name)(array of clients:
 
-    public static void main(String[] args) {
-        AllBooks allBooks = new AllBooks();
-        allBooks.printAll();
+    void takeBook(Book book, Client client) {
+        book.takeBook(client);
+        client.takeBook(book);
+    }
+
+    void returnBook(Book book, Client client) {
+        book.returnBook(client);
+        client.returnBook(book);
+    }
+
+    void reserveBook(Book book, Client client) {
+        book.reserveBook(client);
+        client.reserveBook(book);
+    }
+
+    void findBook() {
+
+    }
+
+    void addNewBook() {
+
     }
 }
