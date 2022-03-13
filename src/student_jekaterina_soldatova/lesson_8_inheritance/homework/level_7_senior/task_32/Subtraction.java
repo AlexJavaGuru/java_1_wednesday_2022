@@ -2,13 +2,13 @@ package student_jekaterina_soldatova.lesson_8_inheritance.homework.level_7_senio
 
 class Subtraction extends TwoArgumentMathOperation {
 
-	public Subtraction(MathOperation leftArgument,
+	Subtraction(MathOperation leftArgument,
                        MathOperation rightArgument) {
 		super(leftArgument, rightArgument);
 	}
 
 	@Override
-	public double calculate() {
+	double calculate() {
 		return calculateLeftSide() - calculateRightSide();
 	}
 }

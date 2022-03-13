@@ -4,12 +4,12 @@ class Argument extends MathOperation {
 
 	private double argument;
 
-	public Argument(double argument) {
+	Argument(double argument) {
 		this.argument = argument;
 	}
 
 	@Override
-	public double calculate() {
+	double calculate() {
 		return argument;
 	}
 }

@@ -2,13 +2,13 @@ package student_jekaterina_soldatova.lesson_8_inheritance.homework.level_7_senio
 
 class Multiply extends TwoArgumentMathOperation {
 
-	public Multiply(MathOperation leftArgument,
+	Multiply(MathOperation leftArgument,
                     MathOperation rightArgument) {
 		super(leftArgument, rightArgument);
 	}
 
 	@Override
-	public double calculate() {
+	double calculate() {
 		return calculateLeftSide() * calculateRightSide();
 	}
 }
