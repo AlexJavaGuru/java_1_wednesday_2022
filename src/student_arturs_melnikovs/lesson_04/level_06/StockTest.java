@@ -38,6 +38,7 @@ public class StockTest {
         int expectedResult = 77;
         int actualResult = test.getCurrentPrice();
         checkResult(expectedResult, actualResult, "Current price test");
+        checkResult(true, " Test");
     }
 
     void checkResult(int expectedResult, int actualResult, String testName) {
@@ -46,6 +47,15 @@ public class StockTest {
         } else {
             System.out.println(testName + " has failed");
             System.out.println("Expected result was " + expectedResult + ", actual result is " + actualResult);
+        }
+    }
+
+    void checkResult(boolean actualResult, String testName) {
+        if(actualResult) {
+            System.out.println(testName + " has passed");
+        } else {
+            System.out.println(testName + " has failed");
+            System.out.println("Expected result was  actual result is " + actualResult);
         }
     }
 }
