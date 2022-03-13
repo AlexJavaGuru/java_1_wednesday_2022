@@ -8,6 +8,7 @@ class ShapeUtilTest {
         Shape[] shapes = createArray();
 
         demo.calculateArea(shapes);
+        demo.calculatePerimeter(shapes);
     }
 
     static Shape[] createArray() {
@@ -35,11 +36,33 @@ class ShapeUtilTest {
 
     }
 
+    void calculatePerimeter(Shape[] shapes) {
+        ShapeUtil util = new ShapeUtil();
+        double expectedResult = expectedPerimeter(shapes);
+        double realResult = util.calculatePerimeter(shapes);
+        if (expectedResult == realResult) {
+            System.out.println("shapes perimeter area = OK");
+        } else {
+            System.out.println("shapes perimeter area = FAIL, result is " + realResult);
+        }
+
+    }
+
+
     double expectedArea(Shape[] shapes) {
         ShapeUtil util = new ShapeUtil();
         double result = 0.0;
         for (Shape shape: shapes) {
             result += util.calculateArea(shape);
+        }
+        return result;
+    }
+
+    double expectedPerimeter(Shape[] shapes) {
+        ShapeUtil util = new ShapeUtil();
+        double result = 0.0;
+        for (Shape shape: shapes) {
+            result += util.calculatePerimeter(shape);
         }
         return result;
     }
