@@ -2,12 +2,16 @@ package student_jekaterina_soldatova.lesson_8_inheritance.homework.level_7_senio
 
 class Client {
     private String name;
+    private String eMail;
     private String[] booksTakenByThisClient;
+    private String dateWhenTaken;
     private String[] booksReservedByThisClient;
 
-    Client(String name, String[] booksTaken, String[] booksReserved) {
+    Client(String name, String eMail, String[] booksTaken, String dateWhenTaken, String[] booksReserved) {
         this.name = name;
+        this.eMail = eMail;
         this.booksTakenByThisClient = booksTaken;
+        this.dateWhenTaken = dateWhenTaken;
         this.booksReservedByThisClient = booksReserved;
     }
 
@@ -17,6 +21,10 @@ class Client {
 
     String[] getBooksTakenByThisClient() {
         return booksTakenByThisClient;
+    }
+
+    String getDateWhenTaken() {
+        return dateWhenTaken;
     }
 
     String[] getBooksReservedByThisClient() {
