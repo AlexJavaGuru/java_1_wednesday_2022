@@ -7,6 +7,8 @@ class Square extends Shape {
     Square(String title, double side) {
         super(title);
         this.side = side;
+        System.out.println(title + " side: " + side);
+
     }
 
     @Override

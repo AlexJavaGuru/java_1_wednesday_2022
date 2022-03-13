@@ -1,29 +1,24 @@
 package student_jekaterina_soldatova.lesson_8_inheritance.homework.level_4_junior;
 
-
 import java.util.Random;
 
 class ShapeUtil {
 
     Circle createRandomCircle() {
-        Circle circle = new Circle("circle", randomDouble());
-        return circle;
+        return new Circle("circle", randomDouble());
     };
 
     Square createRandomSquare() {
-        Square square = new Square("square", (int)(randomDouble()));
-        return square;
+        return new Square("square", (int)(randomDouble()));
     }
 
     Rectangle createRandomRectangle(){
-        Rectangle rectangle = new Rectangle("rectangle", randomDouble(), randomDouble());
-        return rectangle;
+        return new Rectangle("rectangle", randomDouble(), randomDouble());
     }
 
     Triangle createRandomTriangle() {
-        Triangle triangle = new Triangle("triangle", (randomDouble()));
-        return triangle;
-    };
+        return new Triangle("triangle", (randomDouble()));
+    }
 
     double randomDouble() {
         return Math.random()* 10.0 + 1.0;
@@ -57,7 +52,7 @@ class ShapeUtil {
             result += calculatePerimeter(shape);
         }
         return result;
-    };
+    }
 
     double calculateArea(Shape shape) {
         return shape.calculateArea();

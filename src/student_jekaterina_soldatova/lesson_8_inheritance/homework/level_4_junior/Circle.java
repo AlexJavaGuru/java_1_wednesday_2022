@@ -9,6 +9,7 @@ class Circle extends Shape {
     Circle(String title, double radius) {
         super(title);
         this.radius = radius;
+        System.out.println(title + " radius: " + radius);
     }
 
     @Override

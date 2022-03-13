@@ -9,6 +9,8 @@ class Triangle extends Shape {
     Triangle(String title, double side) {
         super(title);
         this.side = side;
+        System.out.println(title + " side: " + side);
+
     }
 
     @Override

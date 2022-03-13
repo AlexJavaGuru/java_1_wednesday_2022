@@ -10,7 +10,7 @@ class Rectangle extends Shape {
         super(title);
         this.sideA = sideA;
         this.sideB = sideB;
-
+        System.out.println(title + " sideA: " + sideA + "; sideB: " + sideB);
     }
 
     @Override
