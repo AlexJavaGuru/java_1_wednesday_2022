@@ -5,8 +5,7 @@ abstract class TwoArgumentMathOperation extends MathOperation {
 	private MathOperation leftArgument;
 	private MathOperation rightArgument;
 
-	public TwoArgumentMathOperation(MathOperation leftArgument,
-                                    MathOperation rightArgument) {
+	TwoArgumentMathOperation(MathOperation leftArgument, MathOperation rightArgument) {
 		this.leftArgument = leftArgument;
 		this.rightArgument = rightArgument;
 	}
