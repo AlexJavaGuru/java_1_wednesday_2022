@@ -6,24 +6,34 @@ class PowerCalculator {
     public static void main(String[] args) {
         PowerCalculator powerCalculator = new PowerCalculator();
         double result = powerCalculator.getExponentGetNumberCheckForExceptionMakeCalculation();
-        System.out.println("The result  = " + result);
+        System.out.println("Результат = " + result);
 
     }
-    public double getExponentGetNumberCheckForExceptionMakeCalculation(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Please input the number");
-        int number = scanner.nextInt();
-        System.out.println("Please input the exponent");
-        int exponent = scanner.nextInt();
-        if ((number == 0) && (exponent < 0)){
 
-        }
+    public double getExponentGetNumberCheckForExceptionMakeCalculation() {
+        int exponent;
+        int number;
+        do {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Введите число");
+            number = scanner.nextInt();
+            System.out.println("Введите степень");
+            exponent = scanner.nextInt();
+            if (!isUserInputValid(number, exponent)) {
+                System.out.println("Операция не определена! Вероятно, вы попытались возвести ноль в отрицательную степень. Введите значения снова.");
+                System.out.println();
+            }
+        } while (!isUserInputValid(number, exponent));
 
-        return exponentiateNumberCase(number,exponent);
+        return exponentiateNumberCase(number, exponent);
+    }
+
+    public boolean isUserInputValid(int number, int exponent) {
+        return !((number == 0) && (exponent < 0));
     }
 
     public double exponentiateNumberCase(int number, int exponent) {
-        double result = 0;
+        double result;
         if ((number == 0) && (exponent == 0)) {
             result = 1;
         } else if (number == 0) {
