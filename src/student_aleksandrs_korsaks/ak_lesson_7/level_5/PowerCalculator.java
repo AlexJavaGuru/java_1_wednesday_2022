@@ -29,7 +29,7 @@ class PowerCalculator {
     }
 
     public boolean isUserInputValid(int number, int exponent) {
-        return !((number == 0) && (exponent < 0));
+        return ((number != 0) && (exponent > 0));
     }
 
     public double exponentiateNumberCase(int number, int exponent) {
