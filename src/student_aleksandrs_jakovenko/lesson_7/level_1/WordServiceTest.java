@@ -45,9 +45,9 @@ class WordServiceTest {
 
     public void countSameWordsTest() {
         WordService wordService = new WordService();
-        String text = "One one ONE two THRee three";
+        String text = "One one ONE two THRee three one three";
         String[] textArray = wordService.textToArray(text);
-        int[] expectedResult = {2, 0, 0, 0, 1, 0};
+        int[] expectedResult = {3, 0, 0, 0, 2, 0, 0, 0};
         int[] actualResult = wordService.countSameWords(textArray);
         checkResult(actualResult, expectedResult, "Count same words test");
     }
