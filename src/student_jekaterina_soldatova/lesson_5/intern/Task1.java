@@ -15,7 +15,8 @@ package student_jekaterina_soldatova.lesson_5.intern;
 class Task1 {
 
     public static void main(String[] args) {
-        int[] numbers;
+
+        int[] numbers = new int[1];
     }
 
 }

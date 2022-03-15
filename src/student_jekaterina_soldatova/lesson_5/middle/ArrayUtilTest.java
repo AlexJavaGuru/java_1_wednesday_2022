@@ -44,7 +44,8 @@ class ArrayUtilTest {
     public void shouldFindMaxNumber() {
         int expectedResult = 6;
         ArrayUtil arrayUtil = new ArrayUtil();
-        int[] array = arrayUtil.fillArrayWithNumbers(7);
+        int[] array = new int[7];
+        arrayUtil.fillArrayWithNumbers(array,7);
         int realResult = arrayUtil.findMaxNumber(array);
         if (realResult == expectedResult) {
             System.out.println("array max number = OK");
@@ -56,7 +57,8 @@ class ArrayUtilTest {
     public void shouldFindMinNumber() {
         int expectedResult = 0;
         ArrayUtil arrayUtil = new ArrayUtil();
-        int[] array = arrayUtil.fillArrayWithNumbers(7);
+        int[] array = new int[7];
+        arrayUtil.fillArrayWithNumbers(array,7);
         int realResult = arrayUtil.findMinNumber(array);
         if (realResult == expectedResult) {
             System.out.println("array min number = OK");

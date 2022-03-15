@@ -5,12 +5,10 @@ public class ArrayUtil {
         return new int[arrayLength];
     }
 
-    int[] fillArrayWithNumbers(int length) {
-        int[] array = new int[length];
+    void fillArrayWithNumbers(int[] array, int length) {
         for (int i = 0; i < length; i++) {
             array[i] = i;
         }
-        return array;
     }
 
     public void fillArrayWithRandomNumbers(int[] array) {
