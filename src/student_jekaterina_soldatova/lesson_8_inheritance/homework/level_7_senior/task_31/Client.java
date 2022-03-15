@@ -1,5 +1,8 @@
 package student_jekaterina_soldatova.lesson_8_inheritance.homework.level_7_senior.task_31;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.Temporal;
 import java.util.Date;
 
 class Client {
@@ -38,4 +41,6 @@ class Client {
     void reserveBook(Book book) {
         booksReservedByThisClient = (Book[])ELibraryUtil.addToArray(book, booksReservedByThisClient);
     }
+
+
 }

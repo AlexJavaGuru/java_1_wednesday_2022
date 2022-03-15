@@ -1,33 +1,28 @@
 package student_jekaterina_soldatova.lesson_8_inheritance.homework.level_7_senior.task_31;
 
-import student_nikita_visnakov.nv_lesson2.SystemOut;
-
 import java.util.Date;
 
 class ELibrary {
-    //- взять книгу из библиотеки; +
-    //- вернуть книгу в библиотеку; +
-    //- поиск нужной книги; +
-    //- резервация книги; +
-    //- рассылка оповещений читателям о сроке сдачи книги в библиотеку;
-    //- выписывание штрафов за вовремя не сданные книги;
-    //- добавление новой книги в библиотеку. +
 
+    //remove 1 unit of this book from library; add this book to the client's book list + date when was taken
     void takeBook(Book thisBook, Client byClient, Date dateWhenTaken) {
         thisBook.takeBook(byClient);
         byClient.takeBook(thisBook, dateWhenTaken);
     }
 
-    void returnBook(Book thisBook, Client byClient) {
+    //add 1 unit of this book to library; remove this book from the client's book list + check if late + return fine
+    double returnBook(Book thisBook, Client byClient) {
         thisBook.returnBook(byClient);
-        byClient.returnBook(thisBook);
+        return ELibraryUtil.returnBookCheckIfFine(byClient, thisBook);
     }
 
+    //add the client to the list who reserved this book; add this book to the reserved list of books of this client
     void reserveBook(Book thisBook, Client byClient) {
         thisBook.reserveBook(byClient);
         byClient.reserveBook(thisBook);
     }
 
+    //find if book library has the book
     boolean findBook(Book[] allBooks, String title) {
         for (Book book: allBooks) {
             if (book.getTitle().equalsIgnoreCase(title)) {
@@ -37,6 +32,7 @@ class ELibrary {
         return false;
     }
 
+    //send status to the client
     void sendNotification(Client client) {
         System.out.println("Dear " + client.getClientName() +"!");
         System.out.println("You have taken following books:");
@@ -46,10 +42,12 @@ class ELibrary {
         }
     }
 
+    //add new book to library
     void addNewBook(Book[] allBooks, Book newBook) {
         ELibraryUtil.addToArray(newBook, allBooks);
     }
 
+    //add new client to the client list
     void addNewClient(Client[] allClients, Client newClient) {
         ELibraryUtil.addToArray(newClient, allClients);
     }
