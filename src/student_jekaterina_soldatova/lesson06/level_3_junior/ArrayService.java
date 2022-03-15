@@ -1,9 +1,7 @@
 package student_jekaterina_soldatova.lesson06.level_3_junior;
 
-import java.util.Arrays;
-
 class ArrayService {
-    boolean ArrayIncludesNumber(int[] arrayToCheck, int numberToCheck) {
+    boolean arrayIncludesNumber(int[] arrayToCheck, int numberToCheck) {
         for (int i : arrayToCheck) {
             if (i == numberToCheck) {
                 return true;
@@ -12,7 +10,7 @@ class ArrayService {
         return false;
     }
 
-    int ArrayIncludesNumberCountTimes(int[] arrayToCheck, int numberToCheck) {
+    int arrayIncludesNumberCountTimes(int[] arrayToCheck, int numberToCheck) {
         int numberOfTimes = 0;
         for (int i : arrayToCheck) {
             if (i == numberToCheck) {
@@ -22,7 +20,7 @@ class ArrayService {
         return numberOfTimes;
     }
 
-    void ChangeOneNumberInArrayFirst(int[] array, int numberToChange, int newNumber) {
+    void changeOneNumberInArrayFirst(int[] array, int numberToChange, int newNumber) {
         int count = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] == numberToChange) {
@@ -36,7 +34,7 @@ class ArrayService {
         }
     }
 
-    void ChangeOneNumberInArrayAllInstances(int[] array, int numberToChange, int newNumber) {
+    void changeOneNumberInArrayAllInstances(int[] array, int numberToChange, int newNumber) {
         int count = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] == numberToChange) {
@@ -49,7 +47,7 @@ class ArrayService {
         }
     }
 
-    void ReverseArray(int[] array) {
+    void reverseArray(int[] array) {
         int length = array.length;
         int temporaryHolder;
 
@@ -62,7 +60,7 @@ class ArrayService {
 
     }
 
-    void SortArray(int[] array) {
+    void sortArray(int[] array) {
         int length = array.length;
         for (int i = 0; i < length; i++) {
             for (int j = i + 1; j < length; j++) {
