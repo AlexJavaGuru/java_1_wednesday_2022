@@ -1,24 +1,24 @@
-package student_aleksandrs_jakovenko.lesson_8.level_4;
+package student_aleksandrs_jakovenko.lesson_8.level_4_and_5;
 
-class CircleTest {
+class TriangleTest {
 
     public static void main(String[] args) {
-        CircleTest test = new CircleTest();
+        TriangleTest test = new TriangleTest();
         test.calculateAreaTest();
         test.calculatePerimeterTest();
     }
 
     public void calculateAreaTest() {
-        Circle circle = new Circle("Circle", 3.5);
-        double expectedResult = 38.48451000647496;
-        double actualResult = circle.calculateArea();
+        Triangle triangle = new Triangle("Triangle", 3.5);
+        double expectedResult = 5.304405598179686;
+        double actualResult = triangle.calculateArea();
         checkResult(expectedResult, actualResult, "Calculate area test");
     }
 
     public void calculatePerimeterTest() {
-        Circle circle = new Circle("Circle", 3.5);
-        double expectedResult = 21.991148575128552;
-        double actualResult = circle.calculatePerimeter();
+        Triangle triangle = new Triangle("Triangle", 3.5);
+        double expectedResult = 10.5;
+        double actualResult = triangle.calculatePerimeter();
         checkResult(expectedResult, actualResult, "Calculate perimeter test");
     }
 

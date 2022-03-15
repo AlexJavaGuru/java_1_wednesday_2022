@@ -1,24 +1,24 @@
-package student_aleksandrs_jakovenko.lesson_8.level_4;
+package student_aleksandrs_jakovenko.lesson_8.level_4_and_5;
 
-class TriangleTest {
+class SquareTest {
 
     public static void main(String[] args) {
-        TriangleTest test = new TriangleTest();
+        SquareTest test = new SquareTest();
         test.calculateAreaTest();
         test.calculatePerimeterTest();
     }
 
     public void calculateAreaTest() {
-        Triangle triangle = new Triangle("Triangle", 3.5);
-        double expectedResult = 5.304405598179686;
-        double actualResult = triangle.calculateArea();
+        Square square = new Square("Square", 3.5);
+        double expectedResult = 12.25;
+        double actualResult = square.calculateArea();
         checkResult(expectedResult, actualResult, "Calculate area test");
     }
 
     public void calculatePerimeterTest() {
-        Triangle triangle = new Triangle("Triangle", 3.5);
-        double expectedResult = 10.5;
-        double actualResult = triangle.calculatePerimeter();
+        Square square = new Square("Square", 3.5);
+        double expectedResult = 14;
+        double actualResult = square.calculatePerimeter();
         checkResult(expectedResult, actualResult, "Calculate perimeter test");
     }
 

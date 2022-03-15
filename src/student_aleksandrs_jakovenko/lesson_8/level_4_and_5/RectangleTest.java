@@ -1,24 +1,24 @@
-package student_aleksandrs_jakovenko.lesson_8.level_4;
+package student_aleksandrs_jakovenko.lesson_8.level_4_and_5;
 
-class SquareTest {
+class RectangleTest {
 
     public static void main(String[] args) {
-        SquareTest test = new SquareTest();
+        RectangleTest test = new RectangleTest();
         test.calculateAreaTest();
         test.calculatePerimeterTest();
     }
 
     public void calculateAreaTest() {
-        Square square = new Square("Square", 3.5);
-        double expectedResult = 12.25;
-        double actualResult = square.calculateArea();
+        Rectangle rectangle = new Rectangle("Rectangle", 4, 2.5);
+        double expectedResult = 10;
+        double actualResult = rectangle.calculateArea();
         checkResult(expectedResult, actualResult, "Calculate area test");
     }
 
     public void calculatePerimeterTest() {
-        Square square = new Square("Square", 3.5);
-        double expectedResult = 14;
-        double actualResult = square.calculatePerimeter();
+        Rectangle rectangle = new Rectangle("Rectangle", 3.5, 2);
+        double expectedResult = 11;
+        double actualResult = rectangle.calculatePerimeter();
         checkResult(expectedResult, actualResult, "Calculate perimeter test");
     }
 
