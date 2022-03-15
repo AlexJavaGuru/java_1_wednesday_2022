@@ -41,4 +41,14 @@ public class ArrayService {
         }
         return replace;
     }
+
+   void revert(int[] array){
+       int[] reversedArray = new int[array.length];
+       for(int i = 0; i < array.length; i++){
+           reversedArray[i] = array[array.length - i - 1];
+       }
+       for(int i = 0; i < array.length; i++) {
+           array[i] = reversedArray[i];
+        }
+    }
 }

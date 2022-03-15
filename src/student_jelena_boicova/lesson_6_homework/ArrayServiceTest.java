@@ -1,5 +1,7 @@
 package student_jelena_boicova.lesson_6_homework;
 
+import java.util.Objects;
+
 public class ArrayServiceTest {
 
     public static void main(String[] args){
@@ -12,6 +14,7 @@ public class ArrayServiceTest {
         test.testNotReplaceFirst();
         test.testReplaceAll();
         test.testNotReplaceAll();
+        test.testRevert();
 
     }
 
@@ -103,9 +106,22 @@ public class ArrayServiceTest {
          int expectedResult = 5;
          int actualResult = test.replaceAll(array, 5, 4);
          if (expectedResult == actualResult){
-         System.out.println(expectedResult + "All numbers replaced");
+            System.out.println(expectedResult + "All numbers replaced");
         } else {
-        System.out.println(expectedResult + "All numbers not replaced");
+            System.out.println(expectedResult + "All numbers not replaced");
         }
+    }
+
+    public void testRevert(){
+        ArrayService test = new ArrayService();
+        int[] array = {1, 2, 3, 4, 5};
+        int[] expectedResult = {5, 4, 3, 2, 1};
+        test.revert(array);
+        if (array.equals(expectedResult)){
+            System.out.println(expectedResult + "All numbers are reversed");
+        } else {
+            System.out.println(expectedResult + "All numbers not reversed");
+        }
+
     }
 }
