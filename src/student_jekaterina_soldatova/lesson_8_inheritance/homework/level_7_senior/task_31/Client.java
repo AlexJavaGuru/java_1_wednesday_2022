@@ -1,17 +1,17 @@
 package student_jekaterina_soldatova.lesson_8_inheritance.homework.level_7_senior.task_31;
 
+import java.util.Date;
+
 class Client {
     private String name;
     private String eMail;
-    private String[] booksTakenByThisClient;
-    private String dateWhenTaken;
-    private String[] booksReservedByThisClient;
+    private Object[][] booksTakenByThisClient; //[book][date when taken][date when to return]
+    private Book[] booksReservedByThisClient;
 
-    Client(String name, String eMail, String[] booksTaken, String dateWhenTaken, String[] booksReserved) {
+    Client(String name, String eMail, Object[][] booksTaken, Book[] booksReserved) {
         this.name = name;
         this.eMail = eMail;
         this.booksTakenByThisClient = booksTaken;
-        this.dateWhenTaken = dateWhenTaken;
         this.booksReservedByThisClient = booksReserved;
     }
 
@@ -19,27 +19,23 @@ class Client {
         return name;
     }
 
-    String[] getBooksTakenByThisClient() {
+    Object[][] getBooksTakenByThisClient() {
         return booksTakenByThisClient;
     }
 
-    String getDateWhenTaken() {
-        return dateWhenTaken;
-    }
-
-    String[] getBooksReservedByThisClient() {
+    Book[] getBooksReservedByThisClient() {
         return booksReservedByThisClient;
     }
 
-    void takeBook(Book book){
-        booksTakenByThisClient = (String[])ELibraryUtil.addToArray(book.getTitle(), booksTakenByThisClient);
+    void takeBook(Book book, Date dateWhenTaken){
+        booksTakenByThisClient = ELibraryUtil.takeBook(book, booksTakenByThisClient, dateWhenTaken);
     }
 
     void returnBook(Book book) {
-        booksTakenByThisClient = (String[])ELibraryUtil.removeFromArray(book.getTitle(), booksTakenByThisClient);
+        booksTakenByThisClient = ELibraryUtil.removeFromArray(book.getTitle(), booksTakenByThisClient);
     }
 
     void reserveBook(Book book) {
-        booksReservedByThisClient = (String[])ELibraryUtil.addToArray(book.getTitle(), booksReservedByThisClient);
+        booksReservedByThisClient = (Book[])ELibraryUtil.addToArray(book, booksReservedByThisClient);
     }
 }
