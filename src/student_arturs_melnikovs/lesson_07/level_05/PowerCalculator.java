@@ -7,15 +7,23 @@ class PowerCalculator {
         if (power == 0) {
             return result;
         } else if (power > 0) {
-            for (int i = 0; i < power; i++) {
-                result = result * number;
-            }
-            return result;
+            return positive(number, power, result);
         } else {
-            for (int i = 0; i < -power; i++) {
-                result = result * number;
-            }
-            return 1 / result;
+            return negative(number, power, result);
         }
+    }
+
+    private double positive(int number, int power, double result) {
+        for (int i = 0; i < power; i++) {
+            result = result * number;
+        }
+        return result;
+    }
+
+    private double negative(int number, int power, double result) {
+        for (int i = 0; i < -power; i++) {
+            result = result * number;
+        }
+        return 1 / result;
     }
 }
