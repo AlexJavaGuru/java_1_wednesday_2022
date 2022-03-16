@@ -43,12 +43,12 @@ public class ArrayService {
     }
 
    void revert(int[] array){
-       int[] reversedArray = new int[array.length];
+       int[] temp = new int[array.length];
        for(int i = 0; i < array.length; i++){
-           reversedArray[i] = array[array.length - i - 1];
+           temp[i] = array[array.length - i - 1];
        }
-       for(int i = 0; i < array.length; i++) {
-           array[i] = reversedArray[i];
-        }
-    }
+       for (int i = 0; i < temp.length; i++){
+           array[i] = temp[i];
+       }
+   }
 }

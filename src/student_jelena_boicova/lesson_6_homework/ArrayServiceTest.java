@@ -1,5 +1,6 @@
 package student_jelena_boicova.lesson_6_homework;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 public class ArrayServiceTest {
@@ -114,14 +115,14 @@ public class ArrayServiceTest {
 
     public void testRevert(){
         ArrayService test = new ArrayService();
-        int[] array = {1, 2, 3, 4, 5};
-        int[] expectedResult = {5, 4, 3, 2, 1};
-        test.revert(array);
-        if (array.equals(expectedResult)){
-            System.out.println(expectedResult + "All numbers are reversed");
-        } else {
-            System.out.println(expectedResult + "All numbers not reversed");
+        int[] arr = {10, 20, 30, 40, 50};
+        int[]expectedResult = {50, 40, 30, 20, 10};
+        test.revert(arr);
+        int[] realResult = arr;
+        if (realResult.equals(expectedResult)){
+            System.out.println(Arrays.toString(arr) + "Numbers before");
+       } else {
+            System.out.println(Arrays.toString(expectedResult) + "Reversed numbers");
         }
-
     }
 }
