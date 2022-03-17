@@ -40,7 +40,25 @@ class ShapeUtil {
 
     double calculateArea(Shape[] shapes) {
         double area = 0;
-
+        for (Shape shape : shapes) {
+            area += shape.calculateArea();
+        }
         return area;
+    }
+
+    double calculatePerimeter(Shape[] shapes) {
+        double perimeter = 0;
+        for (Shape shape : shapes) {
+            perimeter += shape.calculatePerimeter();
+        }
+        return perimeter;
+    }
+
+    double calculateArea(Shape shape) {
+        return shape.calculateArea();
+    }
+
+    double calculatePerimeter(Shape shape) {
+        return shape.calculatePerimeter();
     }
 }
