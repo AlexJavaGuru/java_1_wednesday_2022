@@ -12,7 +12,7 @@ class PowerCalculatorTest {
     public void testRaiseToPositive() {
         PowerCalculator calculator = new PowerCalculator();
         double expectedResult = 27;
-        double actualResult = calculator.raiseToPower(3, 3);
+        double actualResult = calculator.raiseToPower(0, -1);
         checkResult(expectedResult, actualResult, "Raise to positive test");
     }
     public void testRaiseToZero() {
