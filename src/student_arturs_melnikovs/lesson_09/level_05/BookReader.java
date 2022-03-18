@@ -10,4 +10,9 @@ interface BookReader {
     boolean deleteBook(Book book);
     String[] getListOfAllBooks();
     List<Book> findByAuthor(String author);
+    List<Book> findByTitle(String title);
+    boolean markAsRead(Book book);
+    boolean markAsUnread(Book book);
+    List<String> getListOfAllReadBooks();
+    List<String> getListOfAllUnreadBooks();
 }
