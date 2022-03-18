@@ -24,6 +24,14 @@ class Book {
         return title.equals(book.title) && author.equals(book.author);
     }
 
+    @Override
+    public String toString() {
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                '}';
+    }
+
     public String getTitle() {
         return title;
     }
