@@ -48,12 +48,7 @@ class BookReaderTest {
     }
     public void testGetAllUnreadBooks2() {
         BookReader bookReader = new BookReaderImpl();
-        Book harryPotter = new Book("Harry Potter", "Rowling");
-        Book lordOfRings = new Book("Lord Of The Ring", "Tolkien");
-        Book lordOfRings2 = new Book("Lord Of The Ring 2", "Tolkien");
-        bookReader.addBook(harryPotter);
-        bookReader.addBook(lordOfRings);
-        bookReader.addBook(lordOfRings2);
+        createTestLibrary(bookReader);
         List<String> expectedResult = new ArrayList<>();
         List<String> actualResult = bookReader.getListOfAllUnreadBooks();
         checkResult(expectedResult, actualResult, "Test");
@@ -74,12 +69,7 @@ class BookReaderTest {
     }
     public void testGetAllReadBooks2() {
         BookReader bookReader = new BookReaderImpl();
-        Book harryPotter = new Book("Harry Potter", "Rowling");
-        Book lordOfRings = new Book("Lord Of The Ring", "Tolkien");
-        Book lordOfRings2 = new Book("Lord Of The Ring 2", "Tolkien");
-        bookReader.addBook(harryPotter);
-        bookReader.addBook(lordOfRings);
-        bookReader.addBook(lordOfRings2);
+        createTestLibrary(bookReader);
         List<String> expectedResult = new ArrayList<>();
         List<String> actualResult = bookReader.getListOfAllReadBooks();
         checkResult(expectedResult, actualResult, "Test");
@@ -156,12 +146,7 @@ class BookReaderTest {
     }
     public void testFindByTitle3() {
         BookReader bookReader = new BookReaderImpl();
-        Book harryPotter = new Book("Harry Potter", "Rowling");
-        Book lordOfRings = new Book("Lord Of The Ring", "Tolkien");
-        Book lordOfRings2 = new Book("Lord Of The Ring 2", "Tolkien");
-        bookReader.addBook(harryPotter);
-        bookReader.addBook(lordOfRings);
-        bookReader.addBook(lordOfRings2);
+        createTestLibrary(bookReader);
         List<Book> expectedResult = new ArrayList<>();
         List<Book> actualResult = bookReader.findByTitle("Of The Ring");
         checkResult(expectedResult, actualResult);
@@ -180,12 +165,7 @@ class BookReaderTest {
     }
     public void testFindByAuthor2() {
         BookReader bookReader = new BookReaderImpl();
-        Book harryPotter = new Book("Harry Potter", "Rowling");
-        Book lordOfRings = new Book("Lord Of The Ring", "Tolkien");
-        Book lordOfRings2 = new Book("Lord Of The Ring 2", "Tolkien");
-        bookReader.addBook(harryPotter);
-        bookReader.addBook(lordOfRings);
-        bookReader.addBook(lordOfRings2);
+        createTestLibrary(bookReader);
         List<Book> expectedResult = new ArrayList<>();
         List<Book> actualResult = bookReader.findByAuthor("olkien");
         checkResult(expectedResult, actualResult);
@@ -204,11 +184,8 @@ class BookReaderTest {
     }
     public void testGetListOfAllBooks() {
         BookReader bookReader = new BookReaderImpl();
-        Book harryPotter = new Book("Harry Potter", "Rowling");
-        Book lordOfRings = new Book("Lord Of The Ring", "Tolkien");
-        bookReader.addBook(harryPotter);
-        bookReader.addBook(lordOfRings);
-        String[] expectedResult = {"Harry Potter [Rowling]", "Lord Of The Ring [Tolkien]"};
+        createTestLibrary(bookReader);
+        String[] expectedResult = {"Harry Potter [Rowling]", "Lord Of The Ring [Tolkien]", "Lord Of The Ring 2 [Tolkien]"};
         String[] actualResult = bookReader.getListOfAllBooks();
         checkResult(expectedResult, actualResult);
     }
@@ -294,6 +271,14 @@ class BookReaderTest {
         } else {
             System.out.println("Test has failed");
         }
+    }
+    private void createTestLibrary(BookReader bookReader) {
+        Book harryPotter = new Book("Harry Potter", "Rowling");
+        Book lordOfRings = new Book("Lord Of The Ring", "Tolkien");
+        Book lordOfRings2 = new Book("Lord Of The Ring 2", "Tolkien");
+        bookReader.addBook(harryPotter);
+        bookReader.addBook(lordOfRings);
+        bookReader.addBook(lordOfRings2);
     }
 
 }
