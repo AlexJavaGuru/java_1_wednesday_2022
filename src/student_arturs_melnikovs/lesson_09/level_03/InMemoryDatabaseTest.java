@@ -1,6 +1,7 @@
 package student_arturs_melnikovs.lesson_09.level_03;
 
 import java.util.Arrays;
+import java.util.Optional;
 
 class InMemoryDatabaseTest {
     public static void main(String[] args) {
@@ -15,7 +16,13 @@ class InMemoryDatabaseTest {
         Product banana = new Product("banana");
         database.save(apple);
         database.save(banana);
-        Product actualResult = database.findByTitle("apple");
+        Optional<Product> optionalProduct = database.findByTitle("apple");
+        Product actualResult;
+        if (optionalProduct.isPresent()) {
+            actualResult = optionalProduct.get();
+        } else {
+            actualResult = null;
+        }
         checkResult(apple, actualResult);
     }
 
@@ -26,7 +33,7 @@ class InMemoryDatabaseTest {
         database.save(apple);
         database.save(banana);
         Product[] expectedResult = {apple, banana};
-        Product[] actualResult = database.getProducts;
+        Product[] actualResult = database.getProducts();
         checkResult(expectedResult, actualResult);
     }
 
@@ -35,6 +42,7 @@ class InMemoryDatabaseTest {
             System.out.println("Test has passed");
         } else {
             System.out.println("Test has failed");
+            System.out.println(expectedResult + " " + actualResult);
         }
     }
     private void checkResult(Product[] expectedResult, Product[] actualResult) {

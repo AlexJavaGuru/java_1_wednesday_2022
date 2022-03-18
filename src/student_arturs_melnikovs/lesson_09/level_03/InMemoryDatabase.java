@@ -1,10 +1,13 @@
 package student_arturs_melnikovs.lesson_09.level_03;
 
 
+import java.util.Optional;
+
 class InMemoryDatabase implements ProductDatabase {
 
     Product[] products = new Product[0];
 
+    @Override
     public Product[] getProducts() {
         return products;
     }
@@ -20,13 +23,13 @@ class InMemoryDatabase implements ProductDatabase {
     }
 
     @Override
-    public Product findByTitle(String productTitle) {
+    public Optional<Product> findByTitle(String productTitle) {
         for (Product product : products) {
             if (product.getTitle().equals(productTitle)) {
-                return product;
+                return Optional.of(product);
             }
         }
-        return null;
+        return Optional.empty();
     }
 
 }
