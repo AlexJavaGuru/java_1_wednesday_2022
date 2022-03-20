@@ -11,10 +11,7 @@ class DayOfTheWeekDetectorDemo {
     }
 
     public static void main(String[] args) {
-       // DayOfTheWeekDetectorDemo getDayNameIfVersion = new DayOfTheWeekDetectorDemo(day);
         run();
-
-
     }
 
     static int getNumberFromUser() {
@@ -24,8 +21,28 @@ class DayOfTheWeekDetectorDemo {
     }
 
     static void run() {
-      //  DayOfTheWeekDetectorArrayVersion getDay = new DayOfTheWeekDetectorArrayVersion();
         int number = getNumberFromUser();
-        String dayOfTheWeek = dayOfTheWeekDetector.detectDayName(number);
+        getDayIfs(number);
+        getDaySwitch(number);
+        getDayArray(number);
     }
+
+    static void getDayIfs(int number) {
+        DayOfTheWeekDetectorIfVersion getDayArray = new DayOfTheWeekDetectorIfVersion();
+        String dayOfTheWeek = getDayArray.detectDayName(number);
+        System.out.println("if version: " + dayOfTheWeek);
+    }
+
+    static void getDaySwitch(int number) {
+        DayOfTheWeekDetectorSwitchVersion getDayArray = new DayOfTheWeekDetectorSwitchVersion();
+        String dayOfTheWeek = getDayArray.detectDayName(number);
+        System.out.println("switch version: " + dayOfTheWeek);
+    }
+
+    static void getDayArray(int number) {
+        DayOfTheWeekDetectorArrayVersion getDayArray = new DayOfTheWeekDetectorArrayVersion();
+        String dayOfTheWeek = getDayArray.detectDayName(number);
+        System.out.println("array version: " + dayOfTheWeek);
+    }
+
 }
