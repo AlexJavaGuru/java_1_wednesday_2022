@@ -1,4 +1,4 @@
-package student_igors.lesson_6;
+package student_igors.lesson_6.level_1;
 
 public class WhileDefinition1 {
 
@@ -11,3 +11,4 @@ public class WhileDefinition1 {
         }
 
     }
+
