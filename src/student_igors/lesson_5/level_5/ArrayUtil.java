@@ -32,6 +32,33 @@ public class ArrayUtil {
         }
         return maxNumber;
     }
+    public int minNumber(int[] array) {
+        int minNumber = array[0];
+        for(int number : array) {
+            if (number < minNumber) {
+                minNumber = number;
+            }
+        }
+        return minNumber;
+    }
+
+    public void printEvenNumbers(int[] array) {
+        System.out.println("Even numbers: ");
+        for (int number : array) {
+            if(number % 2 == 0) {
+                System.out.println( + number);
+            }
+        }
+    }
+
+    public void printOddNumbers(int[] array) {
+        System.out.println("Odd numbers: ");
+        for (int number : array) {
+            if(number % 2 != 0) {
+                System.out.println( + number);
+            }
+        }
+    }
 
 
 }
