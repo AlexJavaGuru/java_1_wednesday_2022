@@ -1,5 +1,7 @@
 package student_jekaterina_soldatova.lesson_09.level_3_junior;
 
+import java.util.Optional;
+
 class InMemoryDatabaseTest {
     public static void main(String[] args) {
         InMemoryDatabaseTest test = new InMemoryDatabaseTest();
@@ -23,28 +25,28 @@ class InMemoryDatabaseTest {
     }
 
     static void FindTitle() {
-        Product[] testArray = {new Product("blah"), new Product("SmTh"), new Product("blah-blah")};
+        Product[] testArray = {new Product("blah"), new Product("smth"), new Product("blah-blah")};
         InMemoryDatabase database = new InMemoryDatabase(testArray);
-        String expectedResult = "smth";
-        String realResult = database.findByTitle(expectedResult).getTitle();
+        Product expectedResult = new Product("smth");
+        Optional<Product> realResult = database.findByTitle("smth");
 
-        if (expectedResult.equalsIgnoreCase(realResult)) {
+        if (expectedResult.equals(realResult)) {
             System.out.println("find - ok");
         } else {
             System.out.println("find - fail");
         }
     }
 
-    static void TitleNotFound() {
+    void TitleNotFound() {
         Product[] testArray = {new Product("blah"), new Product("SmTh"), new Product("blah-blah")};
         InMemoryDatabase database = new InMemoryDatabase(testArray);
         Product expectedResult = null;
-        Product realResult = database.findByTitle("not there");
+        Optional<Product> realResult = database.findByTitle("not there");
 
-        if (expectedResult == realResult) {
+        if (expectedResult.equals(realResult)) {
             System.out.println("not found - ok");
         } else {
-            System.out.println("not found - fail");
+            System.out.println("not found - fail  " +  realResult.toString());
         }
     }
 

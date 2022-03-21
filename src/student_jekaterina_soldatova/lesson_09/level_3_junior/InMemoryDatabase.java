@@ -1,5 +1,7 @@
 package student_jekaterina_soldatova.lesson_09.level_3_junior;
 
+import java.util.Optional;
+
 class InMemoryDatabase implements ProductDatabase {
 
     Product[] productArray;
@@ -17,13 +19,17 @@ class InMemoryDatabase implements ProductDatabase {
     }
 
     @Override
-    public Product findByTitle(String productTitle) {
+    public Optional<Product> findByTitle(String productTitle) {
         for (Product product: productArray) {
-            if (productTitle.equalsIgnoreCase(product.getTitle())) {
-                return product;
+//            if (productTitle.equalsIgnoreCase(product.getTitle())) {
+//                return product;
+//            }
+          //  Optional<Product> opt = Optional.of(product);
+            if (Optional.of(product).get().equals(productTitle)) {
+                Optional.of(product).get();
             }
         }
-        return null;
+        return Optional.ofNullable(null);
     }
 
 }
