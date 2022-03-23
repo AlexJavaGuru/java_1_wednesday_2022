@@ -20,16 +20,12 @@ class InMemoryDatabase implements ProductDatabase {
 
     @Override
     public Optional<Product> findByTitle(String productTitle) {
-        for (Product product: productArray) {
-//            if (productTitle.equalsIgnoreCase(product.getTitle())) {
-//                return product;
-//            }
-          //  Optional<Product> opt = Optional.of(product);
-            if (Optional.of(product).get().equals(productTitle)) {
-                Optional.of(product).get();
+        for (Product product : productArray) {
+            if (product.getTitle().equalsIgnoreCase(productTitle)) {
+                return Optional.of(product);
             }
         }
-        return Optional.ofNullable(null);
+        return Optional.empty();
     }
 
 }

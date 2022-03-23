@@ -25,25 +25,24 @@ class InMemoryDatabaseTest {
     }
 
     static void FindTitle() {
-        Product[] testArray = {new Product("blah"), new Product("smth"), new Product("blah-blah")};
+        Product[] testArray = {new Product("blah"), new Product("sMth"), new Product("blah-blah")};
         InMemoryDatabase database = new InMemoryDatabase(testArray);
-        Product expectedResult = new Product("smth");
-        Optional<Product> realResult = database.findByTitle("smth");
+        String expectedResult = "smth";
+        String realResult = database.findByTitle("smth").get().getTitle();
 
-        if (expectedResult.equals(realResult)) {
+        if (expectedResult.equalsIgnoreCase(realResult)) {
             System.out.println("find - ok");
         } else {
-            System.out.println("find - fail");
+            System.out.println("find - fail, result is " + realResult);
         }
     }
 
-    void TitleNotFound() {
+    static void TitleNotFound() {
         Product[] testArray = {new Product("blah"), new Product("SmTh"), new Product("blah-blah")};
         InMemoryDatabase database = new InMemoryDatabase(testArray);
-        Product expectedResult = null;
         Optional<Product> realResult = database.findByTitle("not there");
 
-        if (expectedResult.equals(realResult)) {
+        if (realResult.isEmpty()) {
             System.out.println("not found - ok");
         } else {
             System.out.println("not found - fail  " +  realResult.toString());
