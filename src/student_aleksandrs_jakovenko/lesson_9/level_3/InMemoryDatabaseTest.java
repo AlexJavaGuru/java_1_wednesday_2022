@@ -1,6 +1,7 @@
 package student_aleksandrs_jakovenko.lesson_9.level_3;
 
 import java.util.Arrays;
+import java.util.Optional;
 
 class InMemoryDatabaseTest {
 
@@ -26,8 +27,8 @@ class InMemoryDatabaseTest {
         Product audi = new Product("AUDI");
         inMemoryDatabase.save(bmw);
         inMemoryDatabase.save(audi);
-        Product expectedResult = bmw;
-        Product actualResult = inMemoryDatabase.findByTitle("BMW");
+        Optional <Product> expectedResult = Optional.of(bmw);
+        Optional<Product> actualResult = inMemoryDatabase.findByTitle("BMW");
         checkResult(actualResult, expectedResult, "Find test");
     }
 
@@ -38,7 +39,7 @@ class InMemoryDatabaseTest {
         } else System.out.println(testName + " = FAIL");
     }
 
-    public void checkResult(Product actualResult, Product expectedResult, String testName) {
+    public void checkResult(Optional actualResult, Optional expectedResult, String testName) {
         if (actualResult.equals(expectedResult)) {
             System.out.println(testName + " = OK");
         } else System.out.println(testName + " = FAIL");
