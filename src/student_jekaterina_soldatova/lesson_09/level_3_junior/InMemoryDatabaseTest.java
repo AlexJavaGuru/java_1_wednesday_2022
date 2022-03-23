@@ -11,7 +11,7 @@ class InMemoryDatabaseTest {
         test.TitleNotFound();
     }
 
-    static void AddNewProduct() {
+    void AddNewProduct() {
         Product[] expectedResult = {new Product("smth")};
         Product[] realResult = new Product[0];
         InMemoryDatabase database = new InMemoryDatabase(realResult);
@@ -24,7 +24,7 @@ class InMemoryDatabaseTest {
         }
     }
 
-    static void FindTitle() {
+    void FindTitle() {
         Product[] testArray = {new Product("blah"), new Product("sMth"), new Product("blah-blah")};
         InMemoryDatabase database = new InMemoryDatabase(testArray);
         String expectedResult = "smth";
@@ -37,7 +37,7 @@ class InMemoryDatabaseTest {
         }
     }
 
-    static void TitleNotFound() {
+    void TitleNotFound() {
         Product[] testArray = {new Product("blah"), new Product("SmTh"), new Product("blah-blah")};
         InMemoryDatabase database = new InMemoryDatabase(testArray);
         Optional<Product> realResult = database.findByTitle("not there");
