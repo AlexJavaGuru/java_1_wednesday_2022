@@ -5,6 +5,10 @@ import java.lang.reflect.Array;
 class BookReaderImpl implements BookReader {
     Book[] bookArray;
 
+    BookReaderImpl (Book[] bookArray) {
+        this.bookArray = bookArray;
+    }
+
     @Override
     public void addNewBook(Book book) {
         Book[] newBookArray = new Book[bookArray.length+1];
@@ -15,9 +19,11 @@ class BookReaderImpl implements BookReader {
 
     @Override
     public boolean isNewBookUnique(Book book) {
-        for (Book item: bookArray) {
-            if (item.getTitle().equals(book.getTitle()) || item.getAuthor().equals(book.getAuthor())) {
-                return false;
+        if (bookArray != null) {
+            for (Book item : bookArray) {
+                if (item.getTitle().equals(book.getTitle()) || item.getAuthor().equals(book.getAuthor())) {
+                    return false;
+                }
             }
         }
         return true;
