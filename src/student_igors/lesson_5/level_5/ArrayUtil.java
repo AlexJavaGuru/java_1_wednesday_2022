@@ -1,4 +1,5 @@
-package student_arturs_melnikovs.lesson_05.level_05;
+package student_igors.lesson_5.level_5;
+
 
 import java.util.Arrays;
 import java.util.Random;
@@ -10,19 +11,19 @@ public class ArrayUtil {
         return new int[arrayLength];
     }
 
-    public void fillArrayWithRandomNumbers(int[] array) {
+
+    public void arrayRandomNumbers(int[] array) {
         Random random = new Random();
         for (int i = 0; i < array.length; i++) {
             array[i] = random.nextInt();
         }
     }
 
-    public void printArrayToConsole(int[] array) {
-
+    public void printArrayNumbers(int[] array) {
         System.out.println(Arrays.toString(array));
     }
 
-    public int findMaxNumber(int[] array) {
+    public int maxNumbers(int[] array) {
         int maxNumber = array[0];
         for(int number : array) {
             if (number > maxNumber) {
@@ -31,8 +32,7 @@ public class ArrayUtil {
         }
         return maxNumber;
     }
-
-    public int findMinNumber(int[] array) {
+    public int minNumber(int[] array) {
         int minNumber = array[0];
         for(int number : array) {
             if (number < minNumber) {
@@ -62,3 +62,13 @@ public class ArrayUtil {
 
 
 }
+
+
+//      Создайте класс ArrayUtil.
+//      Напишите в этом классе метод для создания
+//      массива целых чисел указанной длины.
+
+
+// Напишите реализацию !!!
+
+
