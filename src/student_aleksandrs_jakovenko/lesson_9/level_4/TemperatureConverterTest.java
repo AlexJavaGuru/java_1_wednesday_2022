@@ -1,7 +1,5 @@
 package student_aleksandrs_jakovenko.lesson_9.level_4;
 
-import java.util.Optional;
-
 class TemperatureConverterTest {
 
     public static void main(String[] args) {
