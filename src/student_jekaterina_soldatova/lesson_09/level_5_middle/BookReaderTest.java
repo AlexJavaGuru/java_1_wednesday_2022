@@ -102,8 +102,8 @@ class BookReaderTest {
     }
 
     void checkRun() {
-        Book[] expectedResult = {new Book("gjhk", "dtyfg"), new Book("someone", "something")};
-        Book[] realResult = new Book[]{new Book("gjhk", "dtyfg")};
+        Book[] expectedResult = {new Book("Gjhk", "dtyfg"), new Book("someone", "something")};
+        Book[] realResult = new Book[]{new Book("Gjhk", "dtyfg")};
 
         BookReaderImpl bookReader = new BookReaderImpl(realResult);
         bookReader.run(new Book("someone", "something"));

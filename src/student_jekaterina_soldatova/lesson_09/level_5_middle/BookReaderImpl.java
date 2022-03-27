@@ -8,6 +8,7 @@ class BookReaderImpl implements BookReader {
     }
 
     void run(Book book) {
+        printCurrentBooks();
         if (isNewBookUnique(book) && isBookInfoNotEmpty(book)) {
             addNewBook(book);
         } else {
@@ -15,10 +16,10 @@ class BookReaderImpl implements BookReader {
                 System.out.println("The book is already in the library");
             } else {
                 System.out.print("The book info in not correct, please add");
-                if (book.getTitle().equals("")) {
-                    System.out.println(" title");
+                if (!book.getTitle().matches("[a-zA-Z_0-9]+")) {
+                    System.out.print(" title");
                 }
-                if (book.getAuthor().equals("")) {
+                if (!book.getAuthor().matches("[a-zA-Z]+")) {
                     System.out.println(" author");
                 }
             }
@@ -72,7 +73,7 @@ class BookReaderImpl implements BookReader {
     public boolean isNewBookUnique(Book book) {
         if (bookArray != null) {
             for (Book item : bookArray) {
-                if (item.getTitle().equals(book.getTitle()) || item.getAuthor().equals(book.getAuthor())) {
+                if (item.getTitle().equals(book.getTitle()) && item.getAuthor().equals(book.getAuthor())) {
                     return false;
                 }
             }
@@ -82,6 +83,6 @@ class BookReaderImpl implements BookReader {
 
     @Override
     public boolean isBookInfoNotEmpty(Book book) {
-        return !book.getTitle().equals("") && !book.getAuthor().equals("");
+        return book.getTitle().matches("[a-zA-Z_0-9]+") && book.getAuthor().matches("[a-zA-Z]+");
     }
 }
