@@ -6,7 +6,7 @@ interface BookReader {
 
     void removeBook(Book book);
 
-    String[] printCurrentBooks();
+    String[] returnCurrentBooks();
 
     Book[] findByAuthor(String author);
 
@@ -18,4 +18,9 @@ interface BookReader {
     boolean isNewBookUnique(Book book);
 
     boolean isBookInfoNotEmpty(Book book);
+
+    boolean changeBookStatusRead(Book book);
+
+    boolean changeBookStatusNotRead(Book book);
+
 }

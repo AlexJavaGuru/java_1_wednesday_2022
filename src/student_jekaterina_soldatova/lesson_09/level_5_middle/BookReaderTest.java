@@ -27,6 +27,12 @@ class BookReaderTest {
 
         test.findByTitle();
         test.findByTitleNone();
+
+        test.checkBookAsRead();
+        test.checkBookAsReadNone();
+
+        test.checkBookAsNotRead();
+        test.checkBookAsNotReadNone();
     }
 
     void checkNewIsNewEmptyLibrary() {
@@ -153,7 +159,7 @@ class BookReaderTest {
         Book[] run = new Book[]{new Book("author", "title"), new Book("someone", "something")};
 
         BookReaderImpl bookReader = new BookReaderImpl(run);
-        String[] realResult = bookReader.printCurrentBooks();
+        String[] realResult = bookReader.returnCurrentBooks();
 
         if (compareArrays(expectedResult, realResult)) {
             System.out.println("check print - ok");
@@ -213,6 +219,50 @@ class BookReaderTest {
             System.out.println("find by title none - ok");
         } else {
             System.out.println("find by title none - fail");
+        }
+    }
+
+    void checkBookAsRead() {
+        Book[] testArray = {new Book("blah", "1"), new Book("blah", "2")};
+        BookReaderImpl bookReader = new BookReaderImpl(testArray);
+
+        if(bookReader.changeBookStatusRead(new Book("blah", "2"))) {
+            System.out.println("read existing book - ok");
+        } else {
+            System.out.println("read existing book - fail");
+        }
+    }
+
+    void checkBookAsReadNone() {
+        Book[] testArray = {new Book("blah", "1"), new Book("blah", "2")};
+        BookReaderImpl bookReader = new BookReaderImpl(testArray);
+
+        if(!bookReader.changeBookStatusRead(new Book("wtrdh", "2"))) {
+            System.out.println("read not existing book - ok");
+        } else {
+            System.out.println("read not existing book - fail");
+        }
+    }
+
+    void checkBookAsNotRead() {
+        Book[] testArray = {new Book("blah", "1"), new Book("blah", "2")};
+        BookReaderImpl bookReader = new BookReaderImpl(testArray);
+
+        if(bookReader.changeBookStatusNotRead(new Book("blah", "2"))) {
+            System.out.println("not read existing book - ok");
+        } else {
+            System.out.println("not read existing book - fail");
+        }
+    }
+
+    void checkBookAsNotReadNone() {
+        Book[] testArray = {new Book("blah", "1"), new Book("blah", "2")};
+        BookReaderImpl bookReader = new BookReaderImpl(testArray);
+
+        if(!bookReader.changeBookStatusNotRead(new Book("blgkjlah", "2"))) {
+            System.out.println("not read not existing book - ok");
+        } else {
+            System.out.println("not read not existing book - fail");
         }
     }
 

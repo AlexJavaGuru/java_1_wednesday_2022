@@ -8,7 +8,7 @@ class BookReaderImpl implements BookReader {
     }
 
     void run(Book book) {
-        printCurrentBooks();
+        returnCurrentBooks();
         if (isNewBookUnique(book) && isBookInfoNotEmpty(book)) {
             addNewBook(book);
         } else {
@@ -53,7 +53,7 @@ class BookReaderImpl implements BookReader {
     }
 
     @Override
-    public String[] printCurrentBooks() {
+    public String[] returnCurrentBooks() {
         String[] bookArrayToPrint = new String[bookArray.length];
         for (int i = 0; i < bookArray.length; i++) {
             bookArrayToPrint[i] = (bookArray[i].getTitle() + " [" + bookArray[i].getAuthor() + "]");
@@ -130,5 +130,23 @@ class BookReaderImpl implements BookReader {
     @Override
     public boolean isBookInfoNotEmpty(Book book) {
         return book.getTitle().matches("[a-zA-Z_0-9]+") && book.getAuthor().matches("[a-zA-Z]+");
+    }
+
+    @Override
+    public boolean changeBookStatusRead(Book book) {
+        if (!isNewBookUnique(book)) {
+            book.isRead = true;
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean changeBookStatusNotRead(Book book) {
+        if (!isNewBookUnique(book)) {
+            book.isRead = false;
+            return true;
+        }
+        return false;
     }
 }

@@ -3,6 +3,7 @@ package student_jekaterina_soldatova.lesson_09.level_5_middle;
 class Book {
     String author;
     String title;
+    boolean isRead;
 
     Book (String author, String title) {
         this.author = author;
@@ -16,4 +17,5 @@ class Book {
     String getTitle() {
         return title;
     }
+
 }
