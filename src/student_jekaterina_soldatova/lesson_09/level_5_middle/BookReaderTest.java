@@ -128,7 +128,16 @@ class BookReaderTest {
     }
 
     void removeNone() {
+        Book[] expectedResult = {new Book("gjhk", "dtyfg")};
 
+        BookReaderImpl bookReader = new BookReaderImpl(expectedResult);
+        bookReader.removeBook(new Book("someone", "something"));
+
+        if (compareArrays(expectedResult, bookReader.bookArray)) {
+            System.out.println("remove none - ok");
+        } else {
+            System.out.println("remove none - fail");
+        }
     }
 
     static Boolean compareArrays(Book[] expected, Book[] real) {
