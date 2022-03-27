@@ -7,23 +7,38 @@ class BookReaderTest {
         BookReaderTest test = new BookReaderTest();
         test.addBookTest1();
         test.addBookTest2();
+        test.addBookTest3();
+        test.addBookTest4();
     }
 
     public void addBookTest1() {
-        BookReaderImpl book = new BookReaderImpl();
+        BookReader book = new BookReaderImpl();
         boolean actualResult = book.addBook("Harry", "Potter");
         boolean expectedResult = true;
-        checkResult(actualResult, expectedResult, "Add book test");
+        checkResult(actualResult, expectedResult, "Add book test1");
     }
 
     public void addBookTest2() {
-        BookReaderImpl book = new BookReaderImpl();
+        BookReader book = new BookReaderImpl();
+        book.addBook("Harry1", "Potter1");
+        boolean actualResult = book.addBook("Harry", "Potter");
+        boolean expectedResult = true;
+        checkResult(actualResult, expectedResult, "Add book test2");
+    }
 
-        book.addBook("Harry2", "Potter2");
-        book.addBook("Harry11", "Potter11");
+    public void addBookTest3() {
+        BookReader book = new BookReaderImpl();
+        book.addBook("Harry", "Potter");
         boolean actualResult = book.addBook("Harry", "Potter");
         boolean expectedResult = false;
-        checkResult(actualResult, expectedResult, "Add book test");
+        checkResult(actualResult, expectedResult, "Add book test3");
+    }
+
+    public void addBookTest4() {
+        BookReader book = new BookReaderImpl();
+        boolean actualResult = book.addBook("Harry", "");
+        boolean expectedResult = false;
+        checkResult(actualResult, expectedResult, "Add book test4");
     }
 
     public void checkResult(boolean actualResult, boolean expectedResult, String testName) {
