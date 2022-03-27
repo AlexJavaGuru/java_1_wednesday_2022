@@ -13,7 +13,7 @@ class PowerCalculatorTest {
     }
 
     void checkPowerPositive() {
-        boolean realResult = PowerCalculator.checkPower(new int[]{2, 5});
+        boolean realResult = PowerCalculator.checkPower(2);
         if (realResult) {
             System.out.println("checkPowerPositive = OK");
         } else {
@@ -22,7 +22,7 @@ class PowerCalculatorTest {
     }
 
     void checkPowerZero() {
-        boolean realResult = PowerCalculator.checkPower(new int[]{2, 0});
+        boolean realResult = PowerCalculator.checkPower(0);
         if (realResult) {
             System.out.println("checkPowerZero = OK");
         } else {
@@ -31,7 +31,7 @@ class PowerCalculatorTest {
     }
 
     void checkPowerNegative() {
-        boolean realResult = PowerCalculator.checkPower(new int[]{2, -5});
+        boolean realResult = PowerCalculator.checkPower(-5);
         if (!realResult) {
             System.out.println("checkPowerNegative = OK");
         } else {
@@ -41,7 +41,7 @@ class PowerCalculatorTest {
 
     void exponentiationPositive() {
         int expectedResult = 8;
-        int realResult = PowerCalculator.exponentiationPositive(new int[]{2, 3});
+        int realResult = PowerCalculator.exponentiationPositive(2, 3);
         if (expectedResult==realResult) {
             System.out.println("exponentiationPositive = OK");
         } else {
@@ -52,7 +52,7 @@ class PowerCalculatorTest {
 
     void exponentiationZero() {
         int expectedResult = 1;
-        int realResult = PowerCalculator.exponentiationPositive(new int[]{2, 0});
+        int realResult = PowerCalculator.exponentiationPositive(2, 0);
         if (expectedResult==realResult) {
             System.out.println("exponentiationZero = OK");
         } else {
@@ -62,7 +62,7 @@ class PowerCalculatorTest {
 
     void exponentiationNegative() {
         double expectedResult = 0.125;
-        double realResult = PowerCalculator.exponentiationNegative(new int[]{2, -3});
+        double realResult = PowerCalculator.exponentiationNegative(2, -3);
         if (expectedResult==realResult) {
             System.out.println("exponentiationNegative = OK");
         } else {

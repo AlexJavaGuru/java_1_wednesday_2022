@@ -10,31 +10,32 @@ class PowerCalculator {
     //exponentiation pos neg
     //print
 
-    static int[] getNumbers() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter a number you want to exponentiate");
-        int base = scanner.nextInt();
-        System.out.println("Please enter the power to which to raise the number");
-        int power = scanner.nextInt();
-        return new int[]{base, power};
+    void run(int base, int power) {
+        if (PowerCalculator.checkPower(power)) {
+            int result = PowerCalculator.exponentiationPositive(base, power);
+            PowerCalculator.printResult(result);
+        } else {
+            double result = PowerCalculator.exponentiationNegative(base, power);
+            PowerCalculator.printResult(result);
+        }
     }
 
-    static boolean checkPower(int[] numbers) {
-        return (numbers[1] > -1);
+    static boolean checkPower(int power) {
+        return (power > -1);
     }
 
-    static int exponentiationPositive(int[] numbers) {
+    static int exponentiationPositive(int base, int power) {
         int result = 1;
-        for (int i = 0; i < numbers[1]; i++) {
-            result = result * numbers[0];
+        for (int i = 0; i < power; i++) {
+            result = result * base;
         }
         return result;
     }
 
-    static double exponentiationNegative(int[] numbers) {
+    static double exponentiationNegative(int base, int power) {
         int result = 1;
-        for (int i = 0; i < abs(numbers[1]); i++) {
-            result = result * numbers[0];
+        for (int i = 0; i < abs(power); i++) {
+            result = result * base;
         }
         return 1.0/result;
     }
