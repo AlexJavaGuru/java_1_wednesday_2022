@@ -16,6 +16,9 @@ class BookReaderTest {
         test.noTitleNoAuthor();
 
         test.checkRun();
+
+        test.removeOk();
+        test.removeNone();
     }
 
     void checkNewIsNewEmptyLibrary() {
@@ -111,6 +114,22 @@ class BookReaderTest {
 
     }
 
+    void removeOk() {
+        Book[] expectedResult = {new Book("gjhk", "dtyfg")};
+
+        BookReaderImpl bookReader = new BookReaderImpl(new Book[]{new Book("gjhk", "dtyfg"), new Book("someone", "something")});
+        bookReader.removeBook(new Book("someone", "something"));
+
+        if (compareArrays(expectedResult, bookReader.bookArray)) {
+            System.out.println("remove - ok");
+        } else {
+            System.out.println("remove - fail");
+        }
+    }
+
+    void removeNone() {
+
+    }
 
     static Boolean compareArrays(Book[] expected, Book[] real) {
         if (expected.length == real.length) {

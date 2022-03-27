@@ -4,6 +4,10 @@ interface BookReader {
 
     void addNewBook(Book book);
 
+    void removeBook(Book book);
+
+    boolean isBookToRemoveInLibrary(Book book);
+
     boolean isNewBookUnique(Book book);
 
     boolean isBookInfoNotEmpty(Book book);

@@ -27,10 +27,39 @@ class BookReaderImpl implements BookReader {
 
     @Override
     public void addNewBook(Book book) {
-        Book[] newBookArray = new Book[bookArray.length+1];
-        System.arraycopy(bookArray, 0, newBookArray, 0, bookArray.length);
-        newBookArray[newBookArray.length-1] = book;
-        bookArray = newBookArray;
+        if (isNewBookUnique(book)) {
+            Book[] newBookArray = new Book[bookArray.length + 1];
+            System.arraycopy(bookArray, 0, newBookArray, 0, bookArray.length);
+            newBookArray[newBookArray.length - 1] = book;
+            bookArray = newBookArray;
+        }
+    }
+
+    @Override
+    public void removeBook(Book book) {
+        if (isBookToRemoveInLibrary(book)) {
+            Book[] newBookArray = new Book[bookArray.length - 1];
+
+            int j = 0;
+            for (Book item : bookArray) {
+                if (!item.getAuthor().equals(book.getAuthor()) && !item.getTitle().equals(book.getTitle())) {
+                    newBookArray[j] = item;
+                    j++;
+                }
+            }
+            bookArray = newBookArray;
+        }
+    }
+
+    @Override
+    public boolean isBookToRemoveInLibrary(Book book) {
+        for (Book item: bookArray) {
+            if (item.getTitle().equals(book.getTitle()) && item.getAuthor().equals(book.getAuthor())) {
+                return true;
+            }
+        }
+        System.out.println("No such book to remove");
+        return false;
     }
 
     @Override
