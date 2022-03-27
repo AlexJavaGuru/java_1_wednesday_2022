@@ -33,6 +33,9 @@ class BookReaderTest {
 
         test.checkBookAsNotRead();
         test.checkBookAsNotReadNone();
+
+        test.returnReadBooks();
+        test.returnReadBooksNone();
     }
 
     void checkNewIsNewEmptyLibrary() {
@@ -266,6 +269,19 @@ class BookReaderTest {
         }
     }
 
+    void returnReadBooks() {
+        String[] expectedResult = {"title [author]", "something [someone]"};
+        Book[] run = new Book[]{new Book("author", "title"), new Book("someone", "something")};
+
+        BookReaderImpl bookReader = new BookReaderImpl(run);
+        String[] realResult = bookReader.returnCurrentBooks();
+
+        if (compareArrays(expectedResult, realResult)) {
+            System.out.println("check print - ok");
+        } else {
+            System.out.println("check print - fail");
+        }
+    }
 
     static Boolean compareArrays(Book[] expected, Book[] real) {
         if (expected.length == real.length) {
