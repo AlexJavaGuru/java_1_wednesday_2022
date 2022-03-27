@@ -62,6 +62,28 @@ class BookReaderImpl implements BookReader {
     }
 
     @Override
+    public Book[] findByAuthor(String author) {
+        int i = 0;
+        for (Book book: bookArray) {
+            if (book.getAuthor().equals(author)) {
+                i++;
+            }
+        }
+        if (i > 0) {
+            Book[] foundBooks = new Book[i];
+            i = 0;
+            for (Book book : bookArray) {
+                if (book.getAuthor().equals(author)) {
+                    foundBooks[i] = book;
+                    i++;
+                }
+            }
+            return foundBooks;
+        }
+        return null;
+    }
+
+    @Override
     public boolean isBookToRemoveInLibrary(Book book) {
         for (Book item: bookArray) {
             if (item.getTitle().equals(book.getTitle()) && item.getAuthor().equals(book.getAuthor())) {

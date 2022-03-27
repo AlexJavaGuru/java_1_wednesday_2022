@@ -21,6 +21,9 @@ class BookReaderTest {
         test.removeNone();
 
         test.printBooks();
+
+        test.findByAuthor();
+        test.findByAuthorNone();
     }
 
     void checkNewIsNewEmptyLibrary() {
@@ -156,6 +159,32 @@ class BookReaderTest {
         }
     }
 
+    void findByAuthor() {
+        Book[] testArray = {new Book("dthfj", "1"), new Book("blah", "1"), new Book("blah", "2"), new Book("fjgbmh", "2")};
+        BookReaderImpl bookReader = new BookReaderImpl(testArray);
+
+        Book[] expectedResult = {new Book("blah", "1"), new Book("blah", "2")};
+        Book[] realResult = bookReader.findByAuthor("blah");
+
+        if (compareArrays(expectedResult, realResult)) {
+            System.out.println("find by author - ok");
+        } else {
+            System.out.println("find by author - fail");
+        }
+    }
+
+    void findByAuthorNone() {
+        Book[] testArray = {new Book("blah", "1"), new Book("blah", "2")};
+        BookReaderImpl bookReader = new BookReaderImpl(testArray);
+
+        Book[] realResult = bookReader.findByAuthor("fgguihiuhoi");
+
+        if (realResult == null) {
+            System.out.println("find by author none - ok");
+        } else {
+            System.out.println("find by author none - fail");
+        }
+    }
 
     static Boolean compareArrays(Book[] expected, Book[] real) {
         if (expected.length == real.length) {
