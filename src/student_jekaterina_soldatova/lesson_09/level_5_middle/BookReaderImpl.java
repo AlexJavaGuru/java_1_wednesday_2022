@@ -1,12 +1,28 @@
 package student_jekaterina_soldatova.lesson_09.level_5_middle;
 
-import java.lang.reflect.Array;
-
 class BookReaderImpl implements BookReader {
     Book[] bookArray;
 
     BookReaderImpl (Book[] bookArray) {
         this.bookArray = bookArray;
+    }
+
+    void run(Book book) {
+        if (isNewBookUnique(book) && isBookInfoNotEmpty(book)) {
+            addNewBook(book);
+        } else {
+            if (isNewBookUnique(book)) {
+                System.out.println("The book is already in the library");
+            } else {
+                System.out.println("The book info in not correct, please add");
+                if (book.getTitle().equals("")) {
+                    System.out.print(" title");
+                }
+                if (book.getAuthor().equals("")) {
+                    System.out.print(" author");
+                }
+            }
+        }
     }
 
     @Override
@@ -27,5 +43,10 @@ class BookReaderImpl implements BookReader {
             }
         }
         return true;
+    }
+
+    @Override
+    public boolean isBookInfoNotEmpty(Book book) {
+        return !book.getTitle().equals("") && !book.getAuthor().equals("");
     }
 }

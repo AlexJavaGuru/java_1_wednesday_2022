@@ -5,4 +5,6 @@ interface BookReader {
     void addNewBook(Book book);
 
     boolean isNewBookUnique(Book book);
+
+    boolean isBookInfoNotEmpty(Book book);
 }

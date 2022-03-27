@@ -8,6 +8,11 @@ class BookReaderTest {
         test.checkNewIsNewFilledLibrary();
         test.checkNewIsAdded();
         test.addNew();
+        test.titleAndAuthor();
+//        test.noTitleIsAuthor();
+//        test.isTitleNoAuthor();
+//        test.NoTitleNoAuthor();
+
     }
 
     void checkNewIsNewEmptyLibrary() {
@@ -28,6 +33,7 @@ class BookReaderTest {
             System.out.println("check if new - fail");
         }
     }
+
     void checkNewIsAdded() {
         Book[] array = {new Book("gjhk", "dtyfg"), new Book("someone", "something")};
         BookReaderImpl bookReader = new BookReaderImpl(array);
@@ -51,6 +57,15 @@ class BookReaderTest {
             System.out.println("add new - fail");
         }
 
+    }
+
+    void titleAndAuthor(){
+        BookReaderImpl bookReader = new BookReaderImpl(null);
+        if (bookReader.isBookInfoNotEmpty(new Book("someone", "something"))) {
+            System.out.println("check book has both title-author - ok");
+        } else {
+            System.out.println("check book has both title-author - fail");
+        }
     }
 
     static Boolean compareArrays(Book[] expected, Book[] real) {
