@@ -24,6 +24,9 @@ class BookReaderTest {
 
         test.findByAuthor();
         test.findByAuthorNone();
+
+        test.findByTitle();
+        test.findByTitleNone();
     }
 
     void checkNewIsNewEmptyLibrary() {
@@ -160,11 +163,11 @@ class BookReaderTest {
     }
 
     void findByAuthor() {
-        Book[] testArray = {new Book("dthfj", "1"), new Book("blah", "1"), new Book("blah", "2"), new Book("fjgbmh", "2")};
+        Book[] testArray = {new Book("dthfj", "1"), new Book("blah", "1"), new Book("bla", "2"), new Book("fjgbmh", "2")};
         BookReaderImpl bookReader = new BookReaderImpl(testArray);
 
-        Book[] expectedResult = {new Book("blah", "1"), new Book("blah", "2")};
-        Book[] realResult = bookReader.findByAuthor("bla");
+        Book[] expectedResult = {new Book("blah", "1"), new Book("bla", "2")};
+        Book[] realResult = bookReader.findByAuthor("bl");
 
         if (compareArrays(expectedResult, realResult)) {
             System.out.println("find by author - ok");
@@ -185,6 +188,34 @@ class BookReaderTest {
             System.out.println("find by author none - fail");
         }
     }
+
+    void findByTitle() {
+        Book[] testArray = {new Book("dthfj", "12345"), new Book("blah", "123"), new Book("bla", "s123"), new Book("fjgbmh", "2")};
+        BookReaderImpl bookReader = new BookReaderImpl(testArray);
+
+        Book[] expectedResult = {new Book("dthfj", "12345"), new Book("blah", "123")};
+        Book[] realResult = bookReader.findByTitle("12");
+
+        if (compareArrays(expectedResult, realResult)) {
+            System.out.println("find by title - ok");
+        } else {
+            System.out.println("find by title - fail");
+        }
+    }
+
+    void findByTitleNone() {
+        Book[] testArray = {new Book("blah", "1"), new Book("blah", "2")};
+        BookReaderImpl bookReader = new BookReaderImpl(testArray);
+
+        Book[] realResult = bookReader.findByTitle("fgguihiuhoi");
+
+        if (realResult == null) {
+            System.out.println("find by title none - ok");
+        } else {
+            System.out.println("find by title none - fail");
+        }
+    }
+
 
     static Boolean compareArrays(Book[] expected, Book[] real) {
         if (expected.length == real.length) {

@@ -10,6 +10,9 @@ interface BookReader {
 
     Book[] findByAuthor(String author);
 
+    Book[] findByTitle(String title);
+
+
     boolean isBookToRemoveInLibrary(Book book);
 
     boolean isNewBookUnique(Book book);
