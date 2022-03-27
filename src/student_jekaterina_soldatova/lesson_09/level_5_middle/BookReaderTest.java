@@ -143,7 +143,7 @@ class BookReaderTest {
     }
 
     void printBooks() {
-        BookReaderImpl bookReader = new BookReaderImpl(new Book[]{new Book("gjhk", "dtyfg"), new Book("someone", "something")});
+        BookReaderImpl bookReader = new BookReaderImpl(new Book[]{new Book("author", "title"), new Book("someone", "something")});
         bookReader.printCurrentBooks();
     }
 

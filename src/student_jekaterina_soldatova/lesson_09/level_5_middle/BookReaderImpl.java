@@ -65,7 +65,6 @@ class BookReaderImpl implements BookReader {
                 return true;
             }
         }
-        System.out.println("No such book to remove");
         return false;
     }
 
