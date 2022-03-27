@@ -229,7 +229,7 @@ class BookReaderTest {
         Book[] testArray = {new Book("blah", "1"), new Book("blah", "2")};
         BookReaderImpl bookReader = new BookReaderImpl(testArray);
 
-        if(bookReader.changeBookStatusRead(new Book("blah", "2"))) {
+        if(bookReader.changeBookStatusToRead(new Book("blah", "2"))) {
             System.out.println("read existing book - ok");
         } else {
             System.out.println("read existing book - fail");
@@ -240,7 +240,7 @@ class BookReaderTest {
         Book[] testArray = {new Book("blah", "1"), new Book("blah", "2")};
         BookReaderImpl bookReader = new BookReaderImpl(testArray);
 
-        if(!bookReader.changeBookStatusRead(new Book("wtrdh", "2"))) {
+        if(!bookReader.changeBookStatusToRead(new Book("wtrdh", "2"))) {
             System.out.println("read not existing book - ok");
         } else {
             System.out.println("read not existing book - fail");
@@ -251,7 +251,7 @@ class BookReaderTest {
         Book[] testArray = {new Book("blah", "1"), new Book("blah", "2")};
         BookReaderImpl bookReader = new BookReaderImpl(testArray);
 
-        if(bookReader.changeBookStatusNotRead(new Book("blah", "2"))) {
+        if(bookReader.changeBookStatusToNotRead(new Book("blah", "2"))) {
             System.out.println("not read existing book - ok");
         } else {
             System.out.println("not read existing book - fail");
@@ -262,7 +262,7 @@ class BookReaderTest {
         Book[] testArray = {new Book("blah", "1"), new Book("blah", "2")};
         BookReaderImpl bookReader = new BookReaderImpl(testArray);
 
-        if(!bookReader.changeBookStatusNotRead(new Book("blgkjlah", "2"))) {
+        if(!bookReader.changeBookStatusToNotRead(new Book("blgkjlah", "2"))) {
             System.out.println("not read not existing book - ok");
         } else {
             System.out.println("not read not existing book - fail");
@@ -270,16 +270,33 @@ class BookReaderTest {
     }
 
     void returnReadBooks() {
-        String[] expectedResult = {"title [author]", "something [someone]"};
-        Book[] run = new Book[]{new Book("author", "title"), new Book("someone", "something")};
+        String[] expectedResult = {"title [author]"};
+
+        Book book = new Book("author", "title");
+        book.isRead = true;
+        Book[] run = new Book[]{book, new Book("someone", "something")};
 
         BookReaderImpl bookReader = new BookReaderImpl(run);
-        String[] realResult = bookReader.returnCurrentBooks();
+       // bookReader.changeBookStatusToRead(new Book("author", "title"));
+        String[] realResult = bookReader.returnReadBooks();
 
         if (compareArrays(expectedResult, realResult)) {
-            System.out.println("check print - ok");
+            System.out.println("return read books - ok");
         } else {
-            System.out.println("check print - fail");
+            System.out.println("return read books - fail");
+        }
+    }
+
+    void returnReadBooksNone() {
+        Book[] run = new Book[]{new Book("someone", "something")};
+
+        BookReaderImpl bookReader = new BookReaderImpl(run);
+        String[] realResult = bookReader.returnReadBooks();
+
+        if (realResult == null) {
+            System.out.println("return read books none - ok");
+        } else {
+            System.out.println("return read books none - fail");
         }
     }
 

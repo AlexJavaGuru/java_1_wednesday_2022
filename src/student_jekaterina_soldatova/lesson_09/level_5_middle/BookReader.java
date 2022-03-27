@@ -22,8 +22,8 @@ interface BookReader {
 
     boolean isBookInfoNotEmpty(Book book);
 
-    boolean changeBookStatusRead(Book book);
+    boolean changeBookStatusToRead(Book book);
 
-    boolean changeBookStatusNotRead(Book book);
+    boolean changeBookStatusToNotRead(Book book);
 
 }

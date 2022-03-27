@@ -155,7 +155,7 @@ class BookReaderImpl implements BookReader {
     }
 
     @Override
-    public boolean changeBookStatusRead(Book book) {
+    public boolean changeBookStatusToRead(Book book) {
         if (!isNewBookUnique(book)) {
             book.isRead = true;
             return true;
@@ -164,7 +164,7 @@ class BookReaderImpl implements BookReader {
     }
 
     @Override
-    public boolean changeBookStatusNotRead(Book book) {
+    public boolean changeBookStatusToNotRead(Book book) {
         if (!isNewBookUnique(book)) {
             book.isRead = false;
             return true;
