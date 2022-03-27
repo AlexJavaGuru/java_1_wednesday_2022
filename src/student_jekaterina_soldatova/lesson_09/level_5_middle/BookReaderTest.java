@@ -101,12 +101,12 @@ class BookReaderTest {
         Book[] realResult = new Book[]{new Book("gjhk", "dtyfg")};
 
         BookReaderImpl bookReader = new BookReaderImpl(realResult);
-        bookReader.run(new Book("someone", "hkjhh"));
+        bookReader.run(new Book("someone", "something"));
 
-        if (compareArrays(expectedResult, realResult)) {
-            System.out.println("add new - ok");
+        if (compareArrays(expectedResult, bookReader.bookArray)) {
+            System.out.println("check run - ok");
         } else {
-            System.out.println("add new - fail");
+            System.out.println("check run - fail");
         }
 
     }
