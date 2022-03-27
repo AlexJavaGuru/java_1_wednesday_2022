@@ -143,8 +143,17 @@ class BookReaderTest {
     }
 
     void printBooks() {
-        BookReaderImpl bookReader = new BookReaderImpl(new Book[]{new Book("author", "title"), new Book("someone", "something")});
-        bookReader.printCurrentBooks();
+        String[] expectedResult = {"title [author]", "something [someone]"};
+        Book[] run = new Book[]{new Book("author", "title"), new Book("someone", "something")};
+
+        BookReaderImpl bookReader = new BookReaderImpl(run);
+        String[] realResult = bookReader.printCurrentBooks();
+
+        if (compareArrays(expectedResult, realResult)) {
+            System.out.println("check print - ok");
+        } else {
+            System.out.println("check print - fail");
+        }
     }
 
 
@@ -152,6 +161,19 @@ class BookReaderTest {
         if (expected.length == real.length) {
             for (int i = 0; i < expected.length; i++) {
                 if (!(expected[i].getTitle().equals(real[i].getTitle())) || !(expected[i].getAuthor().equals(real[i].getAuthor()))) {
+                    return false;
+                }
+            }
+        } else {
+            return false;
+        }
+        return true;
+    }
+
+    static Boolean compareArrays(String[] expected, String[] real) {
+        if (expected.length == real.length) {
+            for (int i = 0; i < expected.length; i++) {
+                if (!expected[i].equals(real[i])) {
                     return false;
                 }
             }

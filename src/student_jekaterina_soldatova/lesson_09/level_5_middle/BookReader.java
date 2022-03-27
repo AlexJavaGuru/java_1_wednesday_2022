@@ -6,7 +6,7 @@ interface BookReader {
 
     void removeBook(Book book);
 
-    void printCurrentBooks();
+    String[] printCurrentBooks();
 
     boolean isBookToRemoveInLibrary(Book book);
 

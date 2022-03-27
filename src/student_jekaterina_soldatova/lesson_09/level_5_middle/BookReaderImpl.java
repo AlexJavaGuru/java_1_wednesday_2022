@@ -53,10 +53,12 @@ class BookReaderImpl implements BookReader {
     }
 
     @Override
-    public void printCurrentBooks() {
-        for (Book book: bookArray) {
-            System.out.println(book.getAuthor() + ": " + book.getTitle());
+    public String[] printCurrentBooks() {
+        String[] bookArrayToPrint = new String[bookArray.length];
+        for (int i = 0; i < bookArray.length; i++) {
+            bookArrayToPrint[i] = (bookArray[i].getTitle() + " [" + bookArray[i].getAuthor() + "]");
         }
+        return bookArrayToPrint;
     }
 
     @Override
