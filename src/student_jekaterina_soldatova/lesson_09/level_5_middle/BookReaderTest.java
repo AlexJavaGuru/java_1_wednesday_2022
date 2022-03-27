@@ -7,12 +7,15 @@ class BookReaderTest {
         test.checkNewIsNewEmptyLibrary();
         test.checkNewIsNewFilledLibrary();
         test.checkNewIsAdded();
-        test.addNew();
-        test.titleAndAuthor();
-//        test.noTitleIsAuthor();
-//        test.isTitleNoAuthor();
-//        test.NoTitleNoAuthor();
 
+        test.addNew();
+
+        test.titleAndAuthor();
+        test.noTitleIsAuthor();
+        test.isTitleNoAuthor();
+        test.noTitleNoAuthor();
+
+        test.checkRun();
     }
 
     void checkNewIsNewEmptyLibrary() {
@@ -46,17 +49,15 @@ class BookReaderTest {
 
     void addNew() {
         Book[] expectedResult = {new Book("gjhk", "dtyfg"), new Book("someone", "something")};
-        Book[] realResult = new Book[]{new Book("gjhk", "dtyfg")};
 
-        BookReaderImpl bookReader = new BookReaderImpl(realResult);
+        BookReaderImpl bookReader = new BookReaderImpl(new Book[]{new Book("gjhk", "dtyfg")});
         bookReader.addNewBook(new Book("someone", "something"));
 
-        if (compareArrays(expectedResult, realResult)) {
+        if (compareArrays(expectedResult, bookReader.bookArray)) {
             System.out.println("add new - ok");
         } else {
             System.out.println("add new - fail");
         }
-
     }
 
     void titleAndAuthor(){
@@ -68,11 +69,58 @@ class BookReaderTest {
         }
     }
 
+    void noTitleIsAuthor(){
+        BookReaderImpl bookReader = new BookReaderImpl(null);
+        if (!bookReader.isBookInfoNotEmpty(new Book("someone", ""))) {
+            System.out.println("check book has only author - ok");
+        } else {
+            System.out.println("check book has only author - fail");
+        }
+    }
+
+    void isTitleNoAuthor(){
+        BookReaderImpl bookReader = new BookReaderImpl(null);
+        if (!bookReader.isBookInfoNotEmpty(new Book("", "something"))) {
+            System.out.println("check book has only title - ok");
+        } else {
+            System.out.println("check book has only title - fail");
+        }
+    }
+
+    void noTitleNoAuthor(){
+        BookReaderImpl bookReader = new BookReaderImpl(null);
+        if (!bookReader.isBookInfoNotEmpty(new Book("", ""))) {
+            System.out.println("check book has no author no title - ok");
+        } else {
+            System.out.println("check book has no author no title - fail");
+        }
+    }
+
+    void checkRun() {
+        Book[] expectedResult = {new Book("gjhk", "dtyfg"), new Book("someone", "something")};
+        Book[] realResult = new Book[]{new Book("gjhk", "dtyfg")};
+
+        BookReaderImpl bookReader = new BookReaderImpl(realResult);
+        bookReader.run(new Book("someone", "hkjhh"));
+
+        if (compareArrays(expectedResult, realResult)) {
+            System.out.println("add new - ok");
+        } else {
+            System.out.println("add new - fail");
+        }
+
+    }
+
+
     static Boolean compareArrays(Book[] expected, Book[] real) {
-        for (int i = 0; i < real.length; i++) {
-            if (!(expected[i].getTitle().equals(real[i].getTitle()))) {
-                return false;
+        if (expected.length == real.length) {
+            for (int i = 0; i < expected.length; i++) {
+                if (!(expected[i].getTitle().equals(real[i].getTitle())) || !(expected[i].getAuthor().equals(real[i].getAuthor()))) {
+                    return false;
+                }
             }
+        } else {
+            return false;
         }
         return true;
     }

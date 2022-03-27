@@ -11,15 +11,15 @@ class BookReaderImpl implements BookReader {
         if (isNewBookUnique(book) && isBookInfoNotEmpty(book)) {
             addNewBook(book);
         } else {
-            if (isNewBookUnique(book)) {
+            if (!isNewBookUnique(book)) {
                 System.out.println("The book is already in the library");
             } else {
-                System.out.println("The book info in not correct, please add");
+                System.out.print("The book info in not correct, please add");
                 if (book.getTitle().equals("")) {
-                    System.out.print(" title");
+                    System.out.println(" title");
                 }
                 if (book.getAuthor().equals("")) {
-                    System.out.print(" author");
+                    System.out.println(" author");
                 }
             }
         }
