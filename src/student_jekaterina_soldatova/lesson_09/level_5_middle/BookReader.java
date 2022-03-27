@@ -6,6 +6,8 @@ interface BookReader {
 
     void removeBook(Book book);
 
+    void printCurrentBooks();
+
     boolean isBookToRemoveInLibrary(Book book);
 
     boolean isNewBookUnique(Book book);
