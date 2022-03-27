@@ -164,7 +164,7 @@ class BookReaderTest {
         BookReaderImpl bookReader = new BookReaderImpl(testArray);
 
         Book[] expectedResult = {new Book("blah", "1"), new Book("blah", "2")};
-        Book[] realResult = bookReader.findByAuthor("blah");
+        Book[] realResult = bookReader.findByAuthor("bla");
 
         if (compareArrays(expectedResult, realResult)) {
             System.out.println("find by author - ok");

@@ -65,7 +65,7 @@ class BookReaderImpl implements BookReader {
     public Book[] findByAuthor(String author) {
         int i = 0;
         for (Book book: bookArray) {
-            if (book.getAuthor().equals(author)) {
+            if (book.getAuthor().startsWith(author)) {
                 i++;
             }
         }
@@ -73,7 +73,7 @@ class BookReaderImpl implements BookReader {
             Book[] foundBooks = new Book[i];
             i = 0;
             for (Book book : bookArray) {
-                if (book.getAuthor().equals(author)) {
+                if (book.getAuthor().startsWith(author)) {
                     foundBooks[i] = book;
                     i++;
                 }
