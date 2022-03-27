@@ -36,6 +36,9 @@ class BookReaderTest {
 
         test.returnReadBooks();
         test.returnReadBooksNone();
+
+        test.returnNotReadBooks();
+        test.returnNotReadBooksNone();
     }
 
     void checkNewIsNewEmptyLibrary() {
@@ -277,7 +280,6 @@ class BookReaderTest {
         Book[] run = new Book[]{book, new Book("someone", "something")};
 
         BookReaderImpl bookReader = new BookReaderImpl(run);
-       // bookReader.changeBookStatusToRead(new Book("author", "title"));
         String[] realResult = bookReader.returnReadBooks();
 
         if (compareArrays(expectedResult, realResult)) {
@@ -299,6 +301,44 @@ class BookReaderTest {
             System.out.println("return read books none - fail");
         }
     }
+
+    void returnNotReadBooks() {
+        String[] expectedResult = {"title [author]"};
+
+        Book book1 = new Book("author", "title");
+        book1.isRead = false;
+        Book book2 = new Book("author2", "title2");
+        book2.isRead = true;
+        Book[] run = new Book[]{book1, book2};
+
+        BookReaderImpl bookReader = new BookReaderImpl(run);
+        String[] realResult = bookReader.returnNotReadBooks();
+
+        if (compareArrays(expectedResult, realResult)) {
+            System.out.println("return not read books - ok");
+        } else {
+            System.out.println("return not read books - fail");
+        }
+    }
+
+    void returnNotReadBooksNone() {
+        Book book1 = new Book("author", "title");
+        book1.isRead = true;
+        Book book2 = new Book("author2", "title2");
+        book2.isRead = true;
+        Book[] run = new Book[]{book1, book2};
+
+        BookReaderImpl bookReader = new BookReaderImpl(run);
+        String[] realResult = bookReader.returnNotReadBooks();
+
+        if (realResult == null) {
+            System.out.println("return not read books none - ok");
+        } else {
+            System.out.println("return not read books none - fail");
+        }
+    }
+
+
 
     static Boolean compareArrays(Book[] expected, Book[] real) {
         if (expected.length == real.length) {

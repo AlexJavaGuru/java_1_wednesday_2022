@@ -84,6 +84,28 @@ class BookReaderImpl implements BookReader {
     }
 
     @Override
+    public String[] returnNotReadBooks() {
+        int i = 0;
+        for (Book book: bookArray) {
+            if (!book.isRead) {
+                i++;
+            }
+        }
+        if (i > 0) {
+            String[] readBooks = new String[i];
+            i = 0;
+            for (Book book : bookArray) {
+                if (!book.isRead) {
+                    readBooks[i] = book.getTitle() + " [" + book.getAuthor() + "]";
+                    i++;
+                }
+            }
+            return readBooks;
+        }
+        return null;
+    }
+
+    @Override
     public Book[] findByAuthor(String author) {
         int i = 0;
         for (Book book: bookArray) {

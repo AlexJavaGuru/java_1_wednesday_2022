@@ -10,6 +10,8 @@ interface BookReader {
 
     String[] returnReadBooks();
 
+    String[] returnNotReadBooks();
+
 
     Book[] findByAuthor(String author);
 
