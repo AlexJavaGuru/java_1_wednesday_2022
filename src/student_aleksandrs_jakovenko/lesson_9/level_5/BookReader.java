@@ -4,8 +4,8 @@ import java.util.List;
 
 interface BookReader {
 
-    boolean addBook(String bookName, String author);
-    String convertBook(String bookName, String author);
-    boolean deleteBook(String bookName, String author);
-    void printBooks();
+    boolean addBook(Book book);
+    boolean deleteBook(Book book);
+    String[] printBooks();
+    List<Book> findByAuthor(String author);
 }

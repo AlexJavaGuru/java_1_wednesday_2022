@@ -5,16 +5,11 @@ import java.util.List;
 
 class BookReaderImpl implements BookReader {
 
-    List<String> library = new ArrayList<>();
-    private String bookName;
-    private String author;
+    List<Book> library = new ArrayList<>();
 
     @Override
-    public boolean addBook(String bookName, String author) {
-        this.bookName = bookName;
-        this.author = author;
-        String book = convertBook(bookName, author);
-        if (bookName == "" || author == "") {
+    public boolean addBook(Book book) {
+        if (book.getBookName().equals("") || book.getAuthor().equals("")) {
             return false;
         } else if (library.contains(book)) {
             return false;
@@ -24,56 +19,31 @@ class BookReaderImpl implements BookReader {
         }
     }
 
-//    String[] library = new String[0];
-//
-//    @Override
-//    public boolean addBook(String bookName, String author) {
-//        String book = convertBook(bookName, author);
-//
-//        for (int i = 0; i < library.length; i++) {
-//            if (library.length == 0) {
-//                library = new String[library.length + 1];
-//                library[i] = book;
-//            } else if (library[i].equals(book)) {
-//                return false;
-//            } else if (!library[i].equals(book)) {
-//                library = new String[library.length + 1];
-//                library[i] = book;
-//            }
-//        }
-//        return true;
-//    }
-
     @Override
-    public boolean deleteBook(String bookName, String author) {
-        this.bookName = bookName;
-        this.author = author;
-        String book = convertBook(bookName, author);
-        if (bookName == "" || author == "") {
-            return false;
-        } else if (library.contains(book)) {
+    public boolean deleteBook(Book book) {
+        if (library.contains(book)) {
             library.remove(book);
             return true;
         } else return false;
     }
 
     @Override
-    public void printBooks() {
+    public String[] printBooks() {
+        String[] books = new String[library.size()];
         for (int i = 0; i < library.size(); i++) {
-            System.out.println(getBookName() + " [" + getAuthor() + "]");
+            books[i] = library.get(i).getBookName() + " [" + library.get(i).getAuthor() + "]";
         }
+        return books;
     }
 
     @Override
-    public String convertBook(String bookName, String author) {
-        return bookName + " " + author;
-    }
-
-    public String getBookName() {
-        return bookName;
-    }
-
-    public String getAuthor() {
-        return author;
+    public List<Book> findByAuthor(String author) {
+        List<Book> list = new ArrayList<>();
+        for (Book book : library) {
+            if (author.startsWith(book.getAuthor())) {
+                list.add(book);
+            }
+        }
+        return list;
     }
 }
