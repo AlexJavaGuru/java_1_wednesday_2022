@@ -19,6 +19,9 @@ class BookReaderTest {
         test.findByAuthorTest1();
         test.findByAuthorTest2();
         test.findByAuthorTest3();
+        test.findByBookNameTest1();
+        test.findByBookNameTest2();
+        test.findByBookNameTest3();
     }
 
     public void addBookTest1() {
@@ -87,49 +90,96 @@ class BookReaderTest {
     }
 
     public void findByAuthorTest1() {
-        BookReader bookReader = new BookReaderImpl();
+        BookReader book = new BookReaderImpl();
         Book test1 = new Book("Harry", "Harry");
         Book test2 = new Book("Harry1", "Potter");
         Book test3 = new Book("Harry2", "Potter");
-        bookReader.addBook(test1);
-        bookReader.addBook(test2);
-        bookReader.addBook(test3);
+        book.addBook(test1);
+        book.addBook(test2);
+        book.addBook(test3);
         List<Book> expectedResult = new ArrayList<>() {{
             add(test2);
             add(test3);
         }};
-        List<Book> actualResult = bookReader.findByAuthor("Potter");
+        List<Book> actualResult = book.findByAuthor("Potter");
         checkResult(actualResult, expectedResult, "FindByAuthor test1");
     }
 
     public void findByAuthorTest2() {
-        BookReader bookReader = new BookReaderImpl();
+        BookReader book = new BookReaderImpl();
         Book test1 = new Book("Harry", "Potter");
         Book test2 = new Book("Harry1", "Potter");
         Book test3 = new Book("Harry2", "Potter");
-        bookReader.addBook(test1);
-        bookReader.addBook(test2);
-        bookReader.addBook(test3);
+        book.addBook(test1);
+        book.addBook(test2);
+        book.addBook(test3);
         List<Book> expectedResult = new ArrayList<>();
-        List<Book> actualResult = bookReader.findByAuthor("harry");
+        List<Book> actualResult = book.findByAuthor("harry");
         checkResult(actualResult, expectedResult, "FindByAuthor test2");
     }
 
     public void findByAuthorTest3() {
-        BookReader bookReader = new BookReaderImpl();
+        BookReader book = new BookReaderImpl();
         Book test1 = new Book("Harry", "Potter");
         Book test2 = new Book("Harry1", "Potter");
         Book test3 = new Book("Harry2", "Potter");
-        bookReader.addBook(test1);
-        bookReader.addBook(test2);
-        bookReader.addBook(test3);
+        book.addBook(test1);
+        book.addBook(test2);
+        book.addBook(test3);
         List<Book> expectedResult = new ArrayList<>() {{
             add(test1);
             add(test2);
             add(test3);
         }};
-        List<Book> actualResult = bookReader.findByAuthor("Potter");
+        List<Book> actualResult = book.findByAuthor("Pott");
         checkResult(actualResult, expectedResult, "FindByAuthor test3");
+    }
+
+    public void findByBookNameTest1() {
+        BookReader book = new BookReaderImpl();
+        Book test1 = new Book("Harry", "Potter");
+        Book test2 = new Book("Harry", "Potter1");
+        Book test3 = new Book("Harry1", "Potter");
+        book.addBook(test1);
+        book.addBook(test2);
+        book.addBook(test3);
+        List<Book> expectedResult = new ArrayList<>() {{
+            add(test1);
+            add(test2);
+            add(test3);
+        }};
+        List<Book> actualResult = book.findByBookName("Harry");
+        checkResult(actualResult, expectedResult, "FindByBookName test1");
+    }
+
+    public void findByBookNameTest2() {
+        BookReader book = new BookReaderImpl();
+        Book test1 = new Book("Harry", "Potter");
+        Book test2 = new Book("Harry", "Potter1");
+        Book test3 = new Book("Harry1", "Potter");
+        book.addBook(test1);
+        book.addBook(test2);
+        book.addBook(test3);
+        List<Book> expectedResult = new ArrayList<>();
+        List<Book> actualResult = book.findByBookName("Potter");
+        checkResult(actualResult, expectedResult, "FindByBookName test2");
+    }
+
+    public void findByBookNameTest3() {
+        BookReader book = new BookReaderImpl();
+        Book test1 = new Book("Harry", "Potter");
+        Book test2 = new Book("Harry", "Potter1");
+        Book test3 = new Book("Harry1", "Potter");
+        book.addBook(test1);
+        book.addBook(test2);
+        book.addBook(test3);
+        List<Book> expectedResult = new ArrayList<>() {{
+            add(test1);
+            add(test2);
+            add(test3);
+        }};
+        List<Book> actualResult = book.findByBookName("Har");
+        checkResult(actualResult, expectedResult, "FindByBookName test3");
     }
 
     public void checkResult(boolean actualResult, boolean expectedResult, String testName) {

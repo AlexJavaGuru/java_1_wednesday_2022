@@ -8,4 +8,5 @@ interface BookReader {
     boolean deleteBook(Book book);
     String[] printBooks();
     List<Book> findByAuthor(String author);
+    List<Book> findByBookName(String bookName);
 }

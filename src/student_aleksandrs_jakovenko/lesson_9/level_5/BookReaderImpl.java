@@ -40,7 +40,18 @@ class BookReaderImpl implements BookReader {
     public List<Book> findByAuthor(String author) {
         List<Book> list = new ArrayList<>();
         for (Book book : library) {
-            if (author.startsWith(book.getAuthor())) {
+            if (book.getAuthor().startsWith(author)) {
+                list.add(book);
+            }
+        }
+        return list;
+    }
+
+    @Override
+    public List<Book> findByBookName(String bookName) {
+        List<Book> list = new ArrayList<>();
+        for (Book book : library) {
+            if (book.getBookName().startsWith(bookName)) {
                 list.add(book);
             }
         }
