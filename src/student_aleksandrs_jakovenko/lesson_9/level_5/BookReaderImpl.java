@@ -6,16 +6,20 @@ import java.util.List;
 class BookReaderImpl implements BookReader {
 
     List<String> library = new ArrayList<>();
+    private String bookName;
+    private String author;
 
     @Override
     public boolean addBook(String bookName, String author) {
+        this.bookName = bookName;
+        this.author = author;
         String book = convertBook(bookName, author);
         if (bookName == "" || author == "") {
             return false;
         } else if (library.contains(book)) {
             return false;
         } else {
-            library.add((book));
+            library.add(book);
             return true;
         }
     }
@@ -40,7 +44,36 @@ class BookReaderImpl implements BookReader {
 //        return true;
 //    }
 
+    @Override
+    public boolean deleteBook(String bookName, String author) {
+        this.bookName = bookName;
+        this.author = author;
+        String book = convertBook(bookName, author);
+        if (bookName == "" || author == "") {
+            return false;
+        } else if (library.contains(book)) {
+            library.remove(book);
+            return true;
+        } else return false;
+    }
+
+    @Override
+    public void printBooks() {
+        for (int i = 0; i < library.size(); i++) {
+            System.out.println(getBookName() + " [" + getAuthor() + "]");
+        }
+    }
+
+    @Override
     public String convertBook(String bookName, String author) {
         return bookName + " " + author;
+    }
+
+    public String getBookName() {
+        return bookName;
+    }
+
+    public String getAuthor() {
+        return author;
     }
 }
