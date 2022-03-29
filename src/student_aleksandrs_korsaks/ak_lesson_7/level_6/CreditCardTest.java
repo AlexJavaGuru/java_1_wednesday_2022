@@ -2,8 +2,6 @@ package student_aleksandrs_korsaks.ak_lesson_7.level_6;
 
 class CreditCardTest {
 
-    CreditCard firstCreditCard = new CreditCard(11111, 123, 30);
-
     public static void main(String[] args) {
         CreditCardTest creditCardTest = new CreditCardTest();
         creditCardTest.withdrawFromCardWrongPinTest();
@@ -20,6 +18,7 @@ class CreditCardTest {
     }
 
     public void withdrawFromCardWrongPinTest() {
+        CreditCard firstCreditCard = new CreditCard(11111, 123, 30);
         int expectedResult = 0;
         firstCreditCard.withdrawFromCard(15,122);
         int realResultForBalance = firstCreditCard.getCardBalance();
@@ -28,6 +27,7 @@ class CreditCardTest {
     }
 
     public void withdrawFromCardPinOkTest() {
+        CreditCard firstCreditCard = new CreditCard(11111, 123, 30);
         int expectedResultForBalance = 0;
         int expectedResultForOverdraft = -15;
         firstCreditCard.withdrawFromCard(15,123);
@@ -37,14 +37,17 @@ class CreditCardTest {
     }
 
     public void depositToCardPinOk() {
-        int expectedResult = 0;
+        CreditCard firstCreditCard = new CreditCard(11111, 123, 30);
+        int expectedResultForBalance = 15;
+        int expectedResultForOverdraft = 0;
         firstCreditCard.depositToCard(15,123);
         int realResultForBalance = firstCreditCard.getCardBalance();
         int realResultForOverdraft = firstCreditCard.getCardOverdraft();
-        checkTestResult("depositToCardPinOk", expectedResult == realResultForBalance && expectedResult == realResultForOverdraft);
+        checkTestResult("depositToCardPinOk", expectedResultForBalance == realResultForBalance && expectedResultForOverdraft == realResultForOverdraft);
     }
 
     public void depositToCardWrongPinTest() {
+        CreditCard firstCreditCard = new CreditCard(11111, 123, 30);
         int expectedResult = 0;
         firstCreditCard.depositToCard(15,122);
         int realResultForBalance = firstCreditCard.getCardBalance();
@@ -53,6 +56,7 @@ class CreditCardTest {
     }
 
     public void withdrawFromCardOverLimitTest() {
+        CreditCard firstCreditCard = new CreditCard(11111, 123, 30);
         int expectedResult = 0;
         firstCreditCard.withdrawFromCard(31,123);
         int realResultForBalance = firstCreditCard.getCardBalance();
@@ -61,6 +65,7 @@ class CreditCardTest {
     }
 
     public void withdrawFromCardWithinLimitTest() {
+        CreditCard firstCreditCard = new CreditCard(11111, 123, 30);
         int expectedResultForBalance = 0;
         int expectedResultForOverdraft = -30;
         firstCreditCard.withdrawFromCard(30,123);
@@ -70,6 +75,8 @@ class CreditCardTest {
     }
 
     public void depositToCardAmountLessThanOverdraftTest() {
+        CreditCard firstCreditCard = new CreditCard(11111, 123, 30);
+        firstCreditCard.withdrawFromCard(30,123);
         int expectedResultForBalance = 0;
         int expectedResultForOverdraft = -15;
         firstCreditCard.depositToCard(15,123);
@@ -79,15 +86,19 @@ class CreditCardTest {
     }
 
     public void depositToCardAmountMoreThanOverdraftTest() {
+        CreditCard firstCreditCard = new CreditCard(11111, 123, 30);
+        firstCreditCard.withdrawFromCard(30,123);
         int expectedResultForBalance = 15;
         int expectedResultForOverdraft = 0;
-        firstCreditCard.depositToCard(30,123);
+        firstCreditCard.depositToCard(45,123);
         int realResultForBalance = firstCreditCard.getCardBalance();
         int realResultForOverdraft = firstCreditCard.getCardOverdraft();
         checkTestResult("depositToCardAmountMoreThanOverdraftTest", expectedResultForBalance == realResultForBalance && expectedResultForOverdraft == realResultForOverdraft);
     }
 
     public void withdrawFromCardAmountLessThanBalanceTest() {
+        CreditCard firstCreditCard = new CreditCard(11111, 123, 30);
+        firstCreditCard.depositToCard(15,123);
         int expectedResultForBalance = 5;
         int expectedResultForOverdraft = 0;
         firstCreditCard.withdrawFromCard(10,123);
@@ -97,6 +108,8 @@ class CreditCardTest {
     }
 
     public void withdrawFromCardAmountMoreThanBalanceTest() {
+        CreditCard firstCreditCard = new CreditCard(11111, 123, 30);
+        firstCreditCard.depositToCard(5,123);
         int expectedResultForBalance = 0;
         int expectedResultForOverdraft = -5;
         firstCreditCard.withdrawFromCard(10,123);

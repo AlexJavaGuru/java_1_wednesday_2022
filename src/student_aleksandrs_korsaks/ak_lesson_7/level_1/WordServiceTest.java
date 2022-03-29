@@ -16,7 +16,7 @@ class WordServiceTest {
     public void shouldFilterTextTest() {
         String text = "ok!@#$it)(   )is}|/  filte red";
         String expectedResult = "ok    it      is     filte red";
-        String realResult = wordService.filterTextFromUnnecessaryCharactersPutThemInLowerCase(text);
+        String realResult = wordService.prepareText(text);
         checkTestResult("shouldFilterTextTest", expectedResult.equals(realResult));
     }
 

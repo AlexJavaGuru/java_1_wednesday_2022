@@ -15,12 +15,12 @@ class WordService {
         System.out.println("The most frequent word in the text is - \"" + mostFrequentWord + "\"");
     }
 
-    public String filterTextFromUnnecessaryCharactersPutThemInLowerCase(String text) {
+    public String prepareText(String text) {
         return text.replaceAll("[^a-zA-Z\s]", " ").toLowerCase();
     }
 
     public String[] separateTextToWords(String text) {
-        return filterTextFromUnnecessaryCharactersPutThemInLowerCase(text).split("\s+");
+        return prepareText(text).split("\s+");
     }
 
     public String findMostFrequentWord(String text) {
