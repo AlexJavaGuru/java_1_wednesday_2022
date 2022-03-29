@@ -1,9 +1,6 @@
 package student_aleksandrs_korsaks.ak_lesson_7.level_7;
 
 import java.util.Objects;
-import java.util.concurrent.atomic.AtomicInteger;
-
-import static student_aleksandrs_korsaks.ak_lesson_7.level_7.UserRepository.usersList;
 
 class UserEntity {
 
@@ -11,10 +8,10 @@ class UserEntity {
     private String userName;
     private String userSurname;
     private String personalCode;
-    private static final AtomicInteger COUNTER = new AtomicInteger(1);
+//    private static final AtomicInteger COUNTER = new AtomicInteger(1);
 
     UserEntity(String userName, String userSurname, String personalCode) {
-        this.id = COUNTER.getAndIncrement();
+//        this.id = COUNTER.getAndIncrement();
         this.userName = userName;
         this.userSurname = userSurname;
         this.personalCode = personalCode;
@@ -22,6 +19,10 @@ class UserEntity {
 
     public long getId() {
         return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getUserName() {
@@ -51,14 +52,13 @@ class UserEntity {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof UserEntity)) return false;
-        UserEntity that = (UserEntity) o;
+        if (!(o instanceof UserEntity that)) return false;
         return getId() == that.getId() && Objects.equals(getUserName(), that.getUserName()) && Objects.equals(getUserSurname(), that.getUserSurname()) && Objects.equals(getPersonalCode(), that.getPersonalCode());
     }
 
     @Override
     public String toString() {
-        return "User ID = " + id +
+        return  "\n" + "User ID = " + id +
                 ", Name = '" + userName + '\'' +
                 ", Surname = '" + userSurname + '\'' +
                 ", Personal Code = '" + personalCode + '\'' + "\n";
