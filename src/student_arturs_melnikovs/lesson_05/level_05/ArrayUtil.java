@@ -6,6 +6,7 @@ import java.util.Random;
 public class ArrayUtil {
 
     public int[] createArray(int arrayLength) {
+
         return new int[arrayLength];
     }
 
@@ -17,6 +18,7 @@ public class ArrayUtil {
     }
 
     public void printArrayToConsole(int[] array) {
+
         System.out.println(Arrays.toString(array));
     }
 
