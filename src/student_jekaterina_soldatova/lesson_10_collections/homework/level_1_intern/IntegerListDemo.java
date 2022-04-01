@@ -1,7 +1,5 @@
 package student_jekaterina_soldatova.lesson_10_collections.homework.level_1_intern;
 
-import teacher.lesson_10_collections.lessoncode.User;
-
 import java.util.ArrayList;
 import java.util.List;
 
