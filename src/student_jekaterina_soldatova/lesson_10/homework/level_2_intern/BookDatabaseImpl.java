@@ -38,7 +38,7 @@ class BookDatabaseImpl implements BookDatabase{
     public Optional<Book> findById(Long bookId) {
         for (Book book: bookList) {
             if (book.getId() == bookId) {
-                Optional.of(book);
+                return Optional.of(book);
             }
         }
         return Optional.empty();
