@@ -1,6 +1,5 @@
 package student_jekaterina_soldatova.lesson_10.lessoncode;
 
-import teacher.lesson_10_collections.lessoncode.User;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,16 +8,16 @@ public class HashMapExample {
 
     public static void main(String[] args) {
 
-        teacher.lesson_10_collections.lessoncode.User alex = new teacher.lesson_10_collections.lessoncode.User("Alex", 1234L);
-        teacher.lesson_10_collections.lessoncode.User alex1 = new teacher.lesson_10_collections.lessoncode.User("Alex", 9999L);
-        teacher.lesson_10_collections.lessoncode.User alex2 = new teacher.lesson_10_collections.lessoncode.User("Alex", 1234L);
-        teacher.lesson_10_collections.lessoncode.User kate = new teacher.lesson_10_collections.lessoncode.User("Kate", 1234L);
+        User alex = new User("Alex", 1234L);
+        User alex1 = new User("Alex", 9999L);
+        User alex2 = new User("Alex", 1234L);
+        User kate = new User("Kate", 1234L);
 
         System.out.println(alex.hashCode());
         System.out.println(alex2.hashCode());
         System.out.println(kate.hashCode());
 
-        Map<Integer, teacher.lesson_10_collections.lessoncode.User> userMap = new HashMap<>();
+        Map<Integer, User> userMap = new HashMap<>();
 
         userMap.put(1, alex);
         userMap.put(4, alex1);
@@ -26,7 +25,7 @@ public class HashMapExample {
         userMap.put(100, kate);
         userMap.put(3, kate);
 
-        teacher.lesson_10_collections.lessoncode.User user = userMap.get(4);
+        User user = userMap.get(4);
         user.setCode(10000000L);
         userMap.put(4, user);
 
