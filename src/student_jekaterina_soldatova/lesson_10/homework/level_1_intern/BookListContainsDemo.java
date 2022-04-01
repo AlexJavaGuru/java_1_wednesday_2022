@@ -17,10 +17,10 @@ class BookListContainsDemo {
         }
 
         Book bookInTheList = new Book("A1", "B1");
-        boolean containsBook = books.contains(bookInTheList); // должно быть true
+        boolean containsBook = bookInTheList.contains(books); // должно быть true
 
         Book bookNotInTheList = new Book("A3", "B3");
-        boolean notContainsBook = books.contains(bookNotInTheList); // должно быть false
+        boolean notContainsBook = bookNotInTheList.contains(books); // должно быть false
 
         System.out.println(containsBook + " " + notContainsBook);
     }
