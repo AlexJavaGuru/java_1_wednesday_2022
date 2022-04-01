@@ -1,6 +1,5 @@
-package student_jekaterina_soldatova.lesson_10_collections.lessoncode;
+package student_jekaterina_soldatova.lesson_10.lessoncode;
 
-import student_arturs_melnikovs.lesson_05.level_05.ArrayUtil;
 import teacher.lesson_10_collections.lessoncode.User;
 
 import java.util.ArrayList;

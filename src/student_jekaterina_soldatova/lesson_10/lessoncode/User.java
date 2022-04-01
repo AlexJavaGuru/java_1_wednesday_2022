@@ -1,4 +1,4 @@
-package student_jekaterina_soldatova.lesson_10_collections.lessoncode;
+package student_jekaterina_soldatova.lesson_10.lessoncode;
 
 import java.util.Objects;
 

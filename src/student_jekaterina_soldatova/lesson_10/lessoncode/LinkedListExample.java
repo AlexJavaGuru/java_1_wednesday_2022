@@ -1,8 +1,7 @@
-package student_jekaterina_soldatova.lesson_10_collections.lessoncode;
+package student_jekaterina_soldatova.lesson_10.lessoncode;
 
 import teacher.lesson_10_collections.lessoncode.User;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 

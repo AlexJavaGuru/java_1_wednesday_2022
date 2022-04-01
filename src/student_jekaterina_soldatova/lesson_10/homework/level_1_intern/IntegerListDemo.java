@@ -1,4 +1,4 @@
-package student_jekaterina_soldatova.lesson_10_collections.homework.level_1_intern;
+package student_jekaterina_soldatova.lesson_10.homework.level_1_intern;
 
 import java.util.ArrayList;
 import java.util.List;
