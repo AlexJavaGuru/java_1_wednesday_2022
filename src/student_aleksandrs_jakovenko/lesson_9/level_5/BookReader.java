@@ -5,6 +5,7 @@ import java.util.List;
 interface BookReader {
 
     boolean addBook(Book book);
+    boolean isBookValid(Book book);
     boolean deleteBook(Book book);
     String[] printBooks();
     List<Book> findByAuthor(String author);

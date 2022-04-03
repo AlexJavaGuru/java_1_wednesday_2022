@@ -9,14 +9,20 @@ class BookReaderImpl implements BookReader {
 
     @Override
     public boolean addBook(Book book) {
-        if (book.getBookName().equals("") || book.getAuthor().equals("")) {
-            return false;
-        } else if (library.contains(book)) {
+        if (!isBookValid(book) || library.contains(book)) {
             return false;
         } else {
             library.add(book);
             return true;
         }
+    }
+
+    @Override
+    public boolean isBookValid(Book book) {
+        if (book.getBookName().equals("") || book.getAuthor().equals("")) {
+            return false;
+        }
+        return true;
     }
 
     @Override
