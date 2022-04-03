@@ -23,4 +23,18 @@ class ShapeUtil {
         Random random = new Random();
         return new Triangle("Random triangle", random.nextDouble(10));
     }
+
+    Shape createRandomShape() {
+        Random rnd = new Random();
+        int randomNumber = rnd.nextInt(4);
+        if (randomNumber == 0) {
+            return createRandomCircle();
+        } else if (randomNumber == 1) {
+            return createRandomSquare();
+        } else if (randomNumber == 2) {
+            return createRandomRectangle();
+        } else {
+            return createRandomTriangle();
+        }
+    }
 }
