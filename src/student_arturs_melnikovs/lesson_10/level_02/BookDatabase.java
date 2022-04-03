@@ -1,11 +1,13 @@
 package student_arturs_melnikovs.lesson_10.level_02;
 
+import student_arturs_melnikovs.lesson_10.level_03.SearchCriteria;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 
-interface BookDatabase {
+public interface BookDatabase {
     Long save(Book book);
     boolean delete(Long bookId);
     boolean delete(Book book);

@@ -2,19 +2,19 @@ package student_arturs_melnikovs.lesson_10.level_02;
 
 import java.util.Objects;
 
-class Book {
+public class Book {
     private Long id;
     private final String title;
     private final String author;
     private String yearOfIssue;
 
-    Book(String title, String author, String yearOfIssue) {
+    public Book(String title, String author, String yearOfIssue) {
         this.title = title;
         this.author = author;
         this.yearOfIssue = yearOfIssue;
     }
 
-    Book(String author, String title) {
+    public Book(String author, String title) {
         this.author = author;
         this.title = title;
     }

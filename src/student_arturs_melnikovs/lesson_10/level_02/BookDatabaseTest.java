@@ -1,6 +1,8 @@
 package student_arturs_melnikovs.lesson_10.level_02;
 
 
+import student_arturs_melnikovs.lesson_10.level_03.*;
+
 import java.util.*;
 
 class BookDatabaseTest {

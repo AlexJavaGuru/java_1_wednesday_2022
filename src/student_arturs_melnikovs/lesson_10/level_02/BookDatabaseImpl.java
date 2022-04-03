@@ -1,5 +1,7 @@
 package student_arturs_melnikovs.lesson_10.level_02;
 
+import student_arturs_melnikovs.lesson_10.level_03.SearchCriteria;
+
 import java.util.*;
 
 class BookDatabaseImpl implements BookDatabase {

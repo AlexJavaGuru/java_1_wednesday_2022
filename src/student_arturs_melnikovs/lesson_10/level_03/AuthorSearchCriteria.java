@@ -1,6 +1,9 @@
-package student_arturs_melnikovs.lesson_10.level_02;
+package student_arturs_melnikovs.lesson_10.level_03;
 
-class AuthorSearchCriteria implements SearchCriteria {
+import student_arturs_melnikovs.lesson_10.level_02.Book;
+
+
+public class AuthorSearchCriteria implements SearchCriteria {
 
     private String authorToSearch;
 

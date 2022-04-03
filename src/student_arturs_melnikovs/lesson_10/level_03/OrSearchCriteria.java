@@ -1,6 +1,9 @@
-package student_arturs_melnikovs.lesson_10.level_02;
+package student_arturs_melnikovs.lesson_10.level_03;
 
-class OrSearchCriteria implements SearchCriteria {
+import student_arturs_melnikovs.lesson_10.level_02.Book;
+
+
+public class OrSearchCriteria implements SearchCriteria {
 
     private SearchCriteria leftCondition;
     private SearchCriteria rightCondition;
