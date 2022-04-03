@@ -18,4 +18,9 @@ class ShapeUtil {
         Random random = new Random();
         return new Rectangle("Random rectangle", random.nextDouble(10), random.nextDouble(10));
     }
+
+    Triangle createRandomTriangle() {
+        Random random = new Random();
+        return new Triangle("Random triangle", random.nextDouble(10));
+    }
 }
