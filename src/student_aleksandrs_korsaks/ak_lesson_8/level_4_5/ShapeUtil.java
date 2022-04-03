@@ -8,4 +8,9 @@ class ShapeUtil {
         Random random = new Random();
         return new Circle("Random circle", random.nextDouble(10));
     }
+
+    Square createRandomSquare() {
+        Random random = new Random();
+        return new Square("Random square", random.nextDouble(10));
+    }
 }
