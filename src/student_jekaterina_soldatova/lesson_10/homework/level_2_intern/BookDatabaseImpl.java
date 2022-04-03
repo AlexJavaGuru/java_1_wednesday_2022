@@ -1,5 +1,6 @@
 package student_jekaterina_soldatova.lesson_10.homework.level_2_intern;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
@@ -81,21 +82,23 @@ class BookDatabaseImpl implements BookDatabase{
 
     @Override
     public void deleteByAuthor(String author) {
-        for (Book book: bookList) {
-            if (book.getAuthor().equals(author)) {
-                bookList.remove(book);
+
+        for (int i = 0; i < bookList.size(); i++) {
+            if (bookList.get(i).getAuthor().equals(author)) {
+                bookList.remove(bookList.get(i));
+                i--;
             }
         }
     }
 
     @Override
     public void deleteByTitle(String title) {
-        for (Book book: bookList) {
-            if (book.getTitle().equals(title)) {
-                bookList.remove(book);
+        for (int i = 0; i < bookList.size(); i++) {
+            if (bookList.get(i).getTitle().equals(title)) {
+                bookList.remove(bookList.get(i));
+                i--;
             }
         }
     }
-
 
 }
