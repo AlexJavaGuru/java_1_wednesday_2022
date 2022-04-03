@@ -34,6 +34,51 @@ class BookDatabaseTest {
         tester.testFindUniqueBooks2();
         tester.testContains1();
         tester.testContains2();
+        tester.testGetAuthorToBooksMap1();
+        tester.testGetEachAuthorBookCount1();
+    }
+
+    private void testGetEachAuthorBookCount1() {
+        BookDatabase bookDatabase = new BookDatabaseImpl();
+        Book book1 = new Book("1", "a");
+        Book book2 = new Book("1", "b");
+        Book book3 = new Book("1", "c");
+        Book book4 = new Book("2", "d");
+        Book book5 = new Book("2", "e");
+        Book book6 = new Book("3", "f");
+        bookDatabase.save(book1);
+        bookDatabase.save(book2);
+        bookDatabase.save(book3);
+        bookDatabase.save(book4);
+        bookDatabase.save(book5);
+        bookDatabase.save(book6);
+        Map<String, Integer> expected = new HashMap<>();
+        expected.put("1", 3);
+        expected.put("2", 2);
+        expected.put("3", 1);
+        checkResult(expected.equals(bookDatabase.getEachAuthorBookCount()));
+    }
+
+    private void testGetAuthorToBooksMap1() {
+        BookDatabase bookDatabase = new BookDatabaseImpl();
+        Book book1 = new Book("1", "a");
+        Book book2 = new Book("1", "b");
+        Book book3 = new Book("1", "c");
+        Book book4 = new Book("2", "d");
+        Book book5 = new Book("2", "e");
+        Book book6 = new Book("2", "f");
+        bookDatabase.save(book1);
+        bookDatabase.save(book2);
+        bookDatabase.save(book3);
+        bookDatabase.save(book4);
+        bookDatabase.save(book5);
+        bookDatabase.save(book6);
+        Map<String, List<Book>> expected = new HashMap<>();
+        List<Book> firstAuthor = new ArrayList<>(Arrays.asList(book1, book2, book3));
+        List<Book> secondAuthor = new ArrayList<>(Arrays.asList(book4, book5, book6));
+        expected.put("1", firstAuthor);
+        expected.put("2", secondAuthor);
+        checkResult(expected.equals(bookDatabase.getAuthorToBooksMap()));
     }
 
     private void testContains2() {
@@ -402,9 +447,9 @@ class BookDatabaseTest {
 
     private void checkResult(Boolean actualResult) {
         if (actualResult) {
-            System.out.println("Test passed");
+            System.out.println("Test has passed");
         } else {
-            System.out.println("Test failed");
+            System.out.println("Test has FAILED");
         }
     }
 }

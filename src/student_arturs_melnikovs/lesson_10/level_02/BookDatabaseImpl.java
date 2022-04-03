@@ -4,7 +4,7 @@ import java.util.*;
 
 class BookDatabaseImpl implements BookDatabase {
 
-    private List<Book> myBooks = new ArrayList<>();
+    private final List<Book> myBooks = new ArrayList<>();
     private Long id = 0L;
 
     public List<Book> getMyBooks() {
@@ -128,15 +128,51 @@ class BookDatabaseImpl implements BookDatabase {
 
     @Override
     public Set<Book> findUniqueBooks() {
-        Set<Book> uniqueBooks = new HashSet<>();
-        for (Book book : myBooks) {
-            uniqueBooks.add(book);
-        }
-        return uniqueBooks;
+        return new HashSet<>(myBooks);
     }
 
     @Override
     public boolean contains(Book book) {
         return myBooks.contains(book);
+    }
+
+    @Override
+    public Map<String, List<Book>> getAuthorToBooksMap() {
+        Set<String> authors = new HashSet<>();
+        Map<String, List<Book>> map = new HashMap<>();
+        for (Book book : myBooks) {
+            authors.add(book.getAuthor());
+        }
+        for (String author : authors) {
+            List<Book> authorsBooks = new ArrayList<>();
+            for (Book book : myBooks) {
+                if (book.getAuthor().equals(author)) {
+                    authorsBooks.add(book);
+                }
+            }
+            map.put(author, authorsBooks);
+        }
+
+        return map;
+    }
+
+    @Override
+    public Map<String, Integer> getEachAuthorBookCount() {
+        Set<String> authors = new HashSet<>();
+        Map<String, Integer> map = new HashMap<>();
+        for (Book book : myBooks) {
+            authors.add(book.getAuthor());
+        }
+        for (String author : authors) {
+            int count = 0;
+            for (Book book : myBooks) {
+                if (book.getAuthor().equals(author)) {
+                    count++;
+                }
+            }
+            map.put(author, count);
+        }
+
+        return map;
     }
 }
