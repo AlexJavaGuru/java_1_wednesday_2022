@@ -45,4 +45,12 @@ class ShapeUtil {
         }
         return sumOfShapesAreas;
     }
+
+    double calculatePerimeter(Shape[] shapes) {
+        double sumOfShapesPerimetrs = 0;
+        for (Shape shape : shapes) {
+            sumOfShapesPerimetrs = sumOfShapesPerimetrs + shape.calculatePerimeter();
+        }
+        return sumOfShapesPerimetrs;
+    }
 }
