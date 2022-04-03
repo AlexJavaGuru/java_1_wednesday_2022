@@ -12,9 +12,7 @@ class AndSearchCriteria implements SearchCriteria {
     }
 
     public boolean match(Book book) {
-        // допишите реализацию метода
-        // return true - если книга удовлетворяет и левому и правому условию
-        // иначе return false
+        return (leftCondition && rightCondition);
     }
 
 }
