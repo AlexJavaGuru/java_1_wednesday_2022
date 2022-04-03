@@ -3,21 +3,24 @@ package student_jekaterina_soldatova.lesson_10.homework.level_2_intern;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.atomic.AtomicLong;
 
 class BookDatabaseImpl implements BookDatabase{
 
     List<Book> bookList = new LinkedList<>();
+    private static final AtomicLong count = new AtomicLong(0);
+
 
     @Override
     public Long save(Book book) {
         bookList.add(book);
-        return (long) bookList.indexOf(book);
+        return count.incrementAndGet();
     }
 
     @Override
     public boolean delete(Long bookId) {
         for (Book book: bookList) {
-            if (book.getId() == bookId) {
+            if (book.getId().equals(bookId)) {
                 bookList.remove(book);
                 return true;
             }
@@ -37,7 +40,7 @@ class BookDatabaseImpl implements BookDatabase{
     @Override
     public Optional<Book> findById(Long bookId) {
         for (Book book: bookList) {
-            if (book.getId() == bookId) {
+            if (book.getId().equals(bookId)) {
                 return Optional.of(book);
             }
         }
