@@ -1,6 +1,6 @@
 package student_aleksandrs_korsaks.ak_lesson_8.level_4;
 
-public class Square extends Shape {
+class Square extends Shape {
 
     private double side;
 

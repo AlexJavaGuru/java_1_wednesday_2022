@@ -1,7 +1,6 @@
 package student_aleksandrs_korsaks.ak_lesson_8.level_4;
 
 class CircleTest {
-
     public static void main(String[] args) {
         CircleTest circleTest = new CircleTest();
         circleTest.shouldCalculateCircleArea();
@@ -31,3 +30,4 @@ class CircleTest {
         }
     }
 }
+
