@@ -37,4 +37,12 @@ class ShapeUtil {
             return createRandomTriangle();
         }
     }
+
+    double calculateArea(Shape[] shapes) {
+        double sumOfShapesAreas = 0;
+        for (Shape shape : shapes) {
+            sumOfShapesAreas = sumOfShapesAreas + shape.calculateArea();
+        }
+        return sumOfShapesAreas;
+    }
 }
