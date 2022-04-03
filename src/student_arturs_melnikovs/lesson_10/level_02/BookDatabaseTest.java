@@ -23,6 +23,90 @@ class BookDatabaseTest {
         tester.testCountAllBooks3();
         tester.testDeleteByAuthor1();
         tester.testDeleteByTitle1();
+        tester.testFindCriteria1();
+        tester.testFindCriteria2();
+        tester.testFindCriteria3();
+        tester.testFindCriteria4();
+        tester.testFindCriteria5();
+    }
+
+    private void testFindCriteria5() {
+        BookDatabase bookDatabase = new BookDatabaseImpl();
+        SearchCriteria titleCriteria = new TitleSearchCriteria("1");
+        SearchCriteria authorCriteria = new AuthorSearchCriteria("3");
+        SearchCriteria orCriteria = new OrSearchCriteria(titleCriteria, authorCriteria);
+        Book book1 = new Book("1", "1");
+        Book book2 = new Book("2", "2");
+        Book book3 = new Book("3", "1");
+        bookDatabase.save(book1);
+        bookDatabase.save(book2);
+        bookDatabase.save(book3);
+        List<Book> expected = new ArrayList<>();
+        expected.add(book1);
+        expected.add(book3);
+        checkResult(expected.equals(bookDatabase.find(orCriteria)));
+    }
+
+    private void testFindCriteria4() {
+        BookDatabase bookDatabase = new BookDatabaseImpl();
+        SearchCriteria titleCriteria = new TitleSearchCriteria("1");
+        SearchCriteria authorCriteria = new AuthorSearchCriteria("3");
+        SearchCriteria andCriteria = new AndSearchCriteria(titleCriteria, authorCriteria);
+        Book book1 = new Book("1", "1");
+        Book book2 = new Book("2", "2");
+        Book book3 = new Book("3", "1");
+        bookDatabase.save(book1);
+        bookDatabase.save(book2);
+        bookDatabase.save(book3);
+        List<Book> expected = new ArrayList<>();
+        expected.add(book3);
+        checkResult(expected.equals(bookDatabase.find(andCriteria)));
+    }
+
+    private void testFindCriteria3() {
+        BookDatabase bookDatabase = new BookDatabaseImpl();
+        SearchCriteria yearCriteria = new YearOfIssueSearchCriteria("2000");
+        Book book1 = new Book("1", "1", "2000");
+        Book book2 = new Book("2", "2", "2001");
+        Book book3 = new Book("3", "1", "2000");
+        bookDatabase.save(book1);
+        bookDatabase.save(book2);
+        bookDatabase.save(book3);
+        List<Book> expected = new ArrayList<>();
+        expected.add(book1);
+        expected.add(book3);
+        checkResult(expected.equals(bookDatabase.find(yearCriteria)));
+    }
+
+    private void testFindCriteria2() {
+        BookDatabase bookDatabase = new BookDatabaseImpl();
+        SearchCriteria titleCriteria = new TitleSearchCriteria("1");
+        Book book1 = new Book("1", "1");
+        Book book2 = new Book("2", "2");
+        Book book3 = new Book("3", "1");
+        bookDatabase.save(book1);
+        bookDatabase.save(book2);
+        bookDatabase.save(book3);
+        List<Book> expected = new ArrayList<>();
+        expected.add(book1);
+        expected.add(book3);
+        checkResult(expected.equals(bookDatabase.find(titleCriteria)));
+    }
+
+    private void testFindCriteria1() {
+        BookDatabase bookDatabase = new BookDatabaseImpl();
+        SearchCriteria authorCriteria = new AuthorSearchCriteria("1");
+        Book book1 = new Book("1", "1");
+        Book book2 = new Book("1", "2");
+        Book book3 = new Book("3", "3");
+        bookDatabase.save(book1);
+        bookDatabase.save(book2);
+        bookDatabase.save(book3);
+        List<Book> expected = new ArrayList<>();
+        expected.add(book1);
+        expected.add(book2);
+        checkResult(expected.equals(bookDatabase.find(authorCriteria)));
+
     }
 
     private void testDeleteByTitle1() {
@@ -70,9 +154,6 @@ class BookDatabaseTest {
 
     private void testCountAllBooks2() {
         BookDatabase bookDatabase = new BookDatabaseImpl();
-        Book book1 = new Book("1", "1");
-        Book book2 = new Book("2", "2");
-        Book book3 = new Book("3", "3");
         checkResult(bookDatabase.countAllBooks() == 0);
     }
 

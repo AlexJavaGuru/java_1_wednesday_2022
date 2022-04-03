@@ -102,4 +102,15 @@ class BookDatabaseImpl implements BookDatabase {
         }
         myBooks.removeAll(temp);
     }
+
+    @Override
+    public List<Book> find(SearchCriteria searchCriteria) {
+        List<Book> searchedBooks = new ArrayList<>();
+        for (Book book : myBooks) {
+            if (searchCriteria.match(book)) {
+                searchedBooks.add(book);
+            }
+        }
+        return searchedBooks;
+    }
 }
