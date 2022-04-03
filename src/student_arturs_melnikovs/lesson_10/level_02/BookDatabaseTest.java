@@ -1,9 +1,7 @@
 package student_arturs_melnikovs.lesson_10.level_02;
 
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 class BookDatabaseTest {
     public static void main(String[] args) {
@@ -28,6 +26,119 @@ class BookDatabaseTest {
         tester.testFindCriteria3();
         tester.testFindCriteria4();
         tester.testFindCriteria5();
+        tester.testFindUniqueAuthors1();
+        tester.testFindUniqueAuthors2();
+        tester.testFindUniqueTitle1();
+        tester.testFindUniqueTitle2();
+        tester.testFindUniqueBooks1();
+        tester.testFindUniqueBooks2();
+        tester.testContains1();
+        tester.testContains2();
+    }
+
+    private void testContains2() {
+        BookDatabase bookDatabase = new BookDatabaseImpl();
+        Book book1 = new Book("1", "1");
+        Book book2 = new Book("2", "1");
+        Book book3 = new Book("3", "3");
+        bookDatabase.save(book1);
+        bookDatabase.save(book2);
+        checkResult(!bookDatabase.contains(book3));
+    }
+
+    private void testContains1() {
+        BookDatabase bookDatabase = new BookDatabaseImpl();
+        Book book1 = new Book("1", "1");
+        Book book2 = new Book("2", "2");
+        Book book3 = new Book("3", "3");
+        bookDatabase.save(book1);
+        bookDatabase.save(book2);
+        bookDatabase.save(book3);
+        checkResult(bookDatabase.contains(book1));
+    }
+
+    private void testFindUniqueBooks2() {
+        BookDatabaseImpl bookDatabase = new BookDatabaseImpl();
+        Set<Book> expected = new HashSet<>();
+        checkResult(expected.equals(bookDatabase.findUniqueBooks()));
+    }
+
+    private void testFindUniqueBooks1() {
+        BookDatabaseImpl bookDatabase = new BookDatabaseImpl();
+        Book book1 = new Book("1", "1");
+        Book book2 = new Book("3", "1");
+        bookDatabase.save(book1);
+        bookDatabase.save(book2);
+        bookDatabase.save(book1);
+        bookDatabase.save(book2);
+        Set<Book> expected = new HashSet<>();
+        expected.add(book1);
+        expected.add(book2);
+        checkResult(expected.equals(bookDatabase.findUniqueBooks()));
+    }
+
+    private void testFindUniqueTitle2() {
+        BookDatabaseImpl bookDatabase = new BookDatabaseImpl();
+        Book book1 = new Book("1", "1");
+        Book book2 = new Book("3", "1");
+        Book book3 = new Book("4", "1");
+        Book book4 = new Book("2", "1");
+        bookDatabase.save(book1);
+        bookDatabase.save(book2);
+        bookDatabase.save(book3);
+        bookDatabase.save(book4);
+        Set<String> expected = new HashSet<>();
+        expected.add("1");
+        checkResult(expected.equals(bookDatabase.findUniqueTitles()));
+    }
+
+    private void testFindUniqueTitle1() {
+        BookDatabaseImpl bookDatabase = new BookDatabaseImpl();
+        Book book1 = new Book("1", "1");
+        Book book2 = new Book("1", "2");
+        Book book3 = new Book("1", "3");
+        Book book4 = new Book("2", "1");
+        bookDatabase.save(book1);
+        bookDatabase.save(book2);
+        bookDatabase.save(book3);
+        bookDatabase.save(book4);
+        Set<String> expected = new HashSet<>();
+        expected.add("1");
+        expected.add("2");
+        expected.add("3");
+        checkResult(expected.equals(bookDatabase.findUniqueTitles()));
+    }
+
+    private void testFindUniqueAuthors2() {
+        BookDatabaseImpl bookDatabase = new BookDatabaseImpl();
+        Book book1 = new Book("1", "1");
+        Book book2 = new Book("1", "2");
+        Book book3 = new Book("1", "3");
+        Book book4 = new Book("1", "4");
+        bookDatabase.save(book1);
+        bookDatabase.save(book2);
+        bookDatabase.save(book3);
+        bookDatabase.save(book4);
+        Set<String> expected = new HashSet<>();
+        expected.add("1");
+        checkResult(expected.equals(bookDatabase.findUniqueAuthors()));
+    }
+
+    private void testFindUniqueAuthors1() {
+        BookDatabaseImpl bookDatabase = new BookDatabaseImpl();
+        Book book1 = new Book("1", "1");
+        Book book2 = new Book("1", "2");
+        Book book3 = new Book("3", "3");
+        Book book4 = new Book("2", "1");
+        bookDatabase.save(book1);
+        bookDatabase.save(book2);
+        bookDatabase.save(book3);
+        bookDatabase.save(book4);
+        Set<String> expected = new HashSet<>();
+        expected.add("1");
+        expected.add("2");
+        expected.add("3");
+        checkResult(expected.equals(bookDatabase.findUniqueAuthors()));
     }
 
     private void testFindCriteria5() {

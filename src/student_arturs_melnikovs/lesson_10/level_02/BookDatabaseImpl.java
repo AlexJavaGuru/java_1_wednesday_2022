@@ -1,8 +1,6 @@
 package student_arturs_melnikovs.lesson_10.level_02;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 class BookDatabaseImpl implements BookDatabase {
 
@@ -15,12 +13,8 @@ class BookDatabaseImpl implements BookDatabase {
 
     @Override
     public Long save(Book book) {
-        if(myBooks.contains(book)) {
-            return -1L;
-        } else {
-            myBooks.add(book);
-            book.setId(++id);
-        }
+        myBooks.add(book);
+        book.setId(++id);
         return book.getId();
     }
 
@@ -112,5 +106,37 @@ class BookDatabaseImpl implements BookDatabase {
             }
         }
         return searchedBooks;
+    }
+
+    @Override
+    public Set<String> findUniqueAuthors() {
+        Set<String> uniqueAuthors = new HashSet<>();
+        for (Book book : myBooks) {
+            uniqueAuthors.add(book.getAuthor());
+        }
+        return uniqueAuthors;
+    }
+
+    @Override
+    public Set<String> findUniqueTitles() {
+        Set<String> uniqueTitle = new HashSet<>();
+        for (Book book : myBooks) {
+            uniqueTitle.add(book.getTitle());
+        }
+        return uniqueTitle;
+    }
+
+    @Override
+    public Set<Book> findUniqueBooks() {
+        Set<Book> uniqueBooks = new HashSet<>();
+        for (Book book : myBooks) {
+            uniqueBooks.add(book);
+        }
+        return uniqueBooks;
+    }
+
+    @Override
+    public boolean contains(Book book) {
+        return myBooks.contains(book);
     }
 }
