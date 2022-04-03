@@ -99,7 +99,7 @@ class BookReaderImpl implements BookReader{
     public List<String> getListOfAllUnreadBooks() {
         List<String> listOfUnreadBooks = new ArrayList<>();
         for (int i = 0; i < library.size(); i++) {
-            if (library.get(i).isUnread())
+            if (!library.get(i).isRead())
                 listOfUnreadBooks.add(library.get(i).getTitle() + " [" + library.get(i).getAuthor() + "]");
         }
         return listOfUnreadBooks;

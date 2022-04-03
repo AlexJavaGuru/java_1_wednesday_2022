@@ -13,8 +13,9 @@ class ArrayUtilImpl implements ArrayUtil {
 
     @Override
     public void fillArrayWithRandomNumbers(int[] array) {
+        Random random = new Random();
         for (int count = 0; count < array.length; count++) {
-            int rndValue = new Random().nextInt(11);
+            int rndValue = random.nextInt(11);
             array[count] = rndValue;
         }
     }
@@ -26,7 +27,7 @@ class ArrayUtilImpl implements ArrayUtil {
 
     @Override
     public int findMaxNumber(int[] array) {
-        int maxValue = -1;
+        int maxValue = array[0];
         OptionalInt max = Arrays.stream(array).max();
         if(max.isPresent()) {
             maxValue = max.getAsInt();
@@ -36,7 +37,7 @@ class ArrayUtilImpl implements ArrayUtil {
 
     @Override
     public int findMinNumber(int[] array) {
-        int minValue = -1;
+        int minValue = array[0];
         OptionalInt min = Arrays.stream(array).min();
         if(min.isPresent()) {
             minValue = min.getAsInt();

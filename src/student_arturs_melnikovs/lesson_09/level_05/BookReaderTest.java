@@ -25,7 +25,6 @@ class BookReaderTest {
         tester.testMarkAsRead1();
         tester.testMarkAsRead2();
         tester.testMarkAsUnread1();
-        tester.testMarkAsUnread2();
         tester.testGetAllReadBooks1();
         tester.testGetAllReadBooks2();
         tester.testGetAllUnreadBooks1();
@@ -40,8 +39,7 @@ class BookReaderTest {
         bookReader.addBook(harryPotter);
         bookReader.addBook(lordOfRings);
         bookReader.addBook(lordOfRings2);
-        bookReader.markAsUnread(lordOfRings);
-        bookReader.markAsUnread(lordOfRings2);
+        bookReader.markAsRead(harryPotter);
         List<String> expectedResult = new ArrayList<>() {{
             add("Lord Of The Ring [Tolkien]");
             add("Lord Of The Ring 2 [Tolkien]");
@@ -52,7 +50,15 @@ class BookReaderTest {
 
     public void testGetAllUnreadBooks2() {
         BookReader bookReader = new BookReaderImpl();
-        createTestLibrary(bookReader);
+        Book harryPotter = new Book("Harry Potter", "Rowling");
+        Book lordOfRings = new Book("Lord Of The Ring", "Tolkien");
+        Book lordOfRings2 = new Book("Lord Of The Ring 2", "Tolkien");
+        bookReader.addBook(harryPotter);
+        bookReader.addBook(lordOfRings);
+        bookReader.addBook(lordOfRings2);
+        bookReader.markAsRead(harryPotter);
+        bookReader.markAsRead(lordOfRings);
+        bookReader.markAsRead(lordOfRings2);
         List<String> expectedResult = new ArrayList<>();
         List<String> actualResult = bookReader.getListOfAllUnreadBooks();
         checkResult(expectedResult, actualResult, "Test");
@@ -93,20 +99,7 @@ class BookReaderTest {
         bookReader.addBook(lordOfRings);
         bookReader.addBook(lordOfRings2);
         bookReader.markAsUnread(lordOfRings);
-        boolean actualResult = lordOfRings.isUnread();
-        checkResult(actualResult);
-    }
-
-    public void testMarkAsUnread2() {
-        BookReader bookReader = new BookReaderImpl();
-        Book harryPotter = new Book("Harry Potter", "Rowling");
-        Book lordOfRings = new Book("Lord Of The Ring", "Tolkien");
-        Book lordOfRings2 = new Book("Lord Of The Ring 2", "Tolkien");
-        bookReader.addBook(harryPotter);
-        bookReader.addBook(lordOfRings2);
-        bookReader.markAsUnread(lordOfRings);
-        boolean actualResult = lordOfRings.isUnread();
-        checkResult(!actualResult);
+        checkResult(!lordOfRings.isRead());
     }
 
     public void testMarkAsRead1() {

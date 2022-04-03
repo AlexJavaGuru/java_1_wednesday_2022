@@ -7,7 +7,6 @@ class Book {
     private String title;
     private String author;
     private boolean isRead;
-    private boolean isUnread;
 
     public Book(String title, String author) {
         this.title = title;
@@ -52,18 +51,12 @@ class Book {
 
     public void markAsRead() {
         isRead = true;
-        isUnread = false;
     }
     public void markAsUnread() {
         isRead = false;
-        isUnread = true;
     }
 
     public boolean isRead() {
         return isRead;
-    }
-
-    public boolean isUnread() {
-        return isUnread;
     }
 }
