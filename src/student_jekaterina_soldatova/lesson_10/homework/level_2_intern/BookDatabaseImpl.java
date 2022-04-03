@@ -10,6 +10,9 @@ class BookDatabaseImpl implements BookDatabase{
     List<Book> bookList = new LinkedList<>();
     private static final AtomicLong count = new AtomicLong(0);
 
+    List<Book> getBookList() {
+        return bookList;
+    }
 
     @Override
     public void save(Book book) {
@@ -30,9 +33,11 @@ class BookDatabaseImpl implements BookDatabase{
 
     @Override
     public boolean delete(Book book) {
-        if (bookList.contains(book)) {
-            bookList.remove(book);
-            return true;
+        for (Book item: bookList) {
+            if (book.getTitle().equals(item.getTitle()) && book.getAuthor().equals(item.getAuthor())) {
+                bookList.remove(item);
+                return true;
+            }
         }
         return false;
     }
