@@ -12,9 +12,9 @@ class BookDatabaseImpl implements BookDatabase{
 
 
     @Override
-    public Long save(Book book) {
+    public void save(Book book) {
         bookList.add(book);
-        return count.incrementAndGet();
+        book.setId(count.incrementAndGet());
     }
 
     @Override

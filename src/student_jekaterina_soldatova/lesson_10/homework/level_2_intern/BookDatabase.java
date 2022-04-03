@@ -5,7 +5,7 @@ import java.util.Optional;
 
 interface BookDatabase {
 
-    Long save(Book book);
+    void save(Book book);
 
     boolean delete(Long bookId);
 
