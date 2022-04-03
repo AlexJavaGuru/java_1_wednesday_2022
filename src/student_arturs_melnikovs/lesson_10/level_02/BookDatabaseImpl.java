@@ -4,7 +4,7 @@ import student_arturs_melnikovs.lesson_10.level_03.SearchCriteria;
 
 import java.util.*;
 
-class BookDatabaseImpl implements BookDatabase {
+public class BookDatabaseImpl implements BookDatabase {
 
     private final List<Book> myBooks = new ArrayList<>();
     private Long id = 0L;
