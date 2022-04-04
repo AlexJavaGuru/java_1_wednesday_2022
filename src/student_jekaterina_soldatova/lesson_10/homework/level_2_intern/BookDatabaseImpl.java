@@ -127,4 +127,13 @@ class BookDatabaseImpl implements BookDatabase {
         return foundTitles;
     }
 
+    @Override
+    public Set<Book> findUniqueBooks() {
+        Set<Book> foundBooks = new HashSet<>();
+        for (Book book: bookList) {
+            foundBooks.add(book);
+        }
+        return foundBooks;
+    }
+
 }

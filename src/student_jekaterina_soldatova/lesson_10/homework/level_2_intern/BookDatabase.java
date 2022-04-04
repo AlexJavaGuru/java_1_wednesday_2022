@@ -30,5 +30,6 @@ interface BookDatabase {
 
     Set<String> findUniqueTitles();
 
+    Set<Book> findUniqueBooks();
 
 }
