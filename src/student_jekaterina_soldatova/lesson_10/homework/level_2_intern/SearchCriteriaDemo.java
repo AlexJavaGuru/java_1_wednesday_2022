@@ -74,7 +74,7 @@ public class SearchCriteriaDemo {
 
     static void printList(List<Book> foundBooks) {
         for (Book book: foundBooks) {
-            System.out.println(book.getAuthor() + ": " + book.getTitle() + ", " + book.getYearOfIssue());
+            System.out.println("ID" + book.getId() + " - " + book.getAuthor() + ": " + book.getTitle() + ", " + book.getYearOfIssue());
         }
         System.out.println();
     }
