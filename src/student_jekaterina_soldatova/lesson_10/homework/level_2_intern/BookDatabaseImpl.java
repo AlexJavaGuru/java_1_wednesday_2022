@@ -113,11 +113,18 @@ class BookDatabaseImpl implements BookDatabase {
     public Set<String> findUniqueAuthors() {
         Set<String> foundAuthors = new HashSet<>();
         for (Book book: bookList) {
-            if (!foundAuthors.contains(book.getAuthor())) {
-                foundAuthors.add(book.getAuthor());
-            }
+            foundAuthors.add(book.getAuthor());
         }
         return foundAuthors;
+    }
+
+    @Override
+    public Set<String> findUniqueTitles() {
+        Set<String> foundTitles = new HashSet<>();
+        for (Book book: bookList) {
+            foundTitles.add(book.getTitle());
+        }
+        return foundTitles;
     }
 
 }

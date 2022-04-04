@@ -16,6 +16,7 @@ class BookDatabaseTest {
         test.deleteByAuthor();
         test.deleteByTitle();
         test.findUniqueAuthors();
+        test.findUniqueTitles();
     }
 
     void addBook() {
@@ -208,6 +209,28 @@ class BookDatabaseTest {
             System.out.println("find unique authors - ok");
         } else {
             System.out.println("find unique authors - fail");
+        }
+    }
+
+    void findUniqueTitles() {
+        BookDatabaseImpl database = new BookDatabaseImpl();
+
+        Set<String> expectedResult = new HashSet<>();
+        expectedResult.add("smth");
+        expectedResult.add("smth2");
+        expectedResult.add("smth3");
+
+        database.save(new Book ("smne", "smth3"));
+        database.save(new Book ("smne", "smth"));
+        database.save(new Book ("smne2", "smth2"));
+        database.save(new Book ("smne2", "smth3"));
+
+        Set<String> realResult = database.findUniqueTitles();
+
+        if (expectedResult.equals(realResult)) {
+            System.out.println("find unique titles - ok");
+        } else {
+            System.out.println("find unique titles - fail");
         }
     }
 
