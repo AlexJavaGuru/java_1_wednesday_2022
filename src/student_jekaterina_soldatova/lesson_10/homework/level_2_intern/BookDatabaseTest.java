@@ -1,8 +1,6 @@
 package student_jekaterina_soldatova.lesson_10.homework.level_2_intern;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 class BookDatabaseTest {
     public static void main(String[] args) {
@@ -17,6 +15,7 @@ class BookDatabaseTest {
         test.countAllBooks();
         test.deleteByAuthor();
         test.deleteByTitle();
+        test.findUniqueAuthors();
     }
 
     void addBook() {
@@ -192,6 +191,25 @@ class BookDatabaseTest {
         }
     }
 
+    void findUniqueAuthors() {
+        BookDatabaseImpl database = new BookDatabaseImpl();
+
+        Set<String> expectedResult = new HashSet<>();
+        expectedResult.add("smne");
+        expectedResult.add("smne2");
+
+        database.save(new Book ("smne", "smth"));
+        database.save(new Book ("smne2", "smth2"));
+        database.save(new Book ("smne2", "smth3"));
+
+        Set<String> realResult = database.findUniqueAuthors();
+
+        if (expectedResult.equals(realResult)) {
+            System.out.println("find unique authors - ok");
+        } else {
+            System.out.println("find unique authors - fail");
+        }
+    }
 
     boolean compare(List<Book> expected, List<Book> real) {
         for (int i = 0; i < real.size(); i++) {
