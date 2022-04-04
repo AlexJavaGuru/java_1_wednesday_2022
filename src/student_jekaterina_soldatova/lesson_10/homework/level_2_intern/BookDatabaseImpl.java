@@ -1,8 +1,6 @@
 package student_jekaterina_soldatova.lesson_10.homework.level_2_intern;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 
 class BookDatabaseImpl implements BookDatabase {
@@ -109,6 +107,17 @@ class BookDatabaseImpl implements BookDatabase {
             }
         }
         return foundBooks;
+    }
+
+    @Override
+    public Set<String> findUniqueAuthors() {
+        Set<String> foundAuthors = new HashSet<>();
+        for (Book book: bookList) {
+            if (!foundAuthors.contains(book.getAuthor())) {
+                foundAuthors.add(book.getAuthor());
+            }
+        }
+        return foundAuthors;
     }
 
 }
