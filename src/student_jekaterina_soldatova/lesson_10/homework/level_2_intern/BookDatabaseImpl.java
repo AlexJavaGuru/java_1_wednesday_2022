@@ -1,12 +1,11 @@
 package student_jekaterina_soldatova.lesson_10.homework.level_2_intern;
 
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;
 
-class BookDatabaseImpl implements BookDatabase{
+class BookDatabaseImpl implements BookDatabase {
 
     List<Book> bookList = new LinkedList<>();
     private static final AtomicLong count = new AtomicLong(0);
@@ -99,6 +98,17 @@ class BookDatabaseImpl implements BookDatabase{
                 i--;
             }
         }
+    }
+
+    @Override
+    public List<Book> find(SearchCriteria searchCriteria) {
+        List<Book> foundBooks = new LinkedList<>();
+        for (Book book: bookList) {
+            if (searchCriteria.match(book)) {
+                foundBooks.add(book);
+            }
+        }
+        return null;
     }
 
 }
