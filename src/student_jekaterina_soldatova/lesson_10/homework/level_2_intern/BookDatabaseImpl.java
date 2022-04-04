@@ -108,7 +108,7 @@ class BookDatabaseImpl implements BookDatabase {
                 foundBooks.add(book);
             }
         }
-        return null;
+        return foundBooks;
     }
 
 }
