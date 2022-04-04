@@ -136,4 +136,9 @@ class BookDatabaseImpl implements BookDatabase {
         return foundBooks;
     }
 
+    @Override
+    public boolean contains(Book book) {
+        return findUniqueBooks().contains(book);
+    }
+
 }

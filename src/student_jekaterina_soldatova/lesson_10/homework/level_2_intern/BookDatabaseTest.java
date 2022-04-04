@@ -17,6 +17,7 @@ class BookDatabaseTest {
         test.deleteByTitle();
         test.findUniqueAuthors();
         test.findUniqueTitles();
+        test.containsBook();
     }
 
     void addBook() {
@@ -232,6 +233,25 @@ class BookDatabaseTest {
         } else {
             System.out.println("find unique titles - fail");
         }
+    }
+
+    void containsBook() {
+        BookDatabaseImpl database = new BookDatabaseImpl();
+
+        Book book1 = new Book("smne", "smth3");
+        database.save(book1);
+        database.save(new Book ("smne", "smth"));
+        database.save(new Book ("smne2", "smth2"));
+        database.save(new Book ("smne2", "smth3"));
+
+        if (database.contains(book1)) {
+            System.out.println("contains book - ok");
+        } else {
+            System.out.println("contains book - fail");
+        }
+
+
+
     }
 
     boolean compare(List<Book> expected, List<Book> real) {
