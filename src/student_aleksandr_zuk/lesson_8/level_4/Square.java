@@ -1,4 +1,4 @@
-package student_aleksandr_zuk.lesson_8;
+package student_aleksandr_zuk.lesson_8.level_4;
 
 class Square extends Shape {
 
