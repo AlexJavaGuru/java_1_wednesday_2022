@@ -1,4 +1,4 @@
-package student_aleksandrs_jakovenko.lesson_10.level_2;
+package student_aleksandrs_jakovenko.lesson_10.level_2_and_3;
 
 import java.util.Objects;
 
@@ -6,10 +6,17 @@ class Book {
     private Long id;
     private String title;
     private String author;
+    private String yearOfIssue;
 
     Book(String author, String title) {
         this.author = author;
         this.title = title;
+    }
+
+    public Book(String title, String author, String yearOfIssue) {
+        this.title = title;
+        this.author = author;
+        this.yearOfIssue = yearOfIssue;
     }
 
     public void setId(Long id) {
@@ -26,6 +33,10 @@ class Book {
 
     public String getAuthor() {
         return this.author;
+    }
+
+    public String getYearOfIssue() {
+        return yearOfIssue;
     }
 
     @Override

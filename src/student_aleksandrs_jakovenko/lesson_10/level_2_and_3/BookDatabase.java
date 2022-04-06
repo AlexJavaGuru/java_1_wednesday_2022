@@ -1,4 +1,4 @@
-package student_aleksandrs_jakovenko.lesson_10.level_2;
+package student_aleksandrs_jakovenko.lesson_10.level_2_and_3;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,4 +14,5 @@ interface BookDatabase {
     int countAllBooks();
     void deleteByAuthor(String author);
     void deleteByTitle(String title);
+    List<Book> find(SearchCriteria searchCriteria);
 }

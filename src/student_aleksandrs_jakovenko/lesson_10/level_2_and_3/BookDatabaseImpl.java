@@ -1,4 +1,4 @@
-package student_aleksandrs_jakovenko.lesson_10.level_2;
+package student_aleksandrs_jakovenko.lesson_10.level_2_and_3;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -85,5 +85,16 @@ class BookDatabaseImpl implements BookDatabase {
     @Override
     public void deleteByTitle(String title) {
         library.removeIf(book -> book.getTitle().equals(title));
+    }
+
+    @Override
+    public List<Book> find(SearchCriteria searchCriteria) {
+        List<Book> booksFind = new ArrayList<>();
+        for (Book book : library) {
+            if (searchCriteria.match(book)){
+                booksFind.add(book);
+            }
+        }
+        return booksFind;
     }
 }
