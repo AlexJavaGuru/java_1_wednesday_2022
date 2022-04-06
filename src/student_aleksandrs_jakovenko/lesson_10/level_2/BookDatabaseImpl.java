@@ -9,6 +9,10 @@ class BookDatabaseImpl implements BookDatabase {
     private List<Book> library = new ArrayList<>();
     private Long id = 1L;
 
+    public List<Book> getLibrary() {
+        return library;
+    }
+
     @Override
     public Long save(Book book) {
         library.add(book);
@@ -55,5 +59,31 @@ class BookDatabaseImpl implements BookDatabase {
             }
         }
         return booksByAuthor;
+    }
+
+    @Override
+    public List<Book> findByTitle(String title) {
+        List<Book> booksByTitle = new ArrayList<>();
+        for (Book book : library) {
+            if (book.getTitle().equals(title)) {
+                booksByTitle.add(book);
+            }
+        }
+        return booksByTitle;
+    }
+
+    @Override
+    public int countAllBooks() {
+        return library.size();
+    }
+
+    @Override
+    public void deleteByAuthor(String author) {
+        library.removeIf(book -> book.getAuthor().equals(author));
+    } //идея сама переделала мой метод)
+
+    @Override
+    public void deleteByTitle(String title) {
+        library.removeIf(book -> book.getTitle().equals(title));
     }
 }
