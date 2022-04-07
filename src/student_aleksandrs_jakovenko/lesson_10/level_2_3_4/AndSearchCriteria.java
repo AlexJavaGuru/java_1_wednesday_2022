@@ -1,4 +1,4 @@
-package student_aleksandrs_jakovenko.lesson_10.level_2_and_3;
+package student_aleksandrs_jakovenko.lesson_10.level_2_3_4;
 
 class AndSearchCriteria implements SearchCriteria {
 

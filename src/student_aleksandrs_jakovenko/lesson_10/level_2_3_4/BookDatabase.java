@@ -1,7 +1,8 @@
-package student_aleksandrs_jakovenko.lesson_10.level_2_and_3;
+package student_aleksandrs_jakovenko.lesson_10.level_2_3_4;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 interface BookDatabase {
 
@@ -15,4 +16,8 @@ interface BookDatabase {
     void deleteByAuthor(String author);
     void deleteByTitle(String title);
     List<Book> find(SearchCriteria searchCriteria);
+    Set<String> findUniqueAuthors();
+    Set<String> findUniqueTitles();
+    Set<Book> findUniqueBooks();
+    boolean contains(Book book);
 }

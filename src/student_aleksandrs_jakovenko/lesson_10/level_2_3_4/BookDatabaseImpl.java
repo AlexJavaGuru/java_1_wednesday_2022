@@ -1,8 +1,6 @@
-package student_aleksandrs_jakovenko.lesson_10.level_2_and_3;
+package student_aleksandrs_jakovenko.lesson_10.level_2_3_4;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 class BookDatabaseImpl implements BookDatabase {
 
@@ -96,5 +94,35 @@ class BookDatabaseImpl implements BookDatabase {
             }
         }
         return booksFind;
+    }
+
+    @Override
+    public Set<String> findUniqueAuthors() {
+        Set<String> authors = new HashSet<>();
+        for (Book book : library) {
+            authors.add(book.getAuthor());
+        }
+        return authors;
+    }
+
+    @Override
+    public Set<String> findUniqueTitles() {
+        Set<String> titles = new HashSet<>();
+        for (Book book : library) {
+            titles.add(book.getTitle());
+        }
+        return titles;
+    }
+
+    @Override
+    public Set<Book> findUniqueBooks() {
+        Set<Book> books = new HashSet<>();
+        books.addAll(library);
+        return books;
+    }
+
+    @Override
+    public boolean contains(Book book) {
+        return library.contains(book);
     }
 }
