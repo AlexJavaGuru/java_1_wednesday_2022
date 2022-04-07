@@ -1,0 +1,9 @@
+Исправьте код класса PrivateClass так, что бы он компилировался.
+
+private class PrivateClass {
+
+    private String title;
+    private String author;
+
+
+}
