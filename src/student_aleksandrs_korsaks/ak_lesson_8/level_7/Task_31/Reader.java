@@ -69,8 +69,7 @@ class Reader {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Reader)) return false;
-        Reader reader = (Reader) o;
+        if (!(o instanceof Reader reader)) return false;
         return getReaderId() == reader.getReaderId() && getReaderPhoneNumber() == reader.getReaderPhoneNumber() && getReaderName().equals(reader.getReaderName()) && getReaderSurname().equals(reader.getReaderSurname()) && getReaderPersonalCode().equals(reader.getReaderPersonalCode()) && getReaderAddress().equals(reader.getReaderAddress());
     }
 

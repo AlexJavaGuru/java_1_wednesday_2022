@@ -1,7 +1,5 @@
 package student_aleksandrs_korsaks.ak_lesson_8.level_7.Task_31;
 
-import java.util.Objects;
-
 class Book {
     private long bookId;
     String bookAuthor;
@@ -59,8 +57,7 @@ class Book {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Book)) return false;
-        Book book = (Book) o;
+        if (!(o instanceof Book book)) return false;
         return getBookId() == book.getBookId() && isBookIsTaken() == book.isBookIsTaken() && isBookIsReserved() == book.isBookIsReserved() && getBookAuthor().equals(book.getBookAuthor()) && getBookTitle().equals(book.getBookTitle());
     }
 
