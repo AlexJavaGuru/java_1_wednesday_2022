@@ -89,7 +89,7 @@ class BookDatabaseImpl implements BookDatabase {
     public List<Book> find(SearchCriteria searchCriteria) {
         List<Book> booksFind = new ArrayList<>();
         for (Book book : library) {
-            if (searchCriteria.match(book)){
+            if (searchCriteria.match(book)) {
                 booksFind.add(book);
             }
         }
