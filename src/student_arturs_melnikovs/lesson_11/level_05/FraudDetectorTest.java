@@ -1,6 +1,5 @@
 package student_arturs_melnikovs.lesson_11.level_05;
 
-import java.util.ArrayList;
 import java.util.List;
 
 class FraudDetectorTest {
@@ -24,7 +23,7 @@ class FraudDetectorTest {
         FraudDetector detector = new FraudDetector(rules);
         Trader trader = new Trader("Test", "Test", "Germany");
         Transaction transaction = new Transaction(trader,1000000);
-        boolean actual = detector.isFraud(transaction);
+        boolean actual = detector.isFraud(transaction).isFraud();
         checkResult(actual);
     }
 
@@ -34,7 +33,7 @@ class FraudDetectorTest {
         FraudDetector detector = new FraudDetector(rules);
         Trader trader = new Trader("Test", "Test", "Test");
         Transaction transaction = new Transaction(trader,1000000);
-        boolean actual = detector.isFraud(transaction);
+        boolean actual = detector.isFraud(transaction).isFraud();
         checkResult(!actual);
     }
 
@@ -44,7 +43,7 @@ class FraudDetectorTest {
         FraudDetector detector = new FraudDetector(rules);
         Trader trader = new Trader("Test", "Test", "Jamaica");
         Transaction transaction = new Transaction(trader,1000000);
-        boolean actual = detector.isFraud(transaction);
+        boolean actual = detector.isFraud(transaction).isFraud();
         checkResult(actual);
     }
 
@@ -54,7 +53,7 @@ class FraudDetectorTest {
         FraudDetector detector = new FraudDetector(rules);
         Trader trader = new Trader("Test", "Test", "Test");
         Transaction transaction = new Transaction(trader,1000000);
-        boolean actual = detector.isFraud(transaction);
+        boolean actual = detector.isFraud(transaction).isFraud();
         checkResult(!actual);
     }
 
@@ -64,7 +63,7 @@ class FraudDetectorTest {
         FraudDetector detector = new FraudDetector(rules);
         Trader trader = new Trader("Test", "Sydney", "Test");
         Transaction transaction = new Transaction(trader,1000000);
-        boolean actual = detector.isFraud(transaction);
+        boolean actual = detector.isFraud(transaction).isFraud();
         checkResult(actual);
     }
 
@@ -74,7 +73,7 @@ class FraudDetectorTest {
         FraudDetector detector = new FraudDetector(rules);
         Trader trader = new Trader("Test", "Test", "Test");
         Transaction transaction = new Transaction(trader,1000000);
-        boolean actual = detector.isFraud(transaction);
+        boolean actual = detector.isFraud(transaction).isFraud();
         checkResult(!actual);
     }
 
@@ -84,7 +83,7 @@ class FraudDetectorTest {
         FraudDetector detector = new FraudDetector(rules);
         Trader trader = new Trader("Test", "Test", "Test");
         Transaction transaction = new Transaction(trader,10000000);
-        boolean actual = detector.isFraud(transaction);
+        boolean actual = detector.isFraud(transaction).isFraud();
         checkResult(actual);
     }
 
@@ -94,7 +93,7 @@ class FraudDetectorTest {
         FraudDetector detector = new FraudDetector(rules);
         Trader trader = new Trader("Test", "Test", "Test");
         Transaction transaction = new Transaction(trader,1000);
-        boolean actual = detector.isFraud(transaction);
+        boolean actual = detector.isFraud(transaction).isFraud();
         checkResult(!actual);
     }
 
@@ -104,7 +103,7 @@ class FraudDetectorTest {
         FraudDetector detector = new FraudDetector(rules);
         Trader trader = new Trader("Pokemon", "Test", "Test");
         Transaction transaction = new Transaction(trader,1000);
-        boolean actual = detector.isFraud(transaction);
+        boolean actual = detector.isFraud(transaction).isFraud();
         checkResult(actual);
     }
 
