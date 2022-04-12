@@ -1,4 +1,4 @@
-package student_aleksandrs_jakovenko.lesson_11.level_4_5;
+package student_aleksandrs_jakovenko.lesson_11.level_4_5_6;
 
 class FraudRule3 extends FraudRule {
 
