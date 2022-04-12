@@ -7,13 +7,13 @@ class FraudDetector {
     public FraudDetector() {
     }
 
-    boolean isFraud(Transaction t, List<FraudRule> rules) {
+    FraudDetectionResult isFraud(Transaction t, List<FraudRule> rules) {
         for (FraudRule rule : rules) {
             rule.isFraud(t);
             if (rule.isFraud(t)) {
-                return true;
+                return new FraudDetectionResult(true, rule.getRuleName());
             }
         }
-        return false;
+        return new FraudDetectionResult(false, null);
     }
 }
