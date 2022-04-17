@@ -7,13 +7,19 @@ class WrongUserInputHandlingDemo {
 
     public static void main(String[] args) {
 
+        int number;
+        boolean isNumber = true;
         System.out.println("Enter number: ");
-        try {
-            Scanner scanner = new Scanner(System.in);
-            int number = scanner.nextInt();
-            System.out.println("Your number is: " + number);
-        } catch (InputMismatchException e) {
-            System.out.println("Error: " + e.getMessage());
+
+        while (isNumber) {
+            try {
+                Scanner scanner = new Scanner(System.in);
+                number = scanner.nextInt();
+                System.out.println("Your number is: " + number);
+                isNumber = false;
+            } catch (InputMismatchException e) {
+                System.out.println("Error: InputMismatchException\nEnter number again:");
+            }
         }
     }
 }
