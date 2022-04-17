@@ -140,11 +140,9 @@ public class BookDatabaseImpl implements BookDatabase {
 
     @Override
     public Map<String, List<Book>> getAuthorToBooksMap() {
-        Set<String> authors = new HashSet<>();
+        Set<String> authors = findUniqueAuthors();
         Map<String, List<Book>> map = new HashMap<>();
-        for (Book book : myBooks) {
-            authors.add(book.getAuthor());
-        }
+
         for (String author : authors) {
             List<Book> authorsBooks = new ArrayList<>();
             for (Book book : myBooks) {
