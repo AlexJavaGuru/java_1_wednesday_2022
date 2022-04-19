@@ -1,6 +1,7 @@
 package student_aleksandrs_korsaks.ak_lesson_9.level_3;
 
 import java.util.Arrays;
+import java.util.Optional;
 
 class InMemoryDatabase implements ProductDatabase {
 
@@ -18,13 +19,13 @@ class InMemoryDatabase implements ProductDatabase {
     }
 
     @Override
-    public Product findByTitle(String productTitle) {
+    public Optional<Product> findByTitle(String productTitle) {
         for (Product product : arrayOfProducts) {
             if (product.getTitle().equalsIgnoreCase(productTitle)) {
-                return product;
+                return Optional.of(product);
             }
         }
-        return null;
+        return Optional.empty();
     }
 
 }

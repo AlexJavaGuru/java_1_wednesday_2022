@@ -1,6 +1,8 @@
 package student_aleksandrs_korsaks.ak_lesson_9.level_3;
 
 import java.util.Arrays;
+import java.util.Objects;
+import java.util.Optional;
 
 public class InMemoryDatabaseTest {
     public static void main(String[] args) {
@@ -28,8 +30,8 @@ public class InMemoryDatabaseTest {
         Product two = new Product("Orange");
         productDatabase.save(one);
         productDatabase.save(two);
-        Product realResult = productDatabase.findByTitle("Orange");
-        checkTestResult("findByTitleProductPositiveTest", two.equals(realResult));
+        Optional<Product> realResult = productDatabase.findByTitle("Orange");
+        checkTestResult("findByTitleProductPositiveTest", Objects.equals(Optional.of(two), realResult));
     }
 
     public void findByTitleProductNegativeTest() {
@@ -38,8 +40,8 @@ public class InMemoryDatabaseTest {
         Product two = new Product("Orange");
         productDatabase.save(one);
         productDatabase.save(two);
-        Product realResult = productDatabase.findByTitle("Apple");
-        checkTestResult("findByTitleProductNegativeTest", realResult == null);
+        Optional<Product> realResult = productDatabase.findByTitle("Apple");
+        checkTestResult("findByTitleProductNegativeTest", Objects.equals(Optional.empty(), realResult));
     }
 
     public void checkTestResult(String testName, boolean condition) {
