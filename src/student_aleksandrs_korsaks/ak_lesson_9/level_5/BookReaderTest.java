@@ -11,6 +11,8 @@ class BookReaderTest {
         bookReaderTest.addNonUniqueBookNegativeTest();
         bookReaderTest.addBookWithNoAuthorNegativeTest();
         bookReaderTest.addBookWithNoTitleNegativeTest();
+        bookReaderTest.deleteBookPositiveTest();
+        bookReaderTest.deleteBookNegativeTest();
 
     }
 
@@ -21,7 +23,7 @@ class BookReaderTest {
         List<Book> realResult = bookReader.getBookList();
         List<Book> expectedResult = new ArrayList<>();
         expectedResult.add(bookOne);
-        checkTestResult("addBookNegativeTest", (realResult1) && (expectedResult.equals(realResult)));
+        checkTestResult("addBookPositiveTest", (realResult1) && (expectedResult.equals(realResult)));
 
     }
 
@@ -64,6 +66,35 @@ class BookReaderTest {
         List<Book> expectedResult = new ArrayList<>();
         expectedResult.add(bookOne);
         checkTestResult("addBookWithNoTitleNegativeTest", (realResult1 && !realResult2) && (expectedResult.equals(realResult)));
+
+    }
+
+    public void deleteBookPositiveTest() {
+        BookReaderImpl bookReader = new BookReaderImpl();
+        Book bookOne = new Book("John", "Potter");
+        Book bookTwo = new Book("John2", "Potter2");
+        bookReader.addBook(bookOne);
+        bookReader.addBook(bookTwo);
+        boolean realResult1 = bookReader.deleteBook("Potter2");
+        List<Book> realResult = bookReader.getBookList();
+        List<Book> expectedResult = new ArrayList<>();
+        expectedResult.add(bookOne);
+        checkTestResult("deleteBookPositiveTest", (realResult1) && (expectedResult.equals(realResult)));
+
+    }
+
+    public void deleteBookNegativeTest() {
+        BookReaderImpl bookReader = new BookReaderImpl();
+        Book bookOne = new Book("John", "Potter");
+        Book bookTwo = new Book("John2", "Potter2");
+        bookReader.addBook(bookOne);
+        bookReader.addBook(bookTwo);
+        boolean realResult1 = bookReader.deleteBook("Potter3");
+        List<Book> realResult = bookReader.getBookList();
+        List<Book> expectedResult = new ArrayList<>();
+        expectedResult.add(bookOne);
+        expectedResult.add(bookTwo);
+        checkTestResult("deleteBookNegativeTest", (!realResult1) && (expectedResult.equals(realResult)));
 
     }
 

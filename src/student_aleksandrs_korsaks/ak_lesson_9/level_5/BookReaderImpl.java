@@ -32,4 +32,15 @@ class BookReaderImpl implements BookReader {
         }
         return false;
     }
+
+    @Override
+    public boolean deleteBook(String bookTitleToDelete) {
+        for (Book book : bookList) {
+            if (book.getBookTitle().equalsIgnoreCase(bookTitleToDelete)){
+                bookList.remove(book);
+                return true;
+            }
+        }
+        return false;
+    }
 }

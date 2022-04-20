@@ -4,4 +4,6 @@ interface BookReader {
 
     boolean addBook(Book bookToAdd);
 
+    boolean deleteBook(String bookTitleToDelete);
+
 }
