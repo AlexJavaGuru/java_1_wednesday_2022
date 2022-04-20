@@ -1,7 +1,7 @@
 package student_igors.lesson_3;
 
 
-public record RobotDemo() {
+public class RobotDemo {
 
     public static void main(String[] args) {
         // Scanner scanner = new Scanner(System.in);
