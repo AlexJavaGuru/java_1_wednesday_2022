@@ -15,6 +15,10 @@ public class BankSystem {
         init();
     }
 
+    public BankSystem(List<User> users) {
+        this.users = users;
+    }
+
     private void init() {
         //download all user from DB...
         users.add(new User(1L, "Alex"));
