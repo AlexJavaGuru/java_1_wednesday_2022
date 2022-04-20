@@ -7,15 +7,6 @@ class BookReaderImpl implements BookReader {
 
     private List<Book> bookList = new ArrayList<>();
 
-    @Override
-    public boolean addBook(Book bookToAdd) {
-        if (isBookUnique(bookToAdd)) {
-            bookList.add(bookToAdd);
-            return true;
-        }
-        return false;
-    }
-
     boolean isBookUnique(Book bookToCheck) {
         for (Book book : bookList) {
             if (book.equals(bookToCheck)) {
@@ -25,7 +16,20 @@ class BookReaderImpl implements BookReader {
         return true;
     }
 
+    boolean isBookValid(Book bookToCheck) {
+        return !(bookToCheck.getBookAuthor().isEmpty() || bookToCheck.getBookTitle().isEmpty());
+    }
+
     public List<Book> getBookList() {
         return bookList;
+    }
+
+    @Override
+    public boolean addBook(Book bookToAdd) {
+        if (isBookUnique(bookToAdd) && isBookValid(bookToAdd)) {
+            bookList.add(bookToAdd);
+            return true;
+        }
+        return false;
     }
 }

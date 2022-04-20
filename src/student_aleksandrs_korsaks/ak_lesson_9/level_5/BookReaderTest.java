@@ -8,7 +8,9 @@ class BookReaderTest {
     public static void main(String[] args) {
         BookReaderTest bookReaderTest = new BookReaderTest();
         bookReaderTest.addBookPositiveTest();
-        bookReaderTest.addBookNegativeTest();
+        bookReaderTest.addNonUniqueBookNegativeTest();
+        bookReaderTest.addBookWithNoAuthorNegativeTest();
+        bookReaderTest.addBookWithNoTitleNegativeTest();
 
     }
 
@@ -23,7 +25,7 @@ class BookReaderTest {
 
     }
 
-    public void addBookNegativeTest() {
+    public void addNonUniqueBookNegativeTest() {
         BookReaderImpl bookReader = new BookReaderImpl();
         Book bookOne = new Book("John", "Potter");
         Book bookTwo = new Book("John1", "Potter");
@@ -35,7 +37,33 @@ class BookReaderTest {
         List<Book> expectedResult = new ArrayList<>();
         expectedResult.add(bookOne);
         expectedResult.add(bookTwo);
-        checkTestResult("addBookNegativeTest", (realResult1 && realResult2 && !realResult3) && (expectedResult.equals(realResult)));
+        checkTestResult("addNonUniqueBookNegativeTest", (realResult1 && realResult2 && !realResult3) && (expectedResult.equals(realResult)));
+
+    }
+
+    public void addBookWithNoAuthorNegativeTest() {
+        BookReaderImpl bookReader = new BookReaderImpl();
+        Book bookOne = new Book("John", "Potter");
+        Book bookTwo = new Book("", "Potter2");
+        boolean realResult1 = bookReader.addBook(bookOne);
+        boolean realResult2 = bookReader.addBook(bookTwo);
+        List<Book> realResult = bookReader.getBookList();
+        List<Book> expectedResult = new ArrayList<>();
+        expectedResult.add(bookOne);
+        checkTestResult("addBookWithNoAuthorNegativeTest", (realResult1 && !realResult2) && (expectedResult.equals(realResult)));
+
+    }
+
+    public void addBookWithNoTitleNegativeTest() {
+        BookReaderImpl bookReader = new BookReaderImpl();
+        Book bookOne = new Book("John", "Potter");
+        Book bookTwo = new Book("John2", "");
+        boolean realResult1 = bookReader.addBook(bookOne);
+        boolean realResult2 = bookReader.addBook(bookTwo);
+        List<Book> realResult = bookReader.getBookList();
+        List<Book> expectedResult = new ArrayList<>();
+        expectedResult.add(bookOne);
+        checkTestResult("addBookWithNoTitleNegativeTest", (realResult1 && !realResult2) && (expectedResult.equals(realResult)));
 
     }
 
