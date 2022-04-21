@@ -2,6 +2,8 @@ package student_aleksandrs_korsaks.ak_lesson_9.level_5;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 class BookReaderImpl implements BookReader {
 
@@ -25,6 +27,13 @@ class BookReaderImpl implements BookReader {
     }
 
     @Override
+    public List<String> getBookListInString() {
+        return bookList.stream()
+                .map(object -> Objects.toString(object, null))
+                .collect(Collectors.toList());
+    }
+
+    @Override
     public boolean addBook(Book bookToAdd) {
         if (isBookUnique(bookToAdd) && isBookValid(bookToAdd)) {
             bookList.add(bookToAdd);
@@ -36,7 +45,7 @@ class BookReaderImpl implements BookReader {
     @Override
     public boolean deleteBook(String bookTitleToDelete) {
         for (Book book : bookList) {
-            if (book.getBookTitle().equalsIgnoreCase(bookTitleToDelete)){
+            if (book.getBookTitle().equalsIgnoreCase(bookTitleToDelete)) {
                 bookList.remove(book);
                 return true;
             }

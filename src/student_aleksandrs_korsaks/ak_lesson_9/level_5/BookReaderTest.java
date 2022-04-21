@@ -13,6 +13,7 @@ class BookReaderTest {
         bookReaderTest.addBookWithNoTitleNegativeTest();
         bookReaderTest.deleteBookPositiveTest();
         bookReaderTest.deleteBookNegativeTest();
+        bookReaderTest.getBookListInStringTest();
 
     }
 
@@ -96,6 +97,19 @@ class BookReaderTest {
         expectedResult.add(bookTwo);
         checkTestResult("deleteBookNegativeTest", (!realResult1) && (expectedResult.equals(realResult)));
 
+    }
+
+    public void getBookListInStringTest(){
+        BookReaderImpl bookReader = new BookReaderImpl();
+        Book bookOne = new Book("John", "Potter");
+        Book bookTwo = new Book("John2", "Potter2");
+        bookReader.addBook(bookOne);
+        bookReader.addBook(bookTwo);
+        List<String> expectedResult = new ArrayList<>();
+        expectedResult.add(String.valueOf(bookOne));
+        expectedResult.add(String.valueOf(bookTwo));
+        List<String> realResult = bookReader.getBookListInString();
+        checkTestResult("getBookListInStringTest", realResult.equals(expectedResult));
     }
 
     public void checkTestResult(String testName, boolean condition) {
