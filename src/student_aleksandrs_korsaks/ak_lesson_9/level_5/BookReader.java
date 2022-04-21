@@ -10,4 +10,6 @@ interface BookReader {
 
     List<String> getBookListInString();
 
+    List<Book> getAllBooksOfAuthor(String authorName);
+
 }

@@ -34,6 +34,17 @@ class BookReaderImpl implements BookReader {
     }
 
     @Override
+    public List<Book> getAllBooksOfAuthor(String authorName) {
+        List<Book> foundedBooks = new ArrayList<>();
+        for (Book book : bookList) {
+            if (book.getBookAuthor().equals(authorName)) {
+                foundedBooks.add(book);
+            }
+        }
+        return foundedBooks;
+    }
+
+    @Override
     public boolean addBook(Book bookToAdd) {
         if (isBookUnique(bookToAdd) && isBookValid(bookToAdd)) {
             bookList.add(bookToAdd);

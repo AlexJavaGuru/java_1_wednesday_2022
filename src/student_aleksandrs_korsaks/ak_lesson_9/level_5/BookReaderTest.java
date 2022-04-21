@@ -14,6 +14,8 @@ class BookReaderTest {
         bookReaderTest.deleteBookPositiveTest();
         bookReaderTest.deleteBookNegativeTest();
         bookReaderTest.getBookListInStringTest();
+        bookReaderTest.getAllBooksOfAuthorPositiveTest();
+        bookReaderTest.getAllBooksOfAuthorNegativeTest();
 
     }
 
@@ -99,7 +101,7 @@ class BookReaderTest {
 
     }
 
-    public void getBookListInStringTest(){
+    public void getBookListInStringTest() {
         BookReaderImpl bookReader = new BookReaderImpl();
         Book bookOne = new Book("John", "Potter");
         Book bookTwo = new Book("John2", "Potter2");
@@ -110,6 +112,33 @@ class BookReaderTest {
         expectedResult.add(String.valueOf(bookTwo));
         List<String> realResult = bookReader.getBookListInString();
         checkTestResult("getBookListInStringTest", realResult.equals(expectedResult));
+    }
+
+    public void getAllBooksOfAuthorPositiveTest() {
+        BookReaderImpl bookReader = new BookReaderImpl();
+        Book bookOne = new Book("John", "Potter");
+        Book bookTwo = new Book("John2", "Potter2");
+        Book bookThree = new Book("John", "Potter2");
+        bookReader.addBook(bookOne);
+        bookReader.addBook(bookTwo);
+        bookReader.addBook(bookThree);
+        List<Book> realResult = bookReader.getAllBooksOfAuthor("John");
+        List<Book> expectedResult = new ArrayList<>();
+        expectedResult.add(bookOne);
+        expectedResult.add(bookThree);
+        checkTestResult("getAllBooksOfAuthorPositiveTest", expectedResult.equals(realResult));
+    }
+
+    public void getAllBooksOfAuthorNegativeTest() {
+        BookReaderImpl bookReader = new BookReaderImpl();
+        Book bookOne = new Book("John", "Potter");
+        Book bookTwo = new Book("John2", "Potter2");
+        Book bookThree = new Book("John", "Potter2");
+        bookReader.addBook(bookOne);
+        bookReader.addBook(bookTwo);
+        bookReader.addBook(bookThree);
+        List<Book> realResult = bookReader.getAllBooksOfAuthor("John3");
+        checkTestResult("getAllBooksOfAuthorNegativeTest", realResult.isEmpty());
     }
 
     public void checkTestResult(String testName, boolean condition) {
