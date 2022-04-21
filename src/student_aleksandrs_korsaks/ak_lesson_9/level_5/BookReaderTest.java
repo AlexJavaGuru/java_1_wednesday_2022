@@ -145,13 +145,13 @@ class BookReaderTest {
 
     public void getAllBooksOfTitlePositiveTest() {
         BookReaderImpl bookReader = new BookReaderImpl();
-        Book bookOne = new Book("John", "Potter");
+        Book bookOne = new Book("John", "Cinderella");
         Book bookTwo = new Book("Alfred", "Potter2");
         Book bookThree = new Book("John", "Potter2");
         bookReader.addBook(bookOne);
         bookReader.addBook(bookTwo);
         bookReader.addBook(bookThree);
-        List<Book> realResult = bookReader.getAllBooksOfTitle("Potter2");
+        List<Book> realResult = bookReader.getAllBooksOfTitle("Pot");
         List<Book> expectedResult = new ArrayList<>();
         expectedResult.add(bookTwo);
         expectedResult.add(bookThree);
@@ -166,7 +166,7 @@ class BookReaderTest {
         bookReader.addBook(bookOne);
         bookReader.addBook(bookTwo);
         bookReader.addBook(bookThree);
-        List<Book> realResult = bookReader.getAllBooksOfTitle("Potter3");
+        List<Book> realResult = bookReader.getAllBooksOfTitle("ott");
         checkTestResult("getAllBooksOfTitleNegativeTest", realResult.isEmpty());
     }
 
