@@ -117,12 +117,12 @@ class BookReaderTest {
     public void getAllBooksOfAuthorPositiveTest() {
         BookReaderImpl bookReader = new BookReaderImpl();
         Book bookOne = new Book("John", "Potter");
-        Book bookTwo = new Book("John2", "Potter2");
+        Book bookTwo = new Book("Alfred", "Potter2");
         Book bookThree = new Book("John", "Potter2");
         bookReader.addBook(bookOne);
         bookReader.addBook(bookTwo);
         bookReader.addBook(bookThree);
-        List<Book> realResult = bookReader.getAllBooksOfAuthor("John");
+        List<Book> realResult = bookReader.getAllBooksOfAuthor("Jo");
         List<Book> expectedResult = new ArrayList<>();
         expectedResult.add(bookOne);
         expectedResult.add(bookThree);
