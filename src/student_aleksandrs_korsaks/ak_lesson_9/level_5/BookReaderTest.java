@@ -16,6 +16,8 @@ class BookReaderTest {
         bookReaderTest.getBookListInStringTest();
         bookReaderTest.getAllBooksOfAuthorPositiveTest();
         bookReaderTest.getAllBooksOfAuthorNegativeTest();
+        bookReaderTest.getAllBooksOfTitlePositiveTest();
+        bookReaderTest.getAllBooksOfTitleNegativeTest();
 
     }
 
@@ -139,6 +141,33 @@ class BookReaderTest {
         bookReader.addBook(bookThree);
         List<Book> realResult = bookReader.getAllBooksOfAuthor("John3");
         checkTestResult("getAllBooksOfAuthorNegativeTest", realResult.isEmpty());
+    }
+
+    public void getAllBooksOfTitlePositiveTest() {
+        BookReaderImpl bookReader = new BookReaderImpl();
+        Book bookOne = new Book("John", "Potter");
+        Book bookTwo = new Book("Alfred", "Potter2");
+        Book bookThree = new Book("John", "Potter2");
+        bookReader.addBook(bookOne);
+        bookReader.addBook(bookTwo);
+        bookReader.addBook(bookThree);
+        List<Book> realResult = bookReader.getAllBooksOfTitle("Potter2");
+        List<Book> expectedResult = new ArrayList<>();
+        expectedResult.add(bookTwo);
+        expectedResult.add(bookThree);
+        checkTestResult("getAllBooksOfTitlePositiveTest", expectedResult.equals(realResult));
+    }
+
+    public void getAllBooksOfTitleNegativeTest() {
+        BookReaderImpl bookReader = new BookReaderImpl();
+        Book bookOne = new Book("John", "Potter");
+        Book bookTwo = new Book("John2", "Potter2");
+        Book bookThree = new Book("John", "Potter2");
+        bookReader.addBook(bookOne);
+        bookReader.addBook(bookTwo);
+        bookReader.addBook(bookThree);
+        List<Book> realResult = bookReader.getAllBooksOfTitle("Potter3");
+        checkTestResult("getAllBooksOfTitleNegativeTest", realResult.isEmpty());
     }
 
     public void checkTestResult(String testName, boolean condition) {
