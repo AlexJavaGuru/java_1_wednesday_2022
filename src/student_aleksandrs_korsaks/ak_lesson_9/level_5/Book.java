@@ -6,6 +6,7 @@ class Book {
 
     private String bookAuthor;
     private String bookTitle;
+    private boolean isReaden;
 
     public Book(String bookAuthor, String bookTitle) {
         this.bookAuthor = bookAuthor;
@@ -26,6 +27,15 @@ class Book {
 
     public void setBookTitle(String bookTitle) {
         this.bookTitle = bookTitle;
+    }
+
+
+    public boolean isReaden() {
+        return isReaden;
+    }
+
+    public void setReaden(boolean readen) {
+        isReaden = readen;
     }
 
     @Override

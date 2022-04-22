@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 class BookReaderImpl implements BookReader {
 
     private List<Book> bookList = new ArrayList<>();
+    private boolean flagAtLeastOneBookChecked;
 
     boolean isBookUnique(Book bookToCheck) {
         for (Book book : bookList) {
@@ -28,9 +29,7 @@ class BookReaderImpl implements BookReader {
 
     @Override
     public List<String> getBookListInString() {
-        return bookList.stream()
-                .map(object -> Objects.toString(object, null))
-                .collect(Collectors.toList());
+        return bookList.stream().map(object -> Objects.toString(object, null)).collect(Collectors.toList());
     }
 
     @Override
@@ -73,5 +72,16 @@ class BookReaderImpl implements BookReader {
             }
         }
         return false;
+    }
+
+    @Override
+    public boolean checkBookAsReaden(String bookTitleToCheck) {
+        for (Book book : bookList) {
+            if (book.getBookTitle().equalsIgnoreCase(bookTitleToCheck)) {
+                book.setReaden(true);
+                flagAtLeastOneBookChecked = true;
+            }
+        }
+        return flagAtLeastOneBookChecked;
     }
 }

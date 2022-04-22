@@ -8,6 +8,8 @@ interface BookReader {
 
     boolean deleteBook(String bookTitleToDelete);
 
+    boolean checkBookAsReaden(String bookTitleToCheck);
+
     List<String> getBookListInString();
 
     List<Book> getAllBooksOfAuthor(String authorName);
