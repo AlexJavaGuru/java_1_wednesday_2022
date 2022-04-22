@@ -18,4 +18,6 @@ interface BookReader {
 
     List<Book> getAllBooksOfTitle(String bookTitle);
 
+    List<String> getAllReadenBooks();
+
 }

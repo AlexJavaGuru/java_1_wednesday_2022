@@ -22,6 +22,8 @@ class BookReaderTest {
         bookReaderTest.checkBookAsReadenNegativeTest();
         bookReaderTest.uncheckBookAsReadenPositiveTest();
         bookReaderTest.uncheckBookAsReadenNegativeTest();
+        bookReaderTest.getAllReadenBooksPositiveTest();
+        bookReaderTest.getAllReadenBooksNegativeTest();
 
     }
 
@@ -225,6 +227,32 @@ class BookReaderTest {
         checkTestResult("uncheckBookAsReadenNegativeTest", !(realResult) && (realResultBeforeUncheck) && (realResultAfterUncheck));
 
     }
+
+    public void getAllReadenBooksPositiveTest() {
+        BookReaderImpl bookReader = new BookReaderImpl();
+        Book bookOne = new Book("John", "Potter");
+        Book bookTwo = new Book("John2", "Potter");
+        Book bookThree = new Book("John3", "Cinderella");
+        bookReader.addBook(bookOne);
+        bookReader.addBook(bookTwo);
+        bookReader.addBook(bookThree);
+        bookReader.checkBookAsReaden("Potter");
+        List<String> expectedResult = new ArrayList<>();
+        expectedResult.add(String.valueOf(bookOne));
+        expectedResult.add(String.valueOf(bookTwo));
+        List<String> realResult = bookReader.getAllReadenBooks();
+        checkTestResult("getAllReadenBooksPositiveTest", realResult.equals(expectedResult));
+    }
+
+    public void getAllReadenBooksNegativeTest() {
+        BookReaderImpl bookReader = new BookReaderImpl();
+        Book bookOne = new Book("John", "Potter");
+        bookReader.addBook(bookOne);
+        bookReader.uncheckBookAsReaden("Potter");
+        List<String> realResult = bookReader.getAllReadenBooks();
+        checkTestResult("getAllReadenBooksNegativeTest", realResult.isEmpty());
+    }
+
 
     public void checkTestResult(String testName, boolean condition) {
         if (condition) {

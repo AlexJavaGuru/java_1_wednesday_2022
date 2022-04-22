@@ -28,6 +28,10 @@ class BookReaderImpl implements BookReader {
         return bookList;
     }
 
+    public List<String> getBookListInString(List<Book> listOfBooks) {
+        return listOfBooks.stream().map(object -> Objects.toString(object, null)).collect(Collectors.toList());
+    }
+
     @Override
     public List<String> getBookListInString() {
         return bookList.stream().map(object -> Objects.toString(object, null)).collect(Collectors.toList());
@@ -53,6 +57,17 @@ class BookReaderImpl implements BookReader {
             }
         }
         return foundedBooks;
+    }
+
+    @Override
+    public List<String> getAllReadenBooks() {
+        List<Book> foundedBooks = new ArrayList<>();
+        for (Book book : bookList) {
+            if (book.isReaden()) {
+                foundedBooks.add(book);
+            }
+        }
+        return getBookListInString(foundedBooks);
     }
 
     @Override
