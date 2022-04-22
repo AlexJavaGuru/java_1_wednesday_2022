@@ -1,4 +1,4 @@
-package student_aleksandrs_korsaks.ak_lesson_9.level_5;
+package student_aleksandrs_korsaks.ak_lesson_9.level_5_6;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +24,8 @@ class BookReaderTest {
         bookReaderTest.uncheckBookAsReadenNegativeTest();
         bookReaderTest.getAllReadenBooksPositiveTest();
         bookReaderTest.getAllReadenBooksNegativeTest();
+        bookReaderTest.getAllUnreadenBooksPositiveTest();
+        bookReaderTest.getAllUnreadenBooksNegativeTest();
 
     }
 
@@ -251,6 +253,31 @@ class BookReaderTest {
         bookReader.uncheckBookAsReaden("Potter");
         List<String> realResult = bookReader.getAllReadenBooks();
         checkTestResult("getAllReadenBooksNegativeTest", realResult.isEmpty());
+    }
+
+    public void getAllUnreadenBooksPositiveTest() {
+        BookReaderImpl bookReader = new BookReaderImpl();
+        Book bookOne = new Book("John", "Potter");
+        Book bookTwo = new Book("John2", "Potter");
+        Book bookThree = new Book("John3", "Cinderella");
+        bookReader.addBook(bookOne);
+        bookReader.addBook(bookTwo);
+        bookReader.addBook(bookThree);
+        bookReader.checkBookAsReaden("Cinderella");
+        List<String> expectedResult = new ArrayList<>();
+        expectedResult.add(String.valueOf(bookOne));
+        expectedResult.add(String.valueOf(bookTwo));
+        List<String> realResult = bookReader.getAllUnreadenBooks();
+        checkTestResult("getAllUnreadenBooksPositiveTest", realResult.equals(expectedResult));
+    }
+
+    public void getAllUnreadenBooksNegativeTest() {
+        BookReaderImpl bookReader = new BookReaderImpl();
+        Book bookOne = new Book("John", "Potter");
+        bookReader.addBook(bookOne);
+        bookReader.checkBookAsReaden("Potter");
+        List<String> realResult = bookReader.getAllUnreadenBooks();
+        checkTestResult("getAllUnreadenBooksNegativeTest", realResult.isEmpty());
     }
 
 

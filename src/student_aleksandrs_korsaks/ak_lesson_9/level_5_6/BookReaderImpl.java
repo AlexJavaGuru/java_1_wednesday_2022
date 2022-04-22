@@ -1,4 +1,4 @@
-package student_aleksandrs_korsaks.ak_lesson_9.level_5;
+package student_aleksandrs_korsaks.ak_lesson_9.level_5_6;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,6 +64,17 @@ class BookReaderImpl implements BookReader {
         List<Book> foundedBooks = new ArrayList<>();
         for (Book book : bookList) {
             if (book.isReaden()) {
+                foundedBooks.add(book);
+            }
+        }
+        return getBookListInString(foundedBooks);
+    }
+
+    @Override
+    public List<String> getAllUnreadenBooks() {
+        List<Book> foundedBooks = new ArrayList<>();
+        for (Book book : bookList) {
+            if (!book.isReaden()) {
                 foundedBooks.add(book);
             }
         }
