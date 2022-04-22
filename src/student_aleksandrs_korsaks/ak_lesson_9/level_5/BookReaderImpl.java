@@ -9,6 +9,7 @@ class BookReaderImpl implements BookReader {
 
     private List<Book> bookList = new ArrayList<>();
     private boolean flagAtLeastOneBookChecked;
+    private boolean flagAtLeastOneBookUnchecked;
 
     boolean isBookUnique(Book bookToCheck) {
         for (Book book : bookList) {
@@ -83,5 +84,16 @@ class BookReaderImpl implements BookReader {
             }
         }
         return flagAtLeastOneBookChecked;
+    }
+
+    @Override
+    public boolean uncheckBookAsReaden(String bookTitleToUncheck) {
+        for (Book book : bookList) {
+            if (book.getBookTitle().equalsIgnoreCase(bookTitleToUncheck)) {
+                book.setReaden(false);
+                flagAtLeastOneBookUnchecked = true;
+            }
+        }
+        return flagAtLeastOneBookUnchecked;
     }
 }

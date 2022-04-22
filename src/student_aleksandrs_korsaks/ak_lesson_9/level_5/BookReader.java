@@ -10,6 +10,8 @@ interface BookReader {
 
     boolean checkBookAsReaden(String bookTitleToCheck);
 
+    boolean uncheckBookAsReaden(String bookTitleToCheck);
+
     List<String> getBookListInString();
 
     List<Book> getAllBooksOfAuthor(String authorName);

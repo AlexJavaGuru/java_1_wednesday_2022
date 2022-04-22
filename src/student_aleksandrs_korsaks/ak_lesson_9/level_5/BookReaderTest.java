@@ -20,6 +20,8 @@ class BookReaderTest {
         bookReaderTest.getAllBooksOfTitleNegativeTest();
         bookReaderTest.checkBookAsReadenPositiveTest();
         bookReaderTest.checkBookAsReadenNegativeTest();
+        bookReaderTest.uncheckBookAsReadenPositiveTest();
+        bookReaderTest.uncheckBookAsReadenNegativeTest();
 
     }
 
@@ -195,6 +197,32 @@ class BookReaderTest {
         boolean realResult = bookReader.checkBookAsReaden("Potter3");
         boolean realResultAfterCheck = bookTwo.isReaden();
         checkTestResult("checkBookAsReadenNegativeTest", !(realResult && realResultBeforeCheck && realResultAfterCheck));
+
+    }
+
+    public void uncheckBookAsReadenPositiveTest() {
+        BookReaderImpl bookReader = new BookReaderImpl();
+        Book bookOne = new Book("John", "Potter");
+        Book bookTwo = new Book("John2", "Potter2");
+        bookReader.addBook(bookOne);
+        bookReader.addBook(bookTwo);
+        bookReader.checkBookAsReaden("Potter2");
+        boolean realResultBeforeUncheck = bookTwo.isReaden();
+        boolean realResult = bookReader.uncheckBookAsReaden("Potter2");
+        boolean realResultAfterUncheck = bookTwo.isReaden();
+        checkTestResult("uncheckBookAsReadenPositiveTest", (realResult) && (realResultBeforeUncheck) && !(realResultAfterUncheck));
+
+    }
+
+    public void uncheckBookAsReadenNegativeTest() {
+        BookReaderImpl bookReader = new BookReaderImpl();
+        Book bookOne = new Book("John", "Potter");
+        bookReader.addBook(bookOne);
+        bookReader.checkBookAsReaden("Potter");
+        boolean realResultBeforeUncheck = bookOne.isReaden();
+        boolean realResult = bookReader.uncheckBookAsReaden("Potter3");
+        boolean realResultAfterUncheck = bookOne.isReaden();
+        checkTestResult("uncheckBookAsReadenNegativeTest", !(realResult) && (realResultBeforeUncheck) && (realResultAfterUncheck));
 
     }
 
