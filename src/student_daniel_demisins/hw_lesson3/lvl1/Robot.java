@@ -4,20 +4,21 @@ public class Robot {
 
     String name;
 
-
-    public Robot() {}
-    public void sayHello() {System.out.println("HELLOOOOOO!!!!");}
-    public void sayYourName() {System.out.println("My name is" + name);}
-
-
-
-    public Robot(String name){
-            this.name= name;
-
+    public Robot() {
     }
 
-
+    public void sayHello() {
+        System.out.println("HELLOOOOOO!!!!");
     }
+
+    public void sayYourName() {
+        System.out.println("My name is" + name);
+    }
+
+    public Robot(String name) {
+        this.name = name;
+    }
+}
 
 
 

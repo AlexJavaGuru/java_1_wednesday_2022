@@ -5,7 +5,5 @@ public class CircleDemo {
         Circle myCircle= new Circle(5);
         double area = myCircle.calculateArea();
         System.out.println(area);
-
-
     }
 }

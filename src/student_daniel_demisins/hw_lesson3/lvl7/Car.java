@@ -6,25 +6,22 @@ public class Car {
     int age;
     String color;
 
-    Car(String brand, String model, int age, String color){
-        this.brand= brand;
-        this.model= model;
-        this.age= age;
-        this.color= color;
+    Car(String brand, String model, int age, String color) {
+        this.brand = brand;
+        this.model = model;
+        this.age = age;
+        this.color = color;
     }
-    String getBrand(){
+    String getBrand() {
         return this.brand;
     }
-
-    String getModel(){
+    String getModel() {
         return this.model;
     }
-
-    int getAge(){
+    int getAge() {
         return this.age;
     }
-    String getColor(){
+    String getColor() {
         return this.color;
-
     }
 }

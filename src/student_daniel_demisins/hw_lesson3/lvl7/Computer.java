@@ -8,7 +8,6 @@ public class Computer {
         this.manufacturer = manufacturer;
         this.model = model;
     }
-
     String getManufacturer(){
         return manufacturer;
     }

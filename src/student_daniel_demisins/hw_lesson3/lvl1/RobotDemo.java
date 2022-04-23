@@ -16,9 +16,5 @@ public class RobotDemo {
 
         John.sayHello();
         John.sayYourName();
-
-
-
-
     }
 }

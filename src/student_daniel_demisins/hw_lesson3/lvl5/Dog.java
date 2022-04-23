@@ -5,39 +5,26 @@ public class Dog {
     int age;
     String color;
 
+    public Dog() {
+    }
 
-
-
-    public Dog(){}
-
-
-    public void getVoice(){
-        System.out.println(name+ " " +name+ " " +name);
+    public void getVoice() {
+        System.out.println(name + " " + name + " " + name);
         System.out.println(age);
         System.out.println(color);
-
-
-
-
     }
 
-    public Dog(String name, int age, String color){
-        this.name= name;
-        this.age= age;
-        this.color= color;
-
+    public Dog(String name, int age, String color) {
+        this.name = name;
+        this.age = age;
+        this.color = color;
     }
 
-
-    public void happyBirthday(){
-        this.age= age+1;
+    public void happyBirthday() {
+        this.age = age + 1;
     }
 
-    public void changeColor(String newColor){
-        this.color= newColor;
-
-
-
+    public void changeColor(String newColor) {
+        this.color = newColor;
     }
-
 }
