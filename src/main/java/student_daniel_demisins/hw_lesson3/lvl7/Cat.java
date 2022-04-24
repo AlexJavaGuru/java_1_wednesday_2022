@@ -5,13 +5,11 @@ public class Cat {
     int age;
     String color;
 
-
     Cat (String name, int age, String color){
         this.name= name;
         this.age= age;
         this.color= color;
     }
-
     String getName(){
         return this.name;
 

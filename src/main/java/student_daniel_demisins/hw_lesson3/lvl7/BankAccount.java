@@ -7,7 +7,7 @@ public class BankAccount {
     BankAccount(String owner, int money) {
 
         this.owner = owner;
-        this.money= money;
+        this.money = money;
     }
 
     String getOwner() {

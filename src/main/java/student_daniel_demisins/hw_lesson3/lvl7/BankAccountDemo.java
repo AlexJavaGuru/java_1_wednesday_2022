@@ -8,5 +8,4 @@ public class BankAccountDemo {
         System.out.println("Owner = " + owner);
         System.out.println("Money = " + money);
     }
-
 }
