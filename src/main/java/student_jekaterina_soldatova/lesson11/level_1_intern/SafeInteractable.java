@@ -11,7 +11,7 @@ class SafeInteractable {
     }
 
     public double getMoneyFromSafe(String password, double amountOfMoneyToGet) {
-        if (password.equals(this.password) && amountOfMoneyToGet <= moneyInSafe) {
+        if (passwordCheck(password) && amountOfMoneyToGet <= moneyInSafe) {
             moneyInSafe -= amountOfMoneyToGet;
             return amountOfMoneyToGet;
         } else {
@@ -20,8 +20,12 @@ class SafeInteractable {
     }
 
     public void putMoneyInSafe(String password, double amountOfMoneyToPut) {
-        if (password.equals(this.password)) {
+        if (passwordCheck(password)) {
             moneyInSafe += amountOfMoneyToPut;
         }
+    }
+
+    boolean passwordCheck(String password) {
+        return password.equals(this.password);
     }
 }
