@@ -5,7 +5,7 @@ class SafeInteractable {
     private double moneyInSafe;
     private String password;
 
-    public SafeInteractable(String password, int moneyInSafe) {
+    public SafeInteractable(String password, double moneyInSafe) {
         this.password = password;
         this.moneyInSafe = moneyInSafe;
     }
