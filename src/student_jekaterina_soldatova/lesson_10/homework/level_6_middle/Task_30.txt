@@ -1,9 +1,0 @@
-Разработка UI (User Interface) для интерфейса BookDatabase.
-
-Создайте интерфейс UIAction:
-
-interface UIAction {
-
-    void execute();
-
-}

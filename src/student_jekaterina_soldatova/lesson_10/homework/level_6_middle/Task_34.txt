@@ -1,3 +1,0 @@
-Разработка UI (User Interface) для интерфейса BookDatabase.
-
-По аналогии с предыдущими классами создайте и реализуйте класс FindByTitleUIAction.

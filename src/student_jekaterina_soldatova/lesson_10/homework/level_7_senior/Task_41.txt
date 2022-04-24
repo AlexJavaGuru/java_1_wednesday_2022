@@ -1,3 +1,0 @@
-Прочитать документацию по Collections Framework:
-
-https://docs.oracle.com/javase/tutorial/collections/index.html
