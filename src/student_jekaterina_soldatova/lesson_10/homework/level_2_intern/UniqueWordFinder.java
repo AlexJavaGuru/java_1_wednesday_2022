@@ -5,5 +5,6 @@ import java.util.Set;
 class UniqueWordFinder {
     Set<String> find(String text) {
 
+        return null;
     }
 }
