@@ -13,8 +13,8 @@ public class AndSearchCriteria implements SearchCriteria {
         this.rightCondition = rightCondition;
     }
 
-    public boolean match(Book book) {
-        return leftCondition.match(book) && rightCondition.match(book);
+    public boolean test(Book book) {
+        return leftCondition.test(book) && rightCondition.test(book);
     }
 
 }

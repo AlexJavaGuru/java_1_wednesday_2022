@@ -1,0 +1,31 @@
+Пример с анонимным классом:
+
+List<Apple> redApples = filterApples(..., new ApplePredicate() {
+    public boolean test(Apple apple) {
+        return "red".equals(apple.getColor());
+    }
+});
+
+
+Тот же пример, только с лямда выражением:
+
+List<Apple> redApples = filterApples(...,
+    (Apple apple) -> "red".equals(apple.getColor()));
+
+Лямда выражение позволяет убрать код связанный с объявлением
+анонимного класса и тем самым значительно сократить наш код.
+
+Лямда выражение использует понятие функционального интерфейса.
+Лямда выражение можно использовать везде, где используется
+функциональный интерфейс.
+
+При компиляции кода лямда выражение преобразуется в анонимный
+класс, а код лямда выражения ("red".equals(apple.getColor()))
+становится телом метода функционального интерфейса вместо которого
+использовалось лямда выражение:
+
+List<Apple> redApples = filterApples(..., new ApplePredicate() {
+    public boolean test(Apple apple) {
+        return "red".equals(apple.getColor());  // <- тело лямда выражения
+    }
+});

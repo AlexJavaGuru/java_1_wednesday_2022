@@ -11,7 +11,7 @@ public class TitleSearchCriteria implements SearchCriteria {
         this.titleToSearch = titleToSearch;
     }
     @Override
-    public boolean match(Book book) {
+    public boolean test(Book book) {
         return book.getTitle().equals(titleToSearch);
     }
 }
