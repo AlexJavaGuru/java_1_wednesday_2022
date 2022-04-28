@@ -9,7 +9,7 @@ class MyListDemo {
         for (int i = 0; i < 5; i++) {
             myList.addElement(new Man(i + " Aleks"));
         }
-        boolean result = myList.addElementInPosition(new Man("Petr"), 7);
+        boolean result = myList.addElementInPosition(new Man("Petr"), 2);
         System.out.println(result);
         myList.addElement(new Man(" Gavr"));
         myList.addElement(new Man(" Gavr"));
@@ -20,17 +20,17 @@ class MyListDemo {
 //        myList.removeElement(new Man(" Gavr"));
         myList.removeElement(new Man(" Gavr"));
         System.out.println(Arrays.toString(myList.getObjects()));
-//        myList.removeElement(new Man("Petr"));
-//        System.out.println(Arrays.toString(myList.getObjects()));
-//        myList.removeElement(new Man("0 Aleks"));
-//        System.out.println(Arrays.toString(myList.getObjects()));
-//        myList.addElement(new Man(" Sobakevich"));
-//        System.out.println(Arrays.toString(myList.getObjects()));
-//        boolean result1 = myList.addElementInPosition(new Man("Ljeha"), 10);
-//        System.out.println(result1);
-//        myList.addElement(new Man(" Kulja"));
-//        System.out.println(Arrays.toString(myList.getObjects()));
-//        myList.removeElement(new Man(" Gavr"));
-//        System.out.println(Arrays.toString(myList.getObjects()));
+        myList.removeElement(new Man("Petr"));
+        System.out.println(Arrays.toString(myList.getObjects()));
+        myList.removeElement(new Man("0 Aleks"));
+        System.out.println(Arrays.toString(myList.getObjects()));
+        myList.addElement(new Man(" Sobakevich"));
+        System.out.println(Arrays.toString(myList.getObjects()));
+        boolean result1 = myList.addElementInPosition(new Man("Ljeha"), 0);
+        System.out.println(result1);
+        myList.addElement(new Man(" Kulja"));
+        System.out.println(Arrays.toString(myList.getObjects()));
+        myList.removeElement(new Man(" Sobakevich"));
+        System.out.println(Arrays.toString(myList.getObjects()));
     }
 }

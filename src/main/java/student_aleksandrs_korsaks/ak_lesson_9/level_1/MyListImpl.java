@@ -1,11 +1,12 @@
 package student_aleksandrs_korsaks.ak_lesson_9.level_1;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 class MyListImpl implements MyList {
 
-    private Man[] objects = new Man[10];
+    private Man[] objects = new Man[0];
 
     public Man[] getObjects() {
         return objects;
@@ -31,6 +32,16 @@ class MyListImpl implements MyList {
         return index;
     }
 
+    private Man[] removeNullFromArray(Man[] arrayToRemove) {
+        List<Man> values = new ArrayList<>();
+        for (Man data : arrayToRemove) {
+            if (data != null) {
+                values.add(data);
+            }
+        }
+        return values.toArray(new Man[0]);
+    }
+
     @Override
     public void addElement(Man objectToAdd) {
         if (isArrayFull(objects)) {
@@ -43,15 +54,16 @@ class MyListImpl implements MyList {
 
     @Override
     public boolean addElementInPosition(Man objectToAdd, int position) {
-        if ((position <= 0) || (position > objects.length - 1)) {
+        if ((position < 0) || (position > objects.length - 1)) {
             System.out.println("Position with this index is out of bound");
             return false;
-        } else if (objects[position] == null) {
+        } else {
+            objects = Arrays.copyOf(objects, objects.length + 1);
+            if (objects.length - 1 - position >= 0) {
+                System.arraycopy(objects, position, objects, position + 1, objects.length - 1 - position);
+            }
             objects[position] = objectToAdd;
             return true;
-        } else {
-            System.out.println("Position with this index isn`t empty");
-            return false;
         }
     }
 
@@ -65,7 +77,7 @@ class MyListImpl implements MyList {
             }
         }
         if (j >= 1) {
-            objects = Arrays.copyOf(objects, objects.length - j + 2);
+            objects = removeNullFromArray(objects);
         }
     }
 
