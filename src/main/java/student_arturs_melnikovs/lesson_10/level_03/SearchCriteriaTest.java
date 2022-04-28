@@ -24,7 +24,7 @@ class SearchCriteriaTest {
                 new TitleSearchCriteria("1")
         );
         Book book = new Book("2", "2");
-        checkResult(!searchCriteria.match(book));
+        checkResult(!searchCriteria.test(book));
     }
 
     private void testOrCriteria1() {
@@ -33,7 +33,7 @@ class SearchCriteriaTest {
                 new TitleSearchCriteria("1")
         );
         Book book = new Book("2", "1");
-        checkResult(searchCriteria.match(book));
+        checkResult(searchCriteria.test(book));
     }
 
     private void testAndCriteria2() {
@@ -41,7 +41,7 @@ class SearchCriteriaTest {
                 new AuthorSearchCriteria("1"),
                 new TitleSearchCriteria("2"));
         Book book = new Book("1", "1");
-        checkResult(!searchCriteria.match(book));
+        checkResult(!searchCriteria.test(book));
     }
 
     private void testAndCriteria1() {
@@ -49,43 +49,43 @@ class SearchCriteriaTest {
                 new AuthorSearchCriteria("1"),
                 new TitleSearchCriteria("1"));
         Book book = new Book("1", "1");
-        checkResult(searchCriteria.match(book));
+        checkResult(searchCriteria.test(book));
     }
 
     private void testYearCriteria2() {
         SearchCriteria searchCriteria = new YearOfIssueSearchCriteria("2000");
         Book book = new Book("1", "1", "3000");
-        checkResult(!searchCriteria.match(book));
+        checkResult(!searchCriteria.test(book));
     }
 
     private void testYearCriteria1() {
         SearchCriteria searchCriteria = new YearOfIssueSearchCriteria("2000");
         Book book = new Book("1", "1", "2000");
-        checkResult(searchCriteria.match(book));
+        checkResult(searchCriteria.test(book));
     }
 
     private void testTitleCriteria2() {
         SearchCriteria searchCriteria = new TitleSearchCriteria("1");
         Book book = new Book("1", "2");
-        checkResult(!searchCriteria.match(book));
+        checkResult(!searchCriteria.test(book));
     }
 
     private void testTitleCriteria1() {
         SearchCriteria searchCriteria = new TitleSearchCriteria("1");
         Book book = new Book("1", "1");
-        checkResult(searchCriteria.match(book));
+        checkResult(searchCriteria.test(book));
     }
 
     private void testAuthorCriteria2() {
         SearchCriteria searchCriteria = new AuthorSearchCriteria("1");
         Book book = new Book("2", "1");
-        checkResult(!searchCriteria.match(book));
+        checkResult(!searchCriteria.test(book));
     }
 
     private void testAuthorCriteria1() {
         SearchCriteria searchCriteria = new AuthorSearchCriteria("1");
         Book book = new Book("1", "1");
-        checkResult(searchCriteria.match(book));
+        checkResult(searchCriteria.test(book));
     }
 
     private void checkResult(Boolean actualResult) {

@@ -3,6 +3,7 @@ package student_arturs_melnikovs.lesson_10.level_02;
 import student_arturs_melnikovs.lesson_10.level_03.SearchCriteria;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class BookDatabaseImpl implements BookDatabase {
 
@@ -52,24 +53,16 @@ public class BookDatabaseImpl implements BookDatabase {
 
     @Override
     public List<Book> findByAuthor(String author) {
-        List<Book> authorsBooks = new ArrayList<>();
-        for (Book book : myBooks) {
-            if (book.getAuthor().equals(author)) {
-                authorsBooks.add(book);
-            }
-        }
-        return authorsBooks;
+        return myBooks.stream()
+                .filter(book -> author.equals(book.getAuthor()))
+                .collect(Collectors.toList());
     }
 
     @Override
     public List<Book> findByTitle(String title) {
-        List<Book> titleBooks = new ArrayList<>();
-        for (Book book : myBooks) {
-            if (book.getTitle().equals(title)) {
-                titleBooks.add(book);
-            }
-        }
-        return titleBooks;
+        return myBooks.stream()
+                .filter(book -> title.equals(book.getTitle()))
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -101,13 +94,16 @@ public class BookDatabaseImpl implements BookDatabase {
 
     @Override
     public List<Book> find(SearchCriteria searchCriteria) {
-        List<Book> searchedBooks = new ArrayList<>();
-        for (Book book : myBooks) {
-            if (searchCriteria.match(book)) {
-                searchedBooks.add(book);
-            }
-        }
-        return searchedBooks;
+        return myBooks.stream()
+                .filter(searchCriteria)
+                .collect(Collectors.toList());
+//        List<Book> searchedBooks = new ArrayList<>();
+//        for (Book book : myBooks) {
+//            if (searchCriteria.match(book)) {
+//                searchedBooks.add(book);
+//            }
+//        }
+//        return searchedBooks;
     }
 
     @Override
@@ -140,20 +136,22 @@ public class BookDatabaseImpl implements BookDatabase {
 
     @Override
     public Map<String, List<Book>> getAuthorToBooksMap() {
-        Set<String> authors = findUniqueAuthors();
-        Map<String, List<Book>> map = new HashMap<>();
-
-        for (String author : authors) {
-            List<Book> authorsBooks = new ArrayList<>();
-            for (Book book : myBooks) {
-                if (book.getAuthor().equals(author)) {
-                    authorsBooks.add(book);
-                }
-            }
-            map.put(author, authorsBooks);
-        }
-
-        return map;
+        return myBooks.stream()
+                .collect(Collectors.groupingBy(Book::getAuthor));
+//        Set<String> authors = findUniqueAuthors();
+//        Map<String, List<Book>> map = new HashMap<>();
+//
+//        for (String author : authors) {
+//            List<Book> authorsBooks = new ArrayList<>();
+//            for (Book book : myBooks) {
+//                if (book.getAuthor().equals(author)) {
+//                    authorsBooks.add(book);
+//                }
+//            }
+//            map.put(author, authorsBooks);
+//        }
+//
+//        return map;
     }
 
     @Override
