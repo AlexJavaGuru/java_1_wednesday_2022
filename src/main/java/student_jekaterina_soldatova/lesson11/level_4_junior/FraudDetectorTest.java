@@ -7,7 +7,8 @@ class FraudDetectorTest {
         test.isTraderNotFraud();
         test.isAmountTooBig();
         test.isAmountNotTooBig();
-        test.isCityFraud();
+        test.isCityFraudSydney();
+        test.isCityFraudJamaica();
         test.isCityNotFraud();
 
     }
@@ -52,13 +53,23 @@ class FraudDetectorTest {
         }
     }
 
-    void isCityFraud() {
+    void isCityFraudSydney() {
         Transaction transaction = new Transaction(new Trader("Someone", "Sydney"), 99);
         FraudDetector detector = new FraudDetector();
         if (detector.isFraud(transaction)) {
-            System.out.println("Is city fraud test - ok");
+            System.out.println("Is city fraud test Sydney- ok");
         } else {
-            System.out.println("Is city fraud test - fail");
+            System.out.println("Is city fraud test Sydney - fail");
+        }
+    }
+
+    void isCityFraudJamaica() {
+        Transaction transaction = new Transaction(new Trader("Someone", "Jamaica"), 99);
+        FraudDetector detector = new FraudDetector();
+        if (detector.isFraud(transaction)) {
+            System.out.println("Is city fraud test Jamaica - ok");
+        } else {
+            System.out.println("Is city fraud test Jamaica - fail");
         }
     }
 
