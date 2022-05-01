@@ -83,11 +83,25 @@ class MyListImpl implements MyList {
 
     @Override
     public List<Man> copyRange(int startPosition, int endPosition) {
-        return null;
+        if ((objects == null) || (objects.length == 0)) {
+            System.out.println("List is Empty");
+            return new ArrayList<>();
+        } else if (startPosition < 0) {
+            System.out.println("Start position is out of bound");
+            return new ArrayList<>();
+        } else if (endPosition >= objects.length) {
+            System.out.println("End possition is out of bound");
+            return new ArrayList<>();
+        } else {
+            return Arrays.stream(Arrays.copyOfRange(objects, startPosition, endPosition)).toList();
+        }
     }
 
     @Override
     public List<Man> copyAll() {
-        return null;
+        Man[] copyOfObjects = new Man[objects.length];
+        System.arraycopy(objects, 0, copyOfObjects, 0, objects.length);
+        return Arrays.stream(copyOfObjects).toList();
     }
 }
+
