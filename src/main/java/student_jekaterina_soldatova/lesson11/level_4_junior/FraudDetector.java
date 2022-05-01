@@ -15,6 +15,6 @@ class FraudDetector {
     }
 
     boolean traderCityCheck(Transaction t) {
-        return t.getTrader().getCity().equals("Sydney");
+        return (t.getTrader().getCity().equals("Sydney") || t.getTrader().getCity().equals("Jamaica"));
     }
 }
