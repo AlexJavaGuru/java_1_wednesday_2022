@@ -8,8 +8,10 @@ class FraudDetectorTest {
         test.isAmountTooBig();
         test.isAmountNotTooBig();
         test.isCityFraudSydney();
-        test.isCityFraudJamaica();
         test.isCityNotFraud();
+        test.isCountryFraudJamaica();
+        test.isCountryNotFraud();
+        test.isTraderGermanAmountFraud();
 
     }
 
@@ -63,16 +65,6 @@ class FraudDetectorTest {
         }
     }
 
-    void isCityFraudJamaica() {
-        Transaction transaction = new Transaction(new Trader("Someone", "Jamaica"), 99);
-        FraudDetector detector = new FraudDetector();
-        if (detector.isFraud(transaction)) {
-            System.out.println("Is city fraud test Jamaica - ok");
-        } else {
-            System.out.println("Is city fraud test Jamaica - fail");
-        }
-    }
-
     void isCityNotFraud() {
         Transaction transaction = new Transaction(new Trader("Someone", "Riga"), 99);
         FraudDetector detector = new FraudDetector();
@@ -80,6 +72,36 @@ class FraudDetectorTest {
             System.out.println("Is city not fraud test - ok");
         } else {
             System.out.println("Is city not fraud test - fail");
+        }
+    }
+
+    void isCountryFraudJamaica() {
+        Transaction transaction = new Transaction(new Trader("Someone", "Kingston", "Jamaica"), 99);
+        FraudDetector detector = new FraudDetector();
+        if (detector.isFraud(transaction)) {
+            System.out.println("Is country fraud test Jamaica - ok");
+        } else {
+            System.out.println("Is country fraud test Jamaica - fail");
+        }
+    }
+
+    void isCountryNotFraud() {
+        Transaction transaction = new Transaction(new Trader("Someone", "Berlin", "Germany"), 99);
+        FraudDetector detector = new FraudDetector();
+        if (!detector.isFraud(transaction)) {
+            System.out.println("Is country not fraud test - ok");
+        } else {
+            System.out.println("Is country not fraud test - fail");
+        }
+    }
+
+    void isTraderGermanAmountFraud() {
+        Transaction transaction = new Transaction(new Trader("Someone", "Berlin", "Germany"), 2000);
+        FraudDetector detector = new FraudDetector();
+        if (detector.isFraud(transaction)) {
+            System.out.println("Is German amount fraud test - ok");
+        } else {
+            System.out.println("Is German amount fraud test - fail");
         }
     }
 }
