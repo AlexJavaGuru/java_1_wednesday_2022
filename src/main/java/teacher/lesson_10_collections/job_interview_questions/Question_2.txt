@@ -1,0 +1,38 @@
+What is Autoboxing and Unboxing?
+
+Autoboxing is the automatic conversion of primitive data types
+into their corresponding wrapper classes by Java compiler.
+Java compiler applies autoboxing when a primitive data type
+is assigned to a variable of the corresponding wrapper class,
+or a primitive data type is passed as an argument to a method
+which expects an object of the corresponding wrapper class.
+
+Unboxing is the automatic conversion of an object of a wrapper
+type to its corresponding primitive value by Java compiler.
+Java compiler applies unboxing when a wrapper object is assigned
+to a variable of corresponding primitive type, or when a wrapper
+object is passed as an argument to a method which expects
+corresponding primitive type.
+
+Example:
+
+/* Autoboxing */
+class MyClass {
+  List<Integer> list = new ArrayList();
+  //Add ints 1-50 to the list
+  public void addToList() {
+    for (int i=1; i<=50; i++) {
+      list.add(i);  // autoboxing
+    }
+  }
+}
+
+
+Example:
+
+/* Unboxing */
+class MyClass {
+  Integer wrappedInt = new Integer(200);
+  int primitiveInt = wrappedInt; //Unboxing through assignment
+  }
+}

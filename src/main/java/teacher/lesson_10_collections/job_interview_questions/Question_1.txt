@@ -1,0 +1,34 @@
+What are wrapper classes in Java programming language?
+
+There are many cases where we cannot directly use primitive data types.
+For example, We cannot put primitives into Java collections since
+Java collections (Lists, Sets etc.) can only store objects.
+
+Wrapper classes are classes provided by java programming language
+that enable us to wrap primitive data in Objects. Each of the
+eight primitive data types has a corresponding Wrapper class as
+listed in below table.
+
+Primitive Data Type	        Wrapper Class
+byte	                    Byte
+short	                    Short
+int	                        Integer
+double	                    Double
+long	                    Long
+float	                    Float
+char	                    Character
+boolean	                    Boolean
+
+Example:
+
+class MyClass {
+  //List of Integers
+  List<Integer> list = new ArrayList();
+  //Add ints 1-50 to the list
+  public void addToList() {
+    for (int i=1; i<=50; i++) {
+      //Convert to Integer object and add to list
+      list.add(Integer.valueOf(i));
+    }
+  }
+}
