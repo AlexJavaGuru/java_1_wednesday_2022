@@ -33,7 +33,7 @@ class CreditCard {
         if (this.securityPin != securityPin) {
             System.out.println("Cancelled, wrong PIN");
         } else if (balance >= withdrawAmount) {
-            balance += withdrawAmount;
+            balance -= withdrawAmount;
         } else if (balance + creditLimit >= withdrawAmount) {
             withdrawAmount -= balance;
             balance = 0;
