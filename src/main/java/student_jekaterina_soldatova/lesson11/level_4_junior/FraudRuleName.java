@@ -1,4 +1,4 @@
-package student_jekaterina_soldatova.lesson11.level_5_middle;
+package student_jekaterina_soldatova.lesson11.level_4_junior;
 
 class FraudRuleName extends FraudRule {
 
@@ -8,7 +8,7 @@ class FraudRuleName extends FraudRule {
 
     @Override
     public boolean isFraud(Transaction t) {
-        return t.getTrader().getFullName().equals("Pokemon");;
+        return t.getTrader().getFullName().equals("Pokemon");
     }
 
 }
