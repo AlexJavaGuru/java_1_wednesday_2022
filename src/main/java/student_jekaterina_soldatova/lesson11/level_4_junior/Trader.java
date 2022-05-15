@@ -31,7 +31,7 @@ class Trader {
 
     @Override
     public String toString() {
-        return "fullName: " + fullName + ", city: " + city + ", country: " + country;
+        return "name: " + fullName + ", city: " + city + ", country: " + country;
     }
 
 }
