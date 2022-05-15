@@ -22,7 +22,7 @@ class FraudDetectorTest {
         List<FraudRule> rules = fraudRulesList.getFraudRules();
         FraudDetector detector = new FraudDetector(rules);
         Transaction transaction = new Transaction(new Trader("Pokemon", "Riga"), 500);
-        if (detector.isFraud(transaction)) {
+        if (detector.isFraud(transaction).isFraud()) {
             System.out.println("Trader is fraud test - ok");
         } else {
             System.out.println("Trader is fraud test - fail");
@@ -34,7 +34,7 @@ class FraudDetectorTest {
         FraudRulesList fraudRulesList = new FraudRulesList();
         List<FraudRule> rules = fraudRulesList.getFraudRules();
         FraudDetector detector = new FraudDetector(rules);
-        if (!detector.isFraud(transaction)) {
+        if (!detector.isFraud(transaction).isFraud()) {
             System.out.println("Trader is not fraud test - ok");
         } else {
             System.out.println("Trader is not fraud test - fail");
@@ -46,7 +46,7 @@ class FraudDetectorTest {
         FraudRulesList fraudRulesList = new FraudRulesList();
         List<FraudRule> rules = fraudRulesList.getFraudRules();
         FraudDetector detector = new FraudDetector(rules);
-        if (detector.isFraud(transaction)) {
+        if (detector.isFraud(transaction).isFraud()) {
             System.out.println("Amount too big test - ok");
         } else {
             System.out.println("Amount too big test - fail");
@@ -58,7 +58,7 @@ class FraudDetectorTest {
         FraudRulesList fraudRulesList = new FraudRulesList();
         List<FraudRule> rules = fraudRulesList.getFraudRules();
         FraudDetector detector = new FraudDetector(rules);
-        if (!detector.isFraud(transaction)) {
+        if (!detector.isFraud(transaction).isFraud()) {
             System.out.println("Amount not too big test - ok");
         } else {
             System.out.println("Amount not too big test - fail");
@@ -70,7 +70,7 @@ class FraudDetectorTest {
         FraudRulesList fraudRulesList = new FraudRulesList();
         List<FraudRule> rules = fraudRulesList.getFraudRules();
         FraudDetector detector = new FraudDetector(rules);
-        if (detector.isFraud(transaction)) {
+        if (detector.isFraud(transaction).isFraud()) {
             System.out.println("Is city fraud test Sydney- ok");
         } else {
             System.out.println("Is city fraud test Sydney - fail");
@@ -82,7 +82,7 @@ class FraudDetectorTest {
         FraudRulesList fraudRulesList = new FraudRulesList();
         List<FraudRule> rules = fraudRulesList.getFraudRules();
         FraudDetector detector = new FraudDetector(rules);
-        if (!detector.isFraud(transaction)) {
+        if (!detector.isFraud(transaction).isFraud()) {
             System.out.println("Is city not fraud test - ok");
         } else {
             System.out.println("Is city not fraud test - fail");
@@ -94,7 +94,7 @@ class FraudDetectorTest {
         FraudRulesList fraudRulesList = new FraudRulesList();
         List<FraudRule> rules = fraudRulesList.getFraudRules();
         FraudDetector detector = new FraudDetector(rules);
-        if (detector.isFraud(transaction)) {
+        if (detector.isFraud(transaction).isFraud()) {
             System.out.println("Is country fraud test Jamaica - ok");
         } else {
             System.out.println("Is country fraud test Jamaica - fail");
@@ -106,7 +106,7 @@ class FraudDetectorTest {
         FraudRulesList fraudRulesList = new FraudRulesList();
         List<FraudRule> rules = fraudRulesList.getFraudRules();
         FraudDetector detector = new FraudDetector(rules);
-        if (!detector.isFraud(transaction)) {
+        if (!detector.isFraud(transaction).isFraud()) {
             System.out.println("Is country not fraud test - ok");
         } else {
             System.out.println("Is country not fraud test - fail");
@@ -118,7 +118,7 @@ class FraudDetectorTest {
         FraudRulesList fraudRulesList = new FraudRulesList();
         List<FraudRule> rules = fraudRulesList.getFraudRules();
         FraudDetector detector = new FraudDetector(rules);
-        if (detector.isFraud(transaction)) {
+        if (detector.isFraud(transaction).isFraud()) {
             System.out.println("Is German amount fraud test - ok");
         } else {
             System.out.println("Is German amount fraud test - fail");

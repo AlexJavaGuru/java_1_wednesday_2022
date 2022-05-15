@@ -10,13 +10,14 @@ class FraudDetector {
         this.fraudRules = fraudRules;
     }
 
-    boolean isFraud(Transaction t) {
+    FraudDetectionResult isFraud(Transaction t) {
         for (FraudRule rule : fraudRules) {
             if (rule.isFraud(t)) {
-                return true;
+                System.out.println(rule.getRuleName());
+                return new FraudDetectionResult(true, rule.getRuleName());
             }
         }
-        return false;
+        return new FraudDetectionResult(false, null);
     }
 
 }
