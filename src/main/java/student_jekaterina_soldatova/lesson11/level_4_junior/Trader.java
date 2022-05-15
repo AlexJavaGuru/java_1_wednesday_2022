@@ -29,4 +29,9 @@ class Trader {
         return country;
     }
 
+    @Override
+    public String toString() {
+        return "fullName: " + fullName + ", city: " + city + ", country: " + country;
     }
+
+}

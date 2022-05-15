@@ -17,4 +17,9 @@ public class Transaction {
     int getAmount() {
         return amount;
     }
+
+    @Override
+    public String toString() {
+        return "Trader:\n" + trader + "\n" + "amount:\n" + amount;
+    }
 }

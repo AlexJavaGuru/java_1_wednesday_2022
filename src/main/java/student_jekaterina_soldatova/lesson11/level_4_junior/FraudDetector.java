@@ -13,7 +13,7 @@ class FraudDetector {
     FraudDetectionResult isFraud(Transaction t) {
         for (FraudRule rule : fraudRules) {
             if (rule.isFraud(t)) {
-                System.out.println(rule.getRuleName());
+                System.out.println(t);
                 return new FraudDetectionResult(true, rule.getRuleName());
             }
         }
