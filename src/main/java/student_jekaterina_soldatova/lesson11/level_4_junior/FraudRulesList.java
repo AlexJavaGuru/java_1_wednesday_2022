@@ -3,7 +3,7 @@ package student_jekaterina_soldatova.lesson11.level_4_junior;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FraudRulesList {
+class FraudRulesList {
     private List<FraudRule> fraudRules = new ArrayList<>();
 
     public FraudRulesList() {
