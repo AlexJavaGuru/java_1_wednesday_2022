@@ -32,21 +32,20 @@ class Book {
     public String toString() {
         return "Book{" +
                 "id=" + id +
-                ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
+                ", title='" + title + '\'' +
                 '}';
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Book book = (Book) o;
-        return id.equals(book.id) && title.equals(book.title) && author.equals(book.author);
+        if (!(o instanceof Book book)) return false;
+        return getId().equals(book.getId()) && getTitle().equals(book.getTitle()) && getAuthor().equals(book.getAuthor());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, author);
+        return Objects.hash(getId(), getTitle(), getAuthor());
     }
 }
