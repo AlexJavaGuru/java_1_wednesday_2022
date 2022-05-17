@@ -3,6 +3,8 @@ package student_aleksandrs_korsaks.ak_lesson_10.level_2;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -77,5 +79,18 @@ class BookDatabaseImplTest {
     @Test
     void findByIdNegative() {
         assertEquals(Optional.empty(), bookDatabase.findById(5L));
+    }
+
+    @Test
+    void findByAuthorPositive() {
+        List<Book> realResult = bookDatabase.findByAuthor("A1");
+        bookDatabase.delete(3L);
+        assertEquals(bookDatabase.getBookList(),realResult);
+    }
+
+    @Test
+    void findByAuthorNegative() {
+        List<Book> expectedResult = new ArrayList<>();
+        assertEquals(expectedResult, bookDatabase.findByAuthor("A3"));
     }
 }

@@ -38,4 +38,11 @@ class BookDatabaseImpl implements BookDatabase {
                 .filter(book -> book.getId().equals(bookId))
                 .findAny();
     }
+
+    @Override
+    public List<Book> findByAuthor(String author) {
+        return bookList.stream()
+                .filter(book -> book.getAuthor().equals(author))
+                .toList();
+    }
 }
