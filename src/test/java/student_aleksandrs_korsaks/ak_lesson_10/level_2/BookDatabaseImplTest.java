@@ -29,7 +29,7 @@ class BookDatabaseImplTest {
     }
 
     @Test
-    void deleteBookPositive() {
+    void deleteBookByIdPositive() {
         Book bookTest = new Book("A1", "B1");
         bookTest.setId(1L);
         assertTrue(bookDatabase.getBookList().contains(bookTest));
@@ -38,9 +38,28 @@ class BookDatabaseImplTest {
     }
 
     @Test
-    void deleteBookNegative() {
+    void deleteBookByIdNegative() {
         int beforeTryingToDeleteResult = bookDatabase.getBookList().size();
         assertFalse(bookDatabase.delete(4L), "If book with that ID dsn`t exist and wsn`t deleted, should be FALSE");
+        int afterTryingToDeleteResult = bookDatabase.getBookList().size();
+        assertEquals(beforeTryingToDeleteResult, afterTryingToDeleteResult);
+    }
+
+    @Test
+    void deleteBookPositive() {
+        Book bookTest = new Book("A1", "B1");
+        bookTest.setId(1L);
+        assertTrue(bookDatabase.getBookList().contains(bookTest));
+        assertTrue(bookDatabase.delete(bookTest), "If book exist and deleted, should be TRUE");
+        assertFalse(bookDatabase.getBookList().contains(bookTest));
+    }
+
+    @Test
+    void deleteBookNegative() {
+        Book bookTest = new Book("A1", "B1");
+        bookTest.setId(4L);
+        int beforeTryingToDeleteResult = bookDatabase.getBookList().size();
+        assertFalse(bookDatabase.delete(bookTest), "If book dsn`t exist and wsn`t deleted, should be FALSE");
         int afterTryingToDeleteResult = bookDatabase.getBookList().size();
         assertEquals(beforeTryingToDeleteResult, afterTryingToDeleteResult);
     }

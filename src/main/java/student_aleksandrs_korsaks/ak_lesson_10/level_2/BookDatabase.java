@@ -6,4 +6,6 @@ interface BookDatabase {
 
     boolean delete(Long bookId);
 
+    boolean delete(Book book);
+
 }
