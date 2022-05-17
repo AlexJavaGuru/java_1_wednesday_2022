@@ -10,6 +10,14 @@ class ProductValidatorImplTest {
         ProductValidatorImplTest test = new ProductValidatorImplTest();
         test.rule1_v1();
         test.rule1_v2();
+        test.rule1_v3();
+        test.rule1_v4();
+        test.rule1_v5();
+        test.rule1_v6();
+        test.rule2_v1();
+        test.rule2_v2();
+        test.rule3_v1();
+        test.rule3_v2();
         // тесты на остальные правила допишите по аналогии
         // тестов будет много! напишите их все!
         // они пишутся легко, и если вы напишите их все то ваше решение будет полностью протестировано!
