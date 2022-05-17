@@ -2,6 +2,7 @@ package student_aleksandrs_korsaks.ak_lesson_10.level_2;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 class BookDatabaseImpl implements BookDatabase {
 
@@ -29,5 +30,12 @@ class BookDatabaseImpl implements BookDatabase {
     @Override
     public boolean delete(Book book) {
         return bookList.removeIf(bookItem -> bookItem.equals(book));
+    }
+
+    @Override
+    public Optional<Book> findById(Long bookId) {
+        return bookList.stream()
+                .filter(book -> book.getId().equals(bookId))
+                .findAny();
     }
 }

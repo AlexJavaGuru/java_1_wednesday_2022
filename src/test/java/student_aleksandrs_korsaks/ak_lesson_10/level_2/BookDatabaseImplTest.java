@@ -3,6 +3,8 @@ package student_aleksandrs_korsaks.ak_lesson_10.level_2;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Optional;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class BookDatabaseImplTest {
@@ -62,5 +64,18 @@ class BookDatabaseImplTest {
         assertFalse(bookDatabase.delete(bookTest), "If book dsn`t exist and wsn`t deleted, should be FALSE");
         int afterTryingToDeleteResult = bookDatabase.getBookList().size();
         assertEquals(beforeTryingToDeleteResult, afterTryingToDeleteResult);
+    }
+
+    @Test
+    void findByIdPositive() {
+        Book bookTest = new Book("A1", "B1");
+        bookTest.setId(1L);
+        Optional<Book> expectedResult = Optional.of(bookTest);
+        assertEquals(expectedResult, bookDatabase.findById(1L));
+    }
+
+    @Test
+    void findByIdNegative() {
+        assertEquals(Optional.empty(), bookDatabase.findById(5L));
     }
 }
