@@ -93,4 +93,19 @@ class BookDatabaseImplTest {
         List<Book> expectedResult = new ArrayList<>();
         assertEquals(expectedResult, bookDatabase.findByAuthor("A3"));
     }
+
+
+    @Test
+    void findByTitlePositive() {
+        List<Book> realResult = bookDatabase.findByTitle("B1");
+        bookDatabase.delete(3L);
+        assertEquals(bookDatabase.getBookList(),realResult);
+    }
+
+    @Test
+    void findByTitleNegative() {
+        List<Book> expectedResult = new ArrayList<>();
+        assertEquals(expectedResult, bookDatabase.findByAuthor("B3"));
+    }
+
 }

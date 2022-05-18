@@ -45,4 +45,11 @@ class BookDatabaseImpl implements BookDatabase {
                 .filter(book -> book.getAuthor().equals(author))
                 .toList();
     }
+
+    @Override
+    public List<Book> findByTitle(String title) {
+        return bookList.stream()
+                .filter(book -> book.getTitle().equals(title))
+                .toList();
+    }
 }
