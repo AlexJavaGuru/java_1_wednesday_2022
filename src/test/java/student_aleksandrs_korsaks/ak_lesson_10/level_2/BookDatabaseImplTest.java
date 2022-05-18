@@ -85,7 +85,7 @@ class BookDatabaseImplTest {
     void findByAuthorPositive() {
         List<Book> realResult = bookDatabase.findByAuthor("A1");
         bookDatabase.delete(3L);
-        assertEquals(bookDatabase.getBookList(),realResult);
+        assertEquals(bookDatabase.getBookList(), realResult);
     }
 
     @Test
@@ -99,7 +99,7 @@ class BookDatabaseImplTest {
     void findByTitlePositive() {
         List<Book> realResult = bookDatabase.findByTitle("B1");
         bookDatabase.delete(3L);
-        assertEquals(bookDatabase.getBookList(),realResult);
+        assertEquals(bookDatabase.getBookList(), realResult);
     }
 
     @Test
@@ -108,4 +108,8 @@ class BookDatabaseImplTest {
         assertEquals(expectedResult, bookDatabase.findByAuthor("B3"));
     }
 
+    @Test
+    void countAllBooks() {
+        assertEquals(3, bookDatabase.countAllBooks());
+    }
 }

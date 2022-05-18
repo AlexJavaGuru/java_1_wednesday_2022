@@ -52,4 +52,9 @@ class BookDatabaseImpl implements BookDatabase {
                 .filter(book -> book.getTitle().equals(title))
                 .toList();
     }
+
+    @Override
+    public int countAllBooks() {
+        return bookList.size();
+    }
 }
