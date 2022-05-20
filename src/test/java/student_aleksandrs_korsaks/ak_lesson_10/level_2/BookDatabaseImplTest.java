@@ -135,4 +135,27 @@ class BookDatabaseImplTest {
         int afterTryingToDeleteResult = bookDatabase.getBookList().size();
         assertEquals(beforeTryingToDeleteResult, afterTryingToDeleteResult);
     }
+
+    @Test
+    void deleteByTitlePositive() {
+        Book bookOneTest = new Book("A1", "B1");
+        bookOneTest.setId(1L);
+        Book bookTwoTest = new Book("A1", "B1");
+        bookTwoTest.setId(2L);
+        assertEquals(3, bookDatabase.getBookList().size());
+        assertTrue(bookDatabase.getBookList().contains(bookOneTest));
+        assertTrue(bookDatabase.getBookList().contains(bookTwoTest));
+        bookDatabase.deleteByTitle("B1");
+        assertFalse(bookDatabase.getBookList().contains(bookOneTest));
+        assertFalse(bookDatabase.getBookList().contains(bookTwoTest));
+        assertEquals(1, bookDatabase.getBookList().size());
+    }
+
+    @Test
+    void deleteByTitleNegative() {
+        int beforeTryingToDeleteResult = bookDatabase.getBookList().size();
+        bookDatabase.deleteByTitle("B3");
+        int afterTryingToDeleteResult = bookDatabase.getBookList().size();
+        assertEquals(beforeTryingToDeleteResult, afterTryingToDeleteResult);
+    }
 }
