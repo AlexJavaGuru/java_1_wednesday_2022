@@ -6,10 +6,12 @@ class Book {
     private Long id;
     private String title;
     private String author;
+    private String yearOfIssue;
 
-    Book(String author, String title) {
+    Book(String author, String title, String yearOfIssue) {
         this.author = author;
         this.title = title;
+        this.yearOfIssue = yearOfIssue;
     }
 
     public void setId(Long id) {
@@ -28,12 +30,17 @@ class Book {
         return this.author;
     }
 
+    public String getYearOfIssue() {
+        return yearOfIssue;
+    }
+
     @Override
     public String toString() {
         return "Book{" +
                 "id=" + id +
                 ", author='" + author + '\'' +
                 ", title='" + title + '\'' +
+                ", yearOfIssue='" + yearOfIssue + '\'' +
                 '}';
     }
 
@@ -41,11 +48,11 @@ class Book {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Book book)) return false;
-        return getId().equals(book.getId()) && getTitle().equals(book.getTitle()) && getAuthor().equals(book.getAuthor());
+        return getId().equals(book.getId()) && getTitle().equals(book.getTitle()) && getAuthor().equals(book.getAuthor()) && getYearOfIssue().equals(book.getYearOfIssue());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getTitle(), getAuthor());
+        return Objects.hash(getId(), getTitle(), getAuthor(), getYearOfIssue());
     }
 }

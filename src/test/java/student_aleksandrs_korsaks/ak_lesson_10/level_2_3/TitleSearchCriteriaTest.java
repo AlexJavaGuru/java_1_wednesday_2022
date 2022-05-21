@@ -10,13 +10,13 @@ class TitleSearchCriteriaTest {
 
     @Test
     void matchPositive() {
-        Book bookOne = new Book("A1", "B1");
+        Book bookOne = new Book("A1", "B1","1990");
         assertTrue(titleSearchCriteria.match(bookOne));
     }
 
     @Test
     void matchNegative() {
-        Book bookTwo = new Book("A2", "B2");
+        Book bookTwo = new Book("A2", "B2","1990");
         assertFalse(titleSearchCriteria.match(bookTwo));
     }
 }

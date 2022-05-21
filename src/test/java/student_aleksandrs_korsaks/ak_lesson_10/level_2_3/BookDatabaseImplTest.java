@@ -15,9 +15,9 @@ class BookDatabaseImplTest {
 
     @BeforeEach
     void setUp() {
-        Book bookOne = new Book("A1", "B1");
-        Book bookTwo = new Book("A1", "B1");
-        Book bookThree = new Book("A2", "B2");
+        Book bookOne = new Book("A1", "B1","1990");
+        Book bookTwo = new Book("A1", "B1","1990");
+        Book bookThree = new Book("A2", "B2","1990");
         bookDatabase.save(bookOne);
         bookDatabase.save(bookTwo);
         bookDatabase.save(bookThree);
@@ -25,7 +25,7 @@ class BookDatabaseImplTest {
 
     @Test
     void saveBook() {
-        Book testBook = new Book("A3", "B3");
+        Book testBook = new Book("A3", "B3","1990");
         Long realResult = bookDatabase.save(testBook);
         Book realResultTwo = bookDatabase.getBookList().get(3);
         assertEquals(4L, realResult, "Book Id should be 4");
@@ -34,7 +34,7 @@ class BookDatabaseImplTest {
 
     @Test
     void deleteBookByIdPositive() {
-        Book bookTest = new Book("A1", "B1");
+        Book bookTest = new Book("A1", "B1","1990");
         bookTest.setId(1L);
         assertTrue(bookDatabase.getBookList().contains(bookTest));
         assertTrue(bookDatabase.delete(1L), "If book with that ID exist and deleted, should be TRUE");
@@ -51,7 +51,7 @@ class BookDatabaseImplTest {
 
     @Test
     void deleteBookPositive() {
-        Book bookTest = new Book("A1", "B1");
+        Book bookTest = new Book("A1", "B1","1990");
         bookTest.setId(1L);
         assertTrue(bookDatabase.getBookList().contains(bookTest));
         assertTrue(bookDatabase.delete(bookTest), "If book exist and deleted, should be TRUE");
@@ -60,7 +60,7 @@ class BookDatabaseImplTest {
 
     @Test
     void deleteBookNegative() {
-        Book bookTest = new Book("A1", "B1");
+        Book bookTest = new Book("A1", "B1","1990");
         bookTest.setId(4L);
         int beforeTryingToDeleteResult = bookDatabase.getBookList().size();
         assertFalse(bookDatabase.delete(bookTest), "If book dsn`t exist and wsn`t deleted, should be FALSE");
@@ -70,7 +70,7 @@ class BookDatabaseImplTest {
 
     @Test
     void findByIdPositive() {
-        Book bookTest = new Book("A1", "B1");
+        Book bookTest = new Book("A1", "B1","1990");
         bookTest.setId(1L);
         Optional<Book> expectedResult = Optional.of(bookTest);
         assertEquals(expectedResult, bookDatabase.findById(1L));
@@ -115,9 +115,9 @@ class BookDatabaseImplTest {
 
     @Test
     void deleteByAuthorPositive() {
-        Book bookOneTest = new Book("A1", "B1");
+        Book bookOneTest = new Book("A1", "B1","1990");
         bookOneTest.setId(1L);
-        Book bookTwoTest = new Book("A1", "B1");
+        Book bookTwoTest = new Book("A1", "B1","1990");
         bookTwoTest.setId(2L);
         assertEquals(3, bookDatabase.getBookList().size());
         assertTrue(bookDatabase.getBookList().contains(bookOneTest));
@@ -138,9 +138,9 @@ class BookDatabaseImplTest {
 
     @Test
     void deleteByTitlePositive() {
-        Book bookOneTest = new Book("A1", "B1");
+        Book bookOneTest = new Book("A1", "B1","1990");
         bookOneTest.setId(1L);
-        Book bookTwoTest = new Book("A1", "B1");
+        Book bookTwoTest = new Book("A1", "B1","1990");
         bookTwoTest.setId(2L);
         assertEquals(3, bookDatabase.getBookList().size());
         assertTrue(bookDatabase.getBookList().contains(bookOneTest));
