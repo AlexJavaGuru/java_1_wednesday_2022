@@ -67,4 +67,11 @@ class BookDatabaseImpl implements BookDatabase {
     public void deleteByTitle(String title) {
         bookList.removeIf(book -> book.getTitle().equals(title));
     }
+
+    @Override
+    public List<Book> find(SearchCriteria searchCriteria) {
+        return bookList.stream()
+                .filter(searchCriteria::match)
+                .toList();
+    }
 }
