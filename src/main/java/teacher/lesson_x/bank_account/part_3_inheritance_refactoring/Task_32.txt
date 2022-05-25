@@ -1,0 +1,45 @@
+Вводим новую функциональность: анализ расходов.
+
+У вас должно было получиться следующее:
+
+class FoodExpensesCalculator extends ExpensesCalculator {
+
+    public int calculateExpensesAmount(BankAccount bankAccount) {
+        Transaction[] transactions = bankAccount.getTransactions();
+        List<Transaction> withdrawalTransactions = filterWithdrawalTransactions(transactions);
+        List<Transaction> withdrawalFoodTransactions = filterFoodTransactions(withdrawalTransactions);
+        return sumTransactionAmount(withdrawalFoodTransactions);
+    }
+
+    private List<Transaction> filterFoodTransactions(List<Transaction> transactions) {
+        List<Transaction> withdrawalFoodTransactions = new ArrayList<>();
+        for (Transaction transaction : transactions) {
+            if (transaction.getExpenseCategory() == ExpenseCategory.FOOD) {
+                withdrawalFoodTransactions.add(transaction);
+            }
+        }
+        return withdrawalFoodTransactions;
+    }
+
+}
+
+class EntertainmentExpensesCalculator extends ExpensesCalculator {
+
+    public int calculateExpensesAmount(BankAccount bankAccount) {
+        Transaction[] transactions = bankAccount.getTransactions();
+        List<Transaction> withdrawalTransactions = filterWithdrawalTransactions(transactions);
+        List<Transaction> withdrawalEntertainmentTransactions = filterEntertainmentTransactions(withdrawalTransactions);
+        return sumTransactionAmount(withdrawalEntertainmentTransactions);
+    }
+
+    private List<Transaction> filterEntertainmentTransactions(List<Transaction> transactions) {
+        List<Transaction> withdrawalEntertainmentTransactions = new ArrayList<>();
+        for (Transaction transaction : transactions) {
+            if (transaction.getExpenseCategory() == ExpenseCategory.ENTERTAINMENT) {
+                withdrawalEntertainmentTransactions.add(transaction);
+            }
+        }
+        return withdrawalEntertainmentTransactions;
+    }
+
+}

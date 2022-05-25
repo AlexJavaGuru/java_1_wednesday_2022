@@ -1,0 +1,10 @@
+Вводим новую функциональность: анализ расходов.
+
+Следующая категорию расходов ENTERTAINMENT.
+
+Нужно расчитать сумму расходов потраченную в категории ENTERTAINMENT.
+
+Создайте класс EntertainmentExpensesCalculator и реализуйте его
+по аналогии с классом FoodExpensesCalculator.
+
+Обязательно напишите тесты в классе EntertainmentExpensesCalculatorTest.

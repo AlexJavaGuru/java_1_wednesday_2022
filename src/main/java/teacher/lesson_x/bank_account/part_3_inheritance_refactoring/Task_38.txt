@@ -1,0 +1,69 @@
+Вводим новую функциональность: анализ расходов.
+
+Для каждого из классов потомков значение ExpenseCategory должно быть своё.
+Для решения этой задачи мы можем воспользоваться созданной нами иерархией классов
+следующим образом.
+
+Создадим в классе ExpensesCalculator абстрактный метод:
+
+    protected abstract ExpenseCategory getExpenseCategory();
+
+Этот метод должен быть переопределён в классах потомков, с помощью
+этого метода каждый класс потомок сможет указать для какой категории
+расходов нужно проводить вычисления.
+
+Появление абстрактного метода в классе ExpensesCalculator делает сам
+класс тоже абстрактным. Для нас это хорошо и логично, так как расчитать
+сумму расходов можно только для конкретной категории с помощью одного
+из классов потомков.
+
+abstract class ExpensesCalculator {
+
+    public int calculateExpensesAmount(BankAccount bankAccount) {
+        Transaction[] transactions = bankAccount.getTransactions();
+        List<Transaction> withdrawalTransactions = filterWithdrawalTransactions(transactions);
+        ExpenseCategory expenseCategory = getExpenseCategory();
+        List<Transaction> withdrawalFoodTransactions = filterTransactionsByExpenseCategory(withdrawalTransactions, expenseCategory);
+        return sumTransactionAmount(withdrawalFoodTransactions);
+    }
+
+    protected abstract ExpenseCategory getExpenseCategory();
+
+    // protected - для того, что бы этот метод можно было вызвать из классов потомков
+    protected List<Transaction> filterWithdrawalTransactions(List<Transaction> transactions) {
+        List<Transaction> withdrawalTransactions = new ArrayList<>();
+        for (Transaction transaction : transactions) {
+            if (transaction.isWithdrawal()) {
+                withdrawalTransactions.add(transaction);
+            }
+        }
+        return withdrawalTransactions;
+    }
+
+    // protected - для того, что бы этот метод можно было вызвать из классов потомков
+    protected int sumTransactionAmount(List<Transaction> transactions) {
+        int expensesAmount = 0;
+        for (Transaction transaction : transactions) {
+            expensesAmount = expensesAmount + transaction.getAmount();
+        }
+        return expensesAmount;
+    }
+
+    protected List<Transaction> filterTransactionsByExpenseCategory(List<Transaction> transactions,
+                                                                    ExpenseCategory expenseCategory) {
+        List<Transaction> filteredTransactions = new ArrayList<>();
+        for (Transaction transaction : transactions) {
+            if (transaction.getExpenseCategory() == expenseCategory) {
+                filteredTransactions.add(transaction);
+            }
+        }
+        return filteredTransactions;
+    }
+
+}
+
+Внесите измениния в классы потомки: FoodExpensesCalculator и EntertainmentExpensesCalculator.
+Вам нужно добавить реализацию метода getExpenseCategory() в каждый из классов,
+а так же удалить полностью метод calculateExpensesAmount(BankAccount bankAccount)
+из классов потомков, так как его реализация теперь находится в родительском классе
+и дублировать её в классах потомков нет необходимости.

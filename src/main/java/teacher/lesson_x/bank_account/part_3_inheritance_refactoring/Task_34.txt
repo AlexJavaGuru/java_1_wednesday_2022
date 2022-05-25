@@ -1,0 +1,21 @@
+Вводим новую функциональность: анализ расходов.
+
+Метод, который будет фильтровать список транзакций по указанной категории расходов:
+
+    private List<Transaction> filterTransactionsByExpenseCategory(List<Transaction> transactions,
+                                                                  ExpenseCategory expenseCategory) {
+        List<Transaction> filteredTransactions = new ArrayList<>();
+        for (Transaction transaction : transactions) {
+            if (transaction.getExpenseCategory() == expenseCategory) {
+                filteredTransactions.add(transaction);
+            }
+        }
+        return filteredTransactions;
+    }
+
+Вызвать этот метод можно так:
+- filterTransactionsByExpenseCategory(transactions, ExpenseCategory.FOOD);
+- filterTransactionsByExpenseCategory(transactions, ExpenseCategory.ENTERTAINMENTS);
+- etc.
+
+В какой класс в нашей иерархии наследования поместить этот метод?

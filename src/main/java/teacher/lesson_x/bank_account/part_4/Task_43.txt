@@ -1,0 +1,24 @@
+Для упрощения этого кода:
+
+Transaction transaction1 = createDepositTransaction(10);
+Transaction transaction2 = createDepositTransaction(10, ExpenseCategory.FOOD);
+Transaction[] transactions = new Transaction[2];
+transactions[0] = transaction1;
+transactions[1] = transaction2;
+BankAccount bankAccount = new BankAccount("John", transactions);
+
+можно воспользоваться varargs в конструкторе класса банковского аккаунта.
+
+    public BankAccount(String owner, Transaction ... transactions) {
+        this.owner = owner;
+        this.transactions = transactions;
+    }
+
+И тогда создание банковского аккаунта с двумя транзакциями
+сократится до трёх строчек кода:
+
+Transaction transaction1 = createDepositTransaction(10);
+Transaction transaction2 = createDepositTransaction(10, ExpenseCategory.FOOD);
+BankAccount bankAccount = new BankAccount("John", transaction1, transaction2);
+
+Маленькая но победа! Мы избавились от трёх строк кода для каждого нашего тест кейса.

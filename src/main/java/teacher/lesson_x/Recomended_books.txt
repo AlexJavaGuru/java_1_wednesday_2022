@@ -1,0 +1,13 @@
+The Pragmatic Programmer: Your Journey To Mastery
+https://www.amazon.com/Pragmatic-Programmer-journey-mastery-Anniversary/dp/0135957052
+Authors: David Thomas, Andrew Hunt
+
+
+Clean Code: A Handbook of Agile Software Craftsmanship
+https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882
+Author: Robert C. Martin
+
+
+Refactoring: Improving the Design of Existing Code
+https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599
+Author: Martin Fowler

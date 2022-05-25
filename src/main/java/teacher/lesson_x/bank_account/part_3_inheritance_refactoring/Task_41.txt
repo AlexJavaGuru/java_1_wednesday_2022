@@ -1,0 +1,35 @@
+Вводим новую функциональность: анализ расходов.
+
+У вас должны получиться следующие классы:
+
+class LoansExpensesCalculator extends ExpensesCalculator {
+
+    protected ExpenseCategory getExpenseCategory() {
+        return ExpenseCategory.LOANS;
+    }
+
+}
+
+class OthersExpensesCalculator extends ExpensesCalculator {
+
+    protected ExpenseCategory getExpenseCategory() {
+        return ExpenseCategory.OTHERS;
+    }
+
+}
+
+class CommunalPaymentsExpensesCalculator extends ExpensesCalculator {
+
+    protected ExpenseCategory getExpenseCategory() {
+        return ExpenseCategory.COMMUNAL_PAYMENTS;
+    }
+
+}
+
+class GamblingExpensesCalculator extends ExpensesCalculator {
+
+    protected ExpenseCategory getExpenseCategory() {
+        return ExpenseCategory.GAMBLING;
+    }
+
+}

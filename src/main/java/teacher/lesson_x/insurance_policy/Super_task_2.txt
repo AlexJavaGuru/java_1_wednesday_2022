@@ -1,0 +1,1 @@
+Разобраться в коде InsurancePolicyPremiumCalculator.

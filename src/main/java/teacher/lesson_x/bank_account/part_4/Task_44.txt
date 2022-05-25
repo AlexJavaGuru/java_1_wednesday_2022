@@ -1,0 +1,17 @@
+Вводим новую функциональность: анализ расходов.
+
+Напишите код, который на основе разработанных классов
+расчитывает сумму расходов для всех категорий сразу.
+
+class ExpenseCategoryAmountCalculator {
+
+    public Map<ExpenseCategory, Integer> calculate(BankAccount bankAccount) {
+        // Мап пример:
+        //  ExpenseCategory.FOOD, 400
+        //  ExpenseCategory.OTHER, 500
+        // etc.
+    }
+
+}
+
+Напишите тесты для класса ExpenseCategoryAmountCalculator.

@@ -1,0 +1,12 @@
+На данный момент создать банковский аккаунт с транзакциями можно следующим образом:
+
+Transaction transaction1 = createDepositTransaction(10);
+Transaction transaction2 = createDepositTransaction(10, ExpenseCategory.FOOD);
+Transaction[] transactions = new Transaction[2];
+transactions[0] = transaction1;
+transactions[1] = transaction2;
+BankAccount bankAccount = new BankAccount("John", transactions);
+
+Писать такой большой код в каждом тест кейсе довольно не удобно.
+
+Поэтому придумайте способ как можно упростить этот код.

@@ -1,0 +1,32 @@
+<TrxList>
+    <TrxSet>
+        <Type>INCOMING</Type>
+        <BookDate>2020-09-10</BookDate>
+        <AccAmt>1000.00</AccAmt>
+        <PmtInfo>Darba Alga Proof IT par 2020 auugustu</PmtInfo>
+    </TrxSet>
+    <TrxSet>
+        <Type>OUTGOING</Type>
+        <BookDate>2020-09-10</BookDate>
+        <AccAmt>460.84</AccAmt>
+        <PmtInfo>Procentu samaksa saskaņā ar 10.03.2017. Kredīta līgumu Nr.2017-777-HK - EUR 460.84</PmtInfo>
+    </TrxSet>
+    <TrxSet>
+        <Type>OUTGOING</Type>
+        <BookDate>2020-09-10</BookDate>
+        <AccAmt>7.84</AccAmt>
+        <PmtInfo>Karte: 477777......9777. Īpašnieks: VIKTORS SAVOŅINS. Pirkums - IKEA LATVIA - par 09/09/2020</PmtInfo>
+    </TrxSet>
+    <TrxSet>
+        <Type>OUTGOING</Type>
+        <BookDate>2020-09-10</BookDate>
+        <AccAmt>7.84</AccAmt>
+        <PmtInfo>Karte: 477777......9777. Īpašnieks: VIKTORS SAVOŅINS. Pirkums - IKEALATVIA SWEDISH FOOD M - par 09/09/2020</PmtInfo>
+    </TrxSet>
+    <TrxSet>
+        <Type>OUTGOING</Type>
+        <BookDate>2020-09-10</BookDate>
+        <AccAmt>7.84</AccAmt>
+        <PmtInfo>Karte: 477777......9777. Īpašnieks: VIKTORS SAVOŅINS. Pirkums - MELNAIS SUNS - par 09/09/2020</PmtInfo>
+    </TrxSet>
+</TrxList>

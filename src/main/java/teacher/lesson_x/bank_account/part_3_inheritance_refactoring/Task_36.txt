@@ -1,0 +1,36 @@
+Вводим новую функциональность: анализ расходов.
+
+После изменения классы FoodExpensesCalculator и EntertainmentExpensesCalculator
+должны выглядеть так:
+
+class FoodExpensesCalculator extends ExpensesCalculator {
+
+    public int calculateExpensesAmount(BankAccount bankAccount) {
+        Transaction[] transactions = bankAccount.getTransactions();
+        List<Transaction> withdrawalTransactions = filterWithdrawalTransactions(transactions);
+        List<Transaction> withdrawalFoodTransactions = filterTransactionsByExpenseCategory(withdrawalTransactions, ExpenseCategory.FOOD);
+        return sumTransactionAmount(withdrawalFoodTransactions);
+    }
+
+}
+
+class EntertainmentExpensesCalculator extends ExpensesCalculator {
+
+    public int calculateExpensesAmount(BankAccount bankAccount) {
+        Transaction[] transactions = bankAccount.getTransactions();
+        List<Transaction> withdrawalTransactions = filterWithdrawalTransactions(transactions);
+        List<Transaction> withdrawalEntertainmentTransactions = filterTransactionsByExpenseCategory(withdrawalTransactions, ExpenseCategory.ENTERTAINMENT);
+        return sumTransactionAmount(withdrawalEntertainmentTransactions);
+    }
+
+}
+
+Отлично сработано! Вместо 3 - 4 методов в каждом классе осталься только
+один метод calculateExpensesAmount().
+
+Давайте пойдём дальше! Попробуйте придумать способ ёще больше сократить
+код в классах FoodExpensesCalculator и EntertainmentExpensesCalculator.
+
+Подсказка: подумайте чем в действительности отличаются методы calculateExpensesAmount()
+в этих классах? Чем по сути отличается расчёт суммы расходов для категории
+FOOD от расчёта суммы расходов для категории ENTERTAINMENT?
