@@ -12,23 +12,32 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class MarsMissionTest {
-    Rover rover;
+    Rover rover1, rover2;
     MarsMission mission;
 
-    @BeforeEach
-    void setUp() {
-        mission = new MarsMission(10, 10);
-        rover = new Rover(5, 5, "N", mission);
-    }
     @ParameterizedTest
-    @MethodSource("commandProvider")
-    void testMove(String command, String expectedResult) {
-        rover.move(command);
-        assertEquals(expectedResult, rover.getLocation());
+    @MethodSource("commandProviderFor1Rover")
+    void test1RoverMove(String command, String expectedResult) {
+        mission = new MarsMission(10, 10);
+        rover1 = new Rover(5, 5, "N", mission);
+        rover2 = new Rover(11,11,"N", mission);
+        rover1.move(command, rover2);
+        assertEquals(expectedResult, rover1.getLocation());
     }
 
+    @ParameterizedTest
+    @MethodSource("commandProviderFor2Rovers")
+    void test2RoverNoCollision(String command1, String expected1, String command2, String expected2) {
+        mission = new MarsMission(10, 10);
+        rover1 = new Rover(5, 5, "N", mission);
+        rover2 = new Rover(3,3,"N", mission);
+        rover1.move(command1, rover2);
+        rover2.move(command2, rover1);
+        assertEquals(expected1, rover1.getLocation());
+        assertEquals(expected2, rover2.getLocation());
+    }
 
-    static Stream<Arguments> commandProvider() {
+    static Stream<Arguments> commandProviderFor1Rover() {
         return Stream.of(
                 arguments("M", "5 6 N"),
                 arguments("L", "5 5 W"),
@@ -53,4 +62,11 @@ class MarsMissionTest {
         );
     }
 
+    static Stream<Arguments> commandProviderFor2Rovers() {
+        return Stream.of(
+                arguments("LMMLMMM", "3 4 S", "MMM", "3 3 N"),
+                arguments("", "5 5 N", "MMRMM", "4 5 E"),
+                arguments("RRRR", "5 5 N", "LLLL", "3 3 N")
+        );
+    }
 }

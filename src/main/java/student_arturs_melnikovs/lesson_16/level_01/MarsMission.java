@@ -4,20 +4,18 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class MarsMission {
-    private final int maxX;
-    private final int maxY;
-    private Rover rover1;
-    private Rover rover2;
+    private final int maxX, maxY;
+    private Rover rover1, rover2;
 
     public MarsMission(int maxX, int maxY) {
         this.maxX = maxX;
         this.maxY = maxY;
     }
 
-    public void deployRovers() {
+    public void deployRovers(int rover1X, int rover1Y, int rover2X, int rover2Y) {
         Random random = new Random();
-        rover1 = new Rover(random.nextInt(maxX), random.nextInt(maxY), "N", this);
-        rover2 = new Rover(random.nextInt(maxX), random.nextInt(maxY), "N", this);
+        rover1 = new Rover(rover1X, rover1Y, "N", this);
+        rover2 = new Rover(rover2X, rover2Y, "N", this);
     }
     public void start() {
         while (true) {
@@ -30,8 +28,8 @@ public class MarsMission {
             System.out.println("Enter command for rover 2");
             String command2 = scanner.nextLine();
             scanner.reset();
-            rover1.move(command1);
-            rover2.move(command2);
+            rover1.move(command1, rover2);
+            rover2.move(command2, rover1);
         }
     }
 

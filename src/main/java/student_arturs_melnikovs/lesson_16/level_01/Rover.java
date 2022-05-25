@@ -4,7 +4,7 @@ public class Rover {
     private int posX;
     private int posY;
     private String heading;
-    private MarsMission mission;
+    private final MarsMission mission;
 
     public Rover(int posX, int posY, String heading, MarsMission mission) {
         this.posX = posX;
@@ -13,11 +13,11 @@ public class Rover {
         this.mission = mission;
     }
 
-    public void move(String command) {
+    public void move(String command, Rover otherRover) {
         char[] commands = command.toCharArray();
         for (char step : commands) {
             if (step == 'M') {
-                moveForward();
+                moveForward(otherRover);
             }
             if (step == 'R') {
                 turnRight();
@@ -28,30 +28,44 @@ public class Rover {
         }
     }
 
-    private void moveForward() {
+    private void moveForward(Rover otherRover) {
         switch (heading) {
             case "N" -> {
-                if (posY != mission.getMaxY()) {
+                if (posY != mission.getMaxY() && !isOccupiedN(otherRover)) {
                     posY++;
                 }
             }
             case "E" -> {
-                if (posX != mission.getMaxX()) {
+                if (posX != mission.getMaxX() && !isOccupiedE(otherRover)) {
                     posX++;
                 }
             }
             case "S" -> {
-                if (posY != 0) {
+                if (posY != 0 && !isOccupiedS(otherRover)) {
                     posY--;
                 }
             }
             case "W" -> {
-                if (posX != 0) {
+                if (posX != 0 && !isOccupiedW(otherRover)) {
                     posX--;
                 }
             }
         }
     }
+
+    private boolean isOccupiedN(Rover otherRover) {
+        return this.posY + 1 == otherRover.posY && this.posX == otherRover.posX;
+    }
+    private boolean isOccupiedE(Rover otherRover) {
+        return this.posX + 1 == otherRover.posX && this.posY == otherRover.posY;
+    }
+    private boolean isOccupiedS(Rover otherRover) {
+        return this.posY - 1 == otherRover.posY && this.posX == otherRover.posX;
+    }
+    private boolean isOccupiedW(Rover otherRover) {
+        return this.posX - 1 == otherRover.posX && this.posY == otherRover.posY;
+    }
+
     private void turnRight() {
         switch (heading) {
             case "N" -> heading = "E";
