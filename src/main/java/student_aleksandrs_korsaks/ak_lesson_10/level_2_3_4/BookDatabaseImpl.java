@@ -1,9 +1,7 @@
 package student_aleksandrs_korsaks.ak_lesson_10.level_2_3_4;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
 
 class BookDatabaseImpl implements BookDatabase {
 
@@ -78,6 +76,8 @@ class BookDatabaseImpl implements BookDatabase {
 
     @Override
     public Set<String> findUniqueAuthors() {
-        return null;
+        return bookList.stream()
+                .map(Book::getAuthor)
+                .collect(Collectors.toSet());
     }
 }

@@ -3,9 +3,7 @@ package student_aleksandrs_korsaks.ak_lesson_10.level_2_3_4;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -15,9 +13,9 @@ class BookDatabaseImplTest {
 
     @BeforeEach
     void setUp() {
-        Book bookOne = new Book("A1", "B1","1990");
-        Book bookTwo = new Book("A1", "B1","1990");
-        Book bookThree = new Book("A2", "B2","1990");
+        Book bookOne = new Book("A1", "B1", "1990");
+        Book bookTwo = new Book("A1", "B1", "1990");
+        Book bookThree = new Book("A2", "B2", "1990");
         bookDatabase.save(bookOne);
         bookDatabase.save(bookTwo);
         bookDatabase.save(bookThree);
@@ -25,7 +23,7 @@ class BookDatabaseImplTest {
 
     @Test
     void saveBook() {
-        Book testBook = new Book("A3", "B3","1990");
+        Book testBook = new Book("A3", "B3", "1990");
         Long realResult = bookDatabase.save(testBook);
         Book realResultTwo = bookDatabase.getBookList().get(3);
         assertEquals(4L, realResult, "Book Id should be 4");
@@ -34,7 +32,7 @@ class BookDatabaseImplTest {
 
     @Test
     void deleteBookByIdPositive() {
-        Book bookTest = new Book("A1", "B1","1990");
+        Book bookTest = new Book("A1", "B1", "1990");
         bookTest.setId(1L);
         assertTrue(bookDatabase.getBookList().contains(bookTest));
         assertTrue(bookDatabase.delete(1L), "If book with that ID exist and deleted, should be TRUE");
@@ -51,7 +49,7 @@ class BookDatabaseImplTest {
 
     @Test
     void deleteBookPositive() {
-        Book bookTest = new Book("A1", "B1","1990");
+        Book bookTest = new Book("A1", "B1", "1990");
         bookTest.setId(1L);
         assertTrue(bookDatabase.getBookList().contains(bookTest));
         assertTrue(bookDatabase.delete(bookTest), "If book exist and deleted, should be TRUE");
@@ -60,7 +58,7 @@ class BookDatabaseImplTest {
 
     @Test
     void deleteBookNegative() {
-        Book bookTest = new Book("A1", "B1","1990");
+        Book bookTest = new Book("A1", "B1", "1990");
         bookTest.setId(4L);
         int beforeTryingToDeleteResult = bookDatabase.getBookList().size();
         assertFalse(bookDatabase.delete(bookTest), "If book dsn`t exist and wsn`t deleted, should be FALSE");
@@ -70,7 +68,7 @@ class BookDatabaseImplTest {
 
     @Test
     void findByIdPositive() {
-        Book bookTest = new Book("A1", "B1","1990");
+        Book bookTest = new Book("A1", "B1", "1990");
         bookTest.setId(1L);
         Optional<Book> expectedResult = Optional.of(bookTest);
         assertEquals(expectedResult, bookDatabase.findById(1L));
@@ -115,9 +113,9 @@ class BookDatabaseImplTest {
 
     @Test
     void deleteByAuthorPositive() {
-        Book bookOneTest = new Book("A1", "B1","1990");
+        Book bookOneTest = new Book("A1", "B1", "1990");
         bookOneTest.setId(1L);
-        Book bookTwoTest = new Book("A1", "B1","1990");
+        Book bookTwoTest = new Book("A1", "B1", "1990");
         bookTwoTest.setId(2L);
         assertEquals(3, bookDatabase.getBookList().size());
         assertTrue(bookDatabase.getBookList().contains(bookOneTest));
@@ -138,9 +136,9 @@ class BookDatabaseImplTest {
 
     @Test
     void deleteByTitlePositive() {
-        Book bookOneTest = new Book("A1", "B1","1990");
+        Book bookOneTest = new Book("A1", "B1", "1990");
         bookOneTest.setId(1L);
-        Book bookTwoTest = new Book("A1", "B1","1990");
+        Book bookTwoTest = new Book("A1", "B1", "1990");
         bookTwoTest.setId(2L);
         assertEquals(3, bookDatabase.getBookList().size());
         assertTrue(bookDatabase.getBookList().contains(bookOneTest));
@@ -166,11 +164,11 @@ class BookDatabaseImplTest {
         SearchCriteria andSearchCriteria = new AndSearchCriteria(authorSearchCriteria, titleSearchCriteria);
         SearchCriteria orSearchCriteria = new OrSearchCriteria(authorSearchCriteria, titleSearchCriteria);
         List<Book> test = new ArrayList<>();
-        Book bookOne = new Book("A1", "B1","1990");
+        Book bookOne = new Book("A1", "B1", "1990");
         bookOne.setId(1L);
-        Book bookTwo = new Book("A1", "B1","1990");
+        Book bookTwo = new Book("A1", "B1", "1990");
         bookTwo.setId(2L);
-        Book bookThree = new Book("A2", "B2","1990");
+        Book bookThree = new Book("A2", "B2", "1990");
         bookThree.setId(3L);
         test.add(bookOne);
         test.add(bookTwo);
@@ -184,5 +182,13 @@ class BookDatabaseImplTest {
         test.add(bookThree);
         assertEquals(bookDatabase.find(titleSearchCriteria), test);
 
+    }
+
+    @Test
+    void findUniqueAuthors() {
+        Set<String> expectedResult = new HashSet<>();
+        expectedResult.add("A1");
+        expectedResult.add("A2");
+        assertEquals(expectedResult, bookDatabase.findUniqueAuthors());
     }
 }
