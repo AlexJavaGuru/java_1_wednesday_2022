@@ -1,0 +1,53 @@
+Вводим новую функциональность: анализ расходов.
+
+В действительности в этих классах методы calculateExpensesAmount()
+отличаются только тем, что в одном указано ExpenseCategory.FOOD,
+а в другом ExpenseCategory.ENTERTAINMENT.
+
+Давайте попробуем вынести полностью метод calculateExpensesAmount()
+в родительский класс ExpensesCalculator.
+
+class ExpensesCalculator {
+
+    public int calculateExpensesAmount(BankAccount bankAccount) {
+        Transaction[] transactions = bankAccount.getTransactions();
+        List<Transaction> withdrawalTransactions = filterWithdrawalTransactions(transactions);
+        List<Transaction> withdrawalFoodTransactions = filterTransactionsByExpenseCategory(withdrawalTransactions, ???);
+        return sumTransactionAmount(withdrawalFoodTransactions);
+    }
+
+    // protected - для того, что бы этот метод можно было вызвать из классов потомков
+    protected List<Transaction> filterWithdrawalTransactions(List<Transaction> transactions) {
+        List<Transaction> withdrawalTransactions = new ArrayList<>();
+        for (Transaction transaction : transactions) {
+            if (transaction.isWithdrawal()) {
+                withdrawalTransactions.add(transaction);
+            }
+        }
+        return withdrawalTransactions;
+    }
+
+    // protected - для того, что бы этот метод можно было вызвать из классов потомков
+    protected int sumTransactionAmount(List<Transaction> transactions) {
+        int expensesAmount = 0;
+        for (Transaction transaction : transactions) {
+            expensesAmount = expensesAmount + transaction.getAmount();
+        }
+        return expensesAmount;
+    }
+
+    protected List<Transaction> filterTransactionsByExpenseCategory(List<Transaction> transactions,
+                                                                    ExpenseCategory expenseCategory) {
+        List<Transaction> filteredTransactions = new ArrayList<>();
+        for (Transaction transaction : transactions) {
+            if (transaction.getExpenseCategory() == expenseCategory) {
+                filteredTransactions.add(transaction);
+            }
+        }
+        return filteredTransactions;
+    }
+
+}
+
+При выносе метода calculateExpensesAmount() в родительский класс ExpensesCalculator
+встаёт вопрос о том, где брать значение ExpenseCategory (???).

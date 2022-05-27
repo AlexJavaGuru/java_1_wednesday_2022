@@ -1,0 +1,48 @@
+Вводим новую функциональность: анализ расходов.
+
+В какой класс в нашей иерархии наследования
+поместить метод filterTransactionsByExpenseCategory()?
+
+Очевидно этот класс имеет смысл поместить в родительский класс
+нашей иерархии наследования ExpensesCalculator:
+
+class ExpensesCalculator {
+
+    // protected - для того, что бы этот метод можно было вызвать из классов потомков
+    protected List<Transaction> filterWithdrawalTransactions(List<Transaction> transactions) {
+        List<Transaction> withdrawalTransactions = new ArrayList<>();
+        for (Transaction transaction : transactions) {
+            if (transaction.isWithdrawal()) {
+                withdrawalTransactions.add(transaction);
+            }
+        }
+        return withdrawalTransactions;
+    }
+
+    // protected - для того, что бы этот метод можно было вызвать из классов потомков
+    protected int sumTransactionAmount(List<Transaction> transactions) {
+        int expensesAmount = 0;
+        for (Transaction transaction : transactions) {
+            expensesAmount = expensesAmount + transaction.getAmount();
+        }
+        return expensesAmount;
+    }
+
+    protected List<Transaction> filterTransactionsByExpenseCategory(List<Transaction> transactions,
+                                                                    ExpenseCategory expenseCategory) {
+        List<Transaction> filteredTransactions = new ArrayList<>();
+        for (Transaction transaction : transactions) {
+            if (transaction.getExpenseCategory() == expenseCategory) {
+                filteredTransactions.add(transaction);
+            }
+        }
+        return filteredTransactions;
+    }
+
+}
+
+Измените классы FoodExpensesCalculator и EntertainmentExpensesCalculator
+так, что бы они использовали метод filterTransactionsByExpenseCategory()
+из родительского класса.
+
+Убедитесь, что после сделанных вами изменений тесты по прежнему проходят.

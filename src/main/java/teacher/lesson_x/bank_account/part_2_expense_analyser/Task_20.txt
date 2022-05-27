@@ -1,0 +1,29 @@
+Вводим новую функциональность: анализ расходов.
+
+class TransactionDemo {
+
+    public static void main(String[] args) {
+        Transaction withdrawal = new Transaction(10, TransactionType.WITHDRAWAL, ExpenseCategory.FOOD);
+        Transaction depositWithoutExpenseCategory = new Transaction(10, TransactionType.DEPOSIT, null);
+        Transaction depositWithExpenseCategory = new Transaction(10, TransactionType.DEPOSIT, ExpenseCategory.FOOD);
+    }
+
+}
+
+На лицо очевидная проблема - наш код позволяет создавать DEPOSIT транзакции
+с указанием значения свойства expenseCategory.
+
+Если код оставить как есть, то в будущем кто то обязательно воспользуется
+"дыркой" (недочётом) в нашем решении и создаст DEPOSIT транзакции с указанием
+значения свойства expenseCategory. Это может повлиять на наш анализ расходов,
+который начнёт учитывать в расходах так же DEPOSIT транзакции у которых будет
+указано свойство expenseCategory.
+
+Если есть возможность - ей обязательно кто то воспользуется в не зависимости
+от того будет ли это корректно или нет!
+
+Поэтому нам нужно найти способ как разрешить создавать WITHDRAWAL транзакции
+с указанием обязательного свойства expenseCategory, а для DEPOSIT транзакций
+при создании не указывать значение свойства expenseCategory.
+
+Как это можно сделать? Что нужно изменить в коде? Попробуйте придумать решение!

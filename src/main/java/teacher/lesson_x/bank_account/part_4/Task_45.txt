@@ -1,0 +1,41 @@
+Вводим новую функциональность: анализ расходов.
+
+Решение задачи по расчёту сумму расходов для всех категорий сразу в лоб может выглядеть так:
+
+class ExpenseCategoryAmountCalculator {
+
+    public Map<ExpenseCategory, Integer> calculate(BankAccount bankAccount) {
+        Map<ExpenseCategory, Integer> expensesByCategory = new HashMap<>();
+
+        FoodExpensesCalculator foodExpensesCalculator = new FoodExpensesCalculator();
+        int foodExpenseAmount = foodExpensesCalculator.calculate(bankAccount);
+        expensesByCategory.put(ExpenseCategory.FOOD, foodExpenseAmount);
+
+        EntertainmentExpensesCalculator entertainmentExpensesCalculator = new EntertainmentExpensesCalculator();
+        int entertainmentExpenseAmount = entertainmentExpensesCalculator.calculate(bankAccount);
+        expensesByCategory.put(ExpenseCategory.ENTERTAINMENT, entertainmentExpenseAmount);
+
+        LoansExpensesCalculator loansExpensesCalculator = new LoansExpensesCalculator();
+        int loansExpenseAmount = loansExpensesCalculator.calculate(bankAccount);
+        expensesByCategory.put(ExpenseCategory.LOANS, loansExpenseAmount);
+
+        OthersExpensesCalculator othersExpensesCalculator = new OthersExpensesCalculator();
+        int othersExpenseAmount = othersExpensesCalculator.calculate(bankAccount);
+        expensesByCategory.put(ExpenseCategory.OTHERS, othersExpenseAmount);
+
+        CommunalPaymentsExpensesCalculator communalPaymentsExpensesCalculator = new CommunalPaymentsExpensesCalculator();
+        int communalPaymentsExpenseAmount = communalPaymentsExpensesCalculator.calculate(bankAccount);
+        expensesByCategory.put(ExpenseCategory.COMMUNAL_PAYMENTS, communalPaymentsExpenseAmount);
+
+        GamblingExpensesCalculator gamblingExpensesCalculator = new GamblingExpensesCalculator();
+        int gamblingExpenseAmount = gamblingExpensesCalculator.calculate(bankAccount);
+        expensesByCategory.put(ExpenseCategory.GAMBLING, gamblingExpenseAmount);
+
+        return expensesByCategory;
+    }
+
+}
+
+Для каждой из категорий расходов повторяются одни и те же три строки кода.
+
+Попробуйте придумать более элегантное решение данной задачи!

@@ -1,0 +1,34 @@
+Вводим новую функциональность: анализ расходов.
+
+У классов EntertainmentExpensesCalculator и FoodExpensesCalculator очень много общего.
+
+Например полностью одинаковые методы:
+- filterWithdrawalTransactions()
+- sumTransactionAmount().
+
+    private List<Transaction> filterWithdrawalTransactions(List<Transaction> transactions) {
+        List<Transaction> withdrawalTransactions = new ArrayList<>();
+        for (Transaction transaction : transactions) {
+            if (transaction.isWithdrawal()) {
+                withdrawalTransactions.add(transaction);
+            }
+        }
+        return withdrawalTransactions;
+    }
+
+
+    private int sumTransactionAmount(List<Transaction> transactions) {
+        int entertainmentExpensesAmount = 0;
+        for (Transaction transaction : transactions) {
+            entertainmentExpensesAmount = entertainmentExpensesAmount + transaction.getAmount();
+        }
+        return entertainmentExpensesAmount;
+    }
+
+Очевидно, что дублировать эти методы из класса в класс не имеет смысла.
+
+Избавиться от дубликации кода в нашем случае можно двумя способома:
+- при помощи наследования;
+- при помощи композиции.
+
+Давайте рассмотрим оба варианта в отдельности.

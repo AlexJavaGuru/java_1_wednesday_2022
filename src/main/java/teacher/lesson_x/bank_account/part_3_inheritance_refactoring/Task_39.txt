@@ -1,0 +1,25 @@
+Вводим новую функциональность: анализ расходов.
+
+После внесения измениний в классы потомки: FoodExpensesCalculator и EntertainmentExpensesCalculator
+они должны выглядеть следующим образом:
+
+class FoodExpensesCalculator extends ExpensesCalculator {
+
+    protected ExpenseCategory getExpenseCategory() {
+        return ExpenseCategory.FOOD;
+    }
+
+}
+
+class EntertainmentExpensesCalculator extends ExpensesCalculator {
+
+    protected ExpenseCategory getExpenseCategory() {
+        return ExpenseCategory.ENTERTAINMENT;
+    }
+
+}
+
+Убедитесь, что после сделанных вами изменений тесты по прежнему проходят.
+
+Отлично сработано! Наш рефакторинг при помощи наследования помог
+избавиться от дубликации кода.

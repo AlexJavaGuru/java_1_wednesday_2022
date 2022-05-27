@@ -1,0 +1,45 @@
+Вводим новую функциональность: анализ расходов.
+
+При реализации класса EntertainmentExpensesCalculator у вас
+должен был получиться следующий код:
+
+class EntertainmentExpensesCalculator {
+
+    public int calculateExpensesAmount(BankAccount bankAccount) {
+        Transaction[] transactions = bankAccount.getTransactions();
+        List<Transaction> withdrawalTransactions = filterWithdrawalTransactions(transactions);
+        List<Transaction> withdrawalEntertainmentTransactions = filterEntertainmentTransactions(withdrawalTransactions);
+        return sumTransactionAmount(withdrawalEntertainmentTransactions);
+    }
+
+    private List<Transaction> filterWithdrawalTransactions(List<Transaction> transactions) {
+        List<Transaction> withdrawalTransactions = new ArrayList<>();
+        for (Transaction transaction : transactions) {
+            if (transaction.isWithdrawal()) {
+                withdrawalTransactions.add(transaction);
+            }
+        }
+        return withdrawalTransactions;
+    }
+
+    private List<Transaction> filterEntertainmentTransactions(List<Transaction> transactions) {
+        List<Transaction> withdrawalEntertainmentTransactions = new ArrayList<>();
+        for (Transaction transaction : transactions) {
+            if (transaction.getExpenseCategory() == ExpenseCategory.ENTERTAINMENT) {
+                withdrawalEntertainmentTransactions.add(transaction);
+            }
+        }
+        return withdrawalEntertainmentTransactions;
+    }
+
+    private int sumTransactionAmount(List<Transaction> transactions) {
+        int entertainmentExpensesAmount = 0;
+        for (Transaction transaction : transactions) {
+            entertainmentExpensesAmount = entertainmentExpensesAmount + transaction.getAmount();
+        }
+        return entertainmentExpensesAmount;
+    }
+
+}
+
+Запустите тесты и убедитесь, что код работает правильно.

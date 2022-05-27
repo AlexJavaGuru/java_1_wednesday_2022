@@ -1,0 +1,56 @@
+Вводим новую функциональность: анализ расходов.
+
+У классов EntertainmentExpensesCalculator и FoodExpensesCalculator очень много общего.
+
+Например полностью одинаковые методы:
+- filterWithdrawalTransactions()
+- sumTransactionAmount().
+
+Для того, что бы избавиться от дубликации кода с использованием наследования
+нужно создать родительский класс и вынести в него всю функциональность
+которая дублируется в классах. А потом просто отнаследовать свои классы
+от только что созданного родительского класса.
+
+Такой приём (с использованием наследования) логичен и имеет смысл применять,
+когда классы потомки укладываются в какую то общую иерархию. Например в нашем
+случае все эти классы (EntertainmentExpensesCalculator, FoodExpensesCalculator и т.д.)
+описывают алгоритм расчёта суммы расходов для каждой из категорий.
+В таком случае имеет смысл создать иерархию алгоритмов расчета суммы расходов.
+Но если эти классы делали бы совершенно разные вещи то смысл в иерархии наледования
+небыло бы никакого. Иерархия наследования описывает похожие вещи, а не разные.
+
+Для созжания иерархии наследования алгоритмов расчёта суммы расходов для
+каждой из категорий создадим родительский класс ExpensesCalculator
+и вынесем в него общие методы:
+
+class ExpensesCalculator {
+
+    // protected - для того, что бы этот метод можно было вызвать из классов потомков
+    protected List<Transaction> filterWithdrawalTransactions(List<Transaction> transactions) {
+        List<Transaction> withdrawalTransactions = new ArrayList<>();
+        for (Transaction transaction : transactions) {
+            if (transaction.isWithdrawal()) {
+                withdrawalTransactions.add(transaction);
+            }
+        }
+        return withdrawalTransactions;
+    }
+
+    // protected - для того, что бы этот метод можно было вызвать из классов потомков
+    protected int sumTransactionAmount(List<Transaction> transactions) {
+        int expensesAmount = 0;
+        for (Transaction transaction : transactions) {
+            expensesAmount = expensesAmount + transaction.getAmount();
+        }
+        return expensesAmount;
+    }
+
+}
+
+Отнаследуйте классы EntertainmentExpensesCalculator и FoodExpensesCalculator
+от класса ExpensesCalculator, удалите из потомков методы
+- filterWithdrawalTransactions()
+- sumTransactionAmount()
+и вызывайте эти методы из родительского класса.
+
+Убедитесь, что после сделанных вами изменений тесты по прежнему проходят.

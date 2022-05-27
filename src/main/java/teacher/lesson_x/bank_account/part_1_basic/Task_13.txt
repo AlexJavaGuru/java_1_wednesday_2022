@@ -1,0 +1,27 @@
+Решаем задачу: можно ли разрешить выполнить новую транзакцию?
+
+Вам поручили реализовать алгоритм, который будет принимать решение
+можно ли одобрить новую транзакцию или нет. На данный момент правила
+просты - транзакцию можно одобрить только если на балансе у пользователя
+есть достаточно средств. В минус уходить нельзя :).
+
+Для выполнения этого расчёта создайте новый классе BankAccountTransactionApprover.
+
+class BankAccountTransactionApprover {
+
+    private BankAccountCurrentBalanceCalculator currentBalanceCalculator;
+
+    public BankAccountTransactionApprover(BankAccountCurrentBalanceCalculator currentBalanceCalculator) {
+        this.currentBalanceCalculator = currentBalanceCalculator;
+    }
+
+    public boolean approve(BankAccount bankAccount, Transaction newTransaction) {
+        int currentBalance = currentBalanceCalculator.calculate(bankAccount);
+        return newTransaction.isDeposit()
+                || (newTransaction.isWithdrawal() && currentBalance >= newTransaction.getAmount());
+    }
+
+}
+
+Создайте класс BankAccountTransactionApproverTest и протестируйте метод approve().
+Создайте отдельные тесты для каждого возможного сценария.

@@ -1,0 +1,41 @@
+Вводим новую функциональность: анализ расходов.
+
+Реализация идеи по упрощению кода:
+- положить классы для расчёта расходов для каждой категории в один список,
+- потом пройтись по нему узнать у класса категорию расходов
+  для которой он считает сумму затрат
+- расчитать саму сумму затрат и положить подученные данные в мап.
+
+class ExpenseCategoryAmountCalculator {
+
+    private List<ExpensesCalculator> expensesCalculators;
+
+    public ExpenseCategoryAmountCalculator() {
+        this.expensesCalculators = new ArrayList<>();
+        this.expensesCalculators.add(new FoodExpensesCalculator());
+        this.expensesCalculators.add(new EntertainmentExpensesCalculator());
+        this.expensesCalculators.add(new LoansExpensesCalculator());
+        this.expensesCalculators.add(new CommunalPaymentsExpensesCalculator());
+        this.expensesCalculators.add(new GamblingExpensesCalculator());
+        this.expensesCalculators.add(new OthersExpensesCalculator());
+    }
+
+    public Map<ExpenseCategory, Integer> calculate(BankAccount bankAccount) {
+        Map<ExpenseCategory, Integer> expensesByCategory = new HashMap<>();
+
+        for (ExpensesCalculator calculator : expensesCalculators) {
+            ExpenseCategory expenseCategory = calculator.getExpenseCategory();
+            int expenseAmount = calculator.calculateExpensesAmount(bankAccount);
+            expensesByCategory.put(expenseCategory, foodExpenseAmount);
+        }
+
+        return expensesByCategory;
+    }
+
+}
+
+Для того, что бы этот код сработал нужно поменять идентификатор доступа
+для метода getExpenseCategory() с protected на public. Сделайте это!
+
+Убедитесь, что после изменений в коде все автоматические тесты проходят!
+Если это так, то вы выполнили рефакторинг правильно и ничего в коде не поломали.

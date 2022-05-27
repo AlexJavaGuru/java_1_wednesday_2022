@@ -1,0 +1,6 @@
+Skyline problem.
+
+Try to solve problem described here:
+https://leetcode.com/problems/the-skyline-problem/
+https://briangordon.github.io/2014/08/the-skyline-problem.html
+https://www.geeksforgeeks.org/the-skyline-problem-using-divide-and-conquer-algorithm/

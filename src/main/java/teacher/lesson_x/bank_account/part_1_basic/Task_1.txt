@@ -1,0 +1,11 @@
+Создайте enum TransactionType, который будет представлять из себя
+тип транзакции и будет хранить два значения:
+- занесение денег на счёт (DEPOSIT);
+- снятие денег со счёта (WITHDRAWAL).
+
+
+public enum TransactionType {
+
+    DEPOSIT, WITHDRAWAL
+
+}

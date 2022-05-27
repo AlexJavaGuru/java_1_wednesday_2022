@@ -1,0 +1,48 @@
+Вводим новую функциональность: анализ расходов.
+
+Разбиение кода на методы - это отличный способ сделать код более читабельным
+и понятным для другого человека. Хорошее разбиение на методы вносит в код
+определённую структуру.
+
+После разбиения кода на методы у вас должно было получиться примерно такой код:
+
+class FoodExpensesCalculator {
+
+    public int calculateExpensesAmount(BankAccount bankAccount) {
+        Transaction[] transactions = bankAccount.getTransactions();
+        List<Transaction> withdrawalTransactions = filterWithdrawalTransactions(transactions);
+        List<Transaction> withdrawalFoodTransactions = filterFoodTransactions(withdrawalTransactions);
+        return sumTransactionAmount(withdrawalFoodTransactions);
+    }
+
+    private List<Transaction> filterWithdrawalTransactions(List<Transaction> transactions) {
+        List<Transaction> withdrawalTransactions = new ArrayList<>();
+        for (Transaction transaction : transactions) {
+            if (transaction.isWithdrawal()) {
+                withdrawalTransactions.add(transaction);
+            }
+        }
+        return withdrawalTransactions;
+    }
+
+    private List<Transaction> filterFoodTransactions(List<Transaction> transactions) {
+        List<Transaction> withdrawalFoodTransactions = new ArrayList<>();
+        for (Transaction transaction : transactions) {
+            if (transaction.getExpenseCategory() == ExpenseCategory.FOOD) {
+                withdrawalFoodTransactions.add(transaction);
+            }
+        }
+        return withdrawalFoodTransactions;
+    }
+
+    private int sumTransactionAmount(List<Transaction> transactions) {
+        int foodExpensesAmount = 0;
+        for (Transaction transaction : transactions) {
+            foodExpensesAmount = foodExpensesAmount + transaction.getAmount();
+        }
+        return foodExpensesAmount;
+    }
+
+}
+
+Запустите тесты и убедитесь, что наш рефакторинг не внёс ошибок в код.
