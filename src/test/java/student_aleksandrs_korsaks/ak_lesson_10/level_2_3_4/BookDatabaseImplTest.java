@@ -1,4 +1,4 @@
-package student_aleksandrs_korsaks.ak_lesson_10.level_2_3;
+package student_aleksandrs_korsaks.ak_lesson_10.level_2_3_4;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -157,5 +157,32 @@ class BookDatabaseImplTest {
         bookDatabase.deleteByTitle("B3");
         int afterTryingToDeleteResult = bookDatabase.getBookList().size();
         assertEquals(beforeTryingToDeleteResult, afterTryingToDeleteResult);
+    }
+
+    @Test
+    void findPositive() {
+        SearchCriteria authorSearchCriteria = new AuthorSearchCriteria("A1");
+        SearchCriteria titleSearchCriteria = new TitleSearchCriteria("B2");
+        SearchCriteria andSearchCriteria = new AndSearchCriteria(authorSearchCriteria, titleSearchCriteria);
+        SearchCriteria orSearchCriteria = new OrSearchCriteria(authorSearchCriteria, titleSearchCriteria);
+        List<Book> test = new ArrayList<>();
+        Book bookOne = new Book("A1", "B1","1990");
+        bookOne.setId(1L);
+        Book bookTwo = new Book("A1", "B1","1990");
+        bookTwo.setId(2L);
+        Book bookThree = new Book("A2", "B2","1990");
+        bookThree.setId(3L);
+        test.add(bookOne);
+        test.add(bookTwo);
+        test.add(bookThree);
+        assertEquals(bookDatabase.find(orSearchCriteria), test);
+        test.remove(bookThree);
+        assertEquals(bookDatabase.find(authorSearchCriteria), test);
+        test.remove(bookOne);
+        test.remove(bookTwo);
+        assertEquals(bookDatabase.find(andSearchCriteria), test);
+        test.add(bookThree);
+        assertEquals(bookDatabase.find(titleSearchCriteria), test);
+
     }
 }

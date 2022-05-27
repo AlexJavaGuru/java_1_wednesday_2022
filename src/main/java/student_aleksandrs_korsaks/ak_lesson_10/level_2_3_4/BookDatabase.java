@@ -1,7 +1,8 @@
-package student_aleksandrs_korsaks.ak_lesson_10.level_2_3;
+package student_aleksandrs_korsaks.ak_lesson_10.level_2_3_4;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 interface BookDatabase {
 
@@ -22,4 +23,8 @@ interface BookDatabase {
     void deleteByAuthor(String author);
 
     void deleteByTitle(String title);
+
+    List<Book> find(SearchCriteria searchCriteria);
+
+    Set<String> findUniqueAuthors();
 }

@@ -1,8 +1,9 @@
-package student_aleksandrs_korsaks.ak_lesson_10.level_2_3;
+package student_aleksandrs_korsaks.ak_lesson_10.level_2_3_4;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 class BookDatabaseImpl implements BookDatabase {
 
@@ -66,5 +67,17 @@ class BookDatabaseImpl implements BookDatabase {
     @Override
     public void deleteByTitle(String title) {
         bookList.removeIf(book -> book.getTitle().equals(title));
+    }
+
+    @Override
+    public List<Book> find(SearchCriteria searchCriteria) {
+        return bookList.stream()
+                .filter(searchCriteria::match)
+                .toList();
+    }
+
+    @Override
+    public Set<String> findUniqueAuthors() {
+        return null;
     }
 }
