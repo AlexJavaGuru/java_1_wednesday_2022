@@ -191,4 +191,12 @@ class BookDatabaseImplTest {
         expectedResult.add("A2");
         assertEquals(expectedResult, bookDatabase.findUniqueAuthors());
     }
+
+    @Test
+    void findUniqueTitles() {
+        Set<String> expectedResult = new HashSet<>();
+        expectedResult.add("B1");
+        expectedResult.add("B2");
+        assertEquals(expectedResult, bookDatabase.findUniqueTitles());
+    }
 }

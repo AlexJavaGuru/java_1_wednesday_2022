@@ -80,4 +80,11 @@ class BookDatabaseImpl implements BookDatabase {
                 .map(Book::getAuthor)
                 .collect(Collectors.toSet());
     }
+
+    @Override
+    public Set<String> findUniqueTitles() {
+        return bookList.stream()
+                .map(Book::getTitle)
+                .collect(Collectors.toSet());
+    }
 }
