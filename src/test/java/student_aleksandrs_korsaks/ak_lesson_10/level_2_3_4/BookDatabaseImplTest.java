@@ -34,9 +34,11 @@ class BookDatabaseImplTest {
     void deleteBookByIdPositive() {
         Book bookTest = new Book("A1", "B1", "1990");
         bookTest.setId(1L);
-        assertTrue(bookDatabase.getBookList().contains(bookTest));
+        assertEquals(1L, (long) bookDatabase.getBookList().get(0).getId());
+        assertEquals(3,bookDatabase.getBookList().size());
         assertTrue(bookDatabase.delete(1L), "If book with that ID exist and deleted, should be TRUE");
-        assertFalse(bookDatabase.getBookList().contains(bookTest));
+        assertNotEquals(1L, (long) bookDatabase.getBookList().get(0).getId());
+        assertEquals(2,bookDatabase.getBookList().size());
     }
 
     @Test

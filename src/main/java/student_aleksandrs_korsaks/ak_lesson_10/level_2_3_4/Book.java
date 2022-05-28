@@ -48,11 +48,11 @@ class Book {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Book book)) return false;
-        return getId().equals(book.getId()) && getTitle().equals(book.getTitle()) && getAuthor().equals(book.getAuthor()) && getYearOfIssue().equals(book.getYearOfIssue());
+        return getTitle().equals(book.getTitle()) && getAuthor().equals(book.getAuthor()) && getYearOfIssue().equals(book.getYearOfIssue());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getTitle(), getAuthor(), getYearOfIssue());
+        return Objects.hash(getTitle(), getAuthor(), getYearOfIssue());
     }
 }

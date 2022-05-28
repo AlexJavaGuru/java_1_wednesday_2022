@@ -87,4 +87,9 @@ class BookDatabaseImpl implements BookDatabase {
                 .map(Book::getTitle)
                 .collect(Collectors.toSet());
     }
+
+    @Override
+    public Set<Book> findUniqueBooks() {
+        return new HashSet<>(bookList);
+    }
 }
