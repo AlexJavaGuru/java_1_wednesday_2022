@@ -28,7 +28,13 @@ class BookDatabaseImpl implements BookDatabase {
 
     @Override
     public boolean delete(Book book) {
-        return bookList.removeIf(bookItem -> bookItem.equals(book));
+        for (Book bookItem : bookList) {
+            if (book.equals(bookItem)) {
+                bookList.remove(bookItem);
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override

@@ -14,58 +14,60 @@ class BookDatabaseImplTest {
     @BeforeEach
     void setUp() {
         Book bookOne = new Book("A1", "B1", "1990");
+        bookDatabase.save(bookOne); // bookOne ID are set to 1L and added to collection
+
         Book bookTwo = new Book("A1", "B1", "1990");
+        bookDatabase.save(bookTwo);// bookTwo ID are set to 2L and added to collection
+
+//  bookOne is equal bookTwo, despite bookID`s are different
+//  because bookId not included in equal() and hash() and all rest fields are same
+
         Book bookThree = new Book("A2", "B2", "1990");
-        bookDatabase.save(bookOne);
-        bookDatabase.save(bookTwo);
-        bookDatabase.save(bookThree);
+        bookDatabase.save(bookThree);// bookThree ID are set to 3L and added to collection
     }
 
     @Test
     void saveBook() {
         Book testBook = new Book("A3", "B3", "1990");
-        Long realResult = bookDatabase.save(testBook);
-        Book realResultTwo = bookDatabase.getBookList().get(3);
-        assertEquals(4L, realResult, "Book Id should be 4");
-        assertEquals(testBook, realResultTwo);
+        Long realResultForBookId = bookDatabase.save(testBook);
+        Book realResultForBook = bookDatabase.getBookList().get(3);
+        assertEquals(4L, realResultForBookId, "Book Id should be 4");
+        assertEquals(testBook, realResultForBook);
     }
 
     @Test
     void deleteBookByIdPositive() {
-        Book bookTest = new Book("A1", "B1", "1990");
-        bookTest.setId(1L);
-        assertEquals(1L, (long) bookDatabase.getBookList().get(0).getId());
-        assertEquals(3,bookDatabase.getBookList().size());
-        assertTrue(bookDatabase.delete(1L), "If book with that ID exist and deleted, should be TRUE");
-        assertNotEquals(1L, (long) bookDatabase.getBookList().get(0).getId());
-        assertEquals(2,bookDatabase.getBookList().size());
+        assertTrue(bookDatabase.delete(1L), "If book with that ID exist and have been deleted, should return TRUE");
+        boolean realResult = bookDatabase.getBookList().stream()
+                .anyMatch(book -> book.getId() == 1L);
+        assertFalse(realResult);
+        assertEquals(2, bookDatabase.getBookList().size());
     }
 
     @Test
     void deleteBookByIdNegative() {
-        int beforeTryingToDeleteResult = bookDatabase.getBookList().size();
-        assertFalse(bookDatabase.delete(4L), "If book with that ID dsn`t exist and wsn`t deleted, should be FALSE");
-        int afterTryingToDeleteResult = bookDatabase.getBookList().size();
-        assertEquals(beforeTryingToDeleteResult, afterTryingToDeleteResult);
+        assertFalse(bookDatabase.delete(4L), "If book with that ID dsn`t exist and haven’t been deleted, should return FALSE");
     }
 
     @Test
     void deleteBookPositive() {
         Book bookTest = new Book("A1", "B1", "1990");
-        bookTest.setId(1L);
-        assertTrue(bookDatabase.getBookList().contains(bookTest));
-        assertTrue(bookDatabase.delete(bookTest), "If book exist and deleted, should be TRUE");
-        assertFalse(bookDatabase.getBookList().contains(bookTest));
+
+        assertTrue(bookDatabase.delete(bookTest), "If book exist and have been deleted, should return TRUE");
+
+        int realResultAfterDeleting = bookDatabase.getBookList().stream()
+                .filter(book -> book.equals(bookTest))
+                .toList().size();
+
+        assertEquals(1, realResultAfterDeleting);
     }
 
     @Test
     void deleteBookNegative() {
-        Book bookTest = new Book("A1", "B1", "1990");
-        bookTest.setId(4L);
-        int beforeTryingToDeleteResult = bookDatabase.getBookList().size();
-        assertFalse(bookDatabase.delete(bookTest), "If book dsn`t exist and wsn`t deleted, should be FALSE");
+        Book bookTest = new Book("A1", "B1", "1991");
+        assertFalse(bookDatabase.delete(bookTest), "If book dsn`t exist and haven’t been deleted, should be FALSE");
         int afterTryingToDeleteResult = bookDatabase.getBookList().size();
-        assertEquals(beforeTryingToDeleteResult, afterTryingToDeleteResult);
+        assertEquals(3, afterTryingToDeleteResult);
     }
 
     @Test
@@ -115,75 +117,32 @@ class BookDatabaseImplTest {
 
     @Test
     void deleteByAuthorPositive() {
-        Book bookOneTest = new Book("A1", "B1", "1990");
-        bookOneTest.setId(1L);
-        Book bookTwoTest = new Book("A1", "B1", "1990");
-        bookTwoTest.setId(2L);
-        assertEquals(3, bookDatabase.getBookList().size());
-        assertTrue(bookDatabase.getBookList().contains(bookOneTest));
-        assertTrue(bookDatabase.getBookList().contains(bookTwoTest));
         bookDatabase.deleteByAuthor("A1");
-        assertFalse(bookDatabase.getBookList().contains(bookOneTest));
-        assertFalse(bookDatabase.getBookList().contains(bookTwoTest));
+        boolean realResult = bookDatabase.getBookList().stream()
+                .anyMatch(book -> book.getAuthor().equals("A1"));
+        assertFalse(realResult);
         assertEquals(1, bookDatabase.getBookList().size());
     }
 
     @Test
     void deleteByAuthorNegative() {
-        int beforeTryingToDeleteResult = bookDatabase.getBookList().size();
         bookDatabase.deleteByAuthor("A3");
-        int afterTryingToDeleteResult = bookDatabase.getBookList().size();
-        assertEquals(beforeTryingToDeleteResult, afterTryingToDeleteResult);
+        assertEquals(3, bookDatabase.getBookList().size());
     }
 
     @Test
     void deleteByTitlePositive() {
-        Book bookOneTest = new Book("A1", "B1", "1990");
-        bookOneTest.setId(1L);
-        Book bookTwoTest = new Book("A1", "B1", "1990");
-        bookTwoTest.setId(2L);
-        assertEquals(3, bookDatabase.getBookList().size());
-        assertTrue(bookDatabase.getBookList().contains(bookOneTest));
-        assertTrue(bookDatabase.getBookList().contains(bookTwoTest));
         bookDatabase.deleteByTitle("B1");
-        assertFalse(bookDatabase.getBookList().contains(bookOneTest));
-        assertFalse(bookDatabase.getBookList().contains(bookTwoTest));
+        boolean realResult = bookDatabase.getBookList().stream()
+                .anyMatch(book -> book.getTitle().equals("B1"));
+        assertFalse(realResult);
         assertEquals(1, bookDatabase.getBookList().size());
     }
 
     @Test
     void deleteByTitleNegative() {
-        int beforeTryingToDeleteResult = bookDatabase.getBookList().size();
         bookDatabase.deleteByTitle("B3");
-        int afterTryingToDeleteResult = bookDatabase.getBookList().size();
-        assertEquals(beforeTryingToDeleteResult, afterTryingToDeleteResult);
-    }
-
-    @Test
-    void findPositive() {
-        SearchCriteria authorSearchCriteria = new AuthorSearchCriteria("A1");
-        SearchCriteria titleSearchCriteria = new TitleSearchCriteria("B2");
-        SearchCriteria andSearchCriteria = new AndSearchCriteria(authorSearchCriteria, titleSearchCriteria);
-        SearchCriteria orSearchCriteria = new OrSearchCriteria(authorSearchCriteria, titleSearchCriteria);
-        List<Book> test = new ArrayList<>();
-        Book bookOne = new Book("A1", "B1", "1990");
-        bookOne.setId(1L);
-        Book bookTwo = new Book("A1", "B1", "1990");
-        bookTwo.setId(2L);
-        Book bookThree = new Book("A2", "B2", "1990");
-        bookThree.setId(3L);
-        test.add(bookOne);
-        test.add(bookTwo);
-        test.add(bookThree);
-        assertEquals(bookDatabase.find(orSearchCriteria), test);
-        test.remove(bookThree);
-        assertEquals(bookDatabase.find(authorSearchCriteria), test);
-        test.remove(bookOne);
-        test.remove(bookTwo);
-        assertEquals(bookDatabase.find(andSearchCriteria), test);
-        test.add(bookThree);
-        assertEquals(bookDatabase.find(titleSearchCriteria), test);
-
+        assertEquals(3, bookDatabase.getBookList().size());
     }
 
     @Test
@@ -200,5 +159,15 @@ class BookDatabaseImplTest {
         expectedResult.add("B1");
         expectedResult.add("B2");
         assertEquals(expectedResult, bookDatabase.findUniqueTitles());
+    }
+
+    @Test
+    void findUniqueBooks() {
+        Book bookOneTest = new Book("A1", "B1", "1990");
+        Book bookTwoTest = new Book("A2", "B2", "1990");
+        Set<Book> expectedResult = new HashSet<>();
+        expectedResult.add(bookOneTest);
+        expectedResult.add(bookTwoTest);
+        assertEquals(expectedResult, bookDatabase.findUniqueBooks());
     }
 }
