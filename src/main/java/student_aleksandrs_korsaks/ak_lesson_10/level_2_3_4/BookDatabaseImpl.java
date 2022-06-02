@@ -98,4 +98,9 @@ class BookDatabaseImpl implements BookDatabase {
     public Set<Book> findUniqueBooks() {
         return new HashSet<>(bookList);
     }
+
+    @Override
+    public boolean contains(Book book) {
+        return bookList.contains(book);
+    }
 }

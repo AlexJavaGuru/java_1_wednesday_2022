@@ -170,4 +170,16 @@ class BookDatabaseImplTest {
         expectedResult.add(bookTwoTest);
         assertEquals(expectedResult, bookDatabase.findUniqueBooks());
     }
+
+    @Test
+    void containsPositive() {
+        Book bookOneTest = new Book("A1", "B1", "1990");
+        assertTrue(bookDatabase.contains(bookOneTest));
+    }
+
+    @Test
+    void containsNegative() {
+        Book bookOneTest = new Book("A2", "B1", "1990");
+        assertFalse(bookDatabase.contains(bookOneTest));
+    }
 }
