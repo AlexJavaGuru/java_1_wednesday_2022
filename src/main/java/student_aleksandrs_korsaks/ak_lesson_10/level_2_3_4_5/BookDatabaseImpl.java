@@ -103,4 +103,26 @@ class BookDatabaseImpl implements BookDatabase {
     public boolean contains(Book book) {
         return bookList.contains(book);
     }
+
+    public Map<String, List<Book>> getAuthorToBooksMap() {
+        return bookList.stream()
+                .collect(Collectors.groupingBy(Book::getAuthor));
+    }
+
+//    @Override
+//    public Map<String, List<Book>> getAuthorToBooksMap() {
+//        Map<String, List<Book>> authorBooks = new HashMap<>();
+//        Set<String> uniqueAuthors;
+//        uniqueAuthors = findUniqueAuthors();
+//        for (String uniqueAuthor : uniqueAuthors) {
+//            List<Book> books = new ArrayList<>();
+//            for (Book book : bookList) {
+//                if (book.getAuthor().equals(uniqueAuthor)) {
+//                    books.add(book);
+//                }
+//            }
+//            authorBooks.put(uniqueAuthor, books);
+//        }
+//        return authorBooks;
+//    }
 }

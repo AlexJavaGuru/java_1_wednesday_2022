@@ -182,4 +182,13 @@ class BookDatabaseImplTest {
         Book bookOneTest = new Book("A2", "B1", "1990");
         assertFalse(bookDatabase.contains(bookOneTest));
     }
+
+    @Test
+    void getAuthorToBooksMapPositive() {
+        Map<String, List<Book>> realResult = bookDatabase.getAuthorToBooksMap();
+        List<Book> expectedBooksForAuthorA1 = List.of(new Book("A1", "B1", "1990"), new Book("A1", "B1", "1990"));
+        List<Book> expectedBooksForAuthorA2 = List.of(new Book("A2", "B2", "1990"));
+        Map<String, List<Book>> expectedResult = Map.of("A1", expectedBooksForAuthorA1, "A2", expectedBooksForAuthorA2);
+        assertEquals(expectedResult, realResult);
+    }
 }
