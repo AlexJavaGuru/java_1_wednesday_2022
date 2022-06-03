@@ -1,4 +1,4 @@
-package student_aleksandrs_korsaks.ak_lesson_10.level_2_3_4;
+package student_aleksandrs_korsaks.ak_lesson_10.level_2_3_4_5;
 
 import java.util.*;
 import java.util.stream.Collectors;
