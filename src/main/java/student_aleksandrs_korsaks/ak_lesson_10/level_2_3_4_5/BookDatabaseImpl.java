@@ -125,4 +125,20 @@ class BookDatabaseImpl implements BookDatabase {
 //        }
 //        return authorBooks;
 //    }
+
+    @Override
+    public Map<String, Integer> getEachAuthorBookCount() {
+        Map<String, Integer> EachAuthorBookCount = new HashMap<>();
+        Set<String> uniqueAuthors = findUniqueAuthors();
+        for (String uniqueAuthor : uniqueAuthors) {
+            Set<Book> books = new HashSet<>();
+            for (Book book : bookList) {
+                if (book.getAuthor().equals(uniqueAuthor)) {
+                    books.add(book);
+                }
+            }
+            EachAuthorBookCount.put(uniqueAuthor, books.size());
+        }
+        return EachAuthorBookCount;
+    }
 }

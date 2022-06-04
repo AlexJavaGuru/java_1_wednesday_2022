@@ -191,4 +191,11 @@ class BookDatabaseImplTest {
         Map<String, List<Book>> expectedResult = Map.of("A1", expectedBooksForAuthorA1, "A2", expectedBooksForAuthorA2);
         assertEquals(expectedResult, realResult);
     }
+
+    @Test
+    void getEachAuthorBookCount() {
+        Map<String, Integer> realResult = bookDatabase.getEachAuthorBookCount();
+        Map<String, Integer> expectedResult = Map.of("A1", 1, "A2", 1);
+        assertEquals(expectedResult, realResult);
+    }
 }
