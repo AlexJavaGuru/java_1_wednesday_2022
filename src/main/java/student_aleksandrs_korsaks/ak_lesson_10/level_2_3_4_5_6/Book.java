@@ -2,13 +2,13 @@ package student_aleksandrs_korsaks.ak_lesson_10.level_2_3_4_5_6;
 
 import java.util.Objects;
 
-class Book {
+public class Book {
     private Long id;
     private String title;
     private String author;
     private String yearOfIssue;
 
-    Book(String author, String title, String yearOfIssue) {
+    public Book(String author, String title, String yearOfIssue) {
         this.author = author;
         this.title = title;
         this.yearOfIssue = yearOfIssue;

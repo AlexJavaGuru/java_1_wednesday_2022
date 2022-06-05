@@ -3,7 +3,7 @@ package student_aleksandrs_korsaks.ak_lesson_10.level_2_3_4_5_6;
 import java.util.*;
 import java.util.stream.Collectors;
 
-class BookDatabaseImpl implements BookDatabase {
+public class BookDatabaseImpl implements BookDatabase {
 
     private Long id = 1L;
 

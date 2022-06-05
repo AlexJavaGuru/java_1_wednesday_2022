@@ -1,4 +1,7 @@
-package student_aleksandrs_korsaks.ak_lesson_10.level_2_3_4_5_6;
+package student_aleksandrs_korsaks.ak_lesson_10.level_2_3_4_5_6.UI;
+
+import student_aleksandrs_korsaks.ak_lesson_10.level_2_3_4_5_6.Book;
+import student_aleksandrs_korsaks.ak_lesson_10.level_2_3_4_5_6.BookDatabase;
 
 import java.util.Optional;
 import java.util.Scanner;
