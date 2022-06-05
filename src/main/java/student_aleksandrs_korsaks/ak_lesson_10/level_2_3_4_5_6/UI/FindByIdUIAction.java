@@ -19,7 +19,6 @@ class FindByIdUIAction implements UIAction {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter the book`s ID");
         Long bookId = scanner.nextLong();
-        scanner.close();
 
         Optional<Book> bookOpt = bookDatabase.findById(bookId);
 

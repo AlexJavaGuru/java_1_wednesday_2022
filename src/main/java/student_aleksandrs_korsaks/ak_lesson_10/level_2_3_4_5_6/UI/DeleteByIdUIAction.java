@@ -17,7 +17,6 @@ class DeleteByIdUIAction implements UIAction {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter the book`s ID to delete");
         Long bookId = scanner.nextLong();
-        scanner.close();
 
         bookDatabase.delete(bookId);
     }

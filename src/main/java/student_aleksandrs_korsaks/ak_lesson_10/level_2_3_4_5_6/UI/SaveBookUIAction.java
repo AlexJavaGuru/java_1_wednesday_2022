@@ -22,7 +22,6 @@ class SaveBookUIAction implements UIAction {
         String bookTitle = scanner.nextLine();
         System.out.println("Please enter the book`s year of production");
         String bookYearOfProduction = scanner.nextLine();
-        scanner.close();
 
         Book newBook = new Book(authorName, bookTitle, bookYearOfProduction);
         bookDatabase.save(newBook);

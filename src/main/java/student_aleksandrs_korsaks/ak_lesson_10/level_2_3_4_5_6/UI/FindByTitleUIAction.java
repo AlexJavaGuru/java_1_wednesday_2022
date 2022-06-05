@@ -19,7 +19,6 @@ public class FindByTitleUIAction implements UIAction {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter the book`s title");
         String bookTitle = scanner.nextLine();
-        scanner.close();
 
         List<Book> byTitle = bookDatabase.findByTitle(bookTitle);
 

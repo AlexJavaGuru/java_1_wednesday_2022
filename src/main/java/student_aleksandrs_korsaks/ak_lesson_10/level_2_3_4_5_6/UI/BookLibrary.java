@@ -26,6 +26,16 @@ public class BookLibrary {
         Scanner sc = new Scanner(System.in);
 
         while (true) {
+            System.out.println("""
+                    Menu
+                    1) Save book;
+                    2) Find book by ID;
+                    3) Find all author`s books;
+                    4) Find books by title;
+                    5) Delete book by ID.                
+                    0) Exit
+                    """);
+
             System.out.println("Please enter menu number: ");
             int userSelectedMenuNumber = Integer.parseInt(sc.nextLine());
             if (userSelectedMenuNumber == 0) {

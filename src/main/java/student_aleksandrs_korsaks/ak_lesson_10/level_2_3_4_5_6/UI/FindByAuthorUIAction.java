@@ -19,7 +19,6 @@ class FindByAuthorUIAction implements UIAction {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter the book`s author");
         String bookAuthor = scanner.nextLine();
-        scanner.close();
 
         List<Book> authorBooks = bookDatabase.findByAuthor(bookAuthor);
 
