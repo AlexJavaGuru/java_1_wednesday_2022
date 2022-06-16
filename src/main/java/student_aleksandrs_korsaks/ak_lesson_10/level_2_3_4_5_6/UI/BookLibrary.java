@@ -20,6 +20,10 @@ public class BookLibrary {
         menuNumberToActionMap.put(3, new FindByAuthorUIAction(bookDatabase));
         menuNumberToActionMap.put(4, new FindByTitleUIAction(bookDatabase));
         menuNumberToActionMap.put(5, new DeleteByIdUIAction(bookDatabase));
+        menuNumberToActionMap.put(6, new DeleteByAuthorUIAction(bookDatabase));
+        menuNumberToActionMap.put(7, new DeleteByTitleUIAction(bookDatabase));
+        menuNumberToActionMap.put(8, new DeleteByBookUIAction(bookDatabase));
+        menuNumberToActionMap.put(9, new CountAllBooksUIAction(bookDatabase));
     }
 
     public void run() {
@@ -32,7 +36,11 @@ public class BookLibrary {
                     2) Find book by ID;
                     3) Find all author`s books;
                     4) Find books by title;
-                    5) Delete book by ID.                
+                    5) Delete book by ID;
+                    6) Delete book by Author;
+                    7) Delete book by title;
+                    8) Delete book;
+                    9) Count all books;
                     0) Exit
                     """);
 
