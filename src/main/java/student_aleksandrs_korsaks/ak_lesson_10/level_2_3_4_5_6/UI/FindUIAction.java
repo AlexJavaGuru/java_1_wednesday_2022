@@ -1,26 +1,26 @@
 package student_aleksandrs_korsaks.ak_lesson_10.level_2_3_4_5_6.UI;
 
-import student_aleksandrs_korsaks.ak_lesson_10.level_2_3_4_5_6.BookDatabase;
-import student_aleksandrs_korsaks.ak_lesson_10.level_2_3_4_5_6.BookDatabaseImpl;
-import student_arturs_melnikovs.lesson_10.level_03.*;
+import student_aleksandrs_korsaks.ak_lesson_10.level_2_3_4_5_6.*;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.function.Function;
 
 public class FindUIAction implements UIAction {
 
     private BookDatabase bookDatabase;
-    private Map<Integer, SearchCriteria> menuNumberToActionMap;
+    private Map<Integer, Function<String, SearchCriteria>> menuNumberToActionMap;
 
     public FindUIAction(BookDatabase bookDatabase) {
         this.bookDatabase = bookDatabase;
+
         menuNumberToActionMap = new HashMap<>();
-        menuNumberToActionMap.put(1, new AuthorSearchCriteria());
-        menuNumberToActionMap.put(2, new TitleSearchCriteria());
-        menuNumberToActionMap.put(3, new YearOfIssueSearchCriteria());
-        menuNumberToActionMap.put(4, new AndSearchCriteria());
-        menuNumberToActionMap.put(5, new OrSearchCriteria());
+        menuNumberToActionMap.put(1, AuthorSearchCriteria::new);
+        menuNumberToActionMap.put(2, TitleSearchCriteria::new);
+        menuNumberToActionMap.put(3, YearOfIssueSearchCriteria::new);
+//        menuNumberToActionMap.put(4, new AndSearchCriteria());
+//        menuNumberToActionMap.put(5, new OrSearchCriteria());
     }
 
     public void execute() {
@@ -29,20 +29,21 @@ public class FindUIAction implements UIAction {
 
         while (true) {
             System.out.println("""
-                    Menu
+                    Menu (find by criteria)
+                    --------------------------
                     1) Author search criteria;
                     2) Title search criteria;
                     3) Year of issue search criteria;
                     4) And search criteria;
                     5) Or search criteria;
-                    
-                    0) Exit
+
+                    0) Exit (Return to main menu)
                     """);
 
-            System.out.println("Please enter menu number: ");
+            System.out.println("Please enter menu (find by criteria) number: ");
             int userSelectedMenuNumber = Integer.parseInt(sc.nextLine());
             if (userSelectedMenuNumber == 0) {
-                System.out.println("Thank you! Good by!");
+                System.out.println("You`ve been returned to main menu");
                 break;
             } else {
                 executeUIAction(userSelectedMenuNumber);
@@ -51,11 +52,15 @@ public class FindUIAction implements UIAction {
     }
 
     private void executeUIAction(int userSelectedMenuNumber) {
-        SearchCriteria searchCriteria = menuNumberToActionMap.get(userSelectedMenuNumber);
-        if (searchCriteria != null) {
-            searchCriteria.match();
+        Function<String, SearchCriteria> stringSearchCriteriaFunction = menuNumberToActionMap.get(userSelectedMenuNumber);
+        if (stringSearchCriteriaFunction != null) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Please enter the chosen criteria");
+            String userInput = scanner.nextLine();
+            SearchCriteria searchCriteria = stringSearchCriteriaFunction.apply(userInput);
+            System.out.println(bookDatabase.find(searchCriteria));
         } else {
             System.out.println("Menu item not exist: " + userSelectedMenuNumber);
         }
     }
-    }
+}
