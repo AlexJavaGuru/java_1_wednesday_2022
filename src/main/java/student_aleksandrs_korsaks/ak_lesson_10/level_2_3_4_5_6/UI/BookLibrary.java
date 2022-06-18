@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class BookLibrary {
+class BookLibrary {
 
     private Map<Integer, UIAction> menuNumberToActionMap;
 
@@ -20,11 +20,17 @@ public class BookLibrary {
         menuNumberToActionMap.put(3, new FindByAuthorUIAction(bookDatabase));
         menuNumberToActionMap.put(4, new FindByTitleUIAction(bookDatabase));
         menuNumberToActionMap.put(5, new FindUIAction(bookDatabase));
-        menuNumberToActionMap.put(6, new DeleteByIdUIAction(bookDatabase));
-        menuNumberToActionMap.put(7, new DeleteByAuthorUIAction(bookDatabase));
-        menuNumberToActionMap.put(8, new DeleteByTitleUIAction(bookDatabase));
-        menuNumberToActionMap.put(9, new DeleteByBookUIAction(bookDatabase));
-        menuNumberToActionMap.put(10, new CountAllBooksUIAction(bookDatabase));
+        menuNumberToActionMap.put(6, new FindUniqueAuthorsUIAction(bookDatabase));
+        menuNumberToActionMap.put(7, new FindUniqueTitlesUIAction(bookDatabase));
+        menuNumberToActionMap.put(8, new FindUniqueBooksUIAction(bookDatabase));
+        menuNumberToActionMap.put(9, new DeleteByIdUIAction(bookDatabase));
+        menuNumberToActionMap.put(10, new DeleteByAuthorUIAction(bookDatabase));
+        menuNumberToActionMap.put(11, new DeleteByTitleUIAction(bookDatabase));
+        menuNumberToActionMap.put(12, new DeleteByBookUIAction(bookDatabase));
+        menuNumberToActionMap.put(13, new CountAllBooksUIAction(bookDatabase));
+        menuNumberToActionMap.put(14, new ContainsUIAction(bookDatabase));
+        menuNumberToActionMap.put(15, new GetAuthorToBooksMapUIAction(bookDatabase));
+        menuNumberToActionMap.put(16, new GetEachAuthorBookCountUIAction(bookDatabase));
 
     }
 
@@ -34,17 +40,16 @@ public class BookLibrary {
         while (true) {
             System.out.println("""
                     Menu
-                    1) Save book;
-                    2) Find book by ID;
-                    3) Find all author`s books;
-                    4) Find books by title;
-                    5) Find books by criteria;
-                    6) Delete book by ID;
-                    7) Delete book by Author;
-                    8) Delete book by title;
-                    9) Delete book;
-                    10) Count all books;
-                    0) Exit
+                    1) Save book;                 9) Delete book by ID;
+                    2) Find book by ID;           10) Delete book by Author;
+                    3) Find all author`s books;   11) Delete book by title;
+                    4) Find books by title;       12) Delete book;
+                    5) Find books by criteria;    13) Count all books;
+                    6) Find unique authors;       14) Check for book containment ;
+                    7) Find unique titles;        15) Show all books for each author ;
+                    8) Find unique books;         16) Count all unique books for each author ;
+                                        
+                                           0) Exit
                     """);
 
             System.out.println("Please enter menu number: ");
@@ -66,5 +71,4 @@ public class BookLibrary {
             System.out.println("Menu item not exist: " + userSelectedMenuNumber);
         }
     }
-
 }

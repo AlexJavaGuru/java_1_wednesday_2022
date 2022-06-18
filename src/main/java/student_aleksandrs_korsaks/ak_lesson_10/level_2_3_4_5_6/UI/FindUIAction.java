@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.function.Function;
 
-public class FindUIAction implements UIAction {
+class FindUIAction implements UIAction {
 
     private BookDatabase bookDatabase;
     private Map<Integer, Function<String, SearchCriteria>> menuNumberToActionMap;
@@ -34,8 +34,8 @@ public class FindUIAction implements UIAction {
                     1) Author search criteria;
                     2) Title search criteria;
                     3) Year of issue search criteria;
-                    4) And search criteria;
-                    5) Or search criteria;
+                    4) And search criteria (not working yet);
+                    5) Or search criteria (not working yet);
 
                     0) Exit (Return to main menu)
                     """);

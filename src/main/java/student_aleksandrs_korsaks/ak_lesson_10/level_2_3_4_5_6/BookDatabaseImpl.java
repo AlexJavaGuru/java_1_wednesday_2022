@@ -72,38 +72,38 @@ public class BookDatabaseImpl implements BookDatabase {
     public void deleteByTitle(String title) {
         bookList.removeIf(book -> book.getTitle().equals(title));
     }
-
+//+/-
     @Override
     public List<Book> find(SearchCriteria searchCriteria) {
         return bookList.stream()
                 .filter(searchCriteria::match)
                 .toList();
     }
-
+//+
     @Override
     public Set<String> findUniqueAuthors() {
         return bookList.stream()
                 .map(Book::getAuthor)
                 .collect(Collectors.toSet());
     }
-
+//+
     @Override
     public Set<String> findUniqueTitles() {
         return bookList.stream()
                 .map(Book::getTitle)
                 .collect(Collectors.toSet());
     }
-
+//+
     @Override
     public Set<Book> findUniqueBooks() {
         return new HashSet<>(bookList);
     }
-
+//+
     @Override
     public boolean contains(Book book) {
         return bookList.contains(book);
     }
-
+//+
     public Map<String, List<Book>> getAuthorToBooksMap() {
         return bookList.stream()
                 .collect(Collectors.groupingBy(Book::getAuthor));
@@ -125,7 +125,7 @@ public class BookDatabaseImpl implements BookDatabase {
 //        }
 //        return authorBooks;
 //    }
-
+//+
     @Override
     public Map<String, Integer> getEachAuthorBookCount() {
         Map<String, Integer> EachAuthorBookCount = new HashMap<>();
