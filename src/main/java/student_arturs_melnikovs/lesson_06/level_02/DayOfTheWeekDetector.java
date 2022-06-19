@@ -2,7 +2,7 @@ package student_arturs_melnikovs.lesson_06.level_02;
 
 import java.util.Scanner;
 
-class DayOfTheWeekDetector {
+public class DayOfTheWeekDetector {
 
     public int getDayNumberFromUser() {
         Scanner scanner = new Scanner(System.in);
