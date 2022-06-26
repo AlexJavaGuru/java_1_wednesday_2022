@@ -37,4 +37,18 @@ class FraudDetectorTest {
         Transaction transaction = new Transaction(trader, TRX_AMOUNT_LIMIT);
         assertFalse(fraudDetector.isFraud(transaction));
     }
+
+    @Test
+    void isFraudNotValidTraderCityTrueCase() {
+        Trader trader = new Trader("John", "Sidney");
+        Transaction transaction = new Transaction(trader, TRX_AMOUNT_LIMIT);
+        assertTrue(fraudDetector.isFraud(transaction));
+    }
+
+    @Test
+    void isFraudValidTraderCityFalseCase() {
+        Trader trader = new Trader("John", "Riga");
+        Transaction transaction = new Transaction(trader, TRX_AMOUNT_LIMIT);
+        assertFalse(fraudDetector.isFraud(transaction));
+    }
 }
