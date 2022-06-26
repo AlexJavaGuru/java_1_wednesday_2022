@@ -6,10 +6,12 @@ class Trader {
 
     private String fullName;
     private String city;
+    private String country;
 
-    public Trader(String fullName, String city) {
+    public Trader(String fullName, String city, String country) {
         this.fullName = fullName;
         this.city = city;
+        this.country = country;
     }
 
     public String getFullName() {
@@ -20,16 +22,20 @@ class Trader {
         return city;
     }
 
+    public String getCountry() {
+        return country;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Trader trader)) return false;
-        return getFullName().equals(trader.getFullName()) && getCity().equals(trader.getCity());
+        return getFullName().equals(trader.getFullName()) && getCity().equals(trader.getCity()) && getCountry().equals(trader.getCountry());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getFullName(), getCity());
+        return Objects.hash(getFullName(), getCity(), getCountry());
     }
 
     @Override
@@ -37,6 +43,7 @@ class Trader {
         return "Trader{" +
                 "fullName = '" + fullName + '\'' +
                 ", city = '" + city + '\'' +
+                ", country = '" + country + '\'' +
                 '}';
     }
 }

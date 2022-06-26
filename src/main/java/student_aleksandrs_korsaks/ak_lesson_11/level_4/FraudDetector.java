@@ -7,7 +7,8 @@ class FraudDetector {
     boolean isFraud(Transaction t) {
         return t.getTrader().getFullName().equals("Pokemon") ||
                 (t.getAmount() > TRX_AMOUNT_LIMIT) ||
-                (t.getTrader().getCity().equals("Sidney"));
+                (t.getTrader().getCity().equals("Sidney")) ||
+                (t.getTrader().getCountry().equals("Jamaica"));
     }
 
 }
