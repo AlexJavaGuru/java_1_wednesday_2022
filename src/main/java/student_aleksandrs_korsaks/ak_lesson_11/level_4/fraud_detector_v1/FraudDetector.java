@@ -1,4 +1,4 @@
-package student_aleksandrs_korsaks.ak_lesson_11.level_4;
+package student_aleksandrs_korsaks.ak_lesson_11.level_4.fraud_detector_v1;
 
 class FraudDetector {
 

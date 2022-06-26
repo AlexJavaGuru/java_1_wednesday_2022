@@ -1,11 +1,11 @@
-package student_aleksandrs_korsaks.ak_lesson_11.level_4;
+package student_aleksandrs_korsaks.ak_lesson_11.level_4.fraud_detector_v1;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static student_aleksandrs_korsaks.ak_lesson_11.level_4.FraudDetector.TRX_AMOUNT_LIMIT;
-import static student_aleksandrs_korsaks.ak_lesson_11.level_4.FraudDetector.TRX_AMOUNT_LIMIT_GERMANY;
+import static student_aleksandrs_korsaks.ak_lesson_11.level_4.fraud_detector_v1.FraudDetector.TRX_AMOUNT_LIMIT;
+import static student_aleksandrs_korsaks.ak_lesson_11.level_4.fraud_detector_v1.FraudDetector.TRX_AMOUNT_LIMIT_GERMANY;
 
 class FraudDetectorTest {
 
