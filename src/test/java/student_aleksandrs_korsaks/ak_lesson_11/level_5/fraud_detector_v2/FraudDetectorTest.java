@@ -1,15 +1,29 @@
-package student_aleksandrs_korsaks.ak_lesson_11.level_4.fraud_detector_v1;
+package student_aleksandrs_korsaks.ak_lesson_11.level_5.fraud_detector_v2;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static student_aleksandrs_korsaks.ak_lesson_11.level_4.fraud_detector_v1.FraudDetector.TRX_AMOUNT_LIMIT;
-import static student_aleksandrs_korsaks.ak_lesson_11.level_4.fraud_detector_v1.FraudDetector.TRX_AMOUNT_LIMIT_GERMANY;
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static student_aleksandrs_korsaks.ak_lesson_11.level_5.fraud_detector_v2.FraudRule2.TRX_AMOUNT_LIMIT;
+import static student_aleksandrs_korsaks.ak_lesson_11.level_5.fraud_detector_v2.FraudRule5.TRX_AMOUNT_LIMIT_GERMANY;
 
 class FraudDetectorTest {
 
-    FraudDetector fraudDetector = new FraudDetector();
+    FraudDetector fraudDetector;
+
+    @BeforeEach
+    void setUp() {
+        List<FraudRule> rules = new ArrayList<>();
+        rules.add(new FraudRule1("Rule 1"));
+        rules.add(new FraudRule2("Rule 2"));
+        rules.add(new FraudRule3("Rule 3"));
+        rules.add(new FraudRule4("Rule 4"));
+        rules.add(new FraudRule5("Rule 5"));
+        fraudDetector = new FraudDetector(rules);
+    }
 
     @Test
     void isFraudNotValidTraderNameTrueCase() {

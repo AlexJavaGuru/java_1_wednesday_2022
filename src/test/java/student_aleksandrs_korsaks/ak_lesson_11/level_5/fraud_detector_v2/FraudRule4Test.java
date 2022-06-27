@@ -19,7 +19,7 @@ class FraudRule4Test {
     @Test
     void isFraudValidTraderCountryFalseCase() {
         Trader trader = new Trader("John", "Riga", "Latvia");
-        Transaction transaction = new Transaction(trader, FraudDetector.TRX_AMOUNT_LIMIT);
+        Transaction transaction = new Transaction(trader, TRX_AMOUNT_LIMIT);
         assertFalse(fraudRule4.isFraud(transaction));
     }
 }
