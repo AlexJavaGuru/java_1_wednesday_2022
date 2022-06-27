@@ -24,7 +24,7 @@ class FraudDetectorTest {
 //        Transaction transaction = new Transaction(trader, 100);
 //        assertFalse(fraudDetector.isFraud(transaction));
 //    }
-
+//
 //    @Test
 //    void isFraudNotValidTrxAmountTrueCase() {
 //        Trader trader = new Trader("John", "Riga", "Latvia");
@@ -38,20 +38,20 @@ class FraudDetectorTest {
 //        Transaction transaction = new Transaction(trader, TRX_AMOUNT_LIMIT);
 //        assertFalse(fraudDetector.isFraud(transaction));
 //    }
-
-    @Test
-    void isFraudNotValidTraderCityTrueCase() {
-        Trader trader = new Trader("John", "Sidney", "Australia");
-        Transaction transaction = new Transaction(trader, TRX_AMOUNT_LIMIT);
-        assertTrue(fraudDetector.isFraud(transaction));
-    }
-
-    @Test
-    void isFraudValidTraderCityFalseCase() {
-        Trader trader = new Trader("John", "Riga", "Latvia");
-        Transaction transaction = new Transaction(trader, TRX_AMOUNT_LIMIT);
-        assertFalse(fraudDetector.isFraud(transaction));
-    }
+//
+//    @Test
+//    void isFraudNotValidTraderCityTrueCase() {
+//        Trader trader = new Trader("John", "Sidney", "Australia");
+//        Transaction transaction = new Transaction(trader, TRX_AMOUNT_LIMIT);
+//        assertTrue(fraudDetector.isFraud(transaction));
+//    }
+//
+//    @Test
+//    void isFraudValidTraderCityFalseCase() {
+//        Trader trader = new Trader("John", "Riga", "Latvia");
+//        Transaction transaction = new Transaction(trader, TRX_AMOUNT_LIMIT);
+//        assertFalse(fraudDetector.isFraud(transaction));
+//    }
 
     @Test
     void isFraudNotValidTraderCountryTrueCase() {
