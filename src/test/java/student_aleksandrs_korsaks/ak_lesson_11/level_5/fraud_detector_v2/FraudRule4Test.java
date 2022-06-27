@@ -7,7 +7,7 @@ import static student_aleksandrs_korsaks.ak_lesson_11.level_5.fraud_detector_v2.
 
 class FraudRule4Test {
 
-    FraudRule fraudRule4 = new FraudRule4("Not valid trader city \"Sidney\"");
+    FraudRule fraudRule4 = new FraudRule4("Not valid trader country \"Jamaica\"");
 
     @Test
     void isFraudNotValidTraderCountryTrueCase() {

@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class FraudRule1Test {
 
-    FraudRule fraudRule1 = new FraudRule1("Not valid trades name \"Pokemon\"");
+    FraudRule fraudRule1 = new FraudRule1("Not valid trader name \"Pokemon\"");
 
     @Test
     void isFraudNotValidTraderNameTrueCase() {
