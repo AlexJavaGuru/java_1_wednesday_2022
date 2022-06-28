@@ -1,9 +1,9 @@
-package student_aleksandrs_korsaks.ak_lesson_11.level_5.fraud_detector_v2;
+package student_aleksandrs_korsaks.ak_lesson_11.level_5_6.fraud_detector_v2;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static student_aleksandrs_korsaks.ak_lesson_11.level_5.fraud_detector_v2.FraudRule2.TRX_AMOUNT_LIMIT;
+import static student_aleksandrs_korsaks.ak_lesson_11.level_5_6.fraud_detector_v2.FraudRule2.TRX_AMOUNT_LIMIT;
 
 class FraudRule2Test {
 

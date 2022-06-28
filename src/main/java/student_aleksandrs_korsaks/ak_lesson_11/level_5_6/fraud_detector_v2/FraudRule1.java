@@ -1,4 +1,4 @@
-package student_aleksandrs_korsaks.ak_lesson_11.level_5.fraud_detector_v2;
+package student_aleksandrs_korsaks.ak_lesson_11.level_5_6.fraud_detector_v2;
 
 class FraudRule1 extends FraudRule {
 
