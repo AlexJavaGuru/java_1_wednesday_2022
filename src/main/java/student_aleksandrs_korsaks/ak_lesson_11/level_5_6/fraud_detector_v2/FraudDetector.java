@@ -10,14 +10,14 @@ class FraudDetector {
         this.rules = rules;
     }
 
-    boolean isFraud(Transaction t) {
+    FraudDetectionResult isFraud(Transaction t) {
 //        return rules.stream().filter(FraudRule::isFraud).findFirst().orElse(false);
         for (FraudRule rule : rules) {
             if (rule.isFraud(t)) {
-                return true;
+                return new FraudDetectionResult(true, rule.getRuleName());
             }
         }
-        return false;
+        return new FraudDetectionResult(false, null);
     }
 }
 

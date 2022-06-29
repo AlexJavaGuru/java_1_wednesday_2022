@@ -1,5 +1,8 @@
 package student_aleksandrs_korsaks.ak_lesson_11.level_5_6.fraud_detector_v2;
 
+import java.util.Objects;
+import java.util.Optional;
+
 class FraudDetectionResult {
 
     private boolean fraud;
@@ -10,27 +13,31 @@ class FraudDetectionResult {
         this.ruleName = ruleName;
     }
 
-    public boolean isFraud() {
+    public boolean getIsFraud() {
         return fraud;
     }
 
-    public void setFraud(boolean fraud) {
-        this.fraud = fraud;
+    public String getRuleNameResult() {
+        return Optional.ofNullable(ruleName).orElse("");
     }
 
-    public String getRuleName() {
-        return ruleName;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof FraudDetectionResult that)) return false;
+        return fraud == that.fraud && getRuleNameResult().equals(that.getRuleNameResult());
     }
 
-    public void setRuleName(String ruleName) {
-        this.ruleName = ruleName;
+    @Override
+    public int hashCode() {
+        return Objects.hash(fraud, getRuleNameResult());
     }
 
     @Override
     public String toString() {
         return "FraudDetectionResult{" +
                 "fraud = " + fraud +
-                ", ruleName = '" + ruleName + '\'' +
+                ", ruleName = " + ruleName +
                 '}';
     }
 }
