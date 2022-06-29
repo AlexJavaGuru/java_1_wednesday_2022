@@ -14,10 +14,16 @@ class FraudDetector {
 //        return rules.stream().filter(FraudRule::isFraud).findFirst().orElse(false);
         for (FraudRule rule : rules) {
             if (rule.isFraud(t)) {
+                fraudIsFoundedMsg(t);
                 return new FraudDetectionResult(true, rule.getRuleName());
             }
         }
         return new FraudDetectionResult(false, null);
+    }
+
+    void fraudIsFoundedMsg(Transaction t) {
+        System.out.println("Fraud is founded!!!");
+        System.out.println("Fraud information: " + t);
     }
 }
 
