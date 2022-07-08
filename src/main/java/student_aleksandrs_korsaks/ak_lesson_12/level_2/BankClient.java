@@ -1,5 +1,7 @@
 package student_aleksandrs_korsaks.ak_lesson_12.level_2;
 
+import java.util.Objects;
+
 class BankClient {
 
     private String uid;
@@ -16,6 +18,18 @@ class BankClient {
 
     public String getFullName() {
         return fullName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof BankClient that)) return false;
+        return getUid().equals(that.getUid()) && getFullName().equals(that.getFullName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getUid(), getFullName());
     }
 
     @Override

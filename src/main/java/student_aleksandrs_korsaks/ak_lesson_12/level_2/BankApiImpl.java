@@ -13,10 +13,20 @@ class BankApiImpl implements BankApi {
 
     public Optional<BankClient> findByUid(UserCredentials credentials, String uid) throws AccessDeniedException {
 
-        if (credentials.getRoles().stream().anyMatch(role -> role.equals(Role.CAN_SEARCH_CLIENTS))) {
+//        if (credentials.getRoles().stream().noneMatch(role -> role.equals(Role.CAN_SEARCH_CLIENTS))) {
+//            throw new AccessDeniedException();
+//        }
+//        return clients.stream().filter(bankClient -> bankClient.getUid().equals(uid)).findAny();
+//    }
+
+        if (!credentials.getRoles().contains(Role.CAN_SEARCH_CLIENTS)) {
             throw new AccessDeniedException();
         }
-        return clients.stream().filter(bankClient -> bankClient.getUid().equals(uid)).findAny();
+        for (BankClient client : clients) {
+            if (client.getUid().equals(uid)) {
+                return Optional.of(client);
+            }
+        }
+        return Optional.empty();
     }
-
 }
