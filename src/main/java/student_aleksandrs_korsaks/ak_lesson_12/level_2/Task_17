@@ -1,0 +1,10 @@
+Почему класс AccessDeniedException в нашем случае
+лучше наследовать от Exception, а не от RuntimeException?
+
+class AccessDeniedException extends Exception {
+
+}
+
+Потому что Exception и его sub-классы - это checked exceptions (их обязательно нужно обработать).
+Так как мы имеем дело с интерфейсом, важно, чтобы те,
+кто implements от этого интерфейса знали что в методе интерфейса бросается exception.
