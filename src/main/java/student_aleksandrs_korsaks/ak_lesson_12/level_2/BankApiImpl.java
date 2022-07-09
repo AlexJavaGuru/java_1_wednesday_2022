@@ -19,7 +19,7 @@ class BankApiImpl implements BankApi {
 //        return clients.stream().filter(bankClient -> bankClient.getUid().equals(uid)).findAny();
 //    }
 
-        if (!credentials.getRoles().contains(Role.CAN_SEARCH_CLIENTS)) {
+        if (!credentials.hasRole(Role.CAN_SEARCH_CLIENTS)) {
             throw new AccessDeniedException();
         }
         for (BankClient client : clients) {
