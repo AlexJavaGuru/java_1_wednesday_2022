@@ -1,4 +1,4 @@
-package student_aleksandrs_korsaks.ak_lesson_12.level_5;
+package student_aleksandrs_korsaks.ak_lesson_12.level_5_6;
 
 class ValidationException extends Exception{
 
