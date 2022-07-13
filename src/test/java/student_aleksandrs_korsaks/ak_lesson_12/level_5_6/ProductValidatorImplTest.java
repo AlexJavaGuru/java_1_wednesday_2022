@@ -16,13 +16,13 @@ class ProductValidatorImplTest {
 
     @BeforeEach
     void setUp() {
-        validator = new ProductValidatorImpl();
-        exceptions = validator.validate(product);
+        validator = new ProductValidatorImpl(new ProductTitleValidationRule());
     }
 
     @Test
     void rule1_v1() {
         product = new Product(null, 1, "description");
+        exceptions = validator.validate(product);
         assertEquals(1, exceptions.size());
         assertEquals("RULE-1", exceptions.get(0).getRuleName());
         assertEquals("title", exceptions.get(0).getFieldName());
@@ -32,6 +32,7 @@ class ProductValidatorImplTest {
     @Test
     void rule1_v2() {
         product = new Product("", 1, "description");
+        exceptions = validator.validate(product);
         assertEquals(1, exceptions.size());
         assertEquals("RULE-1", exceptions.get(0).getRuleName());
         assertEquals("title", exceptions.get(0).getFieldName());
@@ -41,6 +42,7 @@ class ProductValidatorImplTest {
     @Test
     void rule2() {
         product = new Product("ab", 1, "description");
+        exceptions = validator.validate(product);
         assertEquals(1, exceptions.size());
         assertEquals("RULE-2", exceptions.get(0).getRuleName());
         assertEquals("title", exceptions.get(0).getFieldName());
@@ -50,6 +52,7 @@ class ProductValidatorImplTest {
     @Test
     void rule3() {
         product = new Product("a".repeat(101), 1, "description");
+        exceptions = validator.validate(product);
         assertEquals(1, exceptions.size());
         assertEquals("RULE-3", exceptions.get(0).getRuleName());
         assertEquals("title", exceptions.get(0).getFieldName());
@@ -59,6 +62,7 @@ class ProductValidatorImplTest {
     @Test
     void rule4_v1() {
         product = new Product("a2c!", 1, "description");
+        exceptions = validator.validate(product);
         assertEquals(1, exceptions.size());
         assertEquals("RULE-4", exceptions.get(0).getRuleName());
         assertEquals("title", exceptions.get(0).getFieldName());
@@ -68,6 +72,7 @@ class ProductValidatorImplTest {
     @Test
     void rule4_v2() {
         product = new Product("a2cЫ", 1, "description");
+        exceptions = validator.validate(product);
         assertEquals(1, exceptions.size());
         assertEquals("RULE-4", exceptions.get(0).getRuleName());
         assertEquals("title", exceptions.get(0).getFieldName());
@@ -77,6 +82,7 @@ class ProductValidatorImplTest {
     @Test
     void rule5() {
         product = new Product("abc", null, "description");
+        exceptions = validator.validate(product);
         assertEquals(1, exceptions.size());
         assertEquals("RULE-5", exceptions.get(0).getRuleName());
         assertEquals("price", exceptions.get(0).getFieldName());
@@ -86,6 +92,7 @@ class ProductValidatorImplTest {
     @Test
     void rule6() {
         product = new Product("abc", 0, "description");
+        exceptions = validator.validate(product);
         assertEquals(1, exceptions.size());
         assertEquals("RULE-6", exceptions.get(0).getRuleName());
         assertEquals("price", exceptions.get(0).getFieldName());
@@ -95,6 +102,7 @@ class ProductValidatorImplTest {
     @Test
     void rule7() {
         product = new Product("abc", 1, "a".repeat(2001));
+        exceptions = validator.validate(product);
         assertEquals(1, exceptions.size());
         assertEquals("RULE-7", exceptions.get(0).getRuleName());
         assertEquals("description", exceptions.get(0).getFieldName());
@@ -104,6 +112,7 @@ class ProductValidatorImplTest {
     @Test
     void rule8_v1() {
         product = new Product("abc", 1, "abc2?");
+        exceptions = validator.validate(product);
         assertEquals(1, exceptions.size());
         assertEquals("RULE-8", exceptions.get(0).getRuleName());
         assertEquals("description", exceptions.get(0).getFieldName());
@@ -113,6 +122,7 @@ class ProductValidatorImplTest {
     @Test
     void rule8_v2() {
         product = new Product("abc", 1, "abc2Ф");
+        exceptions = validator.validate(product);
         assertEquals(1, exceptions.size());
         assertEquals("RULE-8", exceptions.get(0).getRuleName());
         assertEquals("description", exceptions.get(0).getFieldName());

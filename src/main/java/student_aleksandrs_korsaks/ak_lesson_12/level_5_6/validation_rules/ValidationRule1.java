@@ -8,7 +8,7 @@ public class ValidationRule1 extends ValidationRule {
 
     @Override
     protected void validate(Product product) throws ValidationException {
-        if (product.getTitle().isBlank()) {
+        if (product.getTitle() == null || product.getTitle().equals("")) {
             throw new ValidationException("RULE-1", "Title can not be empty", "title");
         }
     }
