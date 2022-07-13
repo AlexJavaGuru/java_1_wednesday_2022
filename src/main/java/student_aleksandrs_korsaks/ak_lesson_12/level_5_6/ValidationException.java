@@ -1,6 +1,6 @@
 package student_aleksandrs_korsaks.ak_lesson_12.level_5_6;
 
-class ValidationException extends Exception{
+public class ValidationException extends Exception{
 
     private String ruleName;
     private String description;

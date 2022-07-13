@@ -2,7 +2,7 @@ package student_aleksandrs_korsaks.ak_lesson_12.level_5_6;
 
 import java.util.Objects;
 
-class Product {
+public class Product {
 
     private String title;
     private Integer price;
