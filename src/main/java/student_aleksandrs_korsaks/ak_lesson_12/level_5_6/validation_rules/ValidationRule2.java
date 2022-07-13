@@ -8,7 +8,7 @@ public class ValidationRule2 extends ValidationRule {
 
     @Override
     protected void validate(Product product) throws ValidationException {
-        if (product.getTitle().length() <= 3) {
+        if (product.getTitle().length() < 3) {
             throw new ValidationException("RULE-2", "Title should contain at least 3 symbols", "title");
         }
     }
