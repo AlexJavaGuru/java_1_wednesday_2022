@@ -5,36 +5,25 @@ import java.util.List;
 
 class ProductValidatorImpl implements ProductValidator {
 
-    private ProductTitleValidationRule titleValidationRule;
-    private ProductPriceValidationRule priceValidationRule;
-    private ProductDescriptionValidationRule descriptionValidationRule;
+    private List<FieldValidationRule> validationRules = new ArrayList<>();
 
     public ProductValidatorImpl(ProductTitleValidationRule titleValidationRule,
                                 ProductPriceValidationRule priceValidationRule,
                                 ProductDescriptionValidationRule descriptionValidationRule) {
-        this.titleValidationRule = titleValidationRule;
-        this.priceValidationRule = priceValidationRule;
-        this.descriptionValidationRule = descriptionValidationRule;
+        validationRules.add(titleValidationRule);
+        validationRules.add(priceValidationRule);
+        validationRules.add(descriptionValidationRule);
     }
 
     public List<ValidationException> validate(Product product) {
         List<ValidationException> exceptions = new ArrayList<>();
-        try {
-            titleValidationRule.validate(product);
-        } catch (ValidationException e) {
-            exceptions.add(e);
-        }
-        try {
-            priceValidationRule.validate(product);
-        } catch (ValidationException e) {
-            exceptions.add(e);
-        }
-        try {
-            descriptionValidationRule.validate(product);
-        } catch (ValidationException e) {
-            exceptions.add(e);
+        for (FieldValidationRule validationRule : validationRules) {
+            try {
+                validationRule.validate(product);
+            } catch (ValidationException e) {
+                exceptions.add(e);
+            }
         }
         return exceptions;
     }
-
 }
