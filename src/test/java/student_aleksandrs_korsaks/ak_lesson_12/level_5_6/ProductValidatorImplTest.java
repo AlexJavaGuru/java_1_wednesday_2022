@@ -62,7 +62,7 @@ class ProductValidatorImplTest {
 
     @Test
     void rule4_v1() {
-        product = new Product("a2c!", 1, "description");
+        product = new Product("abc!", 1, "description");
         exceptions = validator.validate(product);
         assertEquals(1, exceptions.size());
         assertEquals("RULE-4", exceptions.get(0).getRuleName());
