@@ -9,7 +9,7 @@ public class ValidationRule8 extends student_aleksandrs_korsaks.ak_lesson_12.lev
     @Override
     protected void validate(Product product) throws ValidationException {
         Pattern p = Pattern.compile("[^a-zA-Z_0-9]");
-        if (p.matcher(product.getTitle()).find()) {
+        if (p.matcher(product.getDescription()).find()) {
             throw new ValidationException("RULE-8", "Description must only consist of eng characters and/or numbers", "description");
         }
     }

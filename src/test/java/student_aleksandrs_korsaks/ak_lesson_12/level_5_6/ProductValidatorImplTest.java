@@ -17,7 +17,7 @@ class ProductValidatorImplTest {
     @BeforeEach
     void setUp() {
         validator = new ProductValidatorImpl(new ProductTitleValidationRule(),
-                new ProductPriceValidationRule());
+                new ProductPriceValidationRule(), new ProductDescriptionValidationRule());
     }
 
     @Test
