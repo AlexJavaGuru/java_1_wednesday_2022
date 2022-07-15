@@ -1,5 +1,7 @@
 package student_aleksandrs_korsaks.ak_lesson_12.level_5_6;
 
+import java.util.Objects;
+
 public class ValidationException extends Exception{
 
     private String ruleName;
@@ -24,4 +26,15 @@ public class ValidationException extends Exception{
         return fieldName;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof ValidationException that)) return false;
+        return getRuleName().equals(that.getRuleName()) && getDescription().equals(that.getDescription()) && getFieldName().equals(that.getFieldName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getRuleName(), getDescription(), getFieldName());
+    }
 }

@@ -129,4 +129,45 @@ class ProductValidatorImplTest {
         assertEquals("description", exceptions.get(0).getFieldName());
         assertEquals("Description must only consist of eng characters and/or numbers", exceptions.get(0).getDescription());
     }
+
+    @Test
+    void multiExceptionTrow_title_and_price() {
+        product = new Product("", 0, "abc");
+        exceptions = validator.validate(product);
+        ValidationException expectedExceptions1 = new ValidationException("RULE-1", "Title can not be empty", "title");
+        ValidationException expectedExceptions2 = new ValidationException("RULE-6", "Price should be more than zero", "price");
+        assertEquals(2, exceptions.size());
+        assertTrue(exceptions.contains(expectedExceptions1) && exceptions.contains(expectedExceptions2));
+    }
+
+    @Test
+    void multiExceptionTrow_title_and_description() {
+        product = new Product("", 1, "abc2Ф");
+        exceptions = validator.validate(product);
+        ValidationException expectedExceptions1 = new ValidationException("RULE-1", "Title can not be empty", "title");
+        ValidationException expectedExceptions2 = new ValidationException("RULE-8", "Description must only consist of eng characters and/or numbers", "description");
+        assertEquals(2, exceptions.size());
+        assertTrue(exceptions.contains(expectedExceptions1) && exceptions.contains(expectedExceptions2));
+    }
+
+    @Test
+    void multiExceptionTrow_price_and_description() {
+        product = new Product("abc", 0, "abc2Ф");
+        exceptions = validator.validate(product);
+        ValidationException expectedExceptions1 = new ValidationException("RULE-6", "Price should be more than zero", "price");
+        ValidationException expectedExceptions2 = new ValidationException("RULE-8", "Description must only consist of eng characters and/or numbers", "description");
+        assertEquals(2, exceptions.size());
+        assertTrue(exceptions.contains(expectedExceptions1) && exceptions.contains(expectedExceptions2));
+    }
+
+    @Test
+    void multiExceptionTrow_title_price_and_description() {
+        product = new Product("", 0, "abc2Ф");
+        exceptions = validator.validate(product);
+        ValidationException expectedExceptions1 = new ValidationException("RULE-6", "Price should be more than zero", "price");
+        ValidationException expectedExceptions2 = new ValidationException("RULE-8", "Description must only consist of eng characters and/or numbers", "description");
+        ValidationException expectedExceptions3 = new ValidationException("RULE-1", "Title can not be empty", "title");
+        assertEquals(3, exceptions.size());
+        assertTrue(exceptions.contains(expectedExceptions1) && exceptions.contains(expectedExceptions2) && exceptions.contains(expectedExceptions3));
+    }
 }
