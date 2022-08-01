@@ -2,7 +2,7 @@ package student_aleksandrs_korsaks.ak_lesson_14.level_1_2;
 
 import java.util.Objects;
 
-class Apple {
+public class Apple {
 
     private String color;
     private int weight;
