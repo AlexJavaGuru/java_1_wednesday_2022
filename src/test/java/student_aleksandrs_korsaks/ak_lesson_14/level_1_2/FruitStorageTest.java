@@ -2,6 +2,10 @@ package student_aleksandrs_korsaks.ak_lesson_14.level_1_2;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import student_aleksandrs_korsaks.ak_lesson_14.level_1_2.searc_criterias.AppleGreenColorPredicate;
+import student_aleksandrs_korsaks.ak_lesson_14.level_1_2.searc_criterias.AppleHeavyWeightPredicate;
+import student_aleksandrs_korsaks.ak_lesson_14.level_1_2.searc_criterias.AppleLightWeightPredicate;
+import student_aleksandrs_korsaks.ak_lesson_14.level_1_2.searc_criterias.AppleRedColorPredicate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +44,7 @@ class FruitStorageTest {
         expectedResult.add(four);
         expectedResult.add(five);
         expectedResult.add(six);
-        assertEquals(expectedResult, fruitStorage.findApplesByColor("green"));
+        assertEquals(expectedResult, fruitStorage.findApples(new AppleGreenColorPredicate()));
     }
 
     @Test
@@ -49,14 +53,26 @@ class FruitStorageTest {
         expectedResult.add(one);
         expectedResult.add(two);
         expectedResult.add(three);
-        assertEquals(expectedResult, fruitStorage.findApplesByColor("red"));
+        assertEquals(expectedResult, fruitStorage.findApples(new AppleRedColorPredicate()));
     }
 
     @Test
     void getAllApplesOverWeight() {
         List<Apple> expectedResult = new ArrayList<>();
+        expectedResult.add(two);
         expectedResult.add(three);
         expectedResult.add(four);
-        assertEquals(expectedResult, fruitStorage.findApplesByWeight(190));
+        expectedResult.add(eight);
+        assertEquals(expectedResult, fruitStorage.findApples(new AppleHeavyWeightPredicate()));
+    }
+
+    @Test
+    void getAllApplesUnderWeight() {
+        List<Apple> expectedResult = new ArrayList<>();
+        expectedResult.add(one);
+        expectedResult.add(five);
+        expectedResult.add(six);
+        expectedResult.add(seven);
+        assertEquals(expectedResult, fruitStorage.findApples(new AppleLightWeightPredicate()));
     }
 }

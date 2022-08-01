@@ -19,15 +19,9 @@ class FruitStorage {
         return apples;
     }
 
-    List<Apple> findApplesByColor(String appleColour) {
+    List<Apple> findApples(ApplePredicate p) {
         return getAllApples().stream()
-                .filter(apple -> apple.getColor().equals(appleColour))
-                .collect(Collectors.toList());
-    }
-
-    List<Apple> findApplesByWeight(int weight) {
-        return getAllApples().stream()
-                .filter(apple -> apple.getWeight() > weight)
+                .filter(p::test)
                 .collect(Collectors.toList());
     }
 }
