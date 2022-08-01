@@ -40,6 +40,15 @@ class FruitStorageTest {
         expectedResult.add(four);
         expectedResult.add(five);
         expectedResult.add(six);
-        assertEquals(expectedResult, fruitStorage.getAllGreenApples());
+        assertEquals(expectedResult, fruitStorage.findApplesByColor("green"));
+    }
+
+    @Test
+    void getAllRedApples() {
+        List<Apple> expectedResult = new ArrayList<>();
+        expectedResult.add(one);
+        expectedResult.add(two);
+        expectedResult.add(three);
+        assertEquals(expectedResult, fruitStorage.findApplesByColor("red"));
     }
 }
