@@ -1,4 +1,4 @@
-package student_aleksandrs_korsaks.ak_lesson_14.level_1;
+package student_aleksandrs_korsaks.ak_lesson_14.level_1_2;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
