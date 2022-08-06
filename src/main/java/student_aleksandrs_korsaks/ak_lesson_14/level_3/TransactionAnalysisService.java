@@ -17,4 +17,10 @@ public class TransactionAnalysisService {
                 .sorted(Comparator.comparing(Transaction::getValue))
                 .collect(Collectors.toList());
     }
+
+    public List<Transaction> sortTransactionsByValueDesc(List<Transaction> transactions) {
+        return transactions.stream()
+                .sorted(Comparator.comparing(Transaction::getValue).reversed())
+                .collect(Collectors.toList());
+    }
 }

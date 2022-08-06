@@ -57,9 +57,8 @@ class TransactionAnalysisServiceTest {
                 2013));
     }
 
-
     @Test
-    void sortTransactionsByValue() {
+    void sortTransactionsByValueAsc() {
         expectedResultTRX.add(one);
         expectedResultTRX.add(three);
         expectedResultTRX.add(five);
@@ -67,5 +66,16 @@ class TransactionAnalysisServiceTest {
         expectedResultTRX.add(six);
         expectedResultTRX.add(two);
         assertEquals(expectedResultTRX, transactionAnalysisService.sortTransactionsByValueAsc(transactionTestData.getTransactions()));
+    }
+
+    @Test
+    void sortTransactionsByValueDesc() {
+        expectedResultTRX.add(two);
+        expectedResultTRX.add(six);
+        expectedResultTRX.add(four);
+        expectedResultTRX.add(five);
+        expectedResultTRX.add(three);
+        expectedResultTRX.add(one);
+        assertEquals(expectedResultTRX, transactionAnalysisService.sortTransactionsByValueDesc(transactionTestData.getTransactions()));
     }
 }
