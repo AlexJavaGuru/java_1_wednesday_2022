@@ -37,7 +37,8 @@ class TransactionAnalysisServiceTest {
     void findTransactionsIn2011() {
         expectedResultTRX.add(one);
         expectedResultTRX.add(three);
-        assertEquals(expectedResultTRX, transactionAnalysisService.findTransactionsByYear(transactionTestData.getTransactions(), 2011));
+        assertEquals(expectedResultTRX, transactionAnalysisService.findTransactionsByYear(transactionTestData.getTransactions(),
+                2011));
     }
 
     @Test
@@ -46,11 +47,25 @@ class TransactionAnalysisServiceTest {
         expectedResultTRX.add(four);
         expectedResultTRX.add(five);
         expectedResultTRX.add(six);
-        assertEquals(expectedResultTRX, transactionAnalysisService.findTransactionsByYear(transactionTestData.getTransactions(), 2012));
+        assertEquals(expectedResultTRX, transactionAnalysisService.findTransactionsByYear(transactionTestData.getTransactions(),
+                2012));
     }
 
     @Test
     void findTransactionsIn2013() {
-        assertEquals(expectedResultTRX, transactionAnalysisService.findTransactionsByYear(transactionTestData.getTransactions(), 2013));
+        assertEquals(expectedResultTRX, transactionAnalysisService.findTransactionsByYear(transactionTestData.getTransactions(),
+                2013));
+    }
+
+
+    @Test
+    void sortTransactionsByValue() {
+        expectedResultTRX.add(one);
+        expectedResultTRX.add(three);
+        expectedResultTRX.add(five);
+        expectedResultTRX.add(four);
+        expectedResultTRX.add(six);
+        expectedResultTRX.add(two);
+        assertEquals(expectedResultTRX, transactionAnalysisService.sortTransactionsByValue(transactionTestData.getTransactions()));
     }
 }
