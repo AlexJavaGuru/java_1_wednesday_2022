@@ -2,12 +2,11 @@ package student_aleksandrs_korsaks.ak_lesson_14.level_1_2;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import student_aleksandrs_korsaks.ak_lesson_14.level_1_2.searc_criterias.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class FruitStorageTest {
 
@@ -41,12 +40,7 @@ class FruitStorageTest {
         expectedResult.add(four);
         expectedResult.add(five);
         expectedResult.add(six);
-        assertEquals(expectedResult, fruitStorage.findApples(new ApplePredicate() {
-            @Override
-            public boolean test(Apple apple) {
-                return apple.getColor().equals("green");
-            }
-        }));
+        assertEquals(expectedResult, fruitStorage.findApples(apple -> apple.getColor().equals("green")));
     }
 
     @Test
@@ -55,12 +49,7 @@ class FruitStorageTest {
         expectedResult.add(one);
         expectedResult.add(two);
         expectedResult.add(three);
-        assertEquals(expectedResult, fruitStorage.findApples(new ApplePredicate() {
-            @Override
-            public boolean test(Apple apple) {
-                return apple.getColor().equals("red");
-            }
-        }));
+        assertEquals(expectedResult, fruitStorage.findApples(apple -> apple.getColor().equals("red")));
     }
 
     @Test
@@ -70,12 +59,7 @@ class FruitStorageTest {
         expectedResult.add(three);
         expectedResult.add(four);
         expectedResult.add(eight);
-        assertEquals(expectedResult, fruitStorage.findApples(new ApplePredicate() {
-            @Override
-            public boolean test(Apple apple) {
-                return apple.getWeight() > 150;
-            }
-        }));
+        assertEquals(expectedResult, fruitStorage.findApples(apple -> apple.getWeight() > 150));
     }
 
     @Test
@@ -85,18 +69,13 @@ class FruitStorageTest {
         expectedResult.add(five);
         expectedResult.add(six);
         expectedResult.add(seven);
-        assertEquals(expectedResult, fruitStorage.findApples(new ApplePredicate() {
-            @Override
-            public boolean test(Apple apple) {
-                return apple.getWeight() <= 150;
-            }
-        }));
+        assertEquals(expectedResult, fruitStorage.findApples(apple -> apple.getWeight() <= 150));
     }
 
     @Test
     void getAllGreenAndOverWeightApples() {
         List<Apple> expectedResult = new ArrayList<>();
         expectedResult.add(four);
-        assertEquals(expectedResult, fruitStorage.findApples(new AppleGreenAndHeavyWeightPredicate()));
+        assertEquals(expectedResult, fruitStorage.findApples(apple -> apple.getColor().equals("green") && apple.getWeight() > 150));
     }
 }
