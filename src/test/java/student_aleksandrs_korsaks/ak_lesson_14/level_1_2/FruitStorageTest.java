@@ -2,10 +2,7 @@ package student_aleksandrs_korsaks.ak_lesson_14.level_1_2;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import student_aleksandrs_korsaks.ak_lesson_14.level_1_2.searc_criterias.AppleGreenColorPredicate;
-import student_aleksandrs_korsaks.ak_lesson_14.level_1_2.searc_criterias.AppleHeavyWeightPredicate;
-import student_aleksandrs_korsaks.ak_lesson_14.level_1_2.searc_criterias.AppleLightWeightPredicate;
-import student_aleksandrs_korsaks.ak_lesson_14.level_1_2.searc_criterias.AppleRedColorPredicate;
+import student_aleksandrs_korsaks.ak_lesson_14.level_1_2.searc_criterias.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -74,5 +71,12 @@ class FruitStorageTest {
         expectedResult.add(six);
         expectedResult.add(seven);
         assertEquals(expectedResult, fruitStorage.findApples(new AppleLightWeightPredicate()));
+    }
+
+    @Test
+    void getAllGreenAndOverWeightApples() {
+        List<Apple> expectedResult = new ArrayList<>();
+        expectedResult.add(four);
+        assertEquals(expectedResult, fruitStorage.findApples(new AppleGreenAndHeavyWeightPredicate()));
     }
 }
