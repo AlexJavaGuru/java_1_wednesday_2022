@@ -11,6 +11,7 @@ public class TransactionAnalysisService {
                 .filter(trx -> trx.getYear() == year)
                 .collect(Collectors.toList());
     }
+
     public List<Transaction> sortTransactionsByValue(List<Transaction> transactions) {
         return transactions.stream()
                 .sorted(Comparator.comparing(Transaction::getValue))
