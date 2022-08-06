@@ -41,7 +41,12 @@ class FruitStorageTest {
         expectedResult.add(four);
         expectedResult.add(five);
         expectedResult.add(six);
-        assertEquals(expectedResult, fruitStorage.findApples(new AppleGreenColorPredicate()));
+        assertEquals(expectedResult, fruitStorage.findApples(new ApplePredicate() {
+            @Override
+            public boolean test(Apple apple) {
+                return apple.getColor().equals("green");
+            }
+        }));
     }
 
     @Test
@@ -50,7 +55,12 @@ class FruitStorageTest {
         expectedResult.add(one);
         expectedResult.add(two);
         expectedResult.add(three);
-        assertEquals(expectedResult, fruitStorage.findApples(new AppleRedColorPredicate()));
+        assertEquals(expectedResult, fruitStorage.findApples(new ApplePredicate() {
+            @Override
+            public boolean test(Apple apple) {
+                return apple.getColor().equals("red");
+            }
+        }));
     }
 
     @Test
@@ -60,7 +70,12 @@ class FruitStorageTest {
         expectedResult.add(three);
         expectedResult.add(four);
         expectedResult.add(eight);
-        assertEquals(expectedResult, fruitStorage.findApples(new AppleHeavyWeightPredicate()));
+        assertEquals(expectedResult, fruitStorage.findApples(new ApplePredicate() {
+            @Override
+            public boolean test(Apple apple) {
+                return apple.getWeight() > 150;
+            }
+        }));
     }
 
     @Test
@@ -70,7 +85,12 @@ class FruitStorageTest {
         expectedResult.add(five);
         expectedResult.add(six);
         expectedResult.add(seven);
-        assertEquals(expectedResult, fruitStorage.findApples(new AppleLightWeightPredicate()));
+        assertEquals(expectedResult, fruitStorage.findApples(new ApplePredicate() {
+            @Override
+            public boolean test(Apple apple) {
+                return apple.getWeight() <= 150;
+            }
+        }));
     }
 
     @Test
