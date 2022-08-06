@@ -66,6 +66,6 @@ class TransactionAnalysisServiceTest {
         expectedResultTRX.add(four);
         expectedResultTRX.add(six);
         expectedResultTRX.add(two);
-        assertEquals(expectedResultTRX, transactionAnalysisService.sortTransactionsByValue(transactionTestData.getTransactions()));
+        assertEquals(expectedResultTRX, transactionAnalysisService.sortTransactionsByValueAsc(transactionTestData.getTransactions()));
     }
 }

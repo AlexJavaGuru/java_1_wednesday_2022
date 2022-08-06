@@ -12,7 +12,7 @@ public class TransactionAnalysisService {
                 .collect(Collectors.toList());
     }
 
-    public List<Transaction> sortTransactionsByValue(List<Transaction> transactions) {
+    public List<Transaction> sortTransactionsByValueAsc(List<Transaction> transactions) {
         return transactions.stream()
                 .sorted(Comparator.comparing(Transaction::getValue))
                 .collect(Collectors.toList());
