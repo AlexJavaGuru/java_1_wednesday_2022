@@ -110,4 +110,10 @@ class TransactionAnalysisServiceTest {
         Set<String> expectedResult = Set.of("Cambridge", "Milan");
         assertEquals(expectedResult, transactionAnalysisService.getUniqueTradersCities(transactionTestData.getTransactions()));
     }
+
+    @Test
+    void shouldFindAllTradersNamesFromCambridge() {
+        Set<String> expectedResult = Set.of("Brian", "Raoul", "Alan");
+        assertEquals(expectedResult, transactionAnalysisService.findAllTradersNamesFromCambridge(transactionTestData.getTransactions()));
+    }
 }
