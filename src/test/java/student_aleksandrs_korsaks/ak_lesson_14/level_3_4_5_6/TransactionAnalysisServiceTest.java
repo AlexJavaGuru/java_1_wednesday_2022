@@ -98,4 +98,10 @@ class TransactionAnalysisServiceTest {
         Set<Integer> expectedResult = Set.of(2011, 2012);
         assertEquals(expectedResult, transactionAnalysisService.getTransactionsUniqueYears(transactionTestData.getTransactions()));
     }
+
+    @Test
+    void shouldGetUniqueTradersNames() {
+        Set<String> expectedResult = Set.of("Brian", "Raoul", "Mario", "Alan");
+        assertEquals(expectedResult, transactionAnalysisService.getUniqueTradersNames(transactionTestData.getTransactions()));
+    }
 }

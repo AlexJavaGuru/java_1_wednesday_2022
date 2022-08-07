@@ -43,4 +43,11 @@ public class TransactionAnalysisService {
                 .map(Transaction::getYear)
                 .collect(Collectors.toSet());
     }
+
+    public Set<String> getUniqueTradersNames(List<Transaction> transactions) {
+        return transactions.stream()
+                .map(Transaction::getTrader)
+                .map(Trader::getName)
+                .collect(Collectors.toSet());
+    }
 }
