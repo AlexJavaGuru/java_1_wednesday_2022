@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class TransactionAnalysisServiceTest {
 
@@ -128,5 +129,10 @@ class TransactionAnalysisServiceTest {
     void shouldFindAllTradersNamesFromLondon() {
         Set<String> expectedResult = new HashSet<>();
         assertEquals(expectedResult, transactionAnalysisService.findTraderNamesFromCity(transactionTestData.getTransactions(), "London"));
+    }
+
+    @Test
+    void shouldReturnTrueIfAnyTraderBasedOnMilan() {
+        assertTrue(transactionAnalysisService.isAnyTraderBasedOnMilan(transactionTestData.getTransactions()));
     }
 }

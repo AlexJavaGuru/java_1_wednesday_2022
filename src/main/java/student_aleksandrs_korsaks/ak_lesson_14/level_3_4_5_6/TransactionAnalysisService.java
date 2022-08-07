@@ -65,4 +65,15 @@ public class TransactionAnalysisService {
                 .map(Trader::getName)
                 .collect(Collectors.toSet());
     }
+
+    public Boolean isAnyTraderBasedOnMilan(List<Transaction> transactions) {
+        return transactions.stream()
+                .map(Transaction::getTrader)
+                .anyMatch(trd -> trd.getCity().equals("Milan"));
+    }
+
+//    public boolean isAnyTraderBasedOnMilan2(List<Transaction> transactions) {
+//        return transactions.stream()
+//                .anyMatch(transaction -> transaction.getTrader().getCity().equals("Milan"));
+//    }
 }
