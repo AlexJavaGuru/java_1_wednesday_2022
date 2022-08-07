@@ -1,4 +1,4 @@
-package student_aleksandrs_korsaks.ak_lesson_14.level_3;
+package student_aleksandrs_korsaks.ak_lesson_14.level_3_4_5_6;
 
 import java.util.Arrays;
 import java.util.List;
