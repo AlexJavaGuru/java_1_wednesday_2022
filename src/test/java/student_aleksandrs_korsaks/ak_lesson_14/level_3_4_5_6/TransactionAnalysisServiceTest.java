@@ -4,8 +4,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -91,5 +91,11 @@ class TransactionAnalysisServiceTest {
     void shouldGetTransactionsYears() {
         List<Integer> expectedResult = List.of(2011, 2012, 2011, 2012, 2012, 2012);
         assertEquals(expectedResult, transactionAnalysisService.getTransactionsYears(transactionTestData.getTransactions()));
+    }
+
+    @Test
+    void shouldGetTransactionsUniqueYears() {
+        Set<Integer> expectedResult = Set.of(2011, 2012);
+        assertEquals(expectedResult, transactionAnalysisService.getTransactionsUniqueYears(transactionTestData.getTransactions()));
     }
 }
