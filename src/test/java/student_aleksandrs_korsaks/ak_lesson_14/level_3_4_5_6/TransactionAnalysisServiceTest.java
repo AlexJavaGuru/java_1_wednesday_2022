@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -114,6 +115,18 @@ class TransactionAnalysisServiceTest {
     @Test
     void shouldFindAllTradersNamesFromCambridge() {
         Set<String> expectedResult = Set.of("Brian", "Raoul", "Alan");
-        assertEquals(expectedResult, transactionAnalysisService.findAllTradersNamesFromCambridge(transactionTestData.getTransactions()));
+        assertEquals(expectedResult, transactionAnalysisService.findTraderNamesFromCity(transactionTestData.getTransactions(), "Cambridge"));
+    }
+
+    @Test
+    void shouldFindAllTradersNamesFromMilan() {
+        Set<String> expectedResult = Set.of("Mario");
+        assertEquals(expectedResult, transactionAnalysisService.findTraderNamesFromCity(transactionTestData.getTransactions(), "Milan"));
+    }
+
+    @Test
+    void shouldFindAllTradersNamesFromLondon() {
+        Set<String> expectedResult = new HashSet<>();
+        assertEquals(expectedResult, transactionAnalysisService.findTraderNamesFromCity(transactionTestData.getTransactions(), "London"));
     }
 }

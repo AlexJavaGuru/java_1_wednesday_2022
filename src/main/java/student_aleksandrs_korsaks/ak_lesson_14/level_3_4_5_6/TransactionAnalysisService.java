@@ -58,10 +58,10 @@ public class TransactionAnalysisService {
                 .collect(Collectors.toSet());
     }
 
-    public Set<String> findAllTradersNamesFromCambridge(List<Transaction> transactions) {
+    public Set<String> findTraderNamesFromCity(List<Transaction> transactions, String city) {
         return transactions.stream()
                 .map(Transaction::getTrader)
-                .filter(trader -> trader.getCity().equals("Cambridge"))
+                .filter(trader -> trader.getCity().equals(city))
                 .map(Trader::getName)
                 .collect(Collectors.toSet());
     }
