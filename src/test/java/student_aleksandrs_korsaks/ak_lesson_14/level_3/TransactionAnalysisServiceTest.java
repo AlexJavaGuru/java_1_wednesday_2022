@@ -78,4 +78,11 @@ class TransactionAnalysisServiceTest {
         expectedResultTRX.add(one);
         assertEquals(expectedResultTRX, transactionAnalysisService.sortTransactionsByValueDesc(transactionTestData.getTransactions()));
     }
+
+    @Test
+    void findTransactionsIn2011SortByValueAsc() {
+        expectedResultTRX.add(one);
+        expectedResultTRX.add(three);
+        assertEquals(expectedResultTRX, transactionAnalysisService.findTransactionsIn2011SortByValueAsc(transactionTestData.getTransactions()));
+    }
 }

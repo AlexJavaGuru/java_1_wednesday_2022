@@ -23,4 +23,11 @@ public class TransactionAnalysisService {
                 .sorted(Comparator.comparing(Transaction::getValue).reversed())
                 .collect(Collectors.toList());
     }
+
+    public List<Transaction> findTransactionsIn2011SortByValueAsc(List<Transaction> transactions) {
+        return transactions.stream()
+                .filter(trx -> trx.getYear() == 2011)
+                .sorted(Comparator.comparing(Transaction::getValue))
+                .collect(Collectors.toList());
+    }
 }
