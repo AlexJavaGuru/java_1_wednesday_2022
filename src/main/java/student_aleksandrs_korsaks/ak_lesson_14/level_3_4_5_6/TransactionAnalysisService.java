@@ -50,4 +50,11 @@ public class TransactionAnalysisService {
                 .map(Trader::getName)
                 .collect(Collectors.toSet());
     }
+
+    public Set<String> getUniqueTradersCities(List<Transaction> transactions) {
+        return transactions.stream()
+                .map(Transaction::getTrader)
+                .map(Trader::getCity)
+                .collect(Collectors.toSet());
+    }
 }
