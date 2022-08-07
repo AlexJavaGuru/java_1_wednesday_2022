@@ -66,10 +66,10 @@ public class TransactionAnalysisService {
                 .collect(Collectors.toSet());
     }
 
-    public Boolean isAnyTraderBasedOnMilan(List<Transaction> transactions) {
+    public Boolean isAnyTraderBasedOnCity(List<Transaction> transactions, String cityToCheck) {
         return transactions.stream()
                 .map(Transaction::getTrader)
-                .anyMatch(trd -> trd.getCity().equals("Milan"));
+                .anyMatch(trd -> trd.getCity().equals(cityToCheck));
     }
 
 //    public boolean isAnyTraderBasedOnMilan2(List<Transaction> transactions) {

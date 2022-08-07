@@ -8,8 +8,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class TransactionAnalysisServiceTest {
 
@@ -133,6 +132,16 @@ class TransactionAnalysisServiceTest {
 
     @Test
     void shouldReturnTrueIfAnyTraderBasedOnMilan() {
-        assertTrue(transactionAnalysisService.isAnyTraderBasedOnMilan(transactionTestData.getTransactions()));
+        assertTrue(transactionAnalysisService.isAnyTraderBasedOnCity(transactionTestData.getTransactions(), "Milan"));
+    }
+
+    @Test
+    void shouldReturnTrueIfAnyTraderBasedOnCambridge() {
+        assertTrue(transactionAnalysisService.isAnyTraderBasedOnCity(transactionTestData.getTransactions(), "Cambridge"));
+    }
+
+    @Test
+    void shouldReturnTrueIfAnyTraderBasedOnLondon() {
+        assertFalse(transactionAnalysisService.isAnyTraderBasedOnCity(transactionTestData.getTransactions(), "London"));
     }
 }
