@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -34,7 +35,7 @@ class TransactionAnalysisServiceTest {
     }
 
     @Test
-    void findTransactionsIn2011() {
+    void shouldFindTransactionsIn2011() {
         expectedResultTRX.add(one);
         expectedResultTRX.add(three);
         assertEquals(expectedResultTRX, transactionAnalysisService.findTransactionsByYear(transactionTestData.getTransactions(),
@@ -42,7 +43,7 @@ class TransactionAnalysisServiceTest {
     }
 
     @Test
-    void findTransactionsIn2012() {
+    void shouldFindTransactionsIn2012() {
         expectedResultTRX.add(two);
         expectedResultTRX.add(four);
         expectedResultTRX.add(five);
@@ -52,13 +53,13 @@ class TransactionAnalysisServiceTest {
     }
 
     @Test
-    void findTransactionsIn2013() {
+    void shouldFindTransactionsIn2013() {
         assertEquals(expectedResultTRX, transactionAnalysisService.findTransactionsByYear(transactionTestData.getTransactions(),
                 2013));
     }
 
     @Test
-    void sortTransactionsByValueAsc() {
+    void shouldSortTransactionsByValueAsc() {
         expectedResultTRX.add(one);
         expectedResultTRX.add(three);
         expectedResultTRX.add(five);
@@ -69,7 +70,7 @@ class TransactionAnalysisServiceTest {
     }
 
     @Test
-    void sortTransactionsByValueDesc() {
+    void shouldSortTransactionsByValueDesc() {
         expectedResultTRX.add(two);
         expectedResultTRX.add(six);
         expectedResultTRX.add(four);
@@ -80,9 +81,15 @@ class TransactionAnalysisServiceTest {
     }
 
     @Test
-    void findTransactionsIn2011SortByValueAsc() {
+    void shouldFindTransactionsIn2011SortByValueAsc() {
         expectedResultTRX.add(one);
         expectedResultTRX.add(three);
         assertEquals(expectedResultTRX, transactionAnalysisService.findTransactionsIn2011SortByValueAsc(transactionTestData.getTransactions()));
+    }
+
+    @Test
+    void shouldGetTransactionsYears() {
+        List<Integer> expectedResult = List.of(2011, 2012, 2011, 2012, 2012, 2012);
+        assertEquals(expectedResult, transactionAnalysisService.getTransactionsYears(transactionTestData.getTransactions()));
     }
 }

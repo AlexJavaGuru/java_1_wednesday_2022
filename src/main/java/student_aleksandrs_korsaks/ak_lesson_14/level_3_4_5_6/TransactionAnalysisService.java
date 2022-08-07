@@ -30,4 +30,10 @@ public class TransactionAnalysisService {
                 .sorted(Comparator.comparing(Transaction::getValue))
                 .collect(Collectors.toList());
     }
+
+    public List<Integer> getTransactionsYears(List<Transaction> transactions) {
+        return transactions.stream()
+                .map(Transaction::getYear)
+                .collect(Collectors.toList());
+    }
 }
