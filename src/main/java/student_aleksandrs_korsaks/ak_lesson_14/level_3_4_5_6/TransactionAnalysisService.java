@@ -1,8 +1,6 @@
 package student_aleksandrs_korsaks.ak_lesson_14.level_3_4_5_6;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class TransactionAnalysisService {
@@ -76,4 +74,12 @@ public class TransactionAnalysisService {
 //        return transactions.stream()
 //                .anyMatch(transaction -> transaction.getTrader().getCity().equals("Milan"));
 //    }
+
+
+    Optional<Integer> findMaxTransactionValue(List<Transaction> transactions) {
+        return Optional.ofNullable(transactions).stream()
+                .flatMap(Collection::stream)
+                .map(Transaction::getValue)
+                .max(Comparator.comparing(Integer::intValue));
+    }
 }

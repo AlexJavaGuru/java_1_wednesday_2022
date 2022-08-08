@@ -3,10 +3,7 @@ package student_aleksandrs_korsaks.ak_lesson_14.level_3_4_5_6;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -143,5 +140,16 @@ class TransactionAnalysisServiceTest {
     @Test
     void shouldReturnTrueIfAnyTraderBasedOnLondon() {
         assertFalse(transactionAnalysisService.isAnyTraderBasedOnCity(transactionTestData.getTransactions(), "London"));
+    }
+
+    @Test
+    void shouldFindMaxTransactionValue() {
+        assertEquals(Optional.of(1000), transactionAnalysisService.findMaxTransactionValue(transactionTestData.getTransactions()));
+    }
+
+    @Test
+    void shouldFindMaxTransactionValueEmptyListCase() {
+        List<Transaction> emptyTest = new ArrayList<>();
+        assertEquals(Optional.empty(), transactionAnalysisService.findMaxTransactionValue(emptyTest));
     }
 }
