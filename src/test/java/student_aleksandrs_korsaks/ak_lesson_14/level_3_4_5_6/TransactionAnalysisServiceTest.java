@@ -36,8 +36,7 @@ class TransactionAnalysisServiceTest {
     void shouldFindTransactionsIn2011() {
         expectedResultTRX.add(one);
         expectedResultTRX.add(three);
-        assertEquals(expectedResultTRX, transactionAnalysisService.findTransactionsByYear(transactionTestData.getTransactions(),
-                2011));
+        assertEquals(expectedResultTRX, transactionAnalysisService.findTransactionsByYear(transactionTestData.getTransactions(), 2011));
     }
 
     @Test
@@ -46,14 +45,12 @@ class TransactionAnalysisServiceTest {
         expectedResultTRX.add(four);
         expectedResultTRX.add(five);
         expectedResultTRX.add(six);
-        assertEquals(expectedResultTRX, transactionAnalysisService.findTransactionsByYear(transactionTestData.getTransactions(),
-                2012));
+        assertEquals(expectedResultTRX, transactionAnalysisService.findTransactionsByYear(transactionTestData.getTransactions(), 2012));
     }
 
     @Test
     void shouldFindTransactionsIn2013() {
-        assertEquals(expectedResultTRX, transactionAnalysisService.findTransactionsByYear(transactionTestData.getTransactions(),
-                2013));
+        assertEquals(expectedResultTRX, transactionAnalysisService.findTransactionsByYear(transactionTestData.getTransactions(), 2013));
     }
 
     @Test
@@ -151,5 +148,16 @@ class TransactionAnalysisServiceTest {
     void shouldFindMaxTransactionValueEmptyListCase() {
         List<Transaction> emptyTest = new ArrayList<>();
         assertEquals(Optional.empty(), transactionAnalysisService.findMaxTransactionValue(emptyTest));
+    }
+
+    @Test
+    void shouldFindMinTransactionValue() {
+        assertEquals(Optional.of(300), transactionAnalysisService.findMinTransactionValue(transactionTestData.getTransactions()));
+    }
+
+    @Test
+    void shouldFindMinTransactionValueEmptyListCase() {
+        List<Transaction> emptyTest = new ArrayList<>();
+        assertEquals(Optional.empty(), transactionAnalysisService.findMinTransactionValue(emptyTest));
     }
 }

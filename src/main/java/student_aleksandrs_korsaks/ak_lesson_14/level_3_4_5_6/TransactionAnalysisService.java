@@ -75,11 +75,17 @@ public class TransactionAnalysisService {
 //                .anyMatch(transaction -> transaction.getTrader().getCity().equals("Milan"));
 //    }
 
-
     Optional<Integer> findMaxTransactionValue(List<Transaction> transactions) {
         return Optional.ofNullable(transactions).stream()
                 .flatMap(Collection::stream)
                 .map(Transaction::getValue)
                 .max(Comparator.comparing(Integer::intValue));
+    }
+
+    Optional<Integer> findMinTransactionValue(List<Transaction> transactions) {
+        return Optional.ofNullable(transactions).stream()
+                .flatMap(Collection::stream)
+                .map(Transaction::getValue)
+                .min(Comparator.comparing(Integer::intValue));
     }
 }
