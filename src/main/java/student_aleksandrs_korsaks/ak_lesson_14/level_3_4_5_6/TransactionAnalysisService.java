@@ -88,4 +88,14 @@ public class TransactionAnalysisService {
                 .map(Transaction::getValue)
                 .min(Comparator.comparing(Integer::intValue));
     }
+
+    String getTradersNamesSortedAsc(List<Transaction> transactions) {
+        return Optional.ofNullable(transactions).stream()
+                .flatMap(Collection::stream)
+                .map(Transaction::getTrader)
+                .sorted(Comparator.comparing(Trader::getName))
+                .map(Trader::getName)
+                .distinct()
+                .collect(Collectors.joining(","));
+    }
 }

@@ -160,4 +160,16 @@ class TransactionAnalysisServiceTest {
         List<Transaction> emptyTest = new ArrayList<>();
         assertEquals(Optional.empty(), transactionAnalysisService.findMinTransactionValue(emptyTest));
     }
+
+    @Test
+    void shouldGetTradersNames() {
+        String expectedResult = "Alan,Brian,Mario,Raoul";
+        assertEquals(expectedResult, transactionAnalysisService.getTradersNamesSortedAsc(transactionTestData.getTransactions()));
+    }
+
+    @Test
+    void shouldGetTradersNamesNullCase() {
+        List<Transaction> emptyTest = new ArrayList<>();
+        assertEquals("", transactionAnalysisService.getTradersNamesSortedAsc(emptyTest));
+    }
 }
