@@ -98,4 +98,14 @@ public class TransactionAnalysisService {
                 .distinct()
                 .collect(Collectors.joining(","));
     }
+
+    String getTradersCitiesSortedAsc(List<Transaction> transactions) {
+        return Optional.ofNullable(transactions).stream()
+                .flatMap(Collection::stream)
+                .map(Transaction::getTrader)
+                .sorted(Comparator.comparing(Trader::getCity))
+                .map(Trader::getCity)
+                .distinct()
+                .collect(Collectors.joining(","));
+    }
 }

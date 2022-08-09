@@ -172,4 +172,16 @@ class TransactionAnalysisServiceTest {
         List<Transaction> emptyTest = new ArrayList<>();
         assertEquals("", transactionAnalysisService.getTradersNamesSortedAsc(emptyTest));
     }
+
+    @Test
+    void shouldGetTradersCities() {
+        String expectedResult = "Cambridge,Milan";
+        assertEquals(expectedResult, transactionAnalysisService.getTradersCitiesSortedAsc(transactionTestData.getTransactions()));
+    }
+
+    @Test
+    void shouldGetTradersCitiesNullCase() {
+        List<Transaction> emptyTest = new ArrayList<>();
+        assertEquals("", transactionAnalysisService.getTradersCitiesSortedAsc(emptyTest));
+    }
 }
